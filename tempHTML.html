@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Code Analysis Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .card-title {
+            color: #1e293b; /* slate-800 */
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .stat-card {
+             text-align: center;
+        }
+        .stat-label {
+            color: #64748b; /* slate-500 */
+            font-size: 0.875rem;
+        }
+        .stat-value {
+            color: #0f172a; /* slate-900 */
+            font-size: 1.875rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .list-item {
+            background-color: #f8fafc; /* slate-50 */
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: #334155; /* slate-700 */
+            margin-bottom: 0.5rem;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-slate-800">Project Code Analysis</h1>
+            <p class="text-slate-500 mt-2 text-lg">A comprehensive dashboard of AST-derived metrics.</p>
+        </header>
+
+        <!-- SECTION: Code Composition & Complexity -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-700 mb-4 border-b pb-2">Code Composition & Complexity</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="card stat-card"><p class="stat-label">Files</p><p id="files" class="stat-value"></p></div>
+                <div class="card stat-card"><p class="stat-label">Lines of Code</p><p id="loc" class="stat-value"></p></div>
+                <div class="card stat-card"><p class="stat-label">Functions</p><p id="functions" class="stat-value"></p></div>
+                <div class="card stat-card"><p class="stat-label">Avg. Complexity</p><p id="avg-cyclo" class="stat-value"></p></div>
+                <div class="card stat-card"><p class="stat-label">Max Nesting</p><p id="max-nest" class="stat-value"></p></div>
+                <div class="card stat-card"><p class="stat-label">Comments</p><p id="comments" class="stat-value"></p></div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-6">
+                <!-- SECTION: Dependency Analysis -->
+                <section class="card">
+                    <h2 class="card-title">Dependency Analysis</h2>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                           <div class="chart-container !h-[200px]">
+                               <canvas id="dependency-pie-chart"></canvas>
+                           </div>
+                        </div>
+                        <div>
+                           <h3 class="font-semibold text-slate-600 mb-2">Import Frequency (Top 10)</h3>
+                           <div class="chart-container !h-[200px]">
+                               <canvas id="import-freq-chart"></canvas>
+                           </div>
+                        </div>
+                    </div>
+                </section>
+                 <!-- SECTION: Application Structure -->
+                <section class="card">
+                    <h2 class="card-title">Application Structure: Module Size (Lines of Code)</h2>
+                    <div class="chart-container">
+                        <canvas id="structure-chart"></canvas>
+                    </div>
+                </section>
+            </div>
+            <div class="lg:col-span-1 space-y-6">
+                 <!-- SECTION: Modern JS Usage -->
+                <section class="card">
+                    <h2 class="card-title">Modern Javascript Usage</h2>
+                    <div class="chart-container">
+                        <canvas id="modern-js-chart"></canvas>
+                    </div>
+                </section>
+                <!-- SECTION: Framework Specifics -->
+                <section class="card">
+                    <h2 class="card-title">Framework Specifics: React</h2>
+                    <div class="chart-container">
+                        <canvas id="react-hooks-chart"></canvas>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- SECTION: Quality, Security & Infrastructure -->
+        <section class="mt-8">
+            <h2 class="text-2xl font-bold text-slate-700 mb-4 border-b pb-2">Quality, Security & Infrastructure</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card">
+                    <h3 class="card-title">Code Quality</h3>
+                    <p class="list-item flex justify-between"><span>Try/Catch Blocks</span> <span id="try-catch" class="font-bold"></span></p>
+                    <p class="list-item flex justify-between"><span>Test Files</span> <span id="test-files" class="font-bold"></span></p>
+                    <p class="list-item flex justify-between"><span>TODO/FIXME</span> <span id="todo-fixme" class="font-bold"></span></p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Security</h3>
+                    <p class="list-item flex justify-between"><span>Hardcoded URLs</span> <span id="hardcoded-urls" class="font-bold"></span></p>
+                    <p class="list-item flex justify-between"><span>dangerouslySetInnerHTML</span> <span id="dangerous-html" class="font-bold"></span></p>
+                    <p class="list-item flex justify-between"><span>Cloud SDKs</span> <span id="cloud-sdks" class="font-bold"></span></p>
+                </div>
+                 <div class="card md:col-span-2">
+                    <h3 class="card-title">Environment Variables Accessed</h3>
+                    <div id="env-vars-list" class="space-y-2 max-h-24 overflow-y-auto">
+                        <!-- Items inserted by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const reportData = {
+            "Code Composition & Complexity": { "Number of files": 135, "Total lines of code": 8375, "Number of functions": 378, "Number of classes": 1, "Maximum nesting depth": 50, "Total cyclomatic complexity": 574, "Average cyclomatic complexity": 1.52, "Total number of comments": 146, "Comment-to-code ratio": 0.017 },
+            "Dependency Analysis": { "Number of import statements": 549, "Types of imports (internal vs. external)": "251 vs. 298", "Third-party vs. in-house code ratio": 0.54, "List of direct dependencies": ["prop-types", "react", "react-redux", "redux-persist/integration/react", "firebase/firebase", "react-router-dom", "@ant-design/icons", "react-modal", "react-compound-slider", "formik", "react-select/creatable", "react-phone-input-2", "react-loading-skeleton", "uuid", "normalize.css/normalize.css", "react-dom", "react-phone-input-2/lib/style.css", "webfontloader", "redux-saga/effects", "redux", "redux-persist", "redux-persist/lib/storage", "redux-saga", "history", "firebase/app", "firebase/auth", "firebase/firestore", "firebase/storage", "workbox-precaching", "workbox-routing", "workbox-strategies", "workbox-expiration", "workbox-core", "yup", "react-select", "enzyme", "dotenv", "enzyme-adapter-react-16", "@vitejs/plugin-react", "path", "vite"], "Import frequency by module/library": { "@/components/common": 25, "prop-types": 55, "react": 91, "react-redux": 33, "redux-persist/integration/react": 1, "@/routers/AppRouter": 4, "@/components/basket": 5, "@/constants/routes": 26, "firebase/firebase": 1, "@/helpers/utils": 14, "@/hooks": 29, "react-router-dom": 32, "@/redux/actions/basketActions": 5, "@ant-design/icons": 26, "@/images/logo-full.png": 3, "@/views/account/components/UserAvatar": 3, "@/redux/actions/filterActions": 5, "@/selectors/selector": 3, "./PriceRange": 1, "./Filters": 1, "./Modal": 1, "./Badge": 2, "./FiltersToggle": 2, "./SearchBar": 2, "react-modal": 1, "../basket/BasketToggle": 1, "./MobileNavigation": 1, "../../../static/logo-wordmark.png": 1, "react-compound-slider": 1, "./Handle": 1, "./SliderRail": 1, "./Tick": 1, "./Track": 1, "@/redux/actions/authActions": 7, "formik": 15, "react-select/creatable": 1, "react-phone-input-2": 1, "react-loading-skeleton": 3, "./ProductItem": 1, "@/redux/actions/miscActions": 7, "@/redux/actions/productActions": 5, "@/components/product": 8, "@/services/firebase": 7, "uuid": 1, "normalize.css/normalize.css": 1, "react-dom": 1, "react-phone-input-2/lib/style.css": 1, "@/redux/store/store": 1, "@/styles/style.scss": 1, "webfontloader": 1, "./App": 1, "@/constants/constants": 20, "./authReducer": 1, "./basketReducer": 1, "./checkoutReducer": 1, "./filterReducer": 1, "./miscReducer": 1, "./productReducer": 1, "./profileReducer": 1, "./userReducer": 1, "@/images/defaultAvatar.jpg": 1, "@/images/defaultBanner.jpg": 1, "redux-saga/effects": 4, "@/redux/actions/checkoutActions": 3, "@/redux/actions/profileActions": 2, "../actions/productActions": 1, "../actions/miscActions": 1, "../actions/profileActions": 1, "./authSaga": 1, "./productSaga": 1, "./profileSaga": 1, "redux": 1, "redux-persist": 1, "redux-persist/lib/storage": 1, "redux-saga": 1, "../reducers": 1, "../sagas/rootSaga": 1, "history": 1, "@/views": 1, "./AdminRoute": 1, "./ClientRoute": 1, "./PublicRoute": 1, "firebase/app": 1, "firebase/auth": 1, "firebase/firestore": 1, "firebase/storage": 1, "./config": 1, "workbox-precaching": 1, "workbox-routing": 1, "workbox-strategies": 1, "workbox-expiration": 1, "workbox-core": 1, "@/components/formik": 6, "yup": 6, "./ConfirmModal": 1, "./EditForm": 1, "../components/UserTab": 1, ".": 1, "../components": 4, "../components/ProductsTable": 1, "../hoc/withCheckout": 3, "./ShippingForm": 1, "./ShippingTotal": 1, "./CreditPayment": 1, "./PayPalPayment": 1, "./Total": 1, "@/images/banner-guy.png": 1, "@/images/banner-girl.png": 1, "@/images/banner-girl-1.png": 1, "react-select": 1, "enzyme": 2, "../../src/client/components/App": 1, "dotenv": 1, "enzyme-adapter-react-16": 1, "@vitejs/plugin-react": 1, "path": 1, "vite": 1 } },
+            "API and Service Usage": { "Total number of network/API calls (heuristic)": 17, "Total number of file I/O operations": 0, "List and count of hardcoded URLs": { "count": 2, "urls": ["\"https://github.com/jgudo\"", "\"https://github.com/jgudo/ecommerce-react\""] } },
+            "Code Quality & Maintainability": { "Number of TODO / FIXME comments": 0, "Number of exception handling blocks (try/catch)": 24, "Number of test files": 1 },
+            "Application Structure": { "Number of modules/packages": 41, "Size of each module/package (in lines of code)": { "functions": 17, "src": 106, "basket": 353, "common": 1007, "PriceRange": 485, "formik": 318, "product": 544, "constants": 91, "helpers": 67, "hooks": 323, "actions": 349, "reducers": 361, "sagas": 524, "store": 29, "routers": 276, "selectors": 61, "services": 282, "components": 877, "edit_account": 334, "user_account": 44, "add_product": 55, "dashboard": 16, "edit_product": 54, "products": 40, "forgot_password": 76, "signin": 157, "signup": 162, "hoc": 41, "step1": 75, "step2": 284, "step3": 352, "error": 86, "featured": 51, "home": 94, "views": 21, "recommended": 51, "search": 85, "shop": 32, "view_product": 167, "test": 9, "JavascriptAST": 19 } },
+            "Modern Javascript Usage": { "variableDeclarations": { "const": 570, "let": 12, "var": 0 }, "arrowFunctions": 367, "templateLiterals": 36, "destructuringAssignments": 321, "spreadOperators": 92 },
+            "Framework Specifics": { "React": { "classComponents": 0, "functionalComponents": 0, "hooks": { "useState": 27, "useEffect": 20, "useContext": 0, "useReducer": 0, "useCallback": 0, "useMemo": 0, "useRef": 10 } }, "Angular": { "components": 0 } },
+            "Infrastructure & Security": { "Environment Variables Accessed": ["process.env.NODE_ENV", "process.env"], "Cloud SDKs Detected": ["Firebase"], "Use of dangerouslySetInnerHTML": 0, "Anonymous Functions in Props": 0 },
+            "Unsupported or Partially Supported Metrics": { "Test coverage": "N/A from AST alone; needs runtime/test suite execution" }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const {
+                "Code Composition & Complexity": composition,
+                "Dependency Analysis": dependencies,
+                "API and Service Usage": apiUsage,
+                "Code Quality & Maintainability": quality,
+                "Application Structure": structure,
+                "Modern Javascript Usage": modern,
+                "Framework Specifics": framework,
+                "Infrastructure & Security": infra,
+            } = reportData;
+            
+            // Helper for formatting numbers
+            const formatNum = (num) => num.toLocaleString();
+
+            // Populate stat cards
+            document.getElementById('files').textContent = formatNum(composition["Number of files"]);
+            document.getElementById('loc').textContent = formatNum(composition["Total lines of code"]);
+            document.getElementById('functions').textContent = formatNum(composition["Number of functions"]);
+            document.getElementById('avg-cyclo').textContent = composition["Average cyclomatic complexity"];
+            document.getElementById('max-nest').textContent = composition["Maximum nesting depth"];
+            document.getElementById('comments').textContent = formatNum(composition["Total number of comments"]);
+            
+            // Populate list-based cards
+            document.getElementById('try-catch').textContent = formatNum(quality["Number of exception handling blocks (try/catch)"]);
+            document.getElementById('test-files').textContent = formatNum(quality["Number of test files"]);
+            document.getElementById('todo-fixme').textContent = formatNum(quality["Number of TODO / FIXME comments"]);
+            document.getElementById('hardcoded-urls').textContent = formatNum(apiUsage["List and count of hardcoded URLs"].count);
+            document.getElementById('dangerous-html').textContent = formatNum(infra["Use of dangerouslySetInnerHTML"]);
+            document.getElementById('cloud-sdks').textContent = infra["Cloud SDKs Detected"].length;
+            
+            const envVarsList = document.getElementById('env-vars-list');
+            infra["Environment Variables Accessed"].forEach(v => {
+                 const p = document.createElement('p');
+                 p.className = 'list-item text-xs truncate';
+                 p.textContent = v;
+                 envVarsList.appendChild(p);
+            });
+            
+
+            // --- CHARTS ---
+            const chartFont = { family: 'Inter', size: 12 };
+            Chart.defaults.font.family = 'Inter';
+
+            // Dependency Pie Chart
+            const [internal, external] = dependencies["Types of imports (internal vs. external)"].split(' vs. ').map(Number);
+            new Chart(document.getElementById('dependency-pie-chart'), {
+                type: 'doughnut',
+                data: { labels: ['Internal', 'External'], datasets: [{ data: [internal, external], backgroundColor: ['#6366f1', '#a78bfa'], borderWidth: 0 }] },
+                options: { maintainAspectRatio: false, responsive: true, plugins: { legend: { position: 'bottom', labels: { font: chartFont } } } }
+            });
+            
+            // Import Frequency Chart
+            const importFreq = dependencies["Import frequency by module/library"];
+            const sortedImports = Object.entries(importFreq).sort(([,a],[,b]) => b-a).slice(0, 10);
+            new Chart(document.getElementById('import-freq-chart'), {
+                type: 'bar',
+                data: { labels: sortedImports.map(([name]) => name), datasets: [{ label: 'Import Count', data: sortedImports.map(([,count]) => count), backgroundColor: '#6366f1' }] },
+                options: { maintainAspectRatio: false, responsive: true, indexAxis: 'y', scales: { y: { ticks: { font: chartFont } }, x: { ticks: { font: chartFont } } }, plugins: { legend: { display: false } } }
+            });
+
+            // Module Size Chart
+            const moduleSizes = structure["Size of each module/package (in lines of code)"];
+            const sortedModules = Object.entries(moduleSizes).sort(([,a],[,b]) => b-a).slice(0, 10);
+            new Chart(document.getElementById('structure-chart'), {
+                type: 'bar',
+                data: {
+                    labels: sortedModules.map(([name]) => name),
+                    datasets: [{ label: 'Lines of Code', data: sortedModules.map(([,size]) => size), backgroundColor: '#a78bfa' }]
+                },
+                options: { maintainAspectRatio: false, responsive: true, plugins: { legend: { display: false } } }
+            });
+
+            // Modern JS Usage
+            new Chart(document.getElementById('modern-js-chart'), {
+                type: 'radar',
+                data: {
+                    labels: ['const/let Ratio', 'Arrow Functions', 'Template Literals', 'Destructuring', 'Spread Operators'],
+                    datasets: [{
+                        label: 'Feature Adoption (normalized)',
+                        data: [
+                            modern.variableDeclarations.const / (modern.variableDeclarations.let || 1),
+                            modern.arrowFunctions,
+                            modern.templateLiterals,
+                            modern.destructuringAssignments,
+                            modern.spreadOperators
+                        ],
+                        backgroundColor: 'rgba(99, 102, 241, 0.2)',
+                        borderColor: '#6366f1',
+                        pointBackgroundColor: '#6366f1'
+                    }]
+                },
+                options: { maintainAspectRatio: false, responsive: true, scales: { r: { beginAtZero: true, pointLabels: { font: { size: 10 } } } } }
+            });
+
+            // React Hooks Chart
+            const hooks = framework.React.hooks;
+            new Chart(document.getElementById('react-hooks-chart'), {
+                type: 'bar',
+                data: { labels: Object.keys(hooks), datasets: [{ label: 'Usage Count', data: Object.values(hooks), backgroundColor: '#34d399' }] },
+                options: { maintainAspectRatio: false, responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+            });
+
+        });
+    </script>
+</body>
+</html>
