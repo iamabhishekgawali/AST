@@ -1,0 +1,42 @@
+{
+  "Models/DAO.py": [
+    "MYSQL connects"
+  ],
+  "Models/DB.py": [
+    "MYSQL connects to localhost (inferred from config)"
+  ],
+  "Models/DBDAO.py": [
+    "MYSQL connects"
+  ],
+  "routes/admin.py": [
+    "GET /",
+    "GET /books/",
+    "GET /books/<int:id>",
+    "GET /books/add",
+    "GET /books/delete/<int:id>",
+    "GET /books/edit/<int:id>",
+    "GET /books/search",
+    "GET /signin/",
+    "GET /signout/",
+    "GET /users/view/",
+    "POST /books/add",
+    "POST /books/edit/<int:id>",
+    "POST /signin/"
+  ],
+  "routes/book.py": [
+    "GET /books/",
+    "GET /books/<int:id>",
+    "GET /books/add/<id>",
+    "GET /books/search"
+  ],
+  "routes/user.py": [
+    "GET /",
+    "GET /signin",
+    "GET /signout/",
+    "GET /signup",
+    "GET /user/",
+    "POST /signin",
+    "POST /signup",
+    "POST /user"
+  ]
+}

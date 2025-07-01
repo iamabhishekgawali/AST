@@ -1,84 +1,124 @@
 import os
 import json
+import re
 
-def find_flask_endpoints(node, file_path):
-    """Recursively finds Flask endpoints in an AST node."""
-    endpoints = []
+# --- Configuration for Detection ---
+
+# Dictionary mapping database types to their common Python libraries
+DB_LIBRARIES = {
+    'ORACLE': ['cx_Oracle', 'oracledb'],
+    'DB2': ['ibm_db', 'ibm_db_dbi'],
+    'MSSQL': ['pyodbc', 'pymssql'],
+    'POSTGRES': ['psycopg2', 'pg8000'],
+    'SYBASE': ['sybpydb'],
+    'MYSQL': ['mysql.connector', 'pymysql', 'flaskext.mysql', 'DBDAO'] # Added DBDAO as a custom keyword
+}
+
+def get_imported_modules(node):
+    """Traverses the AST to find all imported modules and returns them as a set."""
+    imports = set()
     if isinstance(node, dict):
-        # Check if it's a decorated function definition, typical for routes
-        if node.get("type") == "decorated_definition":
-            decorators = [child for child in node.get("children", []) if child.get("type") == "decorator"]
-            for deco in decorators:
-                # The decorator itself is a call, e.g., @app.route(...)
-                call_node = next((child for child in deco.get("children", []) if child.get("type") == "call"), None)
-                if not call_node:
-                    continue
-
-                # Check if the function being called is 'route'
-                attribute_node = next((child for child in call_node.get("children", []) if child.get("type") == "attribute"), None)
-                if attribute_node and attribute_node.get("text", "").endswith(".route"):
-                    arg_list = next((child for child in call_node.get("children", []) if child.get("type") == "argument_list"), None)
-                    if not arg_list:
-                        continue
-                    
-                    # Extract path (first argument)
-                    path_node = arg_list.get("children", [])[0]
-                    path = path_node.get("text", "''").strip("'\"")
-
-                    # Extract methods (keyword argument), default to GET
-                    methods = ["GET"]
-                    methods_kw_arg = next((arg for arg in arg_list.get("children", []) if arg.get("type") == "keyword_argument" and arg.get("text", "").startswith("methods=")), None)
-                    if methods_kw_arg:
-                        list_node = next((child for child in methods_kw_arg.get("children", []) if child.get("type") == "list"), None)
-                        if list_node:
-                            methods = [m.get("text", "''").strip("'\"") for m in list_node.get("children", [])]
-                    
-                    for method in methods:
-                        endpoints.append(f"{method} {path}")
-
-        # Recursively search in children
+        if node.get("type") in ("import_statement", "import_from_statement"):
+            for child in node.get("children", []):
+                if child.get("type") == "dotted_name":
+                    # Get the base module, e.g., 'routes.user' -> 'routes'
+                    base_module = child.get("text", "").split('.')[0]
+                    if base_module:
+                        imports.add(base_module)
+        
         for child in node.get("children", []):
-            endpoints.extend(find_flask_endpoints(child, file_path))
+            imports.update(get_imported_modules(child))
             
     elif isinstance(node, list):
         for item in node:
-            endpoints.extend(find_flask_endpoints(item, file_path))
+            imports.update(get_imported_modules(item))
             
-    return endpoints
+    return imports
 
-def find_db_connections(node, file_path):
-    """Recursively finds database connections in an AST node."""
-    connections = []
+def find_database_connections(node, imported_modules):
+    """Recursively finds various database connections based on common libraries and patterns."""
+    connections = set()
     if isinstance(node, dict):
-        # Look for class instantiations like MySQL() or DBDAO()
+        # Look for class instantiations or connect() calls
         if node.get("type") == "call":
-            identifier = next((child.get("text") for child in node.get("children", []) if child.get("type") == "identifier"), None)
-            if identifier in ["MySQL", "DBDAO"]:
-                 connections.append("MYSQL connects")
+            call_text = node.get("text", "")
+            # Check if the call is a 'connect' function from an imported DB library
+            for db_type, libs in DB_LIBRARIES.items():
+                for lib in libs:
+                    if lib in imported_modules and f"{lib}.connect" in call_text:
+                        connections.add(f"{db_type} connects")
+                    # Also check for custom classes like DBDAO
+                    if lib in call_text and lib == "DBDAO":
+                         connections.add(f"{db_type} connects")
 
-        # Look for database configuration, e.g., app.config["MYSQL_DATABASE_HOST"]
+
+        # Look for specific database configuration, e.g., app.config["MYSQL_DATABASE_HOST"]
         if node.get("type") == "assignment":
-             left_side = node.get("children", [])[0]
-             if left_side.get("type") == "subscript" and "MYSQL_DATABASE_HOST" in left_side.get("text", ""):
-                 right_side = node.get("children", [])[1]
-                 # Extract hostname if available
-                 hostname = "unknown"
-                 if right_side.get("type") == "attribute" and right_side.get("text") == "self.host":
-                    # In a real scenario, you'd trace self.host back, here we simplify
-                    hostname = "localhost (inferred)" 
-                 elif right_side.get("type") == "string":
-                     hostname = right_side.get("text", '""').strip("'\"")
-                 connections.append(f"MYSQL connects to {hostname}")
+            left_side_text = node.get("children", [{}])[0].get("text", "")
+            if "MYSQL_DATABASE_HOST" in left_side_text:
+                connections.add("MYSQL connects to localhost (inferred from config)")
 
         # Recurse through children
         for child in node.get("children", []):
-            connections.extend(find_db_connections(child, file_path))
+            connections.update(find_database_connections(child, imported_modules))
 
     elif isinstance(node, list):
         for item in node:
-            connections.extend(find_db_connections(item, file_path))
+            connections.update(find_database_connections(item, imported_modules))
             
     return connections
+
+
+def find_flask_endpoints(node):
+    """Recursively finds Flask endpoints in an AST node."""
+    endpoints = set()
+    if isinstance(node, dict):
+        if node.get("type") == "decorated_definition":
+            for deco in (c for c in node.get("children", []) if c.get("type") == "decorator"):
+                call_node = next((c for c in deco.get("children", []) if c.get("type") == "call"), None)
+                if call_node and ".route" in call_node.get("text", ""):
+                    arg_list = next((c for c in call_node.get("children", []) if c.get("type") == "argument_list"), {})
+                    
+                    path = arg_list.get("children", [{}])[0].get("text", "''").strip("'\"")
+                    methods = ["GET"] # Default method
+
+                    methods_arg = next((arg for arg in arg_list.get("children", []) if arg.get("text", "").startswith("methods=")), None)
+                    if methods_arg:
+                        list_node = next((c for c in methods_arg.get("children", []) if c.get("type") == "list"), {})
+                        methods = [m.get("text", "''").strip("'\"") for m in list_node.get("children", [])]
+                    
+                    for method in methods:
+                        endpoints.add(f"{method} {path}")
+
+        for child in node.get("children", []):
+            endpoints.update(find_flask_endpoints(child))
+            
+    elif isinstance(node, list):
+        for item in node:
+            endpoints.update(find_flask_endpoints(item))
+            
+    return endpoints
+
+def find_hardcoded_urls(node):
+    """Recursively finds hardcoded URLs in string literals."""
+    urls = set()
+    url_pattern = r'https?://[^\s/$.?#].[^\s]*'
+
+    if isinstance(node, dict):
+        if node.get("type") == "string":
+            string_content = node.get("text", "").strip("'\"")
+            found = re.findall(url_pattern, string_content)
+            for url in found:
+                urls.add(f"Hardcoded URL: {url}")
+
+        for child in node.get("children", []):
+            urls.update(find_hardcoded_urls(child))
+
+    elif isinstance(node, list):
+        for item in node:
+            urls.update(find_hardcoded_urls(item))
+            
+    return urls
 
 def parse_ast_file(file_path):
     """Parses a single AST JSON file and extracts relevant information."""
@@ -89,14 +129,16 @@ def parse_ast_file(file_path):
         print(f"Error reading or parsing {file_path}: {e}")
         return []
 
-    # Combine all findings for this file
-    findings = []
-    findings.extend(find_flask_endpoints(ast_data, file_path))
-    findings.extend(find_db_connections(ast_data, file_path))
-    # Note: Socket and external API call detection would be added here
-    # but are omitted as they are not present in the example files.
+    # First, find all imported modules in this file
+    imported_modules = get_imported_modules(ast_data)
 
-    return list(set(findings)) # Use set to remove duplicates
+    # Combine all findings for this file
+    findings = set()
+    findings.update(find_flask_endpoints(ast_data))
+    findings.update(find_database_connections(ast_data, imported_modules))
+    findings.update(find_hardcoded_urls(ast_data))
+
+    return sorted(list(findings)) # Return a sorted list for consistent output
 
 def create_connection_graph(root_dir):
     """
@@ -111,27 +153,22 @@ def create_connection_graph(root_dir):
                 
                 # Create a representative key for the output JSON, like 'routes/user.py'
                 relative_path = os.path.relpath(full_path, root_dir)
-                original_py_path = relative_path.replace(".json", "").replace("\\", "/") # Normalize path separators
+                original_py_path = relative_path.replace(".json", "").replace("\\", "/")
                 
-                # Parse the file and get findings
                 findings = parse_ast_file(full_path)
                 
                 if findings:
-                    if original_py_path not in connection_graph:
-                        connection_graph[original_py_path] = []
-                    connection_graph[original_py_path].extend(findings)
+                    connection_graph[original_py_path] = findings
 
     return connection_graph
 
 # --- Main Execution ---
 if __name__ == "__main__":
-    # IMPORTANT: Replace '.' with the actual path to the folder 
-    # containing your AST files (e.g., 'path/to/your/ast_folder').
-    # For this example, it assumes the script is run in a directory 
-    # that has the 'routes', 'Models', etc. subdirectories.
-    target_directory = "." 
+    # The script will search for .py.json files in the directory it is run from
+    # and all its subdirectories.
+    target_directory = "./PythonAST"  # Change this to your target directory if needed
     
-    print(f"Starting AST parsing in directory: '{os.path.abspath(target_directory)}'...")
+    print(f"Starting advanced AST parsing in directory: '{os.path.abspath(target_directory)}'...")
     
     # Generate the graph
     graph = create_connection_graph(target_directory)
@@ -139,14 +176,13 @@ if __name__ == "__main__":
     # Convert the graph to a pretty-printed JSON string
     output_json = json.dumps(graph, indent=2)
     
-    # Print the final JSON to the console
     print("\n--- Generated Connection Graph ---")
     print(output_json)
     
-    # Optionally, save to a file
+    output_filename = "connection_graph_detailed.json"
     try:
-        with open("connection_graph.json", "w") as f_out:
+        with open(output_filename, "w") as f_out:
             f_out.write(output_json)
-        print("\nSuccessfully saved to connection_graph.json")
+        print(f"\nSuccessfully saved to {output_filename}")
     except IOError as e:
         print(f"\nCould not save output file: {e}")
