@@ -1,0 +1,40 @@
+{
+  "PythonAST/Models/DAO.py": [
+    "MYSQL connects"
+  ],
+  "PythonAST/Models/DB.py": [
+    "MYSQL connects to localhost (inferred)",
+    "MYSQL connects"
+  ],
+  "PythonAST/routes/admin.py": [
+    "GET /books/<int:id>",
+    "GET /books/search",
+    "GET /books/edit/<int:id>",
+    "POST /books/edit/<int:id>",
+    "GET /",
+    "GET /signin/",
+    "GET /signout/",
+    "GET /books/add",
+    "POST /books/add",
+    "POST /signin/",
+    "GET /users/view/",
+    "GET /books/",
+    "GET /books/delete/<int:id>"
+  ],
+  "PythonAST/routes/book.py": [
+    "GET /books/search",
+    "GET /books/<int:id>",
+    "GET /books/",
+    "GET /books/add/<id>"
+  ],
+  "PythonAST/routes/user.py": [
+    "GET /user/",
+    "POST /signup",
+    "POST /user",
+    "GET /",
+    "GET /signup",
+    "GET /signout/",
+    "POST /signin",
+    "GET /signin"
+  ]
+}
