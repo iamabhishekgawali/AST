@@ -1,0 +1,103 @@
+%%{
+  init: {
+    "theme": "base",
+    "fontFamily": "Inter, Arial, sans-serif",
+    "themeVariables": {
+      "primaryColor": "#ffffff",
+      "primaryTextColor": "#000000"
+    }
+  }
+}%%
+graph LR
+    %%-------------------------------------
+    %% STYLE & ICON DEFINITIONS
+    %%-------------------------------------
+    classDef frontend fill:#E3F2FD,stroke:#2196F3,stroke-width:2px;
+    classDef backend fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px;
+    classDef infra fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px;
+    classDef user fill:#FFFDE7,stroke:#FFC107,stroke-width:2px;
+
+    %%-------------------------------------
+    %% COMPONENT SUBGRAPHS
+    %%-------------------------------------
+    subgraph User
+        U["<br><i class='fa fa-user fa-2x'></i><br><b>End User</b>"]:::user
+    end
+
+    subgraph FrontendReactSPA["Frontend :: React SPA"]
+        direction TB
+        subgraph UIComponents["UI Components"]
+            LoginPage["<i class='fa fa-desktop'></i> LoginPage.js"]
+            RegisterPage["<i class='fa fa-user-plus'></i> RegisterPage.js"]
+            HomePage["<i class='fa fa-home'></i> HomePage.js"]
+        end
+
+        subgraph RoutingState["Routing & State"]
+            Router("fa:fa-route App.js")
+            PrivateRoute("fa:fa-lock PrivateRoute.js")
+        end
+
+        subgraph Services
+            ApiService(("<i class='fa fa-exchange-alt'></i> ApiService"))
+            TokenService(("<i class='fa fa-ticket-alt'></i> TokenService"))
+        end
+    end
+
+    subgraph BackendFlaskAPI["Backend :: Flask API"]
+        direction TB
+        subgraph ServerEndpoints["Server & Endpoints"]
+            EntryPoint["<i class='fa fa-server'></i> run.py"]
+            Endpoints["<i class='fa fa-plug'></i> API Routes<br>/login<br>/register<br>/api/users"]
+        end
+
+        subgraph CoreLogicAuth["Core Logic & Auth"]
+            AppFactory{{'<i class="fa fa-cogs"></i> App Factory'}}
+            LoginManager{{'<i class="fa fa-key"></i> Auth Manager'}}
+            SQLAlchemy{{'<i class="fa fa-layer-group"></i> ORM'}}
+        end
+    end
+
+    subgraph Infrastructure
+        DB[("<i class='fa fa-database fa-2x'></i><br><b>SQLite DB</b>")]:::infra
+    end
+
+    %%-------------------------------------
+    %% CONNECTIONS & DATA FLOWS
+    %%-------------------------------------
+
+    %% User -> Frontend
+    U -- "HTTP Requests<br>(Browser)" --> LoginPage
+    U -- " " --> RegisterPage
+
+    %% Frontend Internal
+    LoginPage & RegisterPage -- "Calls Service" --> ApiService
+    HomePage -- "Calls Service" --> ApiService
+    Router -- "Routes User" --> LoginPage & RegisterPage & PrivateRoute
+    PrivateRoute -- "Renders Protected" --> HomePage
+    ApiService -- "Uses Token" --> TokenService
+    PrivateRoute -- "Checks Token" --> TokenService
+
+    %% Frontend -> Backend (Primary API Calls)
+    ApiService -- "<b>POST /login</b><br><b>POST /register</b><br><b>GET /api/users</b>" --> Endpoints
+
+    %% Backend Internal
+    EntryPoint -- "Runs App" --> AppFactory
+    AppFactory -- "Registers" --> Endpoints
+    AppFactory -- "Initializes" --> LoginManager & SQLAlchemy
+    Endpoints -- "Uses Logic" --> LoginManager & SQLAlchemy
+
+    %% Backend -> DB
+    SQLAlchemy -- "<b>SQL<br>Queries</b>" --> DB
+
+    %%-------------------------------------
+    %% APPLYING STYLES
+    %%-------------------------------------
+    class U user;
+    class LoginPage,RegisterPage,HomePage,Router,PrivateRoute,ApiService,TokenService frontend;
+    class EntryPoint,Endpoints,AppFactory,LoginManager,SQLAlchemy backend;
+    class DB infra;
+
+    %% Link Styles
+    linkStyle 0,1,2,3,4,5,6,7,9,10,11,12 stroke:#90A4AE,stroke-width:1.5px,stroke-dasharray: 5 5;
+    linkStyle 8 stroke:#0D47A1,stroke-width:2.5px;
+    linkStyle 13 stroke:#1B5E20,stroke-width:2.5px;

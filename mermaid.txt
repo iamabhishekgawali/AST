@@ -1,0 +1,121 @@
+graph TD
+    %%-------------------------------------
+    %% STYLES & DEFINITIONS
+    %%-------------------------------------
+    classDef frontend fill:#D6EAF8,stroke:#3498DB,stroke-width:2px,color:#000;
+    classDef backend fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px,color:#000;
+    classDef infra fill:#EBDEF0,stroke:#8E44AD,stroke-width:2px,color:#000;
+    classDef user fill:#F9E79F,stroke:#F1C40F,stroke-width:2px,color:#000;
+
+    %%-------------------------------------
+    %% COMPONENT SUBGRAPHS
+    %%-------------------------------------
+
+    subgraph "User Interaction"
+        U[<font size=4><b>User</b></font>]:::user
+    end
+
+    subgraph "Frontend (React SPA)"
+        direction LR
+        subgraph "UI Components (./src/pages)"
+            LoginPage[LoginPage.js]
+            RegisterPage[RegisterPage.js]
+            HomePage[HomePage.js]
+        end
+
+        subgraph "Routing & State (./src/)"
+            Router["App.js<br><i>(Handles Routing)</i>"]
+            PrivateRoute["PrivateRoute.js<br><i>(Guards Routes)</i>"]
+        end
+
+        subgraph "Services (./src/services)"
+            ApiService["ApiService.js<br><i>(Central API handler)</i>"]
+            TokenService["TokenService.js<br><i>(Manages JWT in LocalStorage)</i>"]
+        end
+    end
+
+    subgraph "Backend (Flask API)"
+        direction LR
+        subgraph "Web Server & Entrypoint"
+            EntryPoint["run.py<br><i>Serves Static Files & API</i>"]
+        end
+
+        subgraph "API Endpoints (./app/base/routes.py)"
+             EndpointLogin["/login (POST)"]
+             EndpointRegister["/register (POST)"]
+             EndpointLogout["/logout"]
+             EndpointUsers["/api/users (GET)<br><i>(Secured)</i>"]
+        end
+
+        subgraph "Core Logic & ORM"
+            AppFactory["__init__.py<br><i>(App Factory)</i>"]
+            SQLAlchemy["Flask-SQLAlchemy<br><i>(ORM)</i>"]
+            LoginManager["Flask-Login & JWT<br><i>(Auth Management)</i>"]
+        end
+
+        subgraph "Data Models (./app/base/models.py)"
+            UserModel["models.py<br><i>(User Schema)</i>"]
+        end
+    end
+
+    subgraph "Infrastructure"
+        DB[(<font size=4><b>SQLite Database</b></font><br>db.sqlite3)]:::infra
+    end
+
+    %%-------------------------------------
+    %% CONNECTIONS & DATA FLOWS
+    %%-------------------------------------
+
+    %% User Interaction Flow
+    U -- "Clicks 'Login'/'Register'" --> LoginPage
+    U -- "Navigates URL" --> Router
+    U -- "Initial Page Load / Static Assets (JS, CSS)" --> EntryPoint
+
+    %% Frontend Internal Flow
+    Router -- "Renders" --> LoginPage
+    Router -- "Renders" --> RegisterPage
+    Router -- "Checks Auth -> Renders" --> PrivateRoute
+    PrivateRoute -- "Renders Protected Page" --> HomePage
+    LoginPage -- "sends credentials()" --> ApiService
+    RegisterPage -- "sends credentials()" --> ApiService
+    HomePage -- "fetches user data()" --> ApiService
+    ApiService -- "Manages Token" --> TokenService
+    PrivateRoute -- "Checks for Token" --> TokenService
+
+    %% Frontend -> Backend (REST API)
+    ApiService -- "<b>REST API CALL</b><br>POST /login<br><i>(username, password)</i>" --> EndpointLogin
+    ApiService -- "<b>REST API CALL</b><br>POST /register<br><i>(username, password, email)</i>" --> EndpointRegister
+    ApiService -- "<b>REST API CALL</b><br>GET /api/users<br><i>(sends JWT in header)</i>" --> EndpointUsers
+
+    %% Backend Internal Flow
+    EntryPoint -- "Creates & Runs App" --> AppFactory
+    AppFactory -- "Registers Blueprint" --> EndpointLogin
+    AppFactory -- "Registers Blueprint" --> EndpointRegister
+    AppFactory -- "Registers Blueprint" --> EndpointLogout
+    AppFactory -- "Registers Blueprint" --> EndpointUsers
+    EndpointLogin -- "Authenticates User, issues JWT" --> LoginManager
+    EndpointRegister -- "Creates User" --> SQLAlchemy
+    EndpointUsers -- "Verifies JWT via @jwt_required()" --> LoginManager
+    LoginManager -- "Verifies credentials against DB" --> SQLAlchemy
+
+    %% Backend -> Infrastructure (DB Queries)
+    SQLAlchemy -- "<b>SQL QUERY</b><br><i>(SELECT, INSERT, etc.)</i>" --> UserModel
+    UserModel -- "Reads/Writes" --> DB
+
+    %%-------------------------------------
+    %% APPLYING STYLES TO NODES
+    %%-------------------------------------
+    class LoginPage,RegisterPage,HomePage,Router,PrivateRoute,ApiService,TokenService frontend;
+    class EntryPoint,EndpointLogin,EndpointRegister,EndpointLogout,EndpointUsers,AppFactory,SQLAlchemy,LoginManager,UserModel backend;
+    
+    %%-------------------------------------
+    %% LEGEND
+    %%-------------------------------------
+    subgraph Legend
+      direction LR
+      L_User[User]:::user
+      L_FE[Frontend Component]:::frontend
+      L_BE[Backend Component]:::backend
+      L_Infra[Infrastructure]:::infra
+    end
+    style Legend fill:#f9f9f9,stroke:#333,stroke-width:1px
