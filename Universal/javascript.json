@@ -1,0 +1,49 @@
+{
+  "language": "JavaScript (Express)",
+  "selectors": {
+    "function": ["function_declaration", "arrow_function", "method_definition"],
+    "class": ["class_declaration"],
+    "comment": ["comment"],
+    "import": [
+      {
+        "type": "lexical_declaration",
+        "source": {
+          "path": [
+            {"type": "variable_declarator"},
+            {"type": "call_expression"},
+            {"type": "arguments"},
+            {"type": "string"}
+          ]
+        }
+      }
+    ],
+    "patterns": {
+      "Endpoints Defined": {
+        "type": "call_expression",
+        "textMatch": "router.get",
+        "value": {
+          "path": [{"type": "arguments"}, {"type": "string"}]
+        }
+      },
+      "Environment Variables Accessed": {
+        "type": "member_expression",
+        "textMatch": "process.env",
+        "value": { "path": [] }
+      }
+    }
+  },
+  "dependencyMaps": {
+    "Frameworks Detected": {
+      "express": "Express"
+    },
+    "Database Technologies Detected": {
+      "mongoose": "MongoDB (Mongoose)",
+      "sequelize": "SQL (Sequelize)"
+    },
+    "Cloud SDKs Detected": {
+      "@aws-sdk": "AWS",
+      "@google-cloud": "Google Cloud",
+      "firebase": "Firebase"
+    }
+  }
+}

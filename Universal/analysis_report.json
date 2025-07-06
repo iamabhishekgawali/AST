@@ -1,21 +1,22 @@
 {
-  "Code Composition": {    "Number of files": 22,
-    "Total lines of code": 839,
-    "Number of functions": 86,
-    "Number of classes": 13,
-    "Total number of comments": 9
+  "Code Composition": {
+    "fileCount": 22,
+    "functionCount": 86,
+    "classCount": 13,
+    "totalLinesOfCode": 839,
+    "totalComments": 9
   },
   "Dependency Analysis": {
     "Number of import statements": 37,
     "List of direct dependencies": [
-      "functools",
       "flask",
-      "App.Actor",
       "Misc.functions",
       "Models.DAO",
       "routes.user",
       "routes.book",
       "routes.admin",
+      "functools",
+      "App.Actor",
       "App.Admin",
       "App.Books",
       "App.User",
@@ -35,19 +36,13 @@
       "Controllers.UserManager"
     ],
     "Import frequency by module/library": {
-      "functools": 1,
       "flask": 5,
-      "App.Actor": 2,
       "Misc.functions": 3,
       "Models.DAO": 1,
       "routes.user": 1,
       "routes.book": 1,
       "routes.admin": 1,
-     "functools": 1,
-      "App.Actor": 2,
-    "functools": 1,
-      "App.Actor": 2,
-     "functools": 1,
+      "functools": 1,
       "App.Actor": 2,
       "App.Admin": 1,
       "App.Books": 1,
