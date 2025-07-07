@@ -1,0 +1,1721 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\nimport ReactDOM from 'react-dom';\r\n\r\n// third party\r\nimport { BrowserRouter } from 'react-router-dom';\r\nimport { Provider } from 'react-redux';\r\nimport { PersistGate } from 'redux-persist/integration/react';\r\n\r\n// project imports\r\nimport { store, persister } from './store';\r\nimport * as serviceWorker from './serviceWorker';\r\nimport App from './App';\r\nimport config from './config';\r\n\r\n// style + assets\r\nimport './assets/scss/style.scss';\r\n\r\n//-----------------------|| REACT DOM RENDER  ||-----------------------//\r\n\r\nReactDOM.render(\r\n    <Provider store={store}>\r\n        <PersistGate loading={null} persistor={persister}>\r\n            <BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>\r\n        </PersistGate>\r\n    </Provider>,\r\n    document.getElementById('root')\r\n);\r\n\r\n// If you want your app to work offline and load faster, you can change\r\n// unregister() to register() below. Note this comes with some pitfalls.\r\n// Learn more about service workers: https://bit.ly/CRA-PWA\r\nserviceWorker.unregister();\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 34,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import ReactDOM from 'react-dom';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 33
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "ReactDOM",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "ReactDOM",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-dom'",
+          "startPosition": {
+            "row": 1,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 32
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-dom",
+              "startPosition": {
+                "row": 1,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 31
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// third party\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { BrowserRouter } from 'react-router-dom';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ BrowserRouter }",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 24
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ BrowserRouter }",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "BrowserRouter",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "BrowserRouter",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 4,
+            "column": 30
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 4,
+                "column": 31
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Provider } from 'react-redux';",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 39
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Provider }",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 19
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Provider }",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Provider",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 17
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Provider",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 17
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-redux'",
+          "startPosition": {
+            "row": 5,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 38
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-redux",
+              "startPosition": {
+                "row": 5,
+                "column": 26
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 37
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { PersistGate } from 'redux-persist/integration/react';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ PersistGate }",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ PersistGate }",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "PersistGate",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "PersistGate",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'redux-persist/integration/react'",
+          "startPosition": {
+            "row": 6,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "redux-persist/integration/react",
+              "startPosition": {
+                "row": 6,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 60
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { store, persister } from './store';",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 43
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ store, persister }",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ store, persister }",
+              "startPosition": {
+                "row": 9,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "store",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 14
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "store",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 14
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "persister",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 25
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "persister",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 25
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./store'",
+          "startPosition": {
+            "row": 9,
+            "column": 33
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 42
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./store",
+              "startPosition": {
+                "row": 9,
+                "column": 34
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 41
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import * as serviceWorker from './serviceWorker';",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "* as serviceWorker",
+          "startPosition": {
+            "row": 10,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "namespace_import",
+              "text": "* as serviceWorker",
+              "startPosition": {
+                "row": 10,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 25
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "serviceWorker",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 25
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./serviceWorker'",
+          "startPosition": {
+            "row": 10,
+            "column": 31
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./serviceWorker",
+              "startPosition": {
+                "row": 10,
+                "column": 32
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import App from './App';",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 24
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "App",
+          "startPosition": {
+            "row": 11,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 10
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "App",
+              "startPosition": {
+                "row": 11,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 10
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./App'",
+          "startPosition": {
+            "row": 11,
+            "column": 16
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./App",
+              "startPosition": {
+                "row": 11,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 22
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import config from './config';",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 12,
+        "column": 30
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "config",
+          "startPosition": {
+            "row": 12,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "config",
+              "startPosition": {
+                "row": 12,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./config'",
+          "startPosition": {
+            "row": 12,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 29
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./config",
+              "startPosition": {
+                "row": 12,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 28
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// style + assets\r",
+      "startPosition": {
+        "row": 14,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 14,
+        "column": 18
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import './assets/scss/style.scss';",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "string",
+          "text": "'./assets/scss/style.scss'",
+          "startPosition": {
+            "row": 15,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 15,
+            "column": 33
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./assets/scss/style.scss",
+              "startPosition": {
+                "row": 15,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 32
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| REACT DOM RENDER  ||-----------------------//\r",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 17,
+        "column": 74
+      },
+      "children": []
+    },
+    {
+      "type": "expression_statement",
+      "text": "ReactDOM.render(\r\n    <Provider store={store}>\r\n        <PersistGate loading={null} persistor={persister}>\r\n            <BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>\r\n        </PersistGate>\r\n    </Provider>,\r\n    document.getElementById('root')\r\n);",
+      "startPosition": {
+        "row": 19,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 28,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "call_expression",
+          "text": "ReactDOM.render(\r\n    <Provider store={store}>\r\n        <PersistGate loading={null} persistor={persister}>\r\n            <BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>\r\n        </PersistGate>\r\n    </Provider>,\r\n    document.getElementById('root')\r\n)",
+          "startPosition": {
+            "row": 19,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 28,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "ReactDOM.render",
+              "startPosition": {
+                "row": 19,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 15
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "ReactDOM",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "render",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 15
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "arguments",
+              "text": "(\r\n    <Provider store={store}>\r\n        <PersistGate loading={null} persistor={persister}>\r\n            <BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>\r\n        </PersistGate>\r\n    </Provider>,\r\n    document.getElementById('root')\r\n)",
+              "startPosition": {
+                "row": 19,
+                "column": 15
+              },
+              "endPosition": {
+                "row": 28,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "jsx_element",
+                  "text": "<Provider store={store}>\r\n        <PersistGate loading={null} persistor={persister}>\r\n            <BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>\r\n        </PersistGate>\r\n    </Provider>",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 26,
+                    "column": 15
+                  },
+                  "children": [
+                    {
+                      "type": "jsx_opening_element",
+                      "text": "<Provider store={store}>",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Provider",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 13
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "jsx_attribute",
+                          "text": "store={store}",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "store",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 14
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 19
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_expression",
+                              "text": "{store}",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "store",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "jsx_text",
+                      "text": "\r",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 28
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 29
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "jsx_element",
+                      "text": "<PersistGate loading={null} persistor={persister}>\r\n            <BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>\r\n        </PersistGate>",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 22
+                      },
+                      "children": [
+                        {
+                          "type": "jsx_opening_element",
+                          "text": "<PersistGate loading={null} persistor={persister}>",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 58
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "PersistGate",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_attribute",
+                              "text": "loading={null}",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 35
+                              },
+                              "children": [
+                                {
+                                  "type": "property_identifier",
+                                  "text": "loading",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 28
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_expression",
+                                  "text": "{null}",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 35
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "null",
+                                      "text": "null",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 30
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 34
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_attribute",
+                              "text": "persistor={persister}",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 57
+                              },
+                              "children": [
+                                {
+                                  "type": "property_identifier",
+                                  "text": "persistor",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 36
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_expression",
+                                  "text": "{persister}",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 46
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 57
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "persister",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 47
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 56
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "jsx_text",
+                          "text": "\r",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 58
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 59
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "jsx_element",
+                          "text": "<BrowserRouter basename={config.basename}>\r\n                <App />\r\n            </BrowserRouter>",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 28
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_opening_element",
+                              "text": "<BrowserRouter basename={config.basename}>",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 54
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "BrowserRouter",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_attribute",
+                                  "text": "basename={config.basename}",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 53
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "basename",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 27
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 35
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_expression",
+                                      "text": "{config.basename}",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 36
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 53
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "member_expression",
+                                          "text": "config.basename",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 37
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 52
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "config",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 37
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 43
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "basename",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 44
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 52
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_text",
+                              "text": "\r",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 54
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 55
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_self_closing_element",
+                              "text": "<App />",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "App",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_text",
+                              "text": "\r",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 24
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_closing_element",
+                              "text": "</BrowserRouter>",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 28
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "BrowserRouter",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "jsx_text",
+                          "text": "\r",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 29
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "jsx_closing_element",
+                          "text": "</PersistGate>",
+                          "startPosition": {
+                            "row": 25,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 25,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "PersistGate",
+                              "startPosition": {
+                                "row": 25,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 25,
+                                "column": 21
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "jsx_text",
+                      "text": "\r",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 22
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 23
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "jsx_closing_element",
+                      "text": "</Provider>",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 15
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Provider",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 6
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "call_expression",
+                  "text": "document.getElementById('root')",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 35
+                  },
+                  "children": [
+                    {
+                      "type": "member_expression",
+                      "text": "document.getElementById",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 27
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "document",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "getElementById",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 13
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 27
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "arguments",
+                      "text": "('root')",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "string",
+                          "text": "'root'",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 34
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "root",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 29
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 33
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// If you want your app to work offline and load faster, you can change\r",
+      "startPosition": {
+        "row": 30,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 30,
+        "column": 72
+      },
+      "children": []
+    },
+    {
+      "type": "comment",
+      "text": "// unregister() to register() below. Note this comes with some pitfalls.\r",
+      "startPosition": {
+        "row": 31,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 31,
+        "column": 73
+      },
+      "children": []
+    },
+    {
+      "type": "comment",
+      "text": "// Learn more about service workers: https://bit.ly/CRA-PWA\r",
+      "startPosition": {
+        "row": 32,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 32,
+        "column": 60
+      },
+      "children": []
+    },
+    {
+      "type": "expression_statement",
+      "text": "serviceWorker.unregister();",
+      "startPosition": {
+        "row": 33,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 33,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "call_expression",
+          "text": "serviceWorker.unregister()",
+          "startPosition": {
+            "row": 33,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 33,
+            "column": 26
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "serviceWorker.unregister",
+              "startPosition": {
+                "row": 33,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "serviceWorker",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 13
+                  },
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "unregister",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 14
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "arguments",
+              "text": "()",
+              "startPosition": {
+                "row": 33,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 26
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "type": "program",
+  "text": "// material-ui\r\nimport { styled } from '@material-ui/styles';\r\n\r\n//-----------------------|| AUTHENTICATION 1 WRAPPER ||-----------------------//\r\n\r\nconst AuthWrapper1 = styled('div')(({ theme }) => ({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n}));\r\n\r\nexport default AuthWrapper1;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 11,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { styled } from '@material-ui/styles';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 45
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ styled }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 17
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ styled }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 17
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "styled",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 15
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "styled",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 15
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/styles'",
+          "startPosition": {
+            "row": 1,
+            "column": 23
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 44
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/styles",
+              "startPosition": {
+                "row": 1,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 43
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| AUTHENTICATION 1 WRAPPER ||-----------------------//\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 81
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const AuthWrapper1 = styled('div')(({ theme }) => ({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n}));",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 4
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "AuthWrapper1 = styled('div')(({ theme }) => ({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n}))",
+          "startPosition": {
+            "row": 5,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "AuthWrapper1",
+              "startPosition": {
+                "row": 5,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 18
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "styled('div')(({ theme }) => ({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n}))",
+              "startPosition": {
+                "row": 5,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 3
+              },
+              "children": [
+                {
+                  "type": "call_expression",
+                  "text": "styled('div')",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "styled",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 21
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 27
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "arguments",
+                      "text": "('div')",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 34
+                      },
+                      "children": [
+                        {
+                          "type": "string",
+                          "text": "'div'",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 33
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "div",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 29
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 32
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "arguments",
+                  "text": "(({ theme }) => ({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n}))",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 34
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 3
+                  },
+                  "children": [
+                    {
+                      "type": "arrow_function",
+                      "text": "({ theme }) => ({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n})",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 35
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 2
+                      },
+                      "children": [
+                        {
+                          "type": "formal_parameters",
+                          "text": "({ theme })",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 35
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 46
+                          },
+                          "children": [
+                            {
+                              "type": "object_pattern",
+                              "text": "{ theme }",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 45
+                              },
+                              "children": [
+                                {
+                                  "type": "shorthand_property_identifier_pattern",
+                                  "text": "theme",
+                                  "startPosition": {
+                                    "row": 5,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 5,
+                                    "column": 43
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "({\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n})",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 50
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 2
+                          },
+                          "children": [
+                            {
+                              "type": "object",
+                              "text": "{\r\n    backgroundColor: theme.palette.primary.light,\r\n    minHeight: '100vh'\r\n}",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 51
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 1
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "backgroundColor: theme.palette.primary.light",
+                                  "startPosition": {
+                                    "row": 6,
+                                    "column": 4
+                                  },
+                                  "endPosition": {
+                                    "row": 6,
+                                    "column": 48
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "backgroundColor",
+                                      "startPosition": {
+                                        "row": 6,
+                                        "column": 4
+                                      },
+                                      "endPosition": {
+                                        "row": 6,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "member_expression",
+                                      "text": "theme.palette.primary.light",
+                                      "startPosition": {
+                                        "row": 6,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 6,
+                                        "column": 48
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "member_expression",
+                                          "text": "theme.palette.primary",
+                                          "startPosition": {
+                                            "row": 6,
+                                            "column": 21
+                                          },
+                                          "endPosition": {
+                                            "row": 6,
+                                            "column": 42
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_expression",
+                                              "text": "theme.palette",
+                                              "startPosition": {
+                                                "row": 6,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 6,
+                                                "column": 34
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "theme",
+                                                  "startPosition": {
+                                                    "row": 6,
+                                                    "column": 21
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 6,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "palette",
+                                                  "startPosition": {
+                                                    "row": 6,
+                                                    "column": 27
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 6,
+                                                    "column": 34
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "primary",
+                                              "startPosition": {
+                                                "row": 6,
+                                                "column": 35
+                                              },
+                                              "endPosition": {
+                                                "row": 6,
+                                                "column": 42
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "light",
+                                          "startPosition": {
+                                            "row": 6,
+                                            "column": 43
+                                          },
+                                          "endPosition": {
+                                            "row": 6,
+                                            "column": 48
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "minHeight: '100vh'",
+                                  "startPosition": {
+                                    "row": 7,
+                                    "column": 4
+                                  },
+                                  "endPosition": {
+                                    "row": 7,
+                                    "column": 22
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "minHeight",
+                                      "startPosition": {
+                                        "row": 7,
+                                        "column": 4
+                                      },
+                                      "endPosition": {
+                                        "row": 7,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'100vh'",
+                                      "startPosition": {
+                                        "row": 7,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 7,
+                                        "column": 22
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "100vh",
+                                          "startPosition": {
+                                            "row": 7,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 7,
+                                            "column": 21
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default AuthWrapper1;",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "AuthWrapper1",
+          "startPosition": {
+            "row": 10,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 27
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

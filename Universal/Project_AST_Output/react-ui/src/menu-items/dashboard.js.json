@@ -1,0 +1,907 @@
+{
+  "type": "program",
+  "text": "// assets\r\nimport { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';\r\n\r\n// constant\r\nconst icons = {\r\n    IconDashboard: IconDashboard,\r\n    IconDeviceAnalytics\r\n};\r\n\r\n//-----------------------|| DASHBOARD MENU ITEMS ||-----------------------//\r\n\r\nexport const dashboard = {\r\n    id: 'dashboard',\r\n    title: 'Dashboard',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]\r\n};\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 26,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// assets\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 10
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 67
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ IconDashboard, IconDeviceAnalytics }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 45
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ IconDashboard, IconDeviceAnalytics }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 45
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "IconDashboard",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconDashboard",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconDeviceAnalytics",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 43
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconDeviceAnalytics",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 43
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@tabler/icons'",
+          "startPosition": {
+            "row": 1,
+            "column": 51
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 66
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@tabler/icons",
+              "startPosition": {
+                "row": 1,
+                "column": 52
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 65
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// constant\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 12
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const icons = {\r\n    IconDashboard: IconDashboard,\r\n    IconDeviceAnalytics\r\n};",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "icons = {\r\n    IconDashboard: IconDashboard,\r\n    IconDeviceAnalytics\r\n}",
+          "startPosition": {
+            "row": 4,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "icons",
+              "startPosition": {
+                "row": 4,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 11
+              },
+              "children": []
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    IconDashboard: IconDashboard,\r\n    IconDeviceAnalytics\r\n}",
+              "startPosition": {
+                "row": 4,
+                "column": 14
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "IconDashboard: IconDashboard",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 32
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconDashboard",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 17
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconDashboard",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 32
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "shorthand_property_identifier",
+                  "text": "IconDeviceAnalytics",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 23
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| DASHBOARD MENU ITEMS ||-----------------------//\r",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 77
+      },
+      "children": []
+    },
+    {
+      "type": "export_statement",
+      "text": "export const dashboard = {\r\n    id: 'dashboard',\r\n    title: 'Dashboard',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]\r\n};",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 25,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const dashboard = {\r\n    id: 'dashboard',\r\n    title: 'Dashboard',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]\r\n};",
+          "startPosition": {
+            "row": 11,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 25,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "dashboard = {\r\n    id: 'dashboard',\r\n    title: 'Dashboard',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]\r\n}",
+              "startPosition": {
+                "row": 11,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "dashboard",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "object",
+                  "text": "{\r\n    id: 'dashboard',\r\n    title: 'Dashboard',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]\r\n}",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "pair",
+                      "text": "id: 'dashboard'",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 19
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 6
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'dashboard'",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 19
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "dashboard",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 18
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "title: 'Dashboard'",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 22
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "title",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 9
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'Dashboard'",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "Dashboard",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 21
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "type: 'group'",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 17
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "type",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 8
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'group'",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 17
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "group",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 16
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "children: [\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 24,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "array",
+                          "text": "[\r\n        {\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }\r\n    ]",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'default',\r\n            title: 'Dashboard',\r\n            type: 'item',\r\n            url: '/dashboard/default',\r\n            icon: icons['IconDashboard'],\r\n            breadcrumbs: false\r\n        }",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'default'",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'default'",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "default",
+                                          "startPosition": {
+                                            "row": 17,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 17,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Dashboard'",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Dashboard'",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 30
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Dashboard",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 29
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'item'",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'item'",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "item",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "url: '/dashboard/default'",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 37
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "url",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'/dashboard/default'",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 37
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "/dashboard/default",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 20,
+                                            "column": 36
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconDashboard']",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 40
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconDashboard']",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 40
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconDashboard'",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconDashboard",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 38
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "breadcrumbs: false",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "breadcrumbs",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 23
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "false",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 30
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

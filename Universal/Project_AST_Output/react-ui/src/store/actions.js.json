@@ -1,0 +1,614 @@
+{
+  "type": "program",
+  "text": "// action - account reducer\r\nexport const LOGIN = 'LOGIN';\r\nexport const LOGOUT = 'LOGOUT';\r\nexport const ACCOUNT_INITIALIZE = 'ACCOUNT_INITIALIZE';\r\n\r\n// action - customization reducer\r\nexport const SET_MENU = '@customization/SET_MENU';\r\nexport const MENU_OPEN = '@customization/MENU_OPEN';\r\nexport const SET_FONT_FAMILY = '@customization/SET_FONT_FAMILY';\r\nexport const SET_BORDER_RADIUS = '@customization/SET_BORDER_RADIUS';\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 10,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// action - account reducer\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 28
+      },
+      "children": []
+    },
+    {
+      "type": "export_statement",
+      "text": "export const LOGIN = 'LOGIN';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 29
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const LOGIN = 'LOGIN';",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 29
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "LOGIN = 'LOGIN'",
+              "startPosition": {
+                "row": 1,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "LOGIN",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'LOGIN'",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "LOGIN",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 22
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const LOGOUT = 'LOGOUT';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 31
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const LOGOUT = 'LOGOUT';",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "LOGOUT = 'LOGOUT'",
+              "startPosition": {
+                "row": 2,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 30
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "LOGOUT",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 19
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'LOGOUT'",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 30
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "LOGOUT",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 29
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const ACCOUNT_INITIALIZE = 'ACCOUNT_INITIALIZE';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const ACCOUNT_INITIALIZE = 'ACCOUNT_INITIALIZE';",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 55
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "ACCOUNT_INITIALIZE = 'ACCOUNT_INITIALIZE'",
+              "startPosition": {
+                "row": 3,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 54
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "ACCOUNT_INITIALIZE",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 31
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'ACCOUNT_INITIALIZE'",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 34
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 54
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "ACCOUNT_INITIALIZE",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 35
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 53
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// action - customization reducer\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 34
+      },
+      "children": []
+    },
+    {
+      "type": "export_statement",
+      "text": "export const SET_MENU = '@customization/SET_MENU';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 50
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const SET_MENU = '@customization/SET_MENU';",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 50
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "SET_MENU = '@customization/SET_MENU'",
+              "startPosition": {
+                "row": 6,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "SET_MENU",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'@customization/SET_MENU'",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "@customization/SET_MENU",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 25
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 48
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const MENU_OPEN = '@customization/MENU_OPEN';",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 52
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const MENU_OPEN = '@customization/MENU_OPEN';",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 52
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "MENU_OPEN = '@customization/MENU_OPEN'",
+              "startPosition": {
+                "row": 7,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 51
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "MENU_OPEN",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'@customization/MENU_OPEN'",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 51
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "@customization/MENU_OPEN",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 26
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 50
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const SET_FONT_FAMILY = '@customization/SET_FONT_FAMILY';",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 64
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const SET_FONT_FAMILY = '@customization/SET_FONT_FAMILY';",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 64
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "SET_FONT_FAMILY = '@customization/SET_FONT_FAMILY'",
+              "startPosition": {
+                "row": 8,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 63
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "SET_FONT_FAMILY",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 28
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'@customization/SET_FONT_FAMILY'",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 31
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 63
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "@customization/SET_FONT_FAMILY",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 32
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 62
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const SET_BORDER_RADIUS = '@customization/SET_BORDER_RADIUS';",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 68
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const SET_BORDER_RADIUS = '@customization/SET_BORDER_RADIUS';",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 68
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "SET_BORDER_RADIUS = '@customization/SET_BORDER_RADIUS'",
+              "startPosition": {
+                "row": 9,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 67
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "SET_BORDER_RADIUS",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string",
+                  "text": "'@customization/SET_BORDER_RADIUS'",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 67
+                  },
+                  "children": [
+                    {
+                      "type": "string_fragment",
+                      "text": "@customization/SET_BORDER_RADIUS",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 66
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

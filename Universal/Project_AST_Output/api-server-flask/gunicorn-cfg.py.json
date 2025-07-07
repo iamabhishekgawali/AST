@@ -1,0 +1,538 @@
+{
+  "type": "module",
+  "text": "# -*- encoding: utf-8 -*-\r\n\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"\r\n\r\nbind = '0.0.0.0:5005'\r\nworkers = 1\r\naccesslog = '-'\r\nloglevel = 'debug'\r\ncapture_output = True\r\nenable_stdio_inheritance = True\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 11,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "# -*- encoding: utf-8 -*-\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": []
+    },
+    {
+      "type": "expression_statement",
+      "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "string",
+          "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+          "startPosition": {
+            "row": 1,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "string_start",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 1,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "children": []
+            },
+            {
+              "type": "string_content",
+              "text": "\r\nCopyright (c) 2019 - present AppSeed.us\r\n",
+              "startPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "children": []
+            },
+            {
+              "type": "string_end",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 3
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "bind = '0.0.0.0:5005'",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 21
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "bind = '0.0.0.0:5005'",
+          "startPosition": {
+            "row": 5,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "bind",
+              "startPosition": {
+                "row": 5,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 4
+              },
+              "children": []
+            },
+            {
+              "type": "string",
+              "text": "'0.0.0.0:5005'",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "string_start",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_content",
+                  "text": "0.0.0.0:5005",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 20
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_end",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 21
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "workers = 1",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 11
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "workers = 1",
+          "startPosition": {
+            "row": 6,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 11
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "workers",
+              "startPosition": {
+                "row": 6,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "children": []
+            },
+            {
+              "type": "integer",
+              "text": "1",
+              "startPosition": {
+                "row": 6,
+                "column": 10
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 11
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "accesslog = '-'",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 15
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "accesslog = '-'",
+          "startPosition": {
+            "row": 7,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "accesslog",
+              "startPosition": {
+                "row": 7,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 9
+              },
+              "children": []
+            },
+            {
+              "type": "string",
+              "text": "'-'",
+              "startPosition": {
+                "row": 7,
+                "column": 12
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": [
+                {
+                  "type": "string_start",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 13
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_content",
+                  "text": "-",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_end",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 14
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 15
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "loglevel = 'debug'",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 18
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "loglevel = 'debug'",
+          "startPosition": {
+            "row": 8,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 18
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "loglevel",
+              "startPosition": {
+                "row": 8,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 8
+              },
+              "children": []
+            },
+            {
+              "type": "string",
+              "text": "'debug'",
+              "startPosition": {
+                "row": 8,
+                "column": 11
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 18
+              },
+              "children": [
+                {
+                  "type": "string_start",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_content",
+                  "text": "debug",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_end",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 18
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "capture_output = True",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 21
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "capture_output = True",
+          "startPosition": {
+            "row": 9,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "capture_output",
+              "startPosition": {
+                "row": 9,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 14
+              },
+              "children": []
+            },
+            {
+              "type": "true",
+              "text": "True",
+              "startPosition": {
+                "row": 9,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "enable_stdio_inheritance = True",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 31
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "enable_stdio_inheritance = True",
+          "startPosition": {
+            "row": 10,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "enable_stdio_inheritance",
+              "startPosition": {
+                "row": 10,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 24
+              },
+              "children": []
+            },
+            {
+              "type": "true",
+              "text": "True",
+              "startPosition": {
+                "row": 10,
+                "column": 27
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 31
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

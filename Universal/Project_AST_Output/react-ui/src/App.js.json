@@ -1,0 +1,1424 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\nimport { useSelector } from 'react-redux';\r\n\r\nimport { ThemeProvider } from '@material-ui/core/styles';\r\nimport { CssBaseline, StyledEngineProvider } from '@material-ui/core';\r\n\r\n// routing\r\nimport Routes from './routes';\r\n\r\n// defaultTheme\r\nimport theme from './themes';\r\n\r\n// project imports\r\nimport NavigationScroll from './layout/NavigationScroll';\r\n\r\n//-----------------------|| APP ||-----------------------//\r\n\r\nconst App = () => {\r\n    const customization = useSelector((state) => state.customization);\r\n\r\n    return (\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    );\r\n};\r\n\r\nexport default App;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 33,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { useSelector } from 'react-redux';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 42
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ useSelector }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ useSelector }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "useSelector",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useSelector",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-redux'",
+          "startPosition": {
+            "row": 1,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 41
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-redux",
+              "startPosition": {
+                "row": 1,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 40
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { ThemeProvider } from '@material-ui/core/styles';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 57
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ ThemeProvider }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 24
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ ThemeProvider }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "ThemeProvider",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "ThemeProvider",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core/styles'",
+          "startPosition": {
+            "row": 3,
+            "column": 30
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 56
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core/styles",
+              "startPosition": {
+                "row": 3,
+                "column": 31
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 55
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { CssBaseline, StyledEngineProvider } from '@material-ui/core';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 70
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ CssBaseline, StyledEngineProvider }",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 44
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ CssBaseline, StyledEngineProvider }",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 44
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "CssBaseline",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "CssBaseline",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "StyledEngineProvider",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "StyledEngineProvider",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 22
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 4,
+            "column": 50
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 69
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 4,
+                "column": 51
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 68
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// routing\r",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 11
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import Routes from './routes';",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 30
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "Routes",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Routes",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./routes'",
+          "startPosition": {
+            "row": 7,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 29
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./routes",
+              "startPosition": {
+                "row": 7,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 28
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// defaultTheme\r",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 16
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import theme from './themes';",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 29
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "theme",
+          "startPosition": {
+            "row": 10,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "theme",
+              "startPosition": {
+                "row": 10,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./themes'",
+          "startPosition": {
+            "row": 10,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 28
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./themes",
+              "startPosition": {
+                "row": 10,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 12,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import NavigationScroll from './layout/NavigationScroll';",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 57
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "NavigationScroll",
+          "startPosition": {
+            "row": 13,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "NavigationScroll",
+              "startPosition": {
+                "row": 13,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 23
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./layout/NavigationScroll'",
+          "startPosition": {
+            "row": 13,
+            "column": 29
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 56
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./layout/NavigationScroll",
+              "startPosition": {
+                "row": 13,
+                "column": 30
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 55
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| APP ||-----------------------//\r",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 60
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const App = () => {\r\n    const customization = useSelector((state) => state.customization);\r\n\r\n    return (\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 30,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "App = () => {\r\n    const customization = useSelector((state) => state.customization);\r\n\r\n    return (\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 17,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 30,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "App",
+              "startPosition": {
+                "row": 17,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 9
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const customization = useSelector((state) => state.customization);\r\n\r\n    return (\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 17,
+                "column": 12
+              },
+              "endPosition": {
+                "row": 30,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const customization = useSelector((state) => state.customization);\r\n\r\n    return (\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const customization = useSelector((state) => state.customization);",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 70
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "customization = useSelector((state) => state.customization)",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 69
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "customization",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 23
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useSelector((state) => state.customization)",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 26
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 69
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useSelector",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 26
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "((state) => state.customization)",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 69
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "arrow_function",
+                                      "text": "(state) => state.customization",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 38
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 68
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "formal_parameters",
+                                          "text": "(state)",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 38
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 45
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 39
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 44
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "member_expression",
+                                          "text": "state.customization",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 49
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 68
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 49
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 54
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "customization",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 55
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 68
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    );",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>\r\n    )",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<StyledEngineProvider injectFirst>\r\n            <ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>\r\n        </StyledEngineProvider>",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 31
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<StyledEngineProvider injectFirst>",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 42
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "StyledEngineProvider",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 29
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "injectFirst",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 30
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 41
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "injectFirst",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 30
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 41
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 42
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 43
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<ThemeProvider theme={theme(customization)}>\r\n                <CssBaseline />\r\n                <NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>\r\n            </ThemeProvider>",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<ThemeProvider theme={theme(customization)}>",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 56
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "ThemeProvider",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 26
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "theme={theme(customization)}",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 27
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 55
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "theme",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 27
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_expression",
+                                              "text": "{theme(customization)}",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 33
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 55
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "call_expression",
+                                                  "text": "theme(customization)",
+                                                  "startPosition": {
+                                                    "row": 22,
+                                                    "column": 34
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 54
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "theme",
+                                                      "startPosition": {
+                                                        "row": 22,
+                                                        "column": 34
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 22,
+                                                        "column": 39
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "arguments",
+                                                      "text": "(customization)",
+                                                      "startPosition": {
+                                                        "row": 22,
+                                                        "column": 39
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 22,
+                                                        "column": 54
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "customization",
+                                                          "startPosition": {
+                                                            "row": 22,
+                                                            "column": 40
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 22,
+                                                            "column": 53
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 56
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 57
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_self_closing_element",
+                                      "text": "<CssBaseline />",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "CssBaseline",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 23,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 31
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 32
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_element",
+                                      "text": "<NavigationScroll>\r\n                    <Routes />\r\n                </NavigationScroll>",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 35
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "jsx_opening_element",
+                                          "text": "<NavigationScroll>",
+                                          "startPosition": {
+                                            "row": 24,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 24,
+                                            "column": 34
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "NavigationScroll",
+                                              "startPosition": {
+                                                "row": 24,
+                                                "column": 17
+                                              },
+                                              "endPosition": {
+                                                "row": 24,
+                                                "column": 33
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 24,
+                                            "column": 34
+                                          },
+                                          "endPosition": {
+                                            "row": 24,
+                                            "column": 35
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_self_closing_element",
+                                          "text": "<Routes />",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Routes",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 27
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 30
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 31
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_closing_element",
+                                          "text": "</NavigationScroll>",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 35
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "NavigationScroll",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 34
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 35
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 36
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</ThemeProvider>",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "ThemeProvider",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</StyledEngineProvider>",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "StyledEngineProvider",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 30
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default App;",
+      "startPosition": {
+        "row": 32,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 32,
+        "column": 19
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "App",
+          "startPosition": {
+            "row": 32,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 32,
+            "column": 18
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

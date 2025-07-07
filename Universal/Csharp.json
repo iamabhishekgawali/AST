@@ -1,0 +1,116 @@
+{
+    "language": "C# (.NET)",
+    "internalDependencyPatterns": [
+        "^MyCompany\\."
+    ],
+    "selectors": {
+        "function": [
+            "method_declaration"
+        ],
+        "class": [
+            "class_declaration",
+            "record_declaration",
+            "struct_declaration"
+        ],
+        "comment": [
+            "comment"
+        ],
+        "import": [
+            {
+                "type": "using_directive",
+                "source": {
+                    "path": [
+                        {
+                            "type": "qualified_name"
+                        }
+                    ]
+                }
+            }
+        ],
+        "patterns": {
+            "API Endpoints": {
+                "type": "attribute",
+                "textMatch": "Http",
+                "value": {
+                    "path": [
+                        {
+                            "type": "attribute_argument_list"
+                        },
+                        {
+                            "type": "string_literal_expression"
+                        }
+                    ]
+                }
+            },
+            "Database Queries": {
+                "type": "invocation_expression",
+                "textMatch": "Query",
+                "value": {
+                    "path": [
+                        {
+                            "type": "argument_list"
+                        },
+                        {
+                            "type": "string_literal_expression"
+                        }
+                    ]
+                }
+            },
+            "LINQ Queries": {
+                "type": "invocation_expression",
+                "textMatch": ".Where",
+                "value": null
+            }
+        },
+        "quality": {
+            "exceptionHandling": [
+                "try_statement"
+            ]
+        },
+        "cyclomaticComplexity": {
+            "branchingNodes": [
+                "if_statement",
+                "for_statement",
+                "while_statement",
+                "switch_statement",
+                "catch_clause"
+            ],
+            "logicalOperators": [
+                "&&",
+                "||"
+            ]
+        }
+    },
+    "dependencyMaps": {
+        "Frameworks Detected": {
+            "Microsoft.AspNetCore": "ASP.NET Core",
+            "System.Windows.Forms": "Windows Forms",
+            "Microsoft.EntityFrameworkCore": "Entity Framework Core"
+        },
+        "Database Technologies Detected": {
+            "System.Data.SqlClient": "SQL Server",
+            "Microsoft.Data.SqlClient": "SQL Server",
+            "Npgsql": "PostgreSQL",
+            "MySql.Data": "MySQL",
+            "Pomelo.EntityFrameworkCore.MySql": "MySQL (Pomelo)",
+            "Oracle.ManagedDataAccess": "Oracle",
+            "Oracle.DataAccess": "Oracle",
+            "Microsoft.Data.Sqlite": "SQLite",
+            "System.Data.SQLite": "SQLite",
+            "Devart.Data.Oracle": "Oracle (Devart)",
+            "Devart.Data.PostgreSql": "PostgreSQL (Devart)",
+            "Devart.Data.MySql": "MySQL (Devart)",
+            "FirebirdSql.Data.FirebirdClient": "Firebird",
+            "IBM.Data.DB2": "IBM DB2",
+            "Sap.Data.Hana": "SAP HANA",
+            "Dapper": "Dapper",
+            "EntityFrameworkCore": "Entity Framework Core",
+            "Linq2Db": "LINQ to DB"
+        },
+        "Cloud SDKs Detected": {
+            "AWSSDK.": "AWS",
+            "Azure.": "Azure",
+            "Google.Cloud.": "Google Cloud"
+        }
+    }
+}

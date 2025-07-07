@@ -1,0 +1,2822 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport { makeStyles } from '@material-ui/styles';\r\nimport { Card, CardContent, Grid, Skeleton } from '@material-ui/core';\r\n\r\n// style constant\r\nconst useStyles = makeStyles({\r\n    cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }\r\n});\r\n\r\n//-----------------------|| SKELETON EARNING CARD ||-----------------------//\r\n\r\nconst EarningCard = () => {\r\n    const classes = useStyles();\r\n    return (\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    );\r\n};\r\n\r\nexport default EarningCard;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 46,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { makeStyles } from '@material-ui/styles';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ makeStyles }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ makeStyles }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "makeStyles",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "makeStyles",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/styles'",
+          "startPosition": {
+            "row": 3,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/styles",
+              "startPosition": {
+                "row": 3,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Card, CardContent, Grid, Skeleton } from '@material-ui/core';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 70
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Card, CardContent, Grid, Skeleton }",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 44
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Card, CardContent, Grid, Skeleton }",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 44
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Card",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 13
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Card",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 13
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "CardContent",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "CardContent",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "Grid",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 32
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Grid",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 28
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 32
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "Skeleton",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 34
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Skeleton",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 4,
+            "column": 50
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 69
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 4,
+                "column": 51
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 68
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// style constant\r",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 18
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const useStyles = makeStyles({\r\n    cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }\r\n});",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "useStyles = makeStyles({\r\n    cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }\r\n})",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "useStyles",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "makeStyles({\r\n    cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }\r\n})",
+              "startPosition": {
+                "row": 7,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "makeStyles",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "({\r\n    cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }\r\n})",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "object",
+                      "text": "{\r\n    cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }\r\n}",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 29
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 1
+                      },
+                      "children": [
+                        {
+                          "type": "pair",
+                          "text": "cardHeading: {\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "cardHeading",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 15
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n        marginRight: '8px',\r\n        marginTop: '18px',\r\n        marginBottom: '14px'\r\n    }",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 17
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 5
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "marginRight: '8px'",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 26
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "marginRight",
+                                      "startPosition": {
+                                        "row": 9,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'8px'",
+                                      "startPosition": {
+                                        "row": 9,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 26
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "8px",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 22
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "marginTop: '18px'",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "marginTop",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'18px'",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "18px",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "marginBottom: '14px'",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "marginBottom",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 20
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'14px'",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 22
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "14px",
+                                          "startPosition": {
+                                            "row": 11,
+                                            "column": 23
+                                          },
+                                          "endPosition": {
+                                            "row": 11,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| SKELETON EARNING CARD ||-----------------------//\r",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 78
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const EarningCard = () => {\r\n    const classes = useStyles();\r\n    return (\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 43,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "EarningCard = () => {\r\n    const classes = useStyles();\r\n    return (\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 17,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 43,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "EarningCard",
+              "startPosition": {
+                "row": 17,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 17
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const classes = useStyles();\r\n    return (\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 17,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 43,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const classes = useStyles();\r\n    return (\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const classes = useStyles();",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "classes = useStyles()",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 31
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "classes",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useStyles()",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 31
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useStyles",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    );",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 42,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>\r\n    )",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 42,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<Card>\r\n            <CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>\r\n        </Card>",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 41,
+                                "column": 15
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<Card>",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 14
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Card",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 15
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<CardContent>\r\n                <Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>\r\n            </CardContent>",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 40,
+                                    "column": 26
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<CardContent>",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "CardContent",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 26
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_element",
+                                      "text": "<Grid container direction=\"column\">\r\n                    <Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>\r\n                    <Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>\r\n                </Grid>",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 39,
+                                        "column": 23
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "jsx_opening_element",
+                                          "text": "<Grid container direction=\"column\">",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 51
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Grid",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 17
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 21
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_attribute",
+                                              "text": "container",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "container",
+                                                  "startPosition": {
+                                                    "row": 22,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 31
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_attribute",
+                                              "text": "direction=\"column\"",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 32
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 50
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "direction",
+                                                  "startPosition": {
+                                                    "row": 22,
+                                                    "column": 32
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 41
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "\"column\"",
+                                                  "startPosition": {
+                                                    "row": 22,
+                                                    "column": 42
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 50
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "column",
+                                                      "startPosition": {
+                                                        "row": 22,
+                                                        "column": 43
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 22,
+                                                        "column": 49
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 51
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 52
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_element",
+                                          "text": "<Grid item>\r\n                        <Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>\r\n                    </Grid>",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "jsx_opening_element",
+                                              "text": "<Grid item>",
+                                              "startPosition": {
+                                                "row": 23,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 23,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Grid",
+                                                  "startPosition": {
+                                                    "row": 23,
+                                                    "column": 21
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 23,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "item",
+                                                  "startPosition": {
+                                                    "row": 23,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 23,
+                                                    "column": 30
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "item",
+                                                      "startPosition": {
+                                                        "row": 23,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 23,
+                                                        "column": 30
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 23,
+                                                "column": 31
+                                              },
+                                              "endPosition": {
+                                                "row": 23,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_element",
+                                              "text": "<Grid container justifyContent=\"space-between\">\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>\r\n                            <Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>\r\n                        </Grid>",
+                                              "startPosition": {
+                                                "row": 24,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "jsx_opening_element",
+                                                  "text": "<Grid container justifyContent=\"space-between\">",
+                                                  "startPosition": {
+                                                    "row": 24,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 24,
+                                                    "column": 71
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "Grid",
+                                                      "startPosition": {
+                                                        "row": 24,
+                                                        "column": 25
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 24,
+                                                        "column": 29
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_attribute",
+                                                      "text": "container",
+                                                      "startPosition": {
+                                                        "row": 24,
+                                                        "column": 30
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 24,
+                                                        "column": 39
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "container",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 30
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 39
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_attribute",
+                                                      "text": "justifyContent=\"space-between\"",
+                                                      "startPosition": {
+                                                        "row": 24,
+                                                        "column": 40
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 24,
+                                                        "column": 70
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "justifyContent",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 40
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 54
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "string",
+                                                          "text": "\"space-between\"",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 55
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 70
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "string_fragment",
+                                                              "text": "space-between",
+                                                              "startPosition": {
+                                                                "row": 24,
+                                                                "column": 56
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 24,
+                                                                "column": 69
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_text",
+                                                  "text": "\r",
+                                                  "startPosition": {
+                                                    "row": 24,
+                                                    "column": 71
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 24,
+                                                    "column": 72
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_element",
+                                                  "text": "<Grid item>\r\n                                <Skeleton variant=\"rect\" width={44} height={44} />\r\n                            </Grid>",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 35
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "jsx_opening_element",
+                                                      "text": "<Grid item>",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 39
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Grid",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 29
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 33
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "item",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 34
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 38
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "item",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 34
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 38
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_text",
+                                                      "text": "\r",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 39
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 40
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_self_closing_element",
+                                                      "text": "<Skeleton variant=\"rect\" width={44} height={44} />",
+                                                      "startPosition": {
+                                                        "row": 26,
+                                                        "column": 32
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 26,
+                                                        "column": 82
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Skeleton",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 33
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 41
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "variant=\"rect\"",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 42
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 56
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "variant",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 42
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 49
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "string",
+                                                              "text": "\"rect\"",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 50
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 56
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "string_fragment",
+                                                                  "text": "rect",
+                                                                  "startPosition": {
+                                                                    "row": 26,
+                                                                    "column": 51
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 26,
+                                                                    "column": 55
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "width={44}",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 57
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 67
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "width",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 57
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 62
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "jsx_expression",
+                                                              "text": "{44}",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 63
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 67
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "number",
+                                                                  "text": "44",
+                                                                  "startPosition": {
+                                                                    "row": 26,
+                                                                    "column": 64
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 26,
+                                                                    "column": 66
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "height={44}",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 68
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 79
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "height",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 68
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 74
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "jsx_expression",
+                                                              "text": "{44}",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 75
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 79
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "number",
+                                                                  "text": "44",
+                                                                  "startPosition": {
+                                                                    "row": 26,
+                                                                    "column": 76
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 26,
+                                                                    "column": 78
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_text",
+                                                      "text": "\r",
+                                                      "startPosition": {
+                                                        "row": 26,
+                                                        "column": 82
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 26,
+                                                        "column": 83
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_closing_element",
+                                                      "text": "</Grid>",
+                                                      "startPosition": {
+                                                        "row": 27,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 27,
+                                                        "column": 35
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Grid",
+                                                          "startPosition": {
+                                                            "row": 27,
+                                                            "column": 30
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 27,
+                                                            "column": 34
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_text",
+                                                  "text": "\r",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 35
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_element",
+                                                  "text": "<Grid item>\r\n                                <Skeleton variant=\"rect\" width={34} height={34} />\r\n                            </Grid>",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 30,
+                                                    "column": 35
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "jsx_opening_element",
+                                                      "text": "<Grid item>",
+                                                      "startPosition": {
+                                                        "row": 28,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 28,
+                                                        "column": 39
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Grid",
+                                                          "startPosition": {
+                                                            "row": 28,
+                                                            "column": 29
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 28,
+                                                            "column": 33
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "item",
+                                                          "startPosition": {
+                                                            "row": 28,
+                                                            "column": 34
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 28,
+                                                            "column": 38
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "item",
+                                                              "startPosition": {
+                                                                "row": 28,
+                                                                "column": 34
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 28,
+                                                                "column": 38
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_text",
+                                                      "text": "\r",
+                                                      "startPosition": {
+                                                        "row": 28,
+                                                        "column": 39
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 28,
+                                                        "column": 40
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_self_closing_element",
+                                                      "text": "<Skeleton variant=\"rect\" width={34} height={34} />",
+                                                      "startPosition": {
+                                                        "row": 29,
+                                                        "column": 32
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 29,
+                                                        "column": 82
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Skeleton",
+                                                          "startPosition": {
+                                                            "row": 29,
+                                                            "column": 33
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 29,
+                                                            "column": 41
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "variant=\"rect\"",
+                                                          "startPosition": {
+                                                            "row": 29,
+                                                            "column": 42
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 29,
+                                                            "column": 56
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "variant",
+                                                              "startPosition": {
+                                                                "row": 29,
+                                                                "column": 42
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 29,
+                                                                "column": 49
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "string",
+                                                              "text": "\"rect\"",
+                                                              "startPosition": {
+                                                                "row": 29,
+                                                                "column": 50
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 29,
+                                                                "column": 56
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "string_fragment",
+                                                                  "text": "rect",
+                                                                  "startPosition": {
+                                                                    "row": 29,
+                                                                    "column": 51
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 29,
+                                                                    "column": 55
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "width={34}",
+                                                          "startPosition": {
+                                                            "row": 29,
+                                                            "column": 57
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 29,
+                                                            "column": 67
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "width",
+                                                              "startPosition": {
+                                                                "row": 29,
+                                                                "column": 57
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 29,
+                                                                "column": 62
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "jsx_expression",
+                                                              "text": "{34}",
+                                                              "startPosition": {
+                                                                "row": 29,
+                                                                "column": 63
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 29,
+                                                                "column": 67
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "number",
+                                                                  "text": "34",
+                                                                  "startPosition": {
+                                                                    "row": 29,
+                                                                    "column": 64
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 29,
+                                                                    "column": 66
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "jsx_attribute",
+                                                          "text": "height={34}",
+                                                          "startPosition": {
+                                                            "row": 29,
+                                                            "column": 68
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 29,
+                                                            "column": 79
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "height",
+                                                              "startPosition": {
+                                                                "row": 29,
+                                                                "column": 68
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 29,
+                                                                "column": 74
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "jsx_expression",
+                                                              "text": "{34}",
+                                                              "startPosition": {
+                                                                "row": 29,
+                                                                "column": 75
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 29,
+                                                                "column": 79
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "number",
+                                                                  "text": "34",
+                                                                  "startPosition": {
+                                                                    "row": 29,
+                                                                    "column": 76
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 29,
+                                                                    "column": 78
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_text",
+                                                      "text": "\r",
+                                                      "startPosition": {
+                                                        "row": 29,
+                                                        "column": 82
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 29,
+                                                        "column": 83
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_closing_element",
+                                                      "text": "</Grid>",
+                                                      "startPosition": {
+                                                        "row": 30,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 30,
+                                                        "column": 35
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Grid",
+                                                          "startPosition": {
+                                                            "row": 30,
+                                                            "column": 30
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 30,
+                                                            "column": 34
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_text",
+                                                  "text": "\r",
+                                                  "startPosition": {
+                                                    "row": 30,
+                                                    "column": 35
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 30,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_closing_element",
+                                                  "text": "</Grid>",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 31
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "Grid",
+                                                      "startPosition": {
+                                                        "row": 31,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 31,
+                                                        "column": 30
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 31,
+                                                "column": 31
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_closing_element",
+                                              "text": "</Grid>",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 27
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Grid",
+                                                  "startPosition": {
+                                                    "row": 32,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 32,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 27
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_element",
+                                          "text": "<Grid item>\r\n                        <Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />\r\n                    </Grid>",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 35,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "jsx_opening_element",
+                                              "text": "<Grid item>",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Grid",
+                                                  "startPosition": {
+                                                    "row": 33,
+                                                    "column": 21
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 33,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "item",
+                                                  "startPosition": {
+                                                    "row": 33,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 33,
+                                                    "column": 30
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "item",
+                                                      "startPosition": {
+                                                        "row": 33,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 33,
+                                                        "column": 30
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 31
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_self_closing_element",
+                                              "text": "<Skeleton variant=\"rect\" className={classes.cardHeading} height={40} />",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 95
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Skeleton",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 33
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "variant=\"rect\"",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 34
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 48
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "variant",
+                                                      "startPosition": {
+                                                        "row": 34,
+                                                        "column": 34
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 34,
+                                                        "column": 41
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string",
+                                                      "text": "\"rect\"",
+                                                      "startPosition": {
+                                                        "row": 34,
+                                                        "column": 42
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 34,
+                                                        "column": 48
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "string_fragment",
+                                                          "text": "rect",
+                                                          "startPosition": {
+                                                            "row": 34,
+                                                            "column": 43
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 34,
+                                                            "column": 47
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "className={classes.cardHeading}",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 49
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 80
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "className",
+                                                      "startPosition": {
+                                                        "row": 34,
+                                                        "column": 49
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 34,
+                                                        "column": 58
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_expression",
+                                                      "text": "{classes.cardHeading}",
+                                                      "startPosition": {
+                                                        "row": 34,
+                                                        "column": 59
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 34,
+                                                        "column": 80
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "member_expression",
+                                                          "text": "classes.cardHeading",
+                                                          "startPosition": {
+                                                            "row": 34,
+                                                            "column": 60
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 34,
+                                                            "column": 79
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "classes",
+                                                              "startPosition": {
+                                                                "row": 34,
+                                                                "column": 60
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 34,
+                                                                "column": 67
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "cardHeading",
+                                                              "startPosition": {
+                                                                "row": 34,
+                                                                "column": 68
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 34,
+                                                                "column": 79
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "height={40}",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 81
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 92
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "height",
+                                                      "startPosition": {
+                                                        "row": 34,
+                                                        "column": 81
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 34,
+                                                        "column": 87
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_expression",
+                                                      "text": "{40}",
+                                                      "startPosition": {
+                                                        "row": 34,
+                                                        "column": 88
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 34,
+                                                        "column": 92
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "number",
+                                                          "text": "40",
+                                                          "startPosition": {
+                                                            "row": 34,
+                                                            "column": 89
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 34,
+                                                            "column": 91
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 95
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 96
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_closing_element",
+                                              "text": "</Grid>",
+                                              "startPosition": {
+                                                "row": 35,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 35,
+                                                "column": 27
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Grid",
+                                                  "startPosition": {
+                                                    "row": 35,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 35,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 35,
+                                            "column": 27
+                                          },
+                                          "endPosition": {
+                                            "row": 35,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_element",
+                                          "text": "<Grid item>\r\n                        <Skeleton variant=\"rect\" height={30} />\r\n                    </Grid>",
+                                          "startPosition": {
+                                            "row": 36,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 38,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "jsx_opening_element",
+                                              "text": "<Grid item>",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Grid",
+                                                  "startPosition": {
+                                                    "row": 36,
+                                                    "column": 21
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 36,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "item",
+                                                  "startPosition": {
+                                                    "row": 36,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 36,
+                                                    "column": 30
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "item",
+                                                      "startPosition": {
+                                                        "row": 36,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 36,
+                                                        "column": 30
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 31
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_self_closing_element",
+                                              "text": "<Skeleton variant=\"rect\" height={30} />",
+                                              "startPosition": {
+                                                "row": 37,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 37,
+                                                "column": 63
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Skeleton",
+                                                  "startPosition": {
+                                                    "row": 37,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 37,
+                                                    "column": 33
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "variant=\"rect\"",
+                                                  "startPosition": {
+                                                    "row": 37,
+                                                    "column": 34
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 37,
+                                                    "column": 48
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "variant",
+                                                      "startPosition": {
+                                                        "row": 37,
+                                                        "column": 34
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 37,
+                                                        "column": 41
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string",
+                                                      "text": "\"rect\"",
+                                                      "startPosition": {
+                                                        "row": 37,
+                                                        "column": 42
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 37,
+                                                        "column": 48
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "string_fragment",
+                                                          "text": "rect",
+                                                          "startPosition": {
+                                                            "row": 37,
+                                                            "column": 43
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 37,
+                                                            "column": 47
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "height={30}",
+                                                  "startPosition": {
+                                                    "row": 37,
+                                                    "column": 49
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 37,
+                                                    "column": 60
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "height",
+                                                      "startPosition": {
+                                                        "row": 37,
+                                                        "column": 49
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 37,
+                                                        "column": 55
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_expression",
+                                                      "text": "{30}",
+                                                      "startPosition": {
+                                                        "row": 37,
+                                                        "column": 56
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 37,
+                                                        "column": 60
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "number",
+                                                          "text": "30",
+                                                          "startPosition": {
+                                                            "row": 37,
+                                                            "column": 57
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 37,
+                                                            "column": 59
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 37,
+                                                "column": 63
+                                              },
+                                              "endPosition": {
+                                                "row": 37,
+                                                "column": 64
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_closing_element",
+                                              "text": "</Grid>",
+                                              "startPosition": {
+                                                "row": 38,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 38,
+                                                "column": 27
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Grid",
+                                                  "startPosition": {
+                                                    "row": 38,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 38,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 38,
+                                            "column": 27
+                                          },
+                                          "endPosition": {
+                                            "row": 38,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_closing_element",
+                                          "text": "</Grid>",
+                                          "startPosition": {
+                                            "row": 39,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 39,
+                                            "column": 23
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Grid",
+                                              "startPosition": {
+                                                "row": 39,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 39,
+                                                "column": 22
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 39,
+                                        "column": 23
+                                      },
+                                      "endPosition": {
+                                        "row": 39,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</CardContent>",
+                                      "startPosition": {
+                                        "row": 40,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 40,
+                                        "column": 26
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "CardContent",
+                                          "startPosition": {
+                                            "row": 40,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 40,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 26
+                                  },
+                                  "endPosition": {
+                                    "row": 40,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</Card>",
+                                  "startPosition": {
+                                    "row": 41,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 41,
+                                    "column": 15
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Card",
+                                      "startPosition": {
+                                        "row": 41,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 41,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default EarningCard;",
+      "startPosition": {
+        "row": 45,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 45,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "EarningCard",
+          "startPosition": {
+            "row": 45,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 45,
+            "column": 26
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

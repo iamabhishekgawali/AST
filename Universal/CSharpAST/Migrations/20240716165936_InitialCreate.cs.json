@@ -1,0 +1,2673 @@
+{
+  "type": "compilation_unit",
+  "text": "using Microsoft.EntityFrameworkCore.Migrations;\r\nusing Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;\r\n\r\n#nullable disable\r\n\r\nnamespace First_Backend.Migrations\r\n{\r\n    /// <inheritdoc />\r\n    public partial class InitialCreate : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }\r\n    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 3
+  },
+  "endPosition": {
+    "row": 37,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "using_directive",
+      "text": "using Microsoft.EntityFrameworkCore.Migrations;",
+      "startPosition": {
+        "row": 0,
+        "column": 3
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 50
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "Microsoft.EntityFrameworkCore.Migrations",
+          "startPosition": {
+            "row": 0,
+            "column": 9
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 49
+          },
+          "children": [
+            {
+              "type": "qualified_name",
+              "text": "Microsoft.EntityFrameworkCore",
+              "startPosition": {
+                "row": 0,
+                "column": 9
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 38
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Microsoft",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "EntityFrameworkCore",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 38
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Migrations",
+              "startPosition": {
+                "row": 0,
+                "column": 39
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 49
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "using_directive",
+      "text": "using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 53
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "Npgsql.EntityFrameworkCore.PostgreSQL.Metadata",
+          "startPosition": {
+            "row": 1,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 52
+          },
+          "children": [
+            {
+              "type": "qualified_name",
+              "text": "Npgsql.EntityFrameworkCore.PostgreSQL",
+              "startPosition": {
+                "row": 1,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "qualified_name",
+                  "text": "Npgsql.EntityFrameworkCore",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 32
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Npgsql",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 6
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "EntityFrameworkCore",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 13
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 32
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "PostgreSQL",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Metadata",
+              "startPosition": {
+                "row": 1,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 52
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "nullable_directive",
+      "text": "nullable disable",
+      "startPosition": {
+        "row": 3,
+        "column": 1
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 17
+      },
+      "children": []
+    },
+    {
+      "type": "namespace_declaration",
+      "text": "namespace First_Backend.Migrations\r\n{\r\n    /// <inheritdoc />\r\n    public partial class InitialCreate : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }\r\n    }\r\n}",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 36,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "First_Backend.Migrations",
+          "startPosition": {
+            "row": 5,
+            "column": 10
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "First_Backend",
+              "startPosition": {
+                "row": 5,
+                "column": 10
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 23
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "Migrations",
+              "startPosition": {
+                "row": 5,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 34
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "declaration_list",
+          "text": "{\r\n    /// <inheritdoc />\r\n    public partial class InitialCreate : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }\r\n    }\r\n}",
+          "startPosition": {
+            "row": 6,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 36,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "comment",
+              "text": "/// <inheritdoc />",
+              "startPosition": {
+                "row": 7,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 22
+              },
+              "children": []
+            },
+            {
+              "type": "class_declaration",
+              "text": "public partial class InitialCreate : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }\r\n    }",
+              "startPosition": {
+                "row": 8,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 35,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifier",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "modifier",
+                  "text": "partial",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "InitialCreate",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 38
+                  },
+                  "children": []
+                },
+                {
+                  "type": "base_list",
+                  "text": ": Migration",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 39
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 50
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Migration",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 41
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 50
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "declaration_list",
+                  "text": "{\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }\r\n    }",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "comment",
+                      "text": "/// <inheritdoc />",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 26
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "method_declaration",
+                      "text": "protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "protected",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 17
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "override",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "void",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Up",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 34
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "parameter_list",
+                          "text": "(MigrationBuilder migrationBuilder)",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 69
+                          },
+                          "children": [
+                            {
+                              "type": "parameter",
+                              "text": "MigrationBuilder migrationBuilder",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 35
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 68
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "MigrationBuilder",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 35
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 51
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "migrationBuilder",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 52
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 68
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "{\r\n            migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });\r\n        }",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                });",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 26,
+                                "column": 19
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "migrationBuilder.CreateTable(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                })",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 18
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "migrationBuilder.CreateTable",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 40
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "migrationBuilder",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "CreateTable",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 40
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\r\n                name: \"Users\",\r\n                columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                },\r\n                constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                })",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 18
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "name: \"Users\"",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 29
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "name:",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "name",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Users\"",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 29
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Users",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 28
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "columns: table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                }",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 17
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "columns:",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 24
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "columns",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 23
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "lambda_expression",
+                                              "text": "table => new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                }",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 17
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "implicit_parameter_list",
+                                                  "text": "table",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 30
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "parameter",
+                                                      "text": "table",
+                                                      "startPosition": {
+                                                        "row": 15,
+                                                        "column": 25
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 15,
+                                                        "column": 30
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "table",
+                                                          "startPosition": {
+                                                            "row": 15,
+                                                            "column": 25
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 15,
+                                                            "column": 30
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "anonymous_object_creation_expression",
+                                                  "text": "new\r\n                {\r\n                    Id = table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),\r\n                    Name = table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false),\r\n                    Email = table.Column<string>(type: \"text\", nullable: false),\r\n                    Password = table.Column<string>(type: \"text\", nullable: false)\r\n                }",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 34
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 17
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "name_equals",
+                                                      "text": "Id =",
+                                                      "startPosition": {
+                                                        "row": 17,
+                                                        "column": 20
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 17,
+                                                        "column": 24
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Id",
+                                                          "startPosition": {
+                                                            "row": 17,
+                                                            "column": 20
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 17,
+                                                            "column": 22
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "invocation_expression",
+                                                      "text": "table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)",
+                                                      "startPosition": {
+                                                        "row": 17,
+                                                        "column": 25
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 18,
+                                                        "column": 124
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "member_access_expression",
+                                                          "text": "table.Column<int>(type: \"integer\", nullable: false)\r\n                        .Annotation",
+                                                          "startPosition": {
+                                                            "row": 17,
+                                                            "column": 25
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 18,
+                                                            "column": 35
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "invocation_expression",
+                                                              "text": "table.Column<int>(type: \"integer\", nullable: false)",
+                                                              "startPosition": {
+                                                                "row": 17,
+                                                                "column": 25
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 17,
+                                                                "column": 76
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "member_access_expression",
+                                                                  "text": "table.Column<int>",
+                                                                  "startPosition": {
+                                                                    "row": 17,
+                                                                    "column": 25
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 17,
+                                                                    "column": 42
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "table",
+                                                                      "startPosition": {
+                                                                        "row": 17,
+                                                                        "column": 25
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 17,
+                                                                        "column": 30
+                                                                      },
+                                                                      "children": []
+                                                                    },
+                                                                    {
+                                                                      "type": "generic_name",
+                                                                      "text": "Column<int>",
+                                                                      "startPosition": {
+                                                                        "row": 17,
+                                                                        "column": 31
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 17,
+                                                                        "column": 42
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "identifier",
+                                                                          "text": "Column",
+                                                                          "startPosition": {
+                                                                            "row": 17,
+                                                                            "column": 31
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 17,
+                                                                            "column": 37
+                                                                          },
+                                                                          "children": []
+                                                                        },
+                                                                        {
+                                                                          "type": "type_argument_list",
+                                                                          "text": "<int>",
+                                                                          "startPosition": {
+                                                                            "row": 17,
+                                                                            "column": 37
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 17,
+                                                                            "column": 42
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "predefined_type",
+                                                                              "text": "int",
+                                                                              "startPosition": {
+                                                                                "row": 17,
+                                                                                "column": 38
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 17,
+                                                                                "column": 41
+                                                                              },
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "argument_list",
+                                                                  "text": "(type: \"integer\", nullable: false)",
+                                                                  "startPosition": {
+                                                                    "row": 17,
+                                                                    "column": 42
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 17,
+                                                                    "column": 76
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "argument",
+                                                                      "text": "type: \"integer\"",
+                                                                      "startPosition": {
+                                                                        "row": 17,
+                                                                        "column": 43
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 17,
+                                                                        "column": 58
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "name_colon",
+                                                                          "text": "type:",
+                                                                          "startPosition": {
+                                                                            "row": 17,
+                                                                            "column": 43
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 17,
+                                                                            "column": 48
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "identifier",
+                                                                              "text": "type",
+                                                                              "startPosition": {
+                                                                                "row": 17,
+                                                                                "column": 43
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 17,
+                                                                                "column": 47
+                                                                              },
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "string_literal",
+                                                                          "text": "\"integer\"",
+                                                                          "startPosition": {
+                                                                            "row": 17,
+                                                                            "column": 49
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 17,
+                                                                            "column": 58
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "string_literal_fragment",
+                                                                              "text": "integer",
+                                                                              "startPosition": {
+                                                                                "row": 17,
+                                                                                "column": 50
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 17,
+                                                                                "column": 57
+                                                                              },
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "type": "argument",
+                                                                      "text": "nullable: false",
+                                                                      "startPosition": {
+                                                                        "row": 17,
+                                                                        "column": 60
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 17,
+                                                                        "column": 75
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "name_colon",
+                                                                          "text": "nullable:",
+                                                                          "startPosition": {
+                                                                            "row": 17,
+                                                                            "column": 60
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 17,
+                                                                            "column": 69
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "identifier",
+                                                                              "text": "nullable",
+                                                                              "startPosition": {
+                                                                                "row": 17,
+                                                                                "column": 60
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 17,
+                                                                                "column": 68
+                                                                              },
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "boolean_literal",
+                                                                          "text": "false",
+                                                                          "startPosition": {
+                                                                            "row": 17,
+                                                                            "column": 70
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 17,
+                                                                            "column": 75
+                                                                          },
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "Annotation",
+                                                              "startPosition": {
+                                                                "row": 18,
+                                                                "column": 25
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 18,
+                                                                "column": 35
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "argument_list",
+                                                          "text": "(\"Npgsql:ValueGenerationStrategy\", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)",
+                                                          "startPosition": {
+                                                            "row": 18,
+                                                            "column": 35
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 18,
+                                                            "column": 124
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "\"Npgsql:ValueGenerationStrategy\"",
+                                                              "startPosition": {
+                                                                "row": 18,
+                                                                "column": 36
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 18,
+                                                                "column": 68
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "string_literal",
+                                                                  "text": "\"Npgsql:ValueGenerationStrategy\"",
+                                                                  "startPosition": {
+                                                                    "row": 18,
+                                                                    "column": 36
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 18,
+                                                                    "column": 68
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "string_literal_fragment",
+                                                                      "text": "Npgsql:ValueGenerationStrategy",
+                                                                      "startPosition": {
+                                                                        "row": 18,
+                                                                        "column": 37
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 18,
+                                                                        "column": 67
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "NpgsqlValueGenerationStrategy.IdentityByDefaultColumn",
+                                                              "startPosition": {
+                                                                "row": 18,
+                                                                "column": 70
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 18,
+                                                                "column": 123
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "member_access_expression",
+                                                                  "text": "NpgsqlValueGenerationStrategy.IdentityByDefaultColumn",
+                                                                  "startPosition": {
+                                                                    "row": 18,
+                                                                    "column": 70
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 18,
+                                                                    "column": 123
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "NpgsqlValueGenerationStrategy",
+                                                                      "startPosition": {
+                                                                        "row": 18,
+                                                                        "column": 70
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 18,
+                                                                        "column": 99
+                                                                      },
+                                                                      "children": []
+                                                                    },
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "IdentityByDefaultColumn",
+                                                                      "startPosition": {
+                                                                        "row": 18,
+                                                                        "column": 100
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 18,
+                                                                        "column": 123
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "name_equals",
+                                                      "text": "Name =",
+                                                      "startPosition": {
+                                                        "row": 19,
+                                                        "column": 20
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 19,
+                                                        "column": 26
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Name",
+                                                          "startPosition": {
+                                                            "row": 19,
+                                                            "column": 20
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 19,
+                                                            "column": 24
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "invocation_expression",
+                                                      "text": "table.Column<string>(type: \"character varying(255)\", maxLength: 255, nullable: false)",
+                                                      "startPosition": {
+                                                        "row": 19,
+                                                        "column": 27
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 19,
+                                                        "column": 112
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "member_access_expression",
+                                                          "text": "table.Column<string>",
+                                                          "startPosition": {
+                                                            "row": 19,
+                                                            "column": 27
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 19,
+                                                            "column": 47
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "table",
+                                                              "startPosition": {
+                                                                "row": 19,
+                                                                "column": 27
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 19,
+                                                                "column": 32
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "generic_name",
+                                                              "text": "Column<string>",
+                                                              "startPosition": {
+                                                                "row": 19,
+                                                                "column": 33
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 19,
+                                                                "column": 47
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "Column",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 33
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 39
+                                                                  },
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "type": "type_argument_list",
+                                                                  "text": "<string>",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 39
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 47
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "predefined_type",
+                                                                      "text": "string",
+                                                                      "startPosition": {
+                                                                        "row": 19,
+                                                                        "column": 40
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 19,
+                                                                        "column": 46
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "argument_list",
+                                                          "text": "(type: \"character varying(255)\", maxLength: 255, nullable: false)",
+                                                          "startPosition": {
+                                                            "row": 19,
+                                                            "column": 47
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 19,
+                                                            "column": 112
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "type: \"character varying(255)\"",
+                                                              "startPosition": {
+                                                                "row": 19,
+                                                                "column": 48
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 19,
+                                                                "column": 78
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "type:",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 48
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 53
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "type",
+                                                                      "startPosition": {
+                                                                        "row": 19,
+                                                                        "column": 48
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 19,
+                                                                        "column": 52
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "string_literal",
+                                                                  "text": "\"character varying(255)\"",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 54
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 78
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "string_literal_fragment",
+                                                                      "text": "character varying(255)",
+                                                                      "startPosition": {
+                                                                        "row": 19,
+                                                                        "column": 55
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 19,
+                                                                        "column": 77
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "maxLength: 255",
+                                                              "startPosition": {
+                                                                "row": 19,
+                                                                "column": 80
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 19,
+                                                                "column": 94
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "maxLength:",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 80
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 90
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "maxLength",
+                                                                      "startPosition": {
+                                                                        "row": 19,
+                                                                        "column": 80
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 19,
+                                                                        "column": 89
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "integer_literal",
+                                                                  "text": "255",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 91
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 94
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "nullable: false",
+                                                              "startPosition": {
+                                                                "row": 19,
+                                                                "column": 96
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 19,
+                                                                "column": 111
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "nullable:",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 96
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 105
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "nullable",
+                                                                      "startPosition": {
+                                                                        "row": 19,
+                                                                        "column": 96
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 19,
+                                                                        "column": 104
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "boolean_literal",
+                                                                  "text": "false",
+                                                                  "startPosition": {
+                                                                    "row": 19,
+                                                                    "column": 106
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 19,
+                                                                    "column": 111
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "name_equals",
+                                                      "text": "Email =",
+                                                      "startPosition": {
+                                                        "row": 20,
+                                                        "column": 20
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 20,
+                                                        "column": 27
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Email",
+                                                          "startPosition": {
+                                                            "row": 20,
+                                                            "column": 20
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 20,
+                                                            "column": 25
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "invocation_expression",
+                                                      "text": "table.Column<string>(type: \"text\", nullable: false)",
+                                                      "startPosition": {
+                                                        "row": 20,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 20,
+                                                        "column": 79
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "member_access_expression",
+                                                          "text": "table.Column<string>",
+                                                          "startPosition": {
+                                                            "row": 20,
+                                                            "column": 28
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 20,
+                                                            "column": 48
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "table",
+                                                              "startPosition": {
+                                                                "row": 20,
+                                                                "column": 28
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 20,
+                                                                "column": 33
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "generic_name",
+                                                              "text": "Column<string>",
+                                                              "startPosition": {
+                                                                "row": 20,
+                                                                "column": 34
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 20,
+                                                                "column": 48
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "Column",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 34
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 40
+                                                                  },
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "type": "type_argument_list",
+                                                                  "text": "<string>",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 40
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 48
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "predefined_type",
+                                                                      "text": "string",
+                                                                      "startPosition": {
+                                                                        "row": 20,
+                                                                        "column": 41
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 20,
+                                                                        "column": 47
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "argument_list",
+                                                          "text": "(type: \"text\", nullable: false)",
+                                                          "startPosition": {
+                                                            "row": 20,
+                                                            "column": 48
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 20,
+                                                            "column": 79
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "type: \"text\"",
+                                                              "startPosition": {
+                                                                "row": 20,
+                                                                "column": 49
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 20,
+                                                                "column": 61
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "type:",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 49
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 54
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "type",
+                                                                      "startPosition": {
+                                                                        "row": 20,
+                                                                        "column": 49
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 20,
+                                                                        "column": 53
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "string_literal",
+                                                                  "text": "\"text\"",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 55
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 61
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "string_literal_fragment",
+                                                                      "text": "text",
+                                                                      "startPosition": {
+                                                                        "row": 20,
+                                                                        "column": 56
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 20,
+                                                                        "column": 60
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "nullable: false",
+                                                              "startPosition": {
+                                                                "row": 20,
+                                                                "column": 63
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 20,
+                                                                "column": 78
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "nullable:",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 63
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 72
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "nullable",
+                                                                      "startPosition": {
+                                                                        "row": 20,
+                                                                        "column": 63
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 20,
+                                                                        "column": 71
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "boolean_literal",
+                                                                  "text": "false",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 73
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 78
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "name_equals",
+                                                      "text": "Password =",
+                                                      "startPosition": {
+                                                        "row": 21,
+                                                        "column": 20
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 21,
+                                                        "column": 30
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "Password",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 20
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 28
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "invocation_expression",
+                                                      "text": "table.Column<string>(type: \"text\", nullable: false)",
+                                                      "startPosition": {
+                                                        "row": 21,
+                                                        "column": 31
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 21,
+                                                        "column": 82
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "member_access_expression",
+                                                          "text": "table.Column<string>",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 31
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 51
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "table",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 31
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 36
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "generic_name",
+                                                              "text": "Column<string>",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 37
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 51
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "Column",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 37
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 43
+                                                                  },
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "type": "type_argument_list",
+                                                                  "text": "<string>",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 43
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 51
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "predefined_type",
+                                                                      "text": "string",
+                                                                      "startPosition": {
+                                                                        "row": 21,
+                                                                        "column": 44
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 21,
+                                                                        "column": 50
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "argument_list",
+                                                          "text": "(type: \"text\", nullable: false)",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 51
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 82
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "type: \"text\"",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 52
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 64
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "type:",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 52
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 57
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "type",
+                                                                      "startPosition": {
+                                                                        "row": 21,
+                                                                        "column": 52
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 21,
+                                                                        "column": 56
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "string_literal",
+                                                                  "text": "\"text\"",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 58
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 64
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "string_literal_fragment",
+                                                                      "text": "text",
+                                                                      "startPosition": {
+                                                                        "row": 21,
+                                                                        "column": 59
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 21,
+                                                                        "column": 63
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "argument",
+                                                              "text": "nullable: false",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 66
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 81
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "name_colon",
+                                                                  "text": "nullable:",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 66
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 75
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "identifier",
+                                                                      "text": "nullable",
+                                                                      "startPosition": {
+                                                                        "row": 21,
+                                                                        "column": 66
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 21,
+                                                                        "column": 74
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "boolean_literal",
+                                                                  "text": "false",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 76
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 81
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "constraints: table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                }",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 17
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "constraints:",
+                                              "startPosition": {
+                                                "row": 23,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 23,
+                                                "column": 28
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "constraints",
+                                                  "startPosition": {
+                                                    "row": 23,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 23,
+                                                    "column": 27
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "lambda_expression",
+                                              "text": "table =>\r\n                {\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                }",
+                                              "startPosition": {
+                                                "row": 23,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 17
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "implicit_parameter_list",
+                                                  "text": "table",
+                                                  "startPosition": {
+                                                    "row": 23,
+                                                    "column": 29
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 23,
+                                                    "column": 34
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "parameter",
+                                                      "text": "table",
+                                                      "startPosition": {
+                                                        "row": 23,
+                                                        "column": 29
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 23,
+                                                        "column": 34
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "table",
+                                                          "startPosition": {
+                                                            "row": 23,
+                                                            "column": 29
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 23,
+                                                            "column": 34
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "block",
+                                                  "text": "{\r\n                    table.PrimaryKey(\"PK_Users\", x => x.Id);\r\n                }",
+                                                  "startPosition": {
+                                                    "row": 24,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 17
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "expression_statement",
+                                                      "text": "table.PrimaryKey(\"PK_Users\", x => x.Id);",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 20
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 60
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "invocation_expression",
+                                                          "text": "table.PrimaryKey(\"PK_Users\", x => x.Id)",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 20
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 59
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "member_access_expression",
+                                                              "text": "table.PrimaryKey",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 20
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 36
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "table",
+                                                                  "startPosition": {
+                                                                    "row": 25,
+                                                                    "column": 20
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 25,
+                                                                    "column": 25
+                                                                  },
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "PrimaryKey",
+                                                                  "startPosition": {
+                                                                    "row": 25,
+                                                                    "column": 26
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 25,
+                                                                    "column": 36
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "argument_list",
+                                                              "text": "(\"PK_Users\", x => x.Id)",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 36
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 59
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "argument",
+                                                                  "text": "\"PK_Users\"",
+                                                                  "startPosition": {
+                                                                    "row": 25,
+                                                                    "column": 37
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 25,
+                                                                    "column": 47
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "string_literal",
+                                                                      "text": "\"PK_Users\"",
+                                                                      "startPosition": {
+                                                                        "row": 25,
+                                                                        "column": 37
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 25,
+                                                                        "column": 47
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "string_literal_fragment",
+                                                                          "text": "PK_Users",
+                                                                          "startPosition": {
+                                                                            "row": 25,
+                                                                            "column": 38
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 25,
+                                                                            "column": 46
+                                                                          },
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "argument",
+                                                                  "text": "x => x.Id",
+                                                                  "startPosition": {
+                                                                    "row": 25,
+                                                                    "column": 49
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 25,
+                                                                    "column": 58
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "lambda_expression",
+                                                                      "text": "x => x.Id",
+                                                                      "startPosition": {
+                                                                        "row": 25,
+                                                                        "column": 49
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 25,
+                                                                        "column": 58
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "implicit_parameter_list",
+                                                                          "text": "x",
+                                                                          "startPosition": {
+                                                                            "row": 25,
+                                                                            "column": 49
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 25,
+                                                                            "column": 50
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "parameter",
+                                                                              "text": "x",
+                                                                              "startPosition": {
+                                                                                "row": 25,
+                                                                                "column": 49
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 25,
+                                                                                "column": 50
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "type": "identifier",
+                                                                                  "text": "x",
+                                                                                  "startPosition": {
+                                                                                    "row": 25,
+                                                                                    "column": 49
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 25,
+                                                                                    "column": 50
+                                                                                  },
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "member_access_expression",
+                                                                          "text": "x.Id",
+                                                                          "startPosition": {
+                                                                            "row": 25,
+                                                                            "column": 54
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 25,
+                                                                            "column": 58
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "identifier",
+                                                                              "text": "x",
+                                                                              "startPosition": {
+                                                                                "row": 25,
+                                                                                "column": 54
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 25,
+                                                                                "column": 55
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "identifier",
+                                                                              "text": "Id",
+                                                                              "startPosition": {
+                                                                                "row": 25,
+                                                                                "column": 56
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 25,
+                                                                                "column": 58
+                                                                              },
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "text": "/// <inheritdoc />",
+                      "startPosition": {
+                        "row": 29,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 26
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "method_declaration",
+                      "text": "protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }",
+                      "startPosition": {
+                        "row": 30,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 34,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "protected",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 17
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "override",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "void",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Down",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 36
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "parameter_list",
+                          "text": "(MigrationBuilder migrationBuilder)",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 71
+                          },
+                          "children": [
+                            {
+                              "type": "parameter",
+                              "text": "MigrationBuilder migrationBuilder",
+                              "startPosition": {
+                                "row": 30,
+                                "column": 37
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 70
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "MigrationBuilder",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 53
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "migrationBuilder",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 54
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 70
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "{\r\n            migrationBuilder.DropTable(\r\n                name: \"Users\");\r\n        }",
+                          "startPosition": {
+                            "row": 31,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 34,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "migrationBuilder.DropTable(\r\n                name: \"Users\");",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 33,
+                                "column": 31
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "migrationBuilder.DropTable(\r\n                name: \"Users\")",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 33,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "migrationBuilder.DropTable",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 38
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "migrationBuilder",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "DropTable",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 38
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\r\n                name: \"Users\")",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 38
+                                      },
+                                      "endPosition": {
+                                        "row": 33,
+                                        "column": 30
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "name: \"Users\"",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 33,
+                                            "column": 29
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "name:",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "name",
+                                                  "startPosition": {
+                                                    "row": 33,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 33,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Users\"",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 29
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Users",
+                                                  "startPosition": {
+                                                    "row": 33,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 33,
+                                                    "column": 28
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

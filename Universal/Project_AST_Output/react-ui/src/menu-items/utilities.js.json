@@ -1,0 +1,2742 @@
+{
+  "type": "program",
+  "text": "// assets\r\nimport { IconBrandFramer, IconTypography, IconPalette, IconShadow, IconWindmill, IconLayoutGridAdd } from '@tabler/icons';\r\n\r\n// constant\r\nconst icons = {\r\n    IconTypography: IconTypography,\r\n    IconPalette: IconPalette,\r\n    IconShadow: IconShadow,\r\n    IconWindmill: IconWindmill,\r\n    IconBrandFramer: IconBrandFramer,\r\n    IconLayoutGridAdd: IconLayoutGridAdd\r\n};\r\n\r\n//-----------------------|| UTILITIES MENU ITEMS ||-----------------------//\r\n\r\nexport const utilities = {\r\n    id: 'utilities',\r\n    title: 'Utilities',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n};\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 68,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// assets\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 10
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { IconBrandFramer, IconTypography, IconPalette, IconShadow, IconWindmill, IconLayoutGridAdd } from '@tabler/icons';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 122
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ IconBrandFramer, IconTypography, IconPalette, IconShadow, IconWindmill, IconLayoutGridAdd }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 100
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ IconBrandFramer, IconTypography, IconPalette, IconShadow, IconWindmill, IconLayoutGridAdd }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 100
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "IconBrandFramer",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconBrandFramer",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 24
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconTypography",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconTypography",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 26
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconPalette",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 42
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 53
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconPalette",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 42
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 53
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconShadow",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 55
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 65
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconShadow",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 55
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 65
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconWindmill",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 67
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 79
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconWindmill",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 67
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 79
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconLayoutGridAdd",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 81
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 98
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconLayoutGridAdd",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 81
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 98
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@tabler/icons'",
+          "startPosition": {
+            "row": 1,
+            "column": 106
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 121
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@tabler/icons",
+              "startPosition": {
+                "row": 1,
+                "column": 107
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 120
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// constant\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 12
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const icons = {\r\n    IconTypography: IconTypography,\r\n    IconPalette: IconPalette,\r\n    IconShadow: IconShadow,\r\n    IconWindmill: IconWindmill,\r\n    IconBrandFramer: IconBrandFramer,\r\n    IconLayoutGridAdd: IconLayoutGridAdd\r\n};",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "icons = {\r\n    IconTypography: IconTypography,\r\n    IconPalette: IconPalette,\r\n    IconShadow: IconShadow,\r\n    IconWindmill: IconWindmill,\r\n    IconBrandFramer: IconBrandFramer,\r\n    IconLayoutGridAdd: IconLayoutGridAdd\r\n}",
+          "startPosition": {
+            "row": 4,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "icons",
+              "startPosition": {
+                "row": 4,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 11
+              },
+              "children": []
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    IconTypography: IconTypography,\r\n    IconPalette: IconPalette,\r\n    IconShadow: IconShadow,\r\n    IconWindmill: IconWindmill,\r\n    IconBrandFramer: IconBrandFramer,\r\n    IconLayoutGridAdd: IconLayoutGridAdd\r\n}",
+              "startPosition": {
+                "row": 4,
+                "column": 14
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "IconTypography: IconTypography",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconTypography",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 18
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconTypography",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 20
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 34
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconPalette: IconPalette",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconPalette",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconPalette",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 28
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconShadow: IconShadow",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconShadow",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 14
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconShadow",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconWindmill: IconWindmill",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 30
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconWindmill",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 16
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconWindmill",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 30
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconBrandFramer: IconBrandFramer",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 36
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconBrandFramer",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 19
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconBrandFramer",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 21
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 36
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconLayoutGridAdd: IconLayoutGridAdd",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconLayoutGridAdd",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 21
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconLayoutGridAdd",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| UTILITIES MENU ITEMS ||-----------------------//\r",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 77
+      },
+      "children": []
+    },
+    {
+      "type": "export_statement",
+      "text": "export const utilities = {\r\n    id: 'utilities',\r\n    title: 'Utilities',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n};",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 67,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const utilities = {\r\n    id: 'utilities',\r\n    title: 'Utilities',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n};",
+          "startPosition": {
+            "row": 15,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 67,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "utilities = {\r\n    id: 'utilities',\r\n    title: 'Utilities',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+              "startPosition": {
+                "row": 15,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 67,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "utilities",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "object",
+                  "text": "{\r\n    id: 'utilities',\r\n    title: 'Utilities',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 67,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "pair",
+                      "text": "id: 'utilities'",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 19
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 6
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'utilities'",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 19
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "utilities",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 18
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "title: 'Utilities'",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 22
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "title",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 9
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'Utilities'",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "Utilities",
+                              "startPosition": {
+                                "row": 17,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 17,
+                                "column": 21
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "type: 'group'",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 17
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "type",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 8
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'group'",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 17
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "group",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 16
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "children: [\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 66,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "array",
+                          "text": "[\r\n        {\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }\r\n    ]",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 66,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'util-typography',\r\n            title: 'Typography',\r\n            type: 'item',\r\n            url: '/utils/util-typography',\r\n            icon: icons['IconTypography'],\r\n            breadcrumbs: false\r\n        }",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'util-typography'",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 33
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'util-typography'",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 33
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "util-typography",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 32
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Typography'",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Typography'",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 30
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'item'",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'item'",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "item",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 23,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "url: '/utils/util-typography'",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 41
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "url",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'/utils/util-typography'",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 41
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "/utils/util-typography",
+                                          "startPosition": {
+                                            "row": 24,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 24,
+                                            "column": 40
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconTypography']",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 41
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconTypography']",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 41
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconTypography'",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 40
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconTypography",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 39
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "breadcrumbs: false",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "breadcrumbs",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 23
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "false",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 30
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'util-color',\r\n            title: 'Color',\r\n            type: 'item',\r\n            url: '/utils/util-color',\r\n            icon: icons['IconPalette'],\r\n            breadcrumbs: false\r\n        }",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'util-color'",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'util-color'",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "util-color",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Color'",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 26
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 30,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Color'",
+                                      "startPosition": {
+                                        "row": 30,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 26
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Color",
+                                          "startPosition": {
+                                            "row": 30,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 30,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'item'",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 31,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'item'",
+                                      "startPosition": {
+                                        "row": 31,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "item",
+                                          "startPosition": {
+                                            "row": 31,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 31,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "url: '/utils/util-color'",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 36
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "url",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'/utils/util-color'",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 36
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "/utils/util-color",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 35
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconPalette']",
+                                  "startPosition": {
+                                    "row": 33,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 33,
+                                    "column": 38
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 33,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 33,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconPalette']",
+                                      "startPosition": {
+                                        "row": 33,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 33,
+                                        "column": 38
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 33,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconPalette'",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 33,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconPalette",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 36
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "breadcrumbs: false",
+                                  "startPosition": {
+                                    "row": 34,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 34,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "breadcrumbs",
+                                      "startPosition": {
+                                        "row": 34,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 34,
+                                        "column": 23
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "false",
+                                      "startPosition": {
+                                        "row": 34,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 34,
+                                        "column": 30
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'util-shadow',\r\n            title: 'Shadow',\r\n            type: 'item',\r\n            url: '/utils/util-shadow',\r\n            icon: icons['IconShadow'],\r\n            breadcrumbs: false\r\n        }",
+                              "startPosition": {
+                                "row": 36,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 43,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'util-shadow'",
+                                  "startPosition": {
+                                    "row": 37,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 37,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 37,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 37,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'util-shadow'",
+                                      "startPosition": {
+                                        "row": 37,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 37,
+                                        "column": 29
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "util-shadow",
+                                          "startPosition": {
+                                            "row": 37,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 37,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Shadow'",
+                                  "startPosition": {
+                                    "row": 38,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 38,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 38,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 38,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Shadow'",
+                                      "startPosition": {
+                                        "row": 38,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 38,
+                                        "column": 27
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Shadow",
+                                          "startPosition": {
+                                            "row": 38,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 38,
+                                            "column": 26
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'item'",
+                                  "startPosition": {
+                                    "row": 39,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 39,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 39,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 39,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'item'",
+                                      "startPosition": {
+                                        "row": 39,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 39,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "item",
+                                          "startPosition": {
+                                            "row": 39,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 39,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "url: '/utils/util-shadow'",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 40,
+                                    "column": 37
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "url",
+                                      "startPosition": {
+                                        "row": 40,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 40,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'/utils/util-shadow'",
+                                      "startPosition": {
+                                        "row": 40,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 40,
+                                        "column": 37
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "/utils/util-shadow",
+                                          "startPosition": {
+                                            "row": 40,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 40,
+                                            "column": 36
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconShadow']",
+                                  "startPosition": {
+                                    "row": 41,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 41,
+                                    "column": 37
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 41,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 41,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconShadow']",
+                                      "startPosition": {
+                                        "row": 41,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 41,
+                                        "column": 37
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconShadow'",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 36
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconShadow",
+                                              "startPosition": {
+                                                "row": 41,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 41,
+                                                "column": 35
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "breadcrumbs: false",
+                                  "startPosition": {
+                                    "row": 42,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "breadcrumbs",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 23
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "false",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 30
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'icons',\r\n            title: 'Icons',\r\n            type: 'collapse',\r\n            icon: icons['IconWindmill'],\r\n            children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]\r\n        }",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 65,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'icons'",
+                                  "startPosition": {
+                                    "row": 45,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 45,
+                                    "column": 23
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 45,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 45,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'icons'",
+                                      "startPosition": {
+                                        "row": 45,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 45,
+                                        "column": 23
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 45,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 45,
+                                            "column": 22
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Icons'",
+                                  "startPosition": {
+                                    "row": 46,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 46,
+                                    "column": 26
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 46,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 46,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Icons'",
+                                      "startPosition": {
+                                        "row": 46,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 46,
+                                        "column": 26
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Icons",
+                                          "startPosition": {
+                                            "row": 46,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 46,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'collapse'",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'collapse'",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "collapse",
+                                          "startPosition": {
+                                            "row": 47,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 47,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconWindmill']",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 39
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconWindmill']",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 39
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 48,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 48,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconWindmill'",
+                                          "startPosition": {
+                                            "row": 48,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 48,
+                                            "column": 38
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconWindmill",
+                                              "startPosition": {
+                                                "row": 48,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 48,
+                                                "column": 37
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "children: [\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 64,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "children",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 20
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "array",
+                                      "text": "[\r\n                {\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                },\r\n                {\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }\r\n            ]",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 22
+                                      },
+                                      "endPosition": {
+                                        "row": 64,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "object",
+                                          "text": "{\r\n                    id: 'tabler-icons',\r\n                    title: 'Tabler Icons',\r\n                    type: 'item',\r\n                    url: '/icons/tabler-icons',\r\n                    breadcrumbs: false\r\n                }",
+                                          "startPosition": {
+                                            "row": 50,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 56,
+                                            "column": 17
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "pair",
+                                              "text": "id: 'tabler-icons'",
+                                              "startPosition": {
+                                                "row": 51,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 51,
+                                                "column": 38
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "id",
+                                                  "startPosition": {
+                                                    "row": 51,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 51,
+                                                    "column": 22
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'tabler-icons'",
+                                                  "startPosition": {
+                                                    "row": 51,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 51,
+                                                    "column": 38
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "tabler-icons",
+                                                      "startPosition": {
+                                                        "row": 51,
+                                                        "column": 25
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 51,
+                                                        "column": 37
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "title: 'Tabler Icons'",
+                                              "startPosition": {
+                                                "row": 52,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 52,
+                                                "column": 41
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "title",
+                                                  "startPosition": {
+                                                    "row": 52,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 52,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'Tabler Icons'",
+                                                  "startPosition": {
+                                                    "row": 52,
+                                                    "column": 27
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 52,
+                                                    "column": 41
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "Tabler Icons",
+                                                      "startPosition": {
+                                                        "row": 52,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 52,
+                                                        "column": 40
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "type: 'item'",
+                                              "startPosition": {
+                                                "row": 53,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 53,
+                                                "column": 32
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "type",
+                                                  "startPosition": {
+                                                    "row": 53,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 53,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'item'",
+                                                  "startPosition": {
+                                                    "row": 53,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 53,
+                                                    "column": 32
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "item",
+                                                      "startPosition": {
+                                                        "row": 53,
+                                                        "column": 27
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 53,
+                                                        "column": 31
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "url: '/icons/tabler-icons'",
+                                              "startPosition": {
+                                                "row": 54,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 54,
+                                                "column": 46
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "url",
+                                                  "startPosition": {
+                                                    "row": 54,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 54,
+                                                    "column": 23
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'/icons/tabler-icons'",
+                                                  "startPosition": {
+                                                    "row": 54,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 54,
+                                                    "column": 46
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "/icons/tabler-icons",
+                                                      "startPosition": {
+                                                        "row": 54,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 54,
+                                                        "column": 45
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "breadcrumbs: false",
+                                              "startPosition": {
+                                                "row": 55,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 55,
+                                                "column": 38
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "breadcrumbs",
+                                                  "startPosition": {
+                                                    "row": 55,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 55,
+                                                    "column": 31
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "false",
+                                                  "text": "false",
+                                                  "startPosition": {
+                                                    "row": 55,
+                                                    "column": 33
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 55,
+                                                    "column": 38
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "object",
+                                          "text": "{\r\n                    id: 'material-icons',\r\n                    title: 'Material Icons',\r\n                    type: 'item',\r\n                    url: '/icons/material-icons',\r\n                    breadcrumbs: false\r\n                }",
+                                          "startPosition": {
+                                            "row": 57,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 63,
+                                            "column": 17
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "pair",
+                                              "text": "id: 'material-icons'",
+                                              "startPosition": {
+                                                "row": 58,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 58,
+                                                "column": 40
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "id",
+                                                  "startPosition": {
+                                                    "row": 58,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 58,
+                                                    "column": 22
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'material-icons'",
+                                                  "startPosition": {
+                                                    "row": 58,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 58,
+                                                    "column": 40
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "material-icons",
+                                                      "startPosition": {
+                                                        "row": 58,
+                                                        "column": 25
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 58,
+                                                        "column": 39
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "title: 'Material Icons'",
+                                              "startPosition": {
+                                                "row": 59,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 59,
+                                                "column": 43
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "title",
+                                                  "startPosition": {
+                                                    "row": 59,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 59,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'Material Icons'",
+                                                  "startPosition": {
+                                                    "row": 59,
+                                                    "column": 27
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 59,
+                                                    "column": 43
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "Material Icons",
+                                                      "startPosition": {
+                                                        "row": 59,
+                                                        "column": 28
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 59,
+                                                        "column": 42
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "type: 'item'",
+                                              "startPosition": {
+                                                "row": 60,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 60,
+                                                "column": 32
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "type",
+                                                  "startPosition": {
+                                                    "row": 60,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 60,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'item'",
+                                                  "startPosition": {
+                                                    "row": 60,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 60,
+                                                    "column": 32
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "item",
+                                                      "startPosition": {
+                                                        "row": 60,
+                                                        "column": 27
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 60,
+                                                        "column": 31
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "url: '/icons/material-icons'",
+                                              "startPosition": {
+                                                "row": 61,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 61,
+                                                "column": 48
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "url",
+                                                  "startPosition": {
+                                                    "row": 61,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 61,
+                                                    "column": 23
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'/icons/material-icons'",
+                                                  "startPosition": {
+                                                    "row": 61,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 61,
+                                                    "column": 48
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "/icons/material-icons",
+                                                      "startPosition": {
+                                                        "row": 61,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 61,
+                                                        "column": 47
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "breadcrumbs: false",
+                                              "startPosition": {
+                                                "row": 62,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 62,
+                                                "column": 38
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "breadcrumbs",
+                                                  "startPosition": {
+                                                    "row": 62,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 62,
+                                                    "column": 31
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "false",
+                                                  "text": "false",
+                                                  "startPosition": {
+                                                    "row": 62,
+                                                    "column": 33
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 62,
+                                                    "column": 38
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

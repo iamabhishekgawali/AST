@@ -1,0 +1,1170 @@
+{
+  "type": "program",
+  "text": "import PropTypes from 'prop-types';\r\nimport React from 'react';\r\nimport { useSelector } from 'react-redux';\r\nimport { Redirect } from 'react-router-dom';\r\n\r\n// project imports\r\nimport config from '../../config';\r\n\r\n//-----------------------|| GUEST GUARD ||-----------------------//\r\n\r\n/**\r\n * Guest guard for routes having no auth required\r\n * @param {PropTypes.node} children children element/node\r\n */\r\nconst GuestGuard = ({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (isLoggedIn) {\r\n        return <Redirect to={config.defaultPath} />;\r\n    }\r\n\r\n    return children;\r\n};\r\n\r\nGuestGuard.propTypes = {\r\n    children: PropTypes.node\r\n};\r\n\r\nexport default GuestGuard;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 30,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import PropTypes from 'prop-types';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 35
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "PropTypes",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "PropTypes",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 16
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'prop-types'",
+          "startPosition": {
+            "row": 0,
+            "column": 22
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "prop-types",
+              "startPosition": {
+                "row": 0,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 33
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 1,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 1,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { useSelector } from 'react-redux';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 42
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ useSelector }",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ useSelector }",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "useSelector",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useSelector",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-redux'",
+          "startPosition": {
+            "row": 2,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 41
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-redux",
+              "startPosition": {
+                "row": 2,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 40
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Redirect } from 'react-router-dom';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Redirect }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 19
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Redirect }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Redirect",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 17
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Redirect",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 17
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 3,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 3,
+                "column": 26
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 42
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import config from '../../config';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "config",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "config",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'../../config'",
+          "startPosition": {
+            "row": 6,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 33
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "../../config",
+              "startPosition": {
+                "row": 6,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 32
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| GUEST GUARD ||-----------------------//\r",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 68
+      },
+      "children": []
+    },
+    {
+      "type": "comment",
+      "text": "/**\r\n * Guest guard for routes having no auth required\r\n * @param {PropTypes.node} children children element/node\r\n */",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 3
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const GuestGuard = ({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (isLoggedIn) {\r\n        return <Redirect to={config.defaultPath} />;\r\n    }\r\n\r\n    return children;\r\n};",
+      "startPosition": {
+        "row": 14,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 23,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "GuestGuard = ({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (isLoggedIn) {\r\n        return <Redirect to={config.defaultPath} />;\r\n    }\r\n\r\n    return children;\r\n}",
+          "startPosition": {
+            "row": 14,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 23,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "GuestGuard",
+              "startPosition": {
+                "row": 14,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 14,
+                "column": 16
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (isLoggedIn) {\r\n        return <Redirect to={config.defaultPath} />;\r\n    }\r\n\r\n    return children;\r\n}",
+              "startPosition": {
+                "row": 14,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 23,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "({ children })",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 33
+                  },
+                  "children": [
+                    {
+                      "type": "object_pattern",
+                      "text": "{ children }",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 20
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "shorthand_property_identifier_pattern",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 22
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 30
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (isLoggedIn) {\r\n        return <Redirect to={config.defaultPath} />;\r\n    }\r\n\r\n    return children;\r\n}",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 37
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const account = useSelector((state) => state.account);",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 58
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "account = useSelector((state) => state.account)",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 57
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "account",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useSelector((state) => state.account)",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 57
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useSelector",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "((state) => state.account)",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 57
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "arrow_function",
+                                      "text": "(state) => state.account",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 32
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 56
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "formal_parameters",
+                                          "text": "(state)",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 32
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 33
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 38
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "member_expression",
+                                          "text": "state.account",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 43
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 56
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 43
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 48
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "account",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 49
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 56
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const { isLoggedIn } = account;",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "{ isLoggedIn } = account",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 34
+                          },
+                          "children": [
+                            {
+                              "type": "object_pattern",
+                              "text": "{ isLoggedIn }",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 24
+                              },
+                              "children": [
+                                {
+                                  "type": "shorthand_property_identifier_pattern",
+                                  "text": "isLoggedIn",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 22
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "account",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 34
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "if_statement",
+                      "text": "if (isLoggedIn) {\r\n        return <Redirect to={config.defaultPath} />;\r\n    }",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(isLoggedIn)",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 19
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "isLoggedIn",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 18
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "statement_block",
+                          "text": "{\r\n        return <Redirect to={config.defaultPath} />;\r\n    }",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 20
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "return_statement",
+                              "text": "return <Redirect to={config.defaultPath} />;",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 52
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_self_closing_element",
+                                  "text": "<Redirect to={config.defaultPath} />",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 51
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Redirect",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "to={config.defaultPath}",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 48
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "to",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 25
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{config.defaultPath}",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 28
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 48
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_expression",
+                                              "text": "config.defaultPath",
+                                              "startPosition": {
+                                                "row": 19,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 19,
+                                                "column": 47
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "config",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 29
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 35
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "defaultPath",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 36
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 47
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return children;",
+                      "startPosition": {
+                        "row": 22,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 22,
+                        "column": 20
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 22,
+                            "column": 19
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "GuestGuard.propTypes = {\r\n    children: PropTypes.node\r\n};",
+      "startPosition": {
+        "row": 25,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 27,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "assignment_expression",
+          "text": "GuestGuard.propTypes = {\r\n    children: PropTypes.node\r\n}",
+          "startPosition": {
+            "row": 25,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 27,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "GuestGuard.propTypes",
+              "startPosition": {
+                "row": 25,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "GuestGuard",
+                  "startPosition": {
+                    "row": 25,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "propTypes",
+                  "startPosition": {
+                    "row": 25,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 20
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    children: PropTypes.node\r\n}",
+              "startPosition": {
+                "row": 25,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 27,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "children: PropTypes.node",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 26,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "children",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "member_expression",
+                      "text": "PropTypes.node",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "PropTypes",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "node",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 28
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default GuestGuard;",
+      "startPosition": {
+        "row": 29,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 29,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "GuestGuard",
+          "startPosition": {
+            "row": 29,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 29,
+            "column": 25
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

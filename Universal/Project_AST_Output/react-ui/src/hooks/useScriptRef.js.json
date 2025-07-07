@@ -1,0 +1,598 @@
+{
+  "type": "program",
+  "text": "import { useEffect, useRef } from 'react';\r\n\r\n//-----------------------|| ELEMENT REFERENCE HOOKS  ||-----------------------//\r\n\r\nconst useScriptRef = () => {\r\n    const scripted = useRef(true);\r\n\r\n    useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    );\r\n\r\n    return scripted;\r\n};\r\n\r\nexport default useScriptRef;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 18,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import { useEffect, useRef } from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 42
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ useEffect, useRef }",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 28
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ useEffect, useRef }",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "useEffect",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useEffect",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 18
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "useRef",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useRef",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 20
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 34
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 41
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 35
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 40
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| ELEMENT REFERENCE HOOKS  ||-----------------------//\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 81
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const useScriptRef = () => {\r\n    const scripted = useRef(true);\r\n\r\n    useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    );\r\n\r\n    return scripted;\r\n};",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "useScriptRef = () => {\r\n    const scripted = useRef(true);\r\n\r\n    useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    );\r\n\r\n    return scripted;\r\n}",
+          "startPosition": {
+            "row": 4,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 15,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "useScriptRef",
+              "startPosition": {
+                "row": 4,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 18
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const scripted = useRef(true);\r\n\r\n    useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    );\r\n\r\n    return scripted;\r\n}",
+              "startPosition": {
+                "row": 4,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const scripted = useRef(true);\r\n\r\n    useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    );\r\n\r\n    return scripted;\r\n}",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const scripted = useRef(true);",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 34
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "scripted = useRef(true)",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 33
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "scripted",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useRef(true)",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 33
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useRef",
+                                  "startPosition": {
+                                    "row": 5,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 5,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "(true)",
+                                  "startPosition": {
+                                    "row": 5,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 5,
+                                    "column": 33
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "true",
+                                      "text": "true",
+                                      "startPosition": {
+                                        "row": 5,
+                                        "column": 28
+                                      },
+                                      "endPosition": {
+                                        "row": 5,
+                                        "column": 32
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    );",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "call_expression",
+                          "text": "useEffect(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    )",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "useEffect",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 13
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "arguments",
+                              "text": "(\r\n        () => () => {\r\n            scripted.current = false;\r\n        },\r\n        []\r\n    )",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 13
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 5
+                              },
+                              "children": [
+                                {
+                                  "type": "arrow_function",
+                                  "text": "() => () => {\r\n            scripted.current = false;\r\n        }",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 9
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "formal_parameters",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 10
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "arrow_function",
+                                      "text": "() => {\r\n            scripted.current = false;\r\n        }",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 14
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 9
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "formal_parameters",
+                                          "text": "()",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 8,
+                                            "column": 16
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "statement_block",
+                                          "text": "{\r\n            scripted.current = false;\r\n        }",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 9
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "expression_statement",
+                                              "text": "scripted.current = false;",
+                                              "startPosition": {
+                                                "row": 9,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 9,
+                                                "column": 37
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "assignment_expression",
+                                                  "text": "scripted.current = false",
+                                                  "startPosition": {
+                                                    "row": 9,
+                                                    "column": 12
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 9,
+                                                    "column": 36
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "member_expression",
+                                                      "text": "scripted.current",
+                                                      "startPosition": {
+                                                        "row": 9,
+                                                        "column": 12
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 9,
+                                                        "column": 28
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "scripted",
+                                                          "startPosition": {
+                                                            "row": 9,
+                                                            "column": 12
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 9,
+                                                            "column": 20
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "current",
+                                                          "startPosition": {
+                                                            "row": 9,
+                                                            "column": 21
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 9,
+                                                            "column": 28
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "false",
+                                                      "text": "false",
+                                                      "startPosition": {
+                                                        "row": 9,
+                                                        "column": 31
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 9,
+                                                        "column": 36
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "array",
+                                  "text": "[]",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 10
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return scripted;",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 20
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "scripted",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 19
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default useScriptRef;",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 17,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "useScriptRef",
+          "startPosition": {
+            "row": 17,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 17,
+            "column": 27
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

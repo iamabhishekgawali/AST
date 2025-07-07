@@ -1,0 +1,611 @@
+{
+  "type": "program",
+  "text": "import React, { Suspense } from 'react';\r\n\r\n// project imports\r\nimport Loader from './Loader';\r\n\r\n//-----------------------|| LOADABLE - LAZY LOADING ||-----------------------//\r\n\r\nconst Loadable = (Component) => (props) => (\r\n    <Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>\r\n);\r\n\r\nexport default Loadable;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 14,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React, { Suspense } from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React, { Suspense }",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 26
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            },
+            {
+              "type": "named_imports",
+              "text": "{ Suspense }",
+              "startPosition": {
+                "row": 0,
+                "column": 14
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 26
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Suspense",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Suspense",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 24
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 32
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 33
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 38
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import Loader from './Loader';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 30
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "Loader",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Loader",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./Loader'",
+          "startPosition": {
+            "row": 3,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 29
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./Loader",
+              "startPosition": {
+                "row": 3,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 28
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| LOADABLE - LAZY LOADING ||-----------------------//\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 80
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const Loadable = (Component) => (props) => (\r\n    <Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>\r\n);",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "Loadable = (Component) => (props) => (\r\n    <Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>\r\n)",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Loadable",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 14
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "(Component) => (props) => (\r\n    <Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>\r\n)",
+              "startPosition": {
+                "row": 7,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "(Component)",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Component",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "arrow_function",
+                  "text": "(props) => (\r\n    <Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>\r\n)",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameters",
+                      "text": "(props)",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 32
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "props",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 33
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 38
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "parenthesized_expression",
+                      "text": "(\r\n    <Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>\r\n)",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 43
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 1
+                      },
+                      "children": [
+                        {
+                          "type": "jsx_element",
+                          "text": "<Suspense fallback={<Loader />}>\r\n        <Component {...props} />\r\n    </Suspense>",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 15
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_opening_element",
+                              "text": "<Suspense fallback={<Loader />}>",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 36
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "Suspense",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 5
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_attribute",
+                                  "text": "fallback={<Loader />}",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 35
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "fallback",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 14
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 22
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_expression",
+                                      "text": "{<Loader />}",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 23
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 35
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "jsx_self_closing_element",
+                                          "text": "<Loader />",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 8,
+                                            "column": 34
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Loader",
+                                              "startPosition": {
+                                                "row": 8,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 8,
+                                                "column": 31
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_text",
+                              "text": "\r",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 37
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_self_closing_element",
+                              "text": "<Component {...props} />",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "Component",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_expression",
+                                  "text": "{...props}",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 19
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "spread_element",
+                                      "text": "...props",
+                                      "startPosition": {
+                                        "row": 9,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "props",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 23
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_text",
+                              "text": "\r",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 33
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_closing_element",
+                              "text": "</Suspense>",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 15
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "Suspense",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 6
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 14
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default Loadable;",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 24
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "Loadable",
+          "startPosition": {
+            "row": 13,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 23
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

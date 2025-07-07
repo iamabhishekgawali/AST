@@ -1,0 +1,1358 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport { Typography } from '@material-ui/core';\r\n\r\n// project imports\r\nimport NavGroup from './NavGroup';\r\nimport menuItem from './../../../../menu-items';\r\n\r\n//-----------------------|| SIDEBAR MENU LIST ||-----------------------//\r\n\r\nconst MenuList = () => {\r\n    const navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    });\r\n\r\n    return navItems;\r\n};\r\n\r\nexport default MenuList;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 29,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Typography } from '@material-ui/core';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 47
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Typography }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Typography }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Typography",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Typography",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 3,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 46
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 3,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import NavGroup from './NavGroup';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "NavGroup",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "NavGroup",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./NavGroup'",
+          "startPosition": {
+            "row": 6,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 33
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./NavGroup",
+              "startPosition": {
+                "row": 6,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 32
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import menuItem from './../../../../menu-items';",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 48
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "menuItem",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "menuItem",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../../../../menu-items'",
+          "startPosition": {
+            "row": 7,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../../../../menu-items",
+              "startPosition": {
+                "row": 7,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 46
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| SIDEBAR MENU LIST ||-----------------------//\r",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 74
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const MenuList = () => {\r\n    const navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    });\r\n\r\n    return navItems;\r\n};",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 26,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "MenuList = () => {\r\n    const navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    });\r\n\r\n    return navItems;\r\n}",
+          "startPosition": {
+            "row": 11,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 26,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "MenuList",
+              "startPosition": {
+                "row": 11,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 14
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    });\r\n\r\n    return navItems;\r\n}",
+              "startPosition": {
+                "row": 11,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 26,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 19
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    });\r\n\r\n    return navItems;\r\n}",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 26,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    });",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 7
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "navItems = menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    })",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 6
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "navItems",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "menuItem.items.map((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    })",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 6
+                              },
+                              "children": [
+                                {
+                                  "type": "member_expression",
+                                  "text": "menuItem.items.map",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 39
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_expression",
+                                      "text": "menuItem.items",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 35
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "menuItem",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 21
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 29
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "items",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 30
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 35
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "map",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 36
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 39
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "((item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    })",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 39
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 6
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "arrow_function",
+                                      "text": "(item) => {\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    }",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 5
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "formal_parameters",
+                                          "text": "(item)",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 40
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 46
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "item",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 41
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 45
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "statement_block",
+                                          "text": "{\r\n        switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }\r\n    }",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 50
+                                          },
+                                          "endPosition": {
+                                            "row": 23,
+                                            "column": 5
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "switch_statement",
+                                              "text": "switch (item.type) {\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 9
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "parenthesized_expression",
+                                                  "text": "(item.type)",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 15
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 26
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "member_expression",
+                                                      "text": "item.type",
+                                                      "startPosition": {
+                                                        "row": 13,
+                                                        "column": 16
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 13,
+                                                        "column": 25
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "item",
+                                                          "startPosition": {
+                                                            "row": 13,
+                                                            "column": 16
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 13,
+                                                            "column": 20
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "type",
+                                                          "startPosition": {
+                                                            "row": 13,
+                                                            "column": 21
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 13,
+                                                            "column": 25
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "switch_body",
+                                                  "text": "{\r\n            case 'group':\r\n                return <NavGroup key={item.id} item={item} />;\r\n            default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );\r\n        }",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 27
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 9
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "switch_case",
+                                                      "text": "case 'group':\r\n                return <NavGroup key={item.id} item={item} />;",
+                                                      "startPosition": {
+                                                        "row": 14,
+                                                        "column": 12
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 15,
+                                                        "column": 62
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "string",
+                                                          "text": "'group'",
+                                                          "startPosition": {
+                                                            "row": 14,
+                                                            "column": 17
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 14,
+                                                            "column": 24
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "string_fragment",
+                                                              "text": "group",
+                                                              "startPosition": {
+                                                                "row": 14,
+                                                                "column": 18
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 14,
+                                                                "column": 23
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "return_statement",
+                                                          "text": "return <NavGroup key={item.id} item={item} />;",
+                                                          "startPosition": {
+                                                            "row": 15,
+                                                            "column": 16
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 15,
+                                                            "column": 62
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "jsx_self_closing_element",
+                                                              "text": "<NavGroup key={item.id} item={item} />",
+                                                              "startPosition": {
+                                                                "row": 15,
+                                                                "column": 23
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 15,
+                                                                "column": 61
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "NavGroup",
+                                                                  "startPosition": {
+                                                                    "row": 15,
+                                                                    "column": 24
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 15,
+                                                                    "column": 32
+                                                                  },
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "type": "jsx_attribute",
+                                                                  "text": "key={item.id}",
+                                                                  "startPosition": {
+                                                                    "row": 15,
+                                                                    "column": 33
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 15,
+                                                                    "column": 46
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "property_identifier",
+                                                                      "text": "key",
+                                                                      "startPosition": {
+                                                                        "row": 15,
+                                                                        "column": 33
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 15,
+                                                                        "column": 36
+                                                                      },
+                                                                      "children": []
+                                                                    },
+                                                                    {
+                                                                      "type": "jsx_expression",
+                                                                      "text": "{item.id}",
+                                                                      "startPosition": {
+                                                                        "row": 15,
+                                                                        "column": 37
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 15,
+                                                                        "column": 46
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "member_expression",
+                                                                          "text": "item.id",
+                                                                          "startPosition": {
+                                                                            "row": 15,
+                                                                            "column": 38
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 15,
+                                                                            "column": 45
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "identifier",
+                                                                              "text": "item",
+                                                                              "startPosition": {
+                                                                                "row": 15,
+                                                                                "column": 38
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 15,
+                                                                                "column": 42
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "property_identifier",
+                                                                              "text": "id",
+                                                                              "startPosition": {
+                                                                                "row": 15,
+                                                                                "column": 43
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 15,
+                                                                                "column": 45
+                                                                              },
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "jsx_attribute",
+                                                                  "text": "item={item}",
+                                                                  "startPosition": {
+                                                                    "row": 15,
+                                                                    "column": 47
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 15,
+                                                                    "column": 58
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "property_identifier",
+                                                                      "text": "item",
+                                                                      "startPosition": {
+                                                                        "row": 15,
+                                                                        "column": 47
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 15,
+                                                                        "column": 51
+                                                                      },
+                                                                      "children": []
+                                                                    },
+                                                                    {
+                                                                      "type": "jsx_expression",
+                                                                      "text": "{item}",
+                                                                      "startPosition": {
+                                                                        "row": 15,
+                                                                        "column": 52
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 15,
+                                                                        "column": 58
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "identifier",
+                                                                          "text": "item",
+                                                                          "startPosition": {
+                                                                            "row": 15,
+                                                                            "column": 53
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 15,
+                                                                            "column": 57
+                                                                          },
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "switch_default",
+                                                      "text": "default:\r\n                return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );",
+                                                      "startPosition": {
+                                                        "row": 16,
+                                                        "column": 12
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 21,
+                                                        "column": 18
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "return_statement",
+                                                          "text": "return (\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                );",
+                                                          "startPosition": {
+                                                            "row": 17,
+                                                            "column": 16
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 18
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "parenthesized_expression",
+                                                              "text": "(\r\n                    <Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>\r\n                )",
+                                                              "startPosition": {
+                                                                "row": 17,
+                                                                "column": 23
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 17
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "jsx_element",
+                                                                  "text": "<Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">\r\n                        Menu Items Error\r\n                    </Typography>",
+                                                                  "startPosition": {
+                                                                    "row": 18,
+                                                                    "column": 20
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 33
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "jsx_opening_element",
+                                                                      "text": "<Typography key={item.id} variant=\"h6\" color=\"error\" align=\"center\">",
+                                                                      "startPosition": {
+                                                                        "row": 18,
+                                                                        "column": 20
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 18,
+                                                                        "column": 88
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "identifier",
+                                                                          "text": "Typography",
+                                                                          "startPosition": {
+                                                                            "row": 18,
+                                                                            "column": 21
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 18,
+                                                                            "column": 31
+                                                                          },
+                                                                          "children": []
+                                                                        },
+                                                                        {
+                                                                          "type": "jsx_attribute",
+                                                                          "text": "key={item.id}",
+                                                                          "startPosition": {
+                                                                            "row": 18,
+                                                                            "column": 32
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 18,
+                                                                            "column": 45
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "property_identifier",
+                                                                              "text": "key",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 32
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 35
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "jsx_expression",
+                                                                              "text": "{item.id}",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 36
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 45
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "type": "member_expression",
+                                                                                  "text": "item.id",
+                                                                                  "startPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 37
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 44
+                                                                                  },
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "type": "identifier",
+                                                                                      "text": "item",
+                                                                                      "startPosition": {
+                                                                                        "row": 18,
+                                                                                        "column": 37
+                                                                                      },
+                                                                                      "endPosition": {
+                                                                                        "row": 18,
+                                                                                        "column": 41
+                                                                                      },
+                                                                                      "children": []
+                                                                                    },
+                                                                                    {
+                                                                                      "type": "property_identifier",
+                                                                                      "text": "id",
+                                                                                      "startPosition": {
+                                                                                        "row": 18,
+                                                                                        "column": 42
+                                                                                      },
+                                                                                      "endPosition": {
+                                                                                        "row": 18,
+                                                                                        "column": 44
+                                                                                      },
+                                                                                      "children": []
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "jsx_attribute",
+                                                                          "text": "variant=\"h6\"",
+                                                                          "startPosition": {
+                                                                            "row": 18,
+                                                                            "column": 46
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 18,
+                                                                            "column": 58
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "property_identifier",
+                                                                              "text": "variant",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 46
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 53
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "string",
+                                                                              "text": "\"h6\"",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 54
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 58
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "type": "string_fragment",
+                                                                                  "text": "h6",
+                                                                                  "startPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 55
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 57
+                                                                                  },
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "jsx_attribute",
+                                                                          "text": "color=\"error\"",
+                                                                          "startPosition": {
+                                                                            "row": 18,
+                                                                            "column": 59
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 18,
+                                                                            "column": 72
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "property_identifier",
+                                                                              "text": "color",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 59
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 64
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "string",
+                                                                              "text": "\"error\"",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 65
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 72
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "type": "string_fragment",
+                                                                                  "text": "error",
+                                                                                  "startPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 66
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 71
+                                                                                  },
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "jsx_attribute",
+                                                                          "text": "align=\"center\"",
+                                                                          "startPosition": {
+                                                                            "row": 18,
+                                                                            "column": 73
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 18,
+                                                                            "column": 87
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "property_identifier",
+                                                                              "text": "align",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 73
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 78
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "string",
+                                                                              "text": "\"center\"",
+                                                                              "startPosition": {
+                                                                                "row": 18,
+                                                                                "column": 79
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 18,
+                                                                                "column": 87
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "type": "string_fragment",
+                                                                                  "text": "center",
+                                                                                  "startPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 80
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 18,
+                                                                                    "column": 86
+                                                                                  },
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "type": "jsx_text",
+                                                                      "text": "\r",
+                                                                      "startPosition": {
+                                                                        "row": 18,
+                                                                        "column": 88
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 18,
+                                                                        "column": 89
+                                                                      },
+                                                                      "children": []
+                                                                    },
+                                                                    {
+                                                                      "type": "jsx_text",
+                                                                      "text": "Menu Items Error\r",
+                                                                      "startPosition": {
+                                                                        "row": 19,
+                                                                        "column": 24
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 19,
+                                                                        "column": 41
+                                                                      },
+                                                                      "children": []
+                                                                    },
+                                                                    {
+                                                                      "type": "jsx_closing_element",
+                                                                      "text": "</Typography>",
+                                                                      "startPosition": {
+                                                                        "row": 20,
+                                                                        "column": 20
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 20,
+                                                                        "column": 33
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "identifier",
+                                                                          "text": "Typography",
+                                                                          "startPosition": {
+                                                                            "row": 20,
+                                                                            "column": 22
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 20,
+                                                                            "column": 32
+                                                                          },
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return navItems;",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 20
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "navItems",
+                          "startPosition": {
+                            "row": 25,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 25,
+                            "column": 19
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default MenuList;",
+      "startPosition": {
+        "row": 28,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 28,
+        "column": 24
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "MenuList",
+          "startPosition": {
+            "row": 28,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 28,
+            "column": 23
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

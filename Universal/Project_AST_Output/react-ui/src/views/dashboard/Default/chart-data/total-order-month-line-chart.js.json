@@ -1,0 +1,1675 @@
+{
+  "type": "program",
+  "text": "//-----------------------|| DASHBOARD - TOTAL ORDER MONTH CHART ||-----------------------//\r\n\r\nconst chartData = {\r\n    type: 'line',\r\n    height: 90,\r\n    options: {\r\n        chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        },\r\n        dataLabels: {\r\n            enabled: false\r\n        },\r\n        colors: ['#fff'],\r\n        fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        },\r\n        stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        },\r\n        yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        },\r\n        tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }\r\n    },\r\n    series: [\r\n        {\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }\r\n    ]\r\n};\r\n\r\nexport default chartData;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 54,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "//-----------------------|| DASHBOARD - TOTAL ORDER MONTH CHART ||-----------------------//\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 92
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const chartData = {\r\n    type: 'line',\r\n    height: 90,\r\n    options: {\r\n        chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        },\r\n        dataLabels: {\r\n            enabled: false\r\n        },\r\n        colors: ['#fff'],\r\n        fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        },\r\n        stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        },\r\n        yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        },\r\n        tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }\r\n    },\r\n    series: [\r\n        {\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }\r\n    ]\r\n};",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 51,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "chartData = {\r\n    type: 'line',\r\n    height: 90,\r\n    options: {\r\n        chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        },\r\n        dataLabels: {\r\n            enabled: false\r\n        },\r\n        colors: ['#fff'],\r\n        fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        },\r\n        stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        },\r\n        yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        },\r\n        tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }\r\n    },\r\n    series: [\r\n        {\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }\r\n    ]\r\n}",
+          "startPosition": {
+            "row": 2,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 51,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "chartData",
+              "startPosition": {
+                "row": 2,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    type: 'line',\r\n    height: 90,\r\n    options: {\r\n        chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        },\r\n        dataLabels: {\r\n            enabled: false\r\n        },\r\n        colors: ['#fff'],\r\n        fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        },\r\n        stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        },\r\n        yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        },\r\n        tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }\r\n    },\r\n    series: [\r\n        {\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }\r\n    ]\r\n}",
+              "startPosition": {
+                "row": 2,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 51,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "type: 'line'",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 16
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "type",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 8
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "string",
+                      "text": "'line'",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 10
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 16
+                      },
+                      "children": [
+                        {
+                          "type": "string_fragment",
+                          "text": "line",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 15
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "height: 90",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 14
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "height",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "number",
+                      "text": "90",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 14
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "options: {\r\n        chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        },\r\n        dataLabels: {\r\n            enabled: false\r\n        },\r\n        colors: ['#fff'],\r\n        fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        },\r\n        stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        },\r\n        yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        },\r\n        tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }\r\n    }",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 44,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "options",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "object",
+                      "text": "{\r\n        chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        },\r\n        dataLabels: {\r\n            enabled: false\r\n        },\r\n        colors: ['#fff'],\r\n        fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        },\r\n        stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        },\r\n        yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        },\r\n        tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }\r\n    }",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 13
+                      },
+                      "endPosition": {
+                        "row": 44,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "pair",
+                          "text": "chart: {\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        }",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "chart",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 13
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            sparkline: {\r\n                enabled: true\r\n            }\r\n        }",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "sparkline: {\r\n                enabled: true\r\n            }",
+                                  "startPosition": {
+                                    "row": 7,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "sparkline",
+                                      "startPosition": {
+                                        "row": 7,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 7,
+                                        "column": 21
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                enabled: true\r\n            }",
+                                      "startPosition": {
+                                        "row": 7,
+                                        "column": 23
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "enabled: true",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 8,
+                                            "column": 29
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "enabled",
+                                              "startPosition": {
+                                                "row": 8,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 8,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "true",
+                                              "text": "true",
+                                              "startPosition": {
+                                                "row": 8,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 8,
+                                                "column": 29
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "dataLabels: {\r\n            enabled: false\r\n        }",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "dataLabels",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            enabled: false\r\n        }",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "enabled: false",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 26
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "enabled",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "false",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 26
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "colors: ['#fff']",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 24
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "colors",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 14
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "array",
+                              "text": "['#fff']",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 24
+                              },
+                              "children": [
+                                {
+                                  "type": "string",
+                                  "text": "'#fff'",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 23
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "#fff",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 22
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "fill: {\r\n            type: 'solid',\r\n            opacity: 1\r\n        }",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "fill",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 12
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            type: 'solid',\r\n            opacity: 1\r\n        }",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 14
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'solid'",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'solid'",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "solid",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "opacity: 1",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 22
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "opacity",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "1",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 22
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "stroke: {\r\n            curve: 'smooth',\r\n            width: 3\r\n        }",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 22,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "stroke",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 14
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            curve: 'smooth',\r\n            width: 3\r\n        }",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "curve: 'smooth'",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "curve",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'smooth'",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 27
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "smooth",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 20,
+                                            "column": 26
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "width: 3",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 20
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "width",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "3",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 20
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "yaxis: {\r\n            min: 0,\r\n            max: 100\r\n        }",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "yaxis",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 13
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            min: 0,\r\n            max: 100\r\n        }",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 26,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "min: 0",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 18
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "min",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "0",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 18
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "max: 100",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 20
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "max",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "100",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 20
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "tooltip: {\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "tooltip",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 15
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            theme: 'dark',\r\n            fixed: {\r\n                enabled: false\r\n            },\r\n            x: {\r\n                show: false\r\n            },\r\n            y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            },\r\n            marker: {\r\n                show: false\r\n            }\r\n        }",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 17
+                              },
+                              "endPosition": {
+                                "row": 43,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "theme: 'dark'",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "theme",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'dark'",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "dark",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "fixed: {\r\n                enabled: false\r\n            }",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "fixed",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                enabled: false\r\n            }",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "enabled: false",
+                                          "startPosition": {
+                                            "row": 30,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 30,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "enabled",
+                                              "startPosition": {
+                                                "row": 30,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 30,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "false",
+                                              "text": "false",
+                                              "startPosition": {
+                                                "row": 30,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 30,
+                                                "column": 30
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "x: {\r\n                show: false\r\n            }",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 34,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "x",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                show: false\r\n            }",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 34,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "show: false",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 33,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "show",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "false",
+                                              "text": "false",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 27
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "y: {\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            }",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 39,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "y",
+                                      "startPosition": {
+                                        "row": 35,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 35,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }\r\n            }",
+                                      "startPosition": {
+                                        "row": 35,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 39,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "title: {\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }",
+                                          "startPosition": {
+                                            "row": 36,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 38,
+                                            "column": 17
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "title",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 21
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "object",
+                                              "text": "{\r\n                    formatter: (seriesName) => 'Total Order'\r\n                }",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 38,
+                                                "column": 17
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "pair",
+                                                  "text": "formatter: (seriesName) => 'Total Order'",
+                                                  "startPosition": {
+                                                    "row": 37,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 37,
+                                                    "column": 60
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "formatter",
+                                                      "startPosition": {
+                                                        "row": 37,
+                                                        "column": 20
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 37,
+                                                        "column": 29
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "arrow_function",
+                                                      "text": "(seriesName) => 'Total Order'",
+                                                      "startPosition": {
+                                                        "row": 37,
+                                                        "column": 31
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 37,
+                                                        "column": 60
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "formal_parameters",
+                                                          "text": "(seriesName)",
+                                                          "startPosition": {
+                                                            "row": 37,
+                                                            "column": 31
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 37,
+                                                            "column": 43
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "seriesName",
+                                                              "startPosition": {
+                                                                "row": 37,
+                                                                "column": 32
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 37,
+                                                                "column": 42
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "string",
+                                                          "text": "'Total Order'",
+                                                          "startPosition": {
+                                                            "row": 37,
+                                                            "column": 47
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 37,
+                                                            "column": 60
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "string_fragment",
+                                                              "text": "Total Order",
+                                                              "startPosition": {
+                                                                "row": 37,
+                                                                "column": 48
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 37,
+                                                                "column": 59
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "marker: {\r\n                show: false\r\n            }",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "marker",
+                                      "startPosition": {
+                                        "row": 40,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 40,
+                                        "column": 18
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                show: false\r\n            }",
+                                      "startPosition": {
+                                        "row": 40,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "show: false",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "show",
+                                              "startPosition": {
+                                                "row": 41,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 41,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "false",
+                                              "text": "false",
+                                              "startPosition": {
+                                                "row": 41,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 41,
+                                                "column": 27
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "series: [\r\n        {\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }\r\n    ]",
+                  "startPosition": {
+                    "row": 45,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 50,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "series",
+                      "startPosition": {
+                        "row": 45,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 45,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "array",
+                      "text": "[\r\n        {\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }\r\n    ]",
+                      "startPosition": {
+                        "row": 45,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 50,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "object",
+                          "text": "{\r\n            name: 'series1',\r\n            data: [45, 66, 41, 89, 25, 44, 9, 54]\r\n        }",
+                          "startPosition": {
+                            "row": 46,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 49,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "pair",
+                              "text": "name: 'series1'",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "property_identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 16
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string",
+                                  "text": "'series1'",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 18
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "series1",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 26
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "pair",
+                              "text": "data: [45, 66, 41, 89, 25, 44, 9, 54]",
+                              "startPosition": {
+                                "row": 48,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 48,
+                                "column": 49
+                              },
+                              "children": [
+                                {
+                                  "type": "property_identifier",
+                                  "text": "data",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 16
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "array",
+                                  "text": "[45, 66, 41, 89, 25, 44, 9, 54]",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 18
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 49
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "number",
+                                      "text": "45",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 21
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "66",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 23
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 25
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "41",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 27
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 29
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "89",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 31
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 33
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "25",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 35
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 37
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "44",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 39
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 41
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "9",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 43
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 44
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "number",
+                                      "text": "54",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 46
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 48
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default chartData;",
+      "startPosition": {
+        "row": 53,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 53,
+        "column": 25
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "chartData",
+          "startPosition": {
+            "row": 53,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 53,
+            "column": 24
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,869 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\nimport { Link } from 'react-router-dom';\r\n\r\n// material-ui\r\nimport { ButtonBase } from '@material-ui/core';\r\n\r\n// project imports\r\nimport config from './../../../config';\r\nimport Logo from './../../../ui-component/Logo';\r\n\r\n//-----------------------|| MAIN LOGO ||-----------------------//\r\n\r\nconst LogoSection = () => {\r\n    return (\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    );\r\n};\r\n\r\nexport default LogoSection;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 21,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Link } from 'react-router-dom';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Link }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Link }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 15
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Link",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 13
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Link",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 13
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 1,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 1,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 38
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { ButtonBase } from '@material-ui/core';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 47
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ ButtonBase }",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ ButtonBase }",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "ButtonBase",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "ButtonBase",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 4,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 46
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 4,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import config from './../../../config';",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 39
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "config",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "config",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../../../config'",
+          "startPosition": {
+            "row": 7,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 38
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../../../config",
+              "startPosition": {
+                "row": 7,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 37
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import Logo from './../../../ui-component/Logo';",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 48
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "Logo",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 11
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Logo",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 11
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../../../ui-component/Logo'",
+          "startPosition": {
+            "row": 8,
+            "column": 17
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../../../ui-component/Logo",
+              "startPosition": {
+                "row": 8,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 46
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| MAIN LOGO ||-----------------------//\r",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 66
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const LogoSection = () => {\r\n    return (\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 18,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "LogoSection = () => {\r\n    return (\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 12,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 18,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "LogoSection",
+              "startPosition": {
+                "row": 12,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 17
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    return (\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 12,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    return (\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    );",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>\r\n    )",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<ButtonBase disableRipple component={Link} to={config.defaultPath}>\r\n            <Logo />\r\n        </ButtonBase>",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 21
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<ButtonBase disableRipple component={Link} to={config.defaultPath}>",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 75
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "ButtonBase",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "disableRipple",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 33
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "disableRipple",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 33
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "component={Link}",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 34
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 50
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "component",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 34
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 43
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{Link}",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 44
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 50
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Link",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 45
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 49
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "to={config.defaultPath}",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 51
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 74
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "to",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 51
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 53
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{config.defaultPath}",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 54
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 74
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_expression",
+                                              "text": "config.defaultPath",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 55
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 73
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "config",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 55
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 61
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "defaultPath",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 62
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 73
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 75
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 76
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_self_closing_element",
+                                  "text": "<Logo />",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 20
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Logo",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</ButtonBase>",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 21
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "ButtonBase",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 20
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default LogoSection;",
+      "startPosition": {
+        "row": 20,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 20,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "LogoSection",
+          "startPosition": {
+            "row": 20,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 20,
+            "column": 26
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

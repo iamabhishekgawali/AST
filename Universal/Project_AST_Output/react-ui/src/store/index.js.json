@@ -1,0 +1,559 @@
+{
+  "type": "program",
+  "text": "import { createStore } from 'redux';\r\nimport { persistStore } from 'redux-persist';\r\nimport reducer from './reducer';\r\n\r\n//-----------------------|| REDUX - MAIN STORE ||-----------------------//\r\n\r\nconst store = createStore(reducer);\r\nconst persister = persistStore(store);\r\n\r\nexport { store, persister };\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 10,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import { createStore } from 'redux';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ createStore }",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ createStore }",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "createStore",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "createStore",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'redux'",
+          "startPosition": {
+            "row": 0,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 35
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "redux",
+              "startPosition": {
+                "row": 0,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 34
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { persistStore } from 'redux-persist';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 45
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ persistStore }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ persistStore }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 23
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "persistStore",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "persistStore",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 21
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'redux-persist'",
+          "startPosition": {
+            "row": 1,
+            "column": 29
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 44
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "redux-persist",
+              "startPosition": {
+                "row": 1,
+                "column": 30
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 43
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import reducer from './reducer';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 32
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "reducer",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 14
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "reducer",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 14
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./reducer'",
+          "startPosition": {
+            "row": 2,
+            "column": 20
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./reducer",
+              "startPosition": {
+                "row": 2,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 30
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| REDUX - MAIN STORE ||-----------------------//\r",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 75
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const store = createStore(reducer);",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 35
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "store = createStore(reducer)",
+          "startPosition": {
+            "row": 6,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "store",
+              "startPosition": {
+                "row": 6,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 11
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "createStore(reducer)",
+              "startPosition": {
+                "row": 6,
+                "column": 14
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 34
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "createStore",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 14
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 25
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "(reducer)",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "reducer",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 26
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 33
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const persister = persistStore(store);",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 38
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "persister = persistStore(store)",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 37
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "persister",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "persistStore(store)",
+              "startPosition": {
+                "row": 7,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "persistStore",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "(store)",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 37
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "store",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 31
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 36
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export { store, persister };",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "export_clause",
+          "text": "{ store, persister }",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "export_specifier",
+              "text": "store",
+              "startPosition": {
+                "row": 9,
+                "column": 9
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 14
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "store",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 14
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "export_specifier",
+              "text": "persister",
+              "startPosition": {
+                "row": 9,
+                "column": 16
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 25
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "persister",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 25
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

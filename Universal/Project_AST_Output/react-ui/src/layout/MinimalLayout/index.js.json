@@ -1,0 +1,786 @@
+{
+  "type": "program",
+  "text": "import PropTypes from 'prop-types';\r\nimport React from 'react';\r\n\r\n// project imports\r\nimport Customization from './../Customization';\r\n\r\n//-----------------------|| MINIMAL LAYOUT ||-----------------------//\r\n\r\nconst MinimalLayout = (props) => {\r\n    return (\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    );\r\n};\r\n\r\nMinimalLayout.propTypes = {\r\n    children: PropTypes.node\r\n};\r\n\r\nexport default MinimalLayout;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 22,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import PropTypes from 'prop-types';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 35
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "PropTypes",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "PropTypes",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 16
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'prop-types'",
+          "startPosition": {
+            "row": 0,
+            "column": 22
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "prop-types",
+              "startPosition": {
+                "row": 0,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 33
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 1,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 1,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import Customization from './../Customization';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 47
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "Customization",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 20
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Customization",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 20
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../Customization'",
+          "startPosition": {
+            "row": 4,
+            "column": 26
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 46
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../Customization",
+              "startPosition": {
+                "row": 4,
+                "column": 27
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| MINIMAL LAYOUT ||-----------------------//\r",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 71
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const MinimalLayout = (props) => {\r\n    return (\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "MinimalLayout = (props) => {\r\n    return (\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 8,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 15,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "MinimalLayout",
+              "startPosition": {
+                "row": 8,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 19
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "(props) => {\r\n    return (\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 8,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "(props)",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 29
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "props",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 28
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    return (\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    );",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>\r\n    )",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<React.Fragment>\r\n            {props.children}\r\n            <Customization />\r\n        </React.Fragment>",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 25
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<React.Fragment>",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_expression",
+                                      "text": "React.Fragment",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 23
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "React",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 9
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 14
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "Fragment",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 24
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 25
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_expression",
+                                  "text": "{props.children}",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_expression",
+                                      "text": "props.children",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 27
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "props",
+                                          "startPosition": {
+                                            "row": 11,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 11,
+                                            "column": 18
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "children",
+                                          "startPosition": {
+                                            "row": 11,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 11,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_self_closing_element",
+                                  "text": "<Customization />",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Customization",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 26
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 30
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</React.Fragment>",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 13,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_expression",
+                                      "text": "React.Fragment",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "React",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 10
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 15
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "Fragment",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "MinimalLayout.propTypes = {\r\n    children: PropTypes.node\r\n};",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 19,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "assignment_expression",
+          "text": "MinimalLayout.propTypes = {\r\n    children: PropTypes.node\r\n}",
+          "startPosition": {
+            "row": 17,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 19,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "MinimalLayout.propTypes",
+              "startPosition": {
+                "row": 17,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 23
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "MinimalLayout",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 13
+                  },
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "propTypes",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 14
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 23
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    children: PropTypes.node\r\n}",
+              "startPosition": {
+                "row": 17,
+                "column": 26
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "children: PropTypes.node",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "children",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "member_expression",
+                      "text": "PropTypes.node",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "PropTypes",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "node",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 28
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default MinimalLayout;",
+      "startPosition": {
+        "row": 21,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 21,
+        "column": 29
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "MinimalLayout",
+          "startPosition": {
+            "row": 21,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 21,
+            "column": 28
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

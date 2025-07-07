@@ -1,0 +1,1503 @@
+{
+  "type": "program",
+  "text": "// action - state management\r\nimport { ACCOUNT_INITIALIZE, LOGIN, LOGOUT } from './actions';\r\n\r\nexport const initialState = {\r\n    token: '',\r\n    isLoggedIn: false,\r\n    isInitialized: false,\r\n    user: null\r\n};\r\n\r\n//-----------------------|| ACCOUNT REDUCER ||-----------------------//\r\n\r\nconst accountReducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }\r\n};\r\n\r\nexport default accountReducer;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 47,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// action - state management\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 29
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { ACCOUNT_INITIALIZE, LOGIN, LOGOUT } from './actions';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ ACCOUNT_INITIALIZE, LOGIN, LOGOUT }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 44
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ ACCOUNT_INITIALIZE, LOGIN, LOGOUT }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 44
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "ACCOUNT_INITIALIZE",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "ACCOUNT_INITIALIZE",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "LOGIN",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "LOGIN",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 29
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 34
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "LOGOUT",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 36
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "LOGOUT",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 36
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./actions'",
+          "startPosition": {
+            "row": 1,
+            "column": 50
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./actions",
+              "startPosition": {
+                "row": 1,
+                "column": 51
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 60
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const initialState = {\r\n    token: '',\r\n    isLoggedIn: false,\r\n    isInitialized: false,\r\n    user: null\r\n};",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const initialState = {\r\n    token: '',\r\n    isLoggedIn: false,\r\n    isInitialized: false,\r\n    user: null\r\n};",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "initialState = {\r\n    token: '',\r\n    isLoggedIn: false,\r\n    isInitialized: false,\r\n    user: null\r\n}",
+              "startPosition": {
+                "row": 3,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "initialState",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 25
+                  },
+                  "children": []
+                },
+                {
+                  "type": "object",
+                  "text": "{\r\n    token: '',\r\n    isLoggedIn: false,\r\n    isInitialized: false,\r\n    user: null\r\n}",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "pair",
+                      "text": "token: ''",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 13
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "token",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 9
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "''",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 13
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "isLoggedIn: false",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "isLoggedIn",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "false",
+                          "text": "false",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 21
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "isInitialized: false",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 24
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "isInitialized",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 17
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "false",
+                          "text": "false",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 24
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "user: null",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "user",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 8
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "null",
+                          "text": "null",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| ACCOUNT REDUCER ||-----------------------//\r",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 72
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const accountReducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }\r\n};",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 44,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "accountReducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }\r\n}",
+          "startPosition": {
+            "row": 12,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 44,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "accountReducer",
+              "startPosition": {
+                "row": 12,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 20
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "(state = initialState, action) => {\r\n    switch (action.type) {\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }\r\n}",
+              "startPosition": {
+                "row": 12,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 44,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "(state = initialState, action)",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 53
+                  },
+                  "children": [
+                    {
+                      "type": "assignment_pattern",
+                      "text": "state = initialState",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 44
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "state",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 29
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "initialState",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 44
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "action",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 46
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 52
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    switch (action.type) {\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }\r\n}",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 57
+                  },
+                  "endPosition": {
+                    "row": 44,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "switch_statement",
+                      "text": "switch (action.type) {\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 43,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(action.type)",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 24
+                          },
+                          "children": [
+                            {
+                              "type": "member_expression",
+                              "text": "action.type",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "action",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 13,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "property_identifier",
+                                  "text": "type",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 19
+                                  },
+                                  "endPosition": {
+                                    "row": 13,
+                                    "column": 23
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "switch_body",
+                          "text": "{\r\n        case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }\r\n        case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }\r\n        case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }\r\n        default: {\r\n            return { ...state };\r\n        }\r\n    }",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 25
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "switch_case",
+                              "text": "case ACCOUNT_INITIALIZE: {\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "ACCOUNT_INITIALIZE",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "statement_block",
+                                  "text": "{\r\n            const { isLoggedIn, user, token } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };\r\n        }",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 33
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 9
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "lexical_declaration",
+                                      "text": "const { isLoggedIn, user, token } = action.payload;",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 63
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "variable_declarator",
+                                          "text": "{ isLoggedIn, user, token } = action.payload",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 62
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "object_pattern",
+                                              "text": "{ isLoggedIn, user, token }",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 45
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "shorthand_property_identifier_pattern",
+                                                  "text": "isLoggedIn",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 30
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "shorthand_property_identifier_pattern",
+                                                  "text": "user",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 32
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "shorthand_property_identifier_pattern",
+                                                  "text": "token",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 38
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 43
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "member_expression",
+                                              "text": "action.payload",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 48
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 62
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "action",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 48
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 54
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "payload",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 55
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 62
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "return_statement",
+                                      "text": "return {\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            };",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 14
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "object",
+                                          "text": "{\r\n                ...state,\r\n                isLoggedIn,\r\n                isInitialized: true,\r\n                token,\r\n                user\r\n            }",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 13
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "spread_element",
+                                              "text": "...state",
+                                              "startPosition": {
+                                                "row": 17,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 17,
+                                                "column": 24
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "state",
+                                                  "startPosition": {
+                                                    "row": 17,
+                                                    "column": 19
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 17,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "shorthand_property_identifier",
+                                              "text": "isLoggedIn",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 26
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "isInitialized: true",
+                                              "startPosition": {
+                                                "row": 19,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 19,
+                                                "column": 35
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "isInitialized",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "true",
+                                                  "text": "true",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 31
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 35
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "shorthand_property_identifier",
+                                              "text": "token",
+                                              "startPosition": {
+                                                "row": 20,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 20,
+                                                "column": 21
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "shorthand_property_identifier",
+                                              "text": "user",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_case",
+                              "text": "case LOGIN: {\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "LOGIN",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "statement_block",
+                                  "text": "{\r\n            const { user } = action.payload;\r\n            return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };\r\n        }",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 9
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "lexical_declaration",
+                                      "text": "const { user } = action.payload;",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 44
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "variable_declarator",
+                                          "text": "{ user } = action.payload",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 43
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "object_pattern",
+                                              "text": "{ user }",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 26
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "shorthand_property_identifier_pattern",
+                                                  "text": "user",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 20
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "member_expression",
+                                              "text": "action.payload",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 43
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "action",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 29
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 35
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "payload",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 36
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 43
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "return_statement",
+                                      "text": "return {\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            };",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 14
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "object",
+                                          "text": "{\r\n                ...state,\r\n                isLoggedIn: true,\r\n                user\r\n            }",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 30,
+                                            "column": 13
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "spread_element",
+                                              "text": "...state",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 24
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "state",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 19
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "isLoggedIn: true",
+                                              "startPosition": {
+                                                "row": 28,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 28,
+                                                "column": 32
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "isLoggedIn",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "true",
+                                                  "text": "true",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 32
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "shorthand_property_identifier",
+                                              "text": "user",
+                                              "startPosition": {
+                                                "row": 29,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 29,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_case",
+                              "text": "case LOGOUT: {\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 39,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "LOGOUT",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 19
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "statement_block",
+                                  "text": "{\r\n            return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };\r\n        }",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 39,
+                                    "column": 9
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "return_statement",
+                                      "text": "return {\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            };",
+                                      "startPosition": {
+                                        "row": 33,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 38,
+                                        "column": 14
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "object",
+                                          "text": "{\r\n                ...state,\r\n                isLoggedIn: false,\r\n                token: '',\r\n                user: null\r\n            }",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 38,
+                                            "column": 13
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "spread_element",
+                                              "text": "...state",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 24
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "state",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 19
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "isLoggedIn: false",
+                                              "startPosition": {
+                                                "row": 35,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 35,
+                                                "column": 33
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "isLoggedIn",
+                                                  "startPosition": {
+                                                    "row": 35,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 35,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "false",
+                                                  "text": "false",
+                                                  "startPosition": {
+                                                    "row": 35,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 35,
+                                                    "column": 33
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "token: ''",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 25
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "token",
+                                                  "startPosition": {
+                                                    "row": 36,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 36,
+                                                    "column": 21
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "''",
+                                                  "startPosition": {
+                                                    "row": 36,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 36,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "user: null",
+                                              "startPosition": {
+                                                "row": 37,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 37,
+                                                "column": 26
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "user",
+                                                  "startPosition": {
+                                                    "row": 37,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 37,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "null",
+                                                  "text": "null",
+                                                  "startPosition": {
+                                                    "row": 37,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 37,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_default",
+                              "text": "default: {\r\n            return { ...state };\r\n        }",
+                              "startPosition": {
+                                "row": 40,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 42,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "statement_block",
+                                  "text": "{\r\n            return { ...state };\r\n        }",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 9
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "return_statement",
+                                      "text": "return { ...state };",
+                                      "startPosition": {
+                                        "row": 41,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 41,
+                                        "column": 32
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "object",
+                                          "text": "{ ...state }",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 31
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "spread_element",
+                                              "text": "...state",
+                                              "startPosition": {
+                                                "row": 41,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 41,
+                                                "column": 29
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "state",
+                                                  "startPosition": {
+                                                    "row": 41,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 41,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default accountReducer;",
+      "startPosition": {
+        "row": 46,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 46,
+        "column": 30
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "accountReducer",
+          "startPosition": {
+            "row": 46,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 46,
+            "column": 29
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,809 @@
+{
+  "type": "module",
+  "text": "# -*- encoding: utf-8 -*-\r\n\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"\r\n\r\nfrom api import app, db\r\n\r\n@app.shell_context_processor\r\ndef make_shell_context():\r\n    return {\"app\": app,\r\n            \"db\": db\r\n            }\r\n\r\nif __name__ == '__main__':\r\n    app.run(debug=True, host=\"0.0.0.0\")\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 15,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "# -*- encoding: utf-8 -*-\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": []
+    },
+    {
+      "type": "expression_statement",
+      "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "string",
+          "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+          "startPosition": {
+            "row": 1,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "string_start",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 1,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "children": []
+            },
+            {
+              "type": "string_content",
+              "text": "\r\nCopyright (c) 2019 - present AppSeed.us\r\n",
+              "startPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "children": []
+            },
+            {
+              "type": "string_end",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 3
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "text": "from api import app, db",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 23
+      },
+      "children": [
+        {
+          "type": "dotted_name",
+          "text": "api",
+          "startPosition": {
+            "row": 5,
+            "column": 5
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 8
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "api",
+              "startPosition": {
+                "row": 5,
+                "column": 5
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 8
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "app",
+          "startPosition": {
+            "row": 5,
+            "column": 16
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 19
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "app",
+              "startPosition": {
+                "row": 5,
+                "column": 16
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 19
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "db",
+          "startPosition": {
+            "row": 5,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "db",
+              "startPosition": {
+                "row": 5,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 23
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "decorated_definition",
+      "text": "@app.shell_context_processor\r\ndef make_shell_context():\r\n    return {\"app\": app,\r\n            \"db\": db\r\n            }",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 13
+      },
+      "children": [
+        {
+          "type": "decorator",
+          "text": "@app.shell_context_processor",
+          "startPosition": {
+            "row": 7,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 28
+          },
+          "children": [
+            {
+              "type": "attribute",
+              "text": "app.shell_context_processor",
+              "startPosition": {
+                "row": 7,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "app",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 4
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "shell_context_processor",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 5
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "function_definition",
+          "text": "def make_shell_context():\r\n    return {\"app\": app,\r\n            \"db\": db\r\n            }",
+          "startPosition": {
+            "row": 8,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "make_shell_context",
+              "startPosition": {
+                "row": 8,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 22
+              },
+              "children": []
+            },
+            {
+              "type": "parameters",
+              "text": "()",
+              "startPosition": {
+                "row": 8,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 24
+              },
+              "children": []
+            },
+            {
+              "type": "block",
+              "text": "return {\"app\": app,\r\n            \"db\": db\r\n            }",
+              "startPosition": {
+                "row": 9,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 13
+              },
+              "children": [
+                {
+                  "type": "return_statement",
+                  "text": "return {\"app\": app,\r\n            \"db\": db\r\n            }",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 13
+                  },
+                  "children": [
+                    {
+                      "type": "dictionary",
+                      "text": "{\"app\": app,\r\n            \"db\": db\r\n            }",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 13
+                      },
+                      "children": [
+                        {
+                          "type": "pair",
+                          "text": "\"app\": app",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "\"app\"",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 17
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "\"",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "app",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 16
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "\"",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 16
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 17
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "app",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 22
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "\"db\": db",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 20
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "\"db\"",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 16
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "\"",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "db",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 15
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "\"",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 16
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "db",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 20
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "if_statement",
+      "text": "if __name__ == '__main__':\r\n    app.run(debug=True, host=\"0.0.0.0\")",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 14,
+        "column": 39
+      },
+      "children": [
+        {
+          "type": "comparison_operator",
+          "text": "__name__ == '__main__'",
+          "startPosition": {
+            "row": 13,
+            "column": 3
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "__name__",
+              "startPosition": {
+                "row": 13,
+                "column": 3
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 11
+              },
+              "children": []
+            },
+            {
+              "type": "string",
+              "text": "'__main__'",
+              "startPosition": {
+                "row": 13,
+                "column": 15
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 25
+              },
+              "children": [
+                {
+                  "type": "string_start",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 16
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_content",
+                  "text": "__main__",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "string_end",
+                  "text": "'",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 25
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "block",
+          "text": "app.run(debug=True, host=\"0.0.0.0\")",
+          "startPosition": {
+            "row": 14,
+            "column": 4
+          },
+          "endPosition": {
+            "row": 14,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "expression_statement",
+              "text": "app.run(debug=True, host=\"0.0.0.0\")",
+              "startPosition": {
+                "row": 14,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 14,
+                "column": 39
+              },
+              "children": [
+                {
+                  "type": "call",
+                  "text": "app.run(debug=True, host=\"0.0.0.0\")",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 39
+                  },
+                  "children": [
+                    {
+                      "type": "attribute",
+                      "text": "app.run",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 11
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "app",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 7
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "run",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 11
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "argument_list",
+                      "text": "(debug=True, host=\"0.0.0.0\")",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "keyword_argument",
+                          "text": "debug=True",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "debug",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "true",
+                              "text": "True",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 22
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "keyword_argument",
+                          "text": "host=\"0.0.0.0\"",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 38
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "host",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 24
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 28
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "string",
+                              "text": "\"0.0.0.0\"",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 29
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 38
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "\"",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 30
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "0.0.0.0",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 30
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "\"",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 38
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

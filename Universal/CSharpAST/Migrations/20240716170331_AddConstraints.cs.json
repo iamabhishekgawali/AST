@@ -1,0 +1,1693 @@
+{
+  "type": "compilation_unit",
+  "text": "using Microsoft.EntityFrameworkCore.Migrations;\r\n\r\n#nullable disable\r\n\r\nnamespace First_Backend.Migrations\r\n{\r\n    /// <inheritdoc />\r\n    public partial class AddConstraints : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }\r\n    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 3
+  },
+  "endPosition": {
+    "row": 38,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "using_directive",
+      "text": "using Microsoft.EntityFrameworkCore.Migrations;",
+      "startPosition": {
+        "row": 0,
+        "column": 3
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 50
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "Microsoft.EntityFrameworkCore.Migrations",
+          "startPosition": {
+            "row": 0,
+            "column": 9
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 49
+          },
+          "children": [
+            {
+              "type": "qualified_name",
+              "text": "Microsoft.EntityFrameworkCore",
+              "startPosition": {
+                "row": 0,
+                "column": 9
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 38
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Microsoft",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "EntityFrameworkCore",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 38
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Migrations",
+              "startPosition": {
+                "row": 0,
+                "column": 39
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 49
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "nullable_directive",
+      "text": "nullable disable",
+      "startPosition": {
+        "row": 2,
+        "column": 1
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 17
+      },
+      "children": []
+    },
+    {
+      "type": "namespace_declaration",
+      "text": "namespace First_Backend.Migrations\r\n{\r\n    /// <inheritdoc />\r\n    public partial class AddConstraints : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }\r\n    }\r\n}",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 37,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "First_Backend.Migrations",
+          "startPosition": {
+            "row": 4,
+            "column": 10
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "First_Backend",
+              "startPosition": {
+                "row": 4,
+                "column": 10
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 23
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "Migrations",
+              "startPosition": {
+                "row": 4,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 34
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "declaration_list",
+          "text": "{\r\n    /// <inheritdoc />\r\n    public partial class AddConstraints : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }\r\n    }\r\n}",
+          "startPosition": {
+            "row": 5,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 37,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "comment",
+              "text": "/// <inheritdoc />",
+              "startPosition": {
+                "row": 6,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 22
+              },
+              "children": []
+            },
+            {
+              "type": "class_declaration",
+              "text": "public partial class AddConstraints : Migration\r\n    {\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }\r\n    }",
+              "startPosition": {
+                "row": 7,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 36,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifier",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "modifier",
+                  "text": "partial",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "AddConstraints",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 39
+                  },
+                  "children": []
+                },
+                {
+                  "type": "base_list",
+                  "text": ": Migration",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 40
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 51
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Migration",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 42
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 51
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "declaration_list",
+                  "text": "{\r\n        /// <inheritdoc />\r\n        protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }\r\n    }",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 36,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "comment",
+                      "text": "/// <inheritdoc />",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 26
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "method_declaration",
+                      "text": "protected override void Up(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "protected",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 17
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "override",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "void",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Up",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 34
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "parameter_list",
+                          "text": "(MigrationBuilder migrationBuilder)",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 69
+                          },
+                          "children": [
+                            {
+                              "type": "parameter",
+                              "text": "MigrationBuilder migrationBuilder",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 35
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 68
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "MigrationBuilder",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 35
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 51
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "migrationBuilder",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 52
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 68
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "{\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);\r\n\r\n            migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);\r\n        }",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true);",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 30
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true)",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "migrationBuilder.CreateIndex",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 40
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "migrationBuilder",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "CreateIndex",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 40
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\",\r\n                column: \"Email\",\r\n                unique: true)",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 29
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "name: \"IX_Users_Email\"",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 38
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "name:",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "name",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"IX_Users_Email\"",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 38
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "IX_Users_Email",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 37
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "table: \"Users\"",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "table:",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 22
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "table",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 21
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Users\"",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 30
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Users",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "column: \"Email\"",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 31
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "column:",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 23
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "column",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 22
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Email\"",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Email",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 30
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "unique: true",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 28
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "unique:",
+                                              "startPosition": {
+                                                "row": 16,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 16,
+                                                "column": 23
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "unique",
+                                                  "startPosition": {
+                                                    "row": 16,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 16,
+                                                    "column": 22
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "boolean_literal",
+                                              "text": "true",
+                                              "startPosition": {
+                                                "row": 16,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 16,
+                                                "column": 28
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true);",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 30
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "migrationBuilder.CreateIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true)",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "migrationBuilder.CreateIndex",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 40
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "migrationBuilder",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "CreateIndex",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 40
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\",\r\n                column: \"Name\",\r\n                unique: true)",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 29
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "name: \"IX_Users_Name\"",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "name:",
+                                              "startPosition": {
+                                                "row": 19,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 19,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "name",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"IX_Users_Name\"",
+                                              "startPosition": {
+                                                "row": 19,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 19,
+                                                "column": 37
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "IX_Users_Name",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "table: \"Users\"",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 20,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "table:",
+                                              "startPosition": {
+                                                "row": 20,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 20,
+                                                "column": 22
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "table",
+                                                  "startPosition": {
+                                                    "row": 20,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 20,
+                                                    "column": 21
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Users\"",
+                                              "startPosition": {
+                                                "row": 20,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 20,
+                                                "column": 30
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Users",
+                                                  "startPosition": {
+                                                    "row": 20,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 20,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "column: \"Name\"",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "column:",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 23
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "column",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 22
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Name\"",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 30
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Name",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "unique: true",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 28
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "unique:",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 23
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "unique",
+                                                  "startPosition": {
+                                                    "row": 22,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 22
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "boolean_literal",
+                                              "text": "true",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 28
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "text": "/// <inheritdoc />",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 26
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "method_declaration",
+                      "text": "protected override void Down(MigrationBuilder migrationBuilder)\r\n        {\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 35,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "protected",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 17
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "override",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "void",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Down",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 36
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "parameter_list",
+                          "text": "(MigrationBuilder migrationBuilder)",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 71
+                          },
+                          "children": [
+                            {
+                              "type": "parameter",
+                              "text": "MigrationBuilder migrationBuilder",
+                              "startPosition": {
+                                "row": 26,
+                                "column": 37
+                              },
+                              "endPosition": {
+                                "row": 26,
+                                "column": 70
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "MigrationBuilder",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 53
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "migrationBuilder",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 54
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 70
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "{\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");\r\n\r\n            migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");\r\n        }",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\");",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\")",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "migrationBuilder.DropIndex",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 38
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "migrationBuilder",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "DropIndex",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 38
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\r\n                name: \"IX_Users_Email\",\r\n                table: \"Users\")",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 38
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "name: \"IX_Users_Email\"",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 38
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "name:",
+                                              "startPosition": {
+                                                "row": 29,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 29,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "name",
+                                                  "startPosition": {
+                                                    "row": 29,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 29,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"IX_Users_Email\"",
+                                              "startPosition": {
+                                                "row": 29,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 29,
+                                                "column": 38
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "IX_Users_Email",
+                                                  "startPosition": {
+                                                    "row": 29,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 29,
+                                                    "column": 37
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "table: \"Users\"",
+                                          "startPosition": {
+                                            "row": 30,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 30,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "table:",
+                                              "startPosition": {
+                                                "row": 30,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 30,
+                                                "column": 22
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "table",
+                                                  "startPosition": {
+                                                    "row": 30,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 30,
+                                                    "column": 21
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Users\"",
+                                              "startPosition": {
+                                                "row": 30,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 30,
+                                                "column": 30
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Users",
+                                                  "startPosition": {
+                                                    "row": 30,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 30,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\");",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 34,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "migrationBuilder.DropIndex(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\")",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 34,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "migrationBuilder.DropIndex",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 38
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "migrationBuilder",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "DropIndex",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 38
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\r\n                name: \"IX_Users_Name\",\r\n                table: \"Users\")",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 38
+                                      },
+                                      "endPosition": {
+                                        "row": 34,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "name: \"IX_Users_Name\"",
+                                          "startPosition": {
+                                            "row": 33,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 33,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "name:",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "name",
+                                                  "startPosition": {
+                                                    "row": 33,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 33,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"IX_Users_Name\"",
+                                              "startPosition": {
+                                                "row": 33,
+                                                "column": 22
+                                              },
+                                              "endPosition": {
+                                                "row": 33,
+                                                "column": 37
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "IX_Users_Name",
+                                                  "startPosition": {
+                                                    "row": 33,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 33,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument",
+                                          "text": "table: \"Users\"",
+                                          "startPosition": {
+                                            "row": 34,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 34,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "name_colon",
+                                              "text": "table:",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 22
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "table",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 21
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Users\"",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 30
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_literal_fragment",
+                                                  "text": "Users",
+                                                  "startPosition": {
+                                                    "row": 34,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 34,
+                                                    "column": 29
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

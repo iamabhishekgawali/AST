@@ -1,0 +1,815 @@
+{
+  "type": "program",
+  "text": "import { combineReducers } from 'redux';\r\nimport { persistReducer } from 'redux-persist';\r\nimport storage from 'redux-persist/lib/storage';\r\n\r\n// reducer import\r\nimport customizationReducer from './customizationReducer';\r\nimport accountReducer from './accountReducer';\r\n\r\n//-----------------------|| COMBINE REDUCER ||-----------------------//\r\n\r\nconst reducer = combineReducers({\r\n    account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    ),\r\n    customization: customizationReducer\r\n});\r\n\r\nexport default reducer;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 23,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import { combineReducers } from 'redux';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ combineReducers }",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 26
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ combineReducers }",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 26
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "combineReducers",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "combineReducers",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 24
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'redux'",
+          "startPosition": {
+            "row": 0,
+            "column": 32
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "redux",
+              "startPosition": {
+                "row": 0,
+                "column": 33
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 38
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { persistReducer } from 'redux-persist';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 47
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ persistReducer }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ persistReducer }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 25
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "persistReducer",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 23
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "persistReducer",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 23
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'redux-persist'",
+          "startPosition": {
+            "row": 1,
+            "column": 31
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 46
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "redux-persist",
+              "startPosition": {
+                "row": 1,
+                "column": 32
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import storage from 'redux-persist/lib/storage';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 48
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "storage",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 14
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "storage",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 14
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'redux-persist/lib/storage'",
+          "startPosition": {
+            "row": 2,
+            "column": 20
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "redux-persist/lib/storage",
+              "startPosition": {
+                "row": 2,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 46
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// reducer import\r",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 18
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import customizationReducer from './customizationReducer';",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 58
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "customizationReducer",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "customizationReducer",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./customizationReducer'",
+          "startPosition": {
+            "row": 5,
+            "column": 33
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 57
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./customizationReducer",
+              "startPosition": {
+                "row": 5,
+                "column": 34
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 56
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import accountReducer from './accountReducer';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 46
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "accountReducer",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "accountReducer",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./accountReducer'",
+          "startPosition": {
+            "row": 6,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 45
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./accountReducer",
+              "startPosition": {
+                "row": 6,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 44
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| COMBINE REDUCER ||-----------------------//\r",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 72
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const reducer = combineReducers({\r\n    account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    ),\r\n    customization: customizationReducer\r\n});",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 20,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "reducer = combineReducers({\r\n    account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    ),\r\n    customization: customizationReducer\r\n})",
+          "startPosition": {
+            "row": 10,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 20,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "reducer",
+              "startPosition": {
+                "row": 10,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 13
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "combineReducers({\r\n    account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    ),\r\n    customization: customizationReducer\r\n})",
+              "startPosition": {
+                "row": 10,
+                "column": 16
+              },
+              "endPosition": {
+                "row": 20,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "combineReducers",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 31
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "({\r\n    account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    ),\r\n    customization: customizationReducer\r\n})",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 31
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "object",
+                      "text": "{\r\n    account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    ),\r\n    customization: customizationReducer\r\n}",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 32
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 1
+                      },
+                      "children": [
+                        {
+                          "type": "pair",
+                          "text": "account: persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    )",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "account",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 11
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "persistReducer(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    )",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 13
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 5
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "persistReducer",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "(\r\n        {\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        },\r\n        accountReducer\r\n    )",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 5
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n            key: 'account',\r\n            storage,\r\n            keyPrefix: 'berry-'\r\n        }",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 9
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "key: 'account'",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 26
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "key",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 15
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "'account'",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 17
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 26
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "account",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 18
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "shorthand_property_identifier",
+                                          "text": "storage",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 19
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "keyPrefix: 'berry-'",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 31
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "keyPrefix",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 21
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "'berry-'",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "berry-",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 30
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "accountReducer",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 22
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "pair",
+                          "text": "customization: customizationReducer",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 39
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "customization",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "customizationReducer",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 39
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default reducer;",
+      "startPosition": {
+        "row": 22,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 22,
+        "column": 23
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "reducer",
+          "startPosition": {
+            "row": 22,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 22,
+            "column": 22
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

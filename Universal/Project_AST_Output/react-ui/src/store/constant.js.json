@@ -1,0 +1,231 @@
+{
+  "type": "program",
+  "text": "// theme constant\r\nexport const gridSpacing = 3;\r\nexport const drawerWidth = 260;\r\nexport const appDrawerWidth = 320;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 4,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// theme constant\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 18
+      },
+      "children": []
+    },
+    {
+      "type": "export_statement",
+      "text": "export const gridSpacing = 3;",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 29
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const gridSpacing = 3;",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 29
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "gridSpacing = 3",
+              "startPosition": {
+                "row": 1,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "gridSpacing",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "number",
+                  "text": "3",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 28
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const drawerWidth = 260;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 31
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const drawerWidth = 260;",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "drawerWidth = 260",
+              "startPosition": {
+                "row": 2,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 30
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "drawerWidth",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "number",
+                  "text": "260",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 30
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const appDrawerWidth = 320;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const appDrawerWidth = 320;",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "appDrawerWidth = 320",
+              "startPosition": {
+                "row": 3,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 33
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "appDrawerWidth",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 27
+                  },
+                  "children": []
+                },
+                {
+                  "type": "number",
+                  "text": "320",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 33
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport Skeleton from '@material-ui/core/Skeleton';\r\n\r\n//-----------------------|| SKELETON IMAGE CARD ||-----------------------//\r\n\r\nconst ImagePlaceholder = ({ ...others }) => {\r\n    return <Skeleton variant=\"rect\" {...others} animation=\"wave\" />;\r\n};\r\n\r\nexport default ImagePlaceholder;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 12,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import Skeleton from '@material-ui/core/Skeleton';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 50
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "Skeleton",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Skeleton",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core/Skeleton'",
+          "startPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 49
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core/Skeleton",
+              "startPosition": {
+                "row": 3,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 48
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| SKELETON IMAGE CARD ||-----------------------//\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 76
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const ImagePlaceholder = ({ ...others }) => {\r\n    return <Skeleton variant=\"rect\" {...others} animation=\"wave\" />;\r\n};",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "ImagePlaceholder = ({ ...others }) => {\r\n    return <Skeleton variant=\"rect\" {...others} animation=\"wave\" />;\r\n}",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "ImagePlaceholder",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 22
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "({ ...others }) => {\r\n    return <Skeleton variant=\"rect\" {...others} animation=\"wave\" />;\r\n}",
+              "startPosition": {
+                "row": 7,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "({ ...others })",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "object_pattern",
+                      "text": "{ ...others }",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 26
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "rest_pattern",
+                          "text": "...others",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 37
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "others",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 31
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 37
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    return <Skeleton variant=\"rect\" {...others} animation=\"wave\" />;\r\n}",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 44
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return <Skeleton variant=\"rect\" {...others} animation=\"wave\" />;",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 68
+                      },
+                      "children": [
+                        {
+                          "type": "jsx_self_closing_element",
+                          "text": "<Skeleton variant=\"rect\" {...others} animation=\"wave\" />",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 67
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "Skeleton",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "jsx_attribute",
+                              "text": "variant=\"rect\"",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 35
+                              },
+                              "children": [
+                                {
+                                  "type": "property_identifier",
+                                  "text": "variant",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 28
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string",
+                                  "text": "\"rect\"",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 35
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "rect",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 30
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 34
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_expression",
+                              "text": "{...others}",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "spread_element",
+                                  "text": "...others",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 46
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "others",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 46
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "jsx_attribute",
+                              "text": "animation=\"wave\"",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 64
+                              },
+                              "children": [
+                                {
+                                  "type": "property_identifier",
+                                  "text": "animation",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 48
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 57
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string",
+                                  "text": "\"wave\"",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 58
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 64
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "wave",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 59
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 63
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default ImagePlaceholder;",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 32
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "ImagePlaceholder",
+          "startPosition": {
+            "row": 11,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 31
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

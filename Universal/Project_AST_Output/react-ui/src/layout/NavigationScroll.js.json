@@ -1,0 +1,1142 @@
+{
+  "type": "program",
+  "text": "import PropTypes from 'prop-types';\r\nimport { useEffect } from 'react';\r\nimport { withRouter } from 'react-router-dom';\r\n\r\n//-----------------------|| NAVIGATION SCROLL TO TOP ||-----------------------//\r\n\r\nconst NavigationScroll = ({ children, location: { pathname } }) => {\r\n    useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname]);\r\n\r\n    return children || null;\r\n};\r\n\r\nNavigationScroll.propTypes = {\r\n    children: PropTypes.node,\r\n    location: PropTypes.object\r\n};\r\n\r\nexport default withRouter(NavigationScroll);\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 24,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import PropTypes from 'prop-types';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 35
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "PropTypes",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "PropTypes",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 16
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'prop-types'",
+          "startPosition": {
+            "row": 0,
+            "column": 22
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "prop-types",
+              "startPosition": {
+                "row": 0,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 33
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { useEffect } from 'react';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ useEffect }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 20
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ useEffect }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "useEffect",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useEffect",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 18
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 1,
+            "column": 26
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 33
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 1,
+                "column": 27
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 32
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { withRouter } from 'react-router-dom';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 46
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ withRouter }",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ withRouter }",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "withRouter",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "withRouter",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 2,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 45
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 2,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 44
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| NAVIGATION SCROLL TO TOP ||-----------------------//\r",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 81
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const NavigationScroll = ({ children, location: { pathname } }) => {\r\n    useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname]);\r\n\r\n    return children || null;\r\n};",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 16,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "NavigationScroll = ({ children, location: { pathname } }) => {\r\n    useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname]);\r\n\r\n    return children || null;\r\n}",
+          "startPosition": {
+            "row": 6,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 16,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "NavigationScroll",
+              "startPosition": {
+                "row": 6,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 22
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "({ children, location: { pathname } }) => {\r\n    useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname]);\r\n\r\n    return children || null;\r\n}",
+              "startPosition": {
+                "row": 6,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 16,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "({ children, location: { pathname } })",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 63
+                  },
+                  "children": [
+                    {
+                      "type": "object_pattern",
+                      "text": "{ children, location: { pathname } }",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 26
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 62
+                      },
+                      "children": [
+                        {
+                          "type": "shorthand_property_identifier_pattern",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 36
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "pair_pattern",
+                          "text": "location: { pathname }",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 38
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 60
+                          },
+                          "children": [
+                            {
+                              "type": "property_identifier",
+                              "text": "location",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 38
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 46
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object_pattern",
+                              "text": "{ pathname }",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 60
+                              },
+                              "children": [
+                                {
+                                  "type": "shorthand_property_identifier_pattern",
+                                  "text": "pathname",
+                                  "startPosition": {
+                                    "row": 6,
+                                    "column": 50
+                                  },
+                                  "endPosition": {
+                                    "row": 6,
+                                    "column": 58
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname]);\r\n\r\n    return children || null;\r\n}",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 67
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname]);",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 19
+                      },
+                      "children": [
+                        {
+                          "type": "call_expression",
+                          "text": "useEffect(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname])",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 18
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "useEffect",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 4
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 13
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "arguments",
+                              "text": "(() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }, [pathname])",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 13
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 18
+                              },
+                              "children": [
+                                {
+                                  "type": "arrow_function",
+                                  "text": "() => {\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }",
+                                  "startPosition": {
+                                    "row": 7,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 13,
+                                    "column": 5
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "formal_parameters",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 7,
+                                        "column": 14
+                                      },
+                                      "endPosition": {
+                                        "row": 7,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "statement_block",
+                                      "text": "{\r\n        window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });\r\n    }",
+                                      "startPosition": {
+                                        "row": 7,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 5
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "expression_statement",
+                                          "text": "window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        });",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 11
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "call_expression",
+                                              "text": "window.scrollTo({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        })",
+                                              "startPosition": {
+                                                "row": 8,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 10
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "member_expression",
+                                                  "text": "window.scrollTo",
+                                                  "startPosition": {
+                                                    "row": 8,
+                                                    "column": 8
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 8,
+                                                    "column": 23
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "window",
+                                                      "startPosition": {
+                                                        "row": 8,
+                                                        "column": 8
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 8,
+                                                        "column": 14
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "scrollTo",
+                                                      "startPosition": {
+                                                        "row": 8,
+                                                        "column": 15
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 8,
+                                                        "column": 23
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "arguments",
+                                                  "text": "({\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        })",
+                                                  "startPosition": {
+                                                    "row": 8,
+                                                    "column": 23
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 12,
+                                                    "column": 10
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "object",
+                                                      "text": "{\r\n            top: 0,\r\n            left: 0,\r\n            behavior: 'smooth'\r\n        }",
+                                                      "startPosition": {
+                                                        "row": 8,
+                                                        "column": 24
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 12,
+                                                        "column": 9
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "pair",
+                                                          "text": "top: 0",
+                                                          "startPosition": {
+                                                            "row": 9,
+                                                            "column": 12
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 9,
+                                                            "column": 18
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "top",
+                                                              "startPosition": {
+                                                                "row": 9,
+                                                                "column": 12
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 9,
+                                                                "column": 15
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "number",
+                                                              "text": "0",
+                                                              "startPosition": {
+                                                                "row": 9,
+                                                                "column": 17
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 9,
+                                                                "column": 18
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "pair",
+                                                          "text": "left: 0",
+                                                          "startPosition": {
+                                                            "row": 10,
+                                                            "column": 12
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 10,
+                                                            "column": 19
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "left",
+                                                              "startPosition": {
+                                                                "row": 10,
+                                                                "column": 12
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 10,
+                                                                "column": 16
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "number",
+                                                              "text": "0",
+                                                              "startPosition": {
+                                                                "row": 10,
+                                                                "column": 18
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 10,
+                                                                "column": 19
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "pair",
+                                                          "text": "behavior: 'smooth'",
+                                                          "startPosition": {
+                                                            "row": 11,
+                                                            "column": 12
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 11,
+                                                            "column": 30
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "behavior",
+                                                              "startPosition": {
+                                                                "row": 11,
+                                                                "column": 12
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 11,
+                                                                "column": 20
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "string",
+                                                              "text": "'smooth'",
+                                                              "startPosition": {
+                                                                "row": 11,
+                                                                "column": 22
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 11,
+                                                                "column": 30
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "string_fragment",
+                                                                  "text": "smooth",
+                                                                  "startPosition": {
+                                                                    "row": 11,
+                                                                    "column": 23
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 11,
+                                                                    "column": 29
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "array",
+                                  "text": "[pathname]",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 13,
+                                    "column": 17
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "pathname",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return children || null;",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "binary_expression",
+                          "text": "children || null",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "children",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 19
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "null",
+                              "text": "null",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "NavigationScroll.propTypes = {\r\n    children: PropTypes.node,\r\n    location: PropTypes.object\r\n};",
+      "startPosition": {
+        "row": 18,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 21,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "assignment_expression",
+          "text": "NavigationScroll.propTypes = {\r\n    children: PropTypes.node,\r\n    location: PropTypes.object\r\n}",
+          "startPosition": {
+            "row": 18,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 21,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "NavigationScroll.propTypes",
+              "startPosition": {
+                "row": 18,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 26
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "NavigationScroll",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 16
+                  },
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "propTypes",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 26
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    children: PropTypes.node,\r\n    location: PropTypes.object\r\n}",
+              "startPosition": {
+                "row": 18,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "children: PropTypes.node",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "children",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 19,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "member_expression",
+                      "text": "PropTypes.node",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 19,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "PropTypes",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "node",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 28
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "location: PropTypes.object",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 30
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "location",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "member_expression",
+                      "text": "PropTypes.object",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 30
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "PropTypes",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "object",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 30
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default withRouter(NavigationScroll);",
+      "startPosition": {
+        "row": 23,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 23,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "call_expression",
+          "text": "withRouter(NavigationScroll)",
+          "startPosition": {
+            "row": 23,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 23,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "withRouter",
+              "startPosition": {
+                "row": 23,
+                "column": 15
+              },
+              "endPosition": {
+                "row": 23,
+                "column": 25
+              },
+              "children": []
+            },
+            {
+              "type": "arguments",
+              "text": "(NavigationScroll)",
+              "startPosition": {
+                "row": 23,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 23,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "NavigationScroll",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 42
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

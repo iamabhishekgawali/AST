@@ -1,0 +1,68 @@
+{
+  "language": "JavaScript/TypeScript",
+  "internalDependencyPatterns": [
+    "^\\.",
+    "^@/"
+  ],
+  "selectors": {
+    "function": ["function_declaration", "arrow_function", "method_definition"],
+    "class": ["class_declaration"],
+    "comment": ["comment"],
+    "import": [
+      { "type": "import_statement", "source": { "path": [{"type": "string"}] } },
+      { "type": "lexical_declaration", "source": { "path": [
+        {"type": "variable_declarator"},
+        {"type": "call_expression", "textMatch": "require"},
+        {"type": "arguments"},
+        {"type": "string"}
+      ]}}
+    ],
+    "patterns": {
+      "API Endpoints": {
+        "type": "call_expression",
+        "textMatch": ".get",
+        "value": { "path": [{"type": "arguments"}, {"type": "string"}] }
+      },
+      "Database Queries": {
+        "type": "call_expression",
+        "textMatch": ".query",
+        "value": { "path": [{"type": "arguments"}, {"type": "template_string"}] }
+      },
+      "Network Calls": {
+        "type": "call_expression",
+        "textMatch": "fetch",
+        "value": { "path": [{"type": "arguments"}, {"type": "string"}] }
+      }
+    },
+    "quality": {
+      "exceptionHandling": ["try_statement"]
+    },
+    "cyclomaticComplexity": {
+      "branchingNodes": ["if_statement", "for_statement", "while_statement", "switch_case", "catch_clause", "ternary_expression"],
+      "logicalOperators": ["&&", "||", "??"]
+    }
+  },
+  "dependencyMaps": {
+    "Frameworks Detected": {
+      "react": "React",
+      "next": "Next.js",
+      "@angular/core": "Angular",
+      "vue": "Vue.js",
+      "express": "Express",
+      "@nestjs/core": "NestJS"
+    },
+    "Database Technologies Detected": {
+      "mongoose": "MongoDB (Mongoose)",
+      "sequelize": "SQL (Sequelize)",
+      "typeorm": "TypeORM",
+      "prisma": "Prisma",
+      "redis": "Redis",
+      "pg": "PostgreSQL"
+    },
+    "Cloud SDKs Detected": {
+      "aws-sdk": "AWS",
+      "@google-cloud/": "Google Cloud",
+      "@azure/": "Azure"
+    }
+  }
+}

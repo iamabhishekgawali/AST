@@ -1,0 +1,2235 @@
+{
+  "type": "program",
+  "text": "import React, { lazy } from 'react';\r\nimport { Route, Switch, useLocation } from 'react-router-dom';\r\n\r\n// project imports\r\nimport GuestGuard from './../utils/route-guard/GuestGuard';\r\nimport MinimalLayout from './../layout/MinimalLayout';\r\nimport NavMotion from './../layout/NavMotion';\r\nimport Loadable from '../ui-component/Loadable';\r\n\r\n// login routing\r\nconst AuthLogin = Loadable(lazy(() => import('../views/pages/authentication/login')));\r\nconst AuthRegister = Loadable(lazy(() => import('../views/pages/authentication/register')));\r\n\r\n//-----------------------|| AUTH ROUTING ||-----------------------//\r\n\r\nconst LoginRoutes = () => {\r\n    const location = useLocation();\r\n\r\n    return (\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    );\r\n};\r\n\r\nexport default LoginRoutes;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 35,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React, { lazy } from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React, { lazy }",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            },
+            {
+              "type": "named_imports",
+              "text": "{ lazy }",
+              "startPosition": {
+                "row": 0,
+                "column": 14
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "lazy",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "lazy",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 35
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 34
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Route, Switch, useLocation } from 'react-router-dom';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Route, Switch, useLocation }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 37
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Route, Switch, useLocation }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Route",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 14
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Route",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 14
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "Switch",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Switch",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "useLocation",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 35
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useLocation",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 35
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 1,
+            "column": 43
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 1,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 60
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import GuestGuard from './../utils/route-guard/GuestGuard';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 59
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "GuestGuard",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 17
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "GuestGuard",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 17
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../utils/route-guard/GuestGuard'",
+          "startPosition": {
+            "row": 4,
+            "column": 23
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 58
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../utils/route-guard/GuestGuard",
+              "startPosition": {
+                "row": 4,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 57
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import MinimalLayout from './../layout/MinimalLayout';",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 54
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "MinimalLayout",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 20
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "MinimalLayout",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 20
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../layout/MinimalLayout'",
+          "startPosition": {
+            "row": 5,
+            "column": 26
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 53
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../layout/MinimalLayout",
+              "startPosition": {
+                "row": 5,
+                "column": 27
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 52
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import NavMotion from './../layout/NavMotion';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 46
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "NavMotion",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "NavMotion",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 16
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../layout/NavMotion'",
+          "startPosition": {
+            "row": 6,
+            "column": 22
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 45
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../layout/NavMotion",
+              "startPosition": {
+                "row": 6,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 44
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import Loadable from '../ui-component/Loadable';",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 48
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "Loadable",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Loadable",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'../ui-component/Loadable'",
+          "startPosition": {
+            "row": 7,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "../ui-component/Loadable",
+              "startPosition": {
+                "row": 7,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 46
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// login routing\r",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 17
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const AuthLogin = Loadable(lazy(() => import('../views/pages/authentication/login')));",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 86
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "AuthLogin = Loadable(lazy(() => import('../views/pages/authentication/login')))",
+          "startPosition": {
+            "row": 10,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 85
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "AuthLogin",
+              "startPosition": {
+                "row": 10,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "Loadable(lazy(() => import('../views/pages/authentication/login')))",
+              "startPosition": {
+                "row": 10,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 85
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Loadable",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "(lazy(() => import('../views/pages/authentication/login')))",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 85
+                  },
+                  "children": [
+                    {
+                      "type": "call_expression",
+                      "text": "lazy(() => import('../views/pages/authentication/login'))",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 84
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "lazy",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "arguments",
+                          "text": "(() => import('../views/pages/authentication/login'))",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 84
+                          },
+                          "children": [
+                            {
+                              "type": "arrow_function",
+                              "text": "() => import('../views/pages/authentication/login')",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 83
+                              },
+                              "children": [
+                                {
+                                  "type": "formal_parameters",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 34
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "call_expression",
+                                  "text": "import('../views/pages/authentication/login')",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 83
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "import",
+                                      "text": "import",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 38
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 44
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "arguments",
+                                      "text": "('../views/pages/authentication/login')",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 44
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 83
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string",
+                                          "text": "'../views/pages/authentication/login'",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 45
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 82
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "../views/pages/authentication/login",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 46
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 81
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const AuthRegister = Loadable(lazy(() => import('../views/pages/authentication/register')));",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 92
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "AuthRegister = Loadable(lazy(() => import('../views/pages/authentication/register')))",
+          "startPosition": {
+            "row": 11,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 91
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "AuthRegister",
+              "startPosition": {
+                "row": 11,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 18
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "Loadable(lazy(() => import('../views/pages/authentication/register')))",
+              "startPosition": {
+                "row": 11,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 91
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Loadable",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 29
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "(lazy(() => import('../views/pages/authentication/register')))",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 91
+                  },
+                  "children": [
+                    {
+                      "type": "call_expression",
+                      "text": "lazy(() => import('../views/pages/authentication/register'))",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 30
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 90
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "lazy",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 30
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 34
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "arguments",
+                          "text": "(() => import('../views/pages/authentication/register'))",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 90
+                          },
+                          "children": [
+                            {
+                              "type": "arrow_function",
+                              "text": "() => import('../views/pages/authentication/register')",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 35
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 89
+                              },
+                              "children": [
+                                {
+                                  "type": "formal_parameters",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 35
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "call_expression",
+                                  "text": "import('../views/pages/authentication/register')",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 41
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 89
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "import",
+                                      "text": "import",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 41
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 47
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "arguments",
+                                      "text": "('../views/pages/authentication/register')",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 47
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 89
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string",
+                                          "text": "'../views/pages/authentication/register'",
+                                          "startPosition": {
+                                            "row": 11,
+                                            "column": 48
+                                          },
+                                          "endPosition": {
+                                            "row": 11,
+                                            "column": 88
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "../views/pages/authentication/register",
+                                              "startPosition": {
+                                                "row": 11,
+                                                "column": 49
+                                              },
+                                              "endPosition": {
+                                                "row": 11,
+                                                "column": 87
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| AUTH ROUTING ||-----------------------//\r",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 69
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const LoginRoutes = () => {\r\n    const location = useLocation();\r\n\r\n    return (\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 32,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "LoginRoutes = () => {\r\n    const location = useLocation();\r\n\r\n    return (\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 15,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 32,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "LoginRoutes",
+              "startPosition": {
+                "row": 15,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 17
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const location = useLocation();\r\n\r\n    return (\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 15,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 32,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const location = useLocation();\r\n\r\n    return (\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 32,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const location = useLocation();",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "location = useLocation()",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 34
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "location",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useLocation()",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 34
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useLocation",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 32
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 34
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    );",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 31,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>\r\n    )",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 31,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<Route path={['/login', '/register']}>\r\n            <MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>\r\n        </Route>",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 16
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<Route path={['/login', '/register']}>",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 46
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Route",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "path={['/login', '/register']}",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 45
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "path",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 19
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{['/login', '/register']}",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 45
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "array",
+                                              "text": "['/login', '/register']",
+                                              "startPosition": {
+                                                "row": 19,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 19,
+                                                "column": 44
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string",
+                                                  "text": "'/login'",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 30
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "/login",
+                                                      "startPosition": {
+                                                        "row": 19,
+                                                        "column": 23
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 19,
+                                                        "column": 29
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "string",
+                                                  "text": "'/register'",
+                                                  "startPosition": {
+                                                    "row": 19,
+                                                    "column": 32
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 19,
+                                                    "column": 43
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_fragment",
+                                                      "text": "/register",
+                                                      "startPosition": {
+                                                        "row": 19,
+                                                        "column": 33
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 19,
+                                                        "column": 42
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 46
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<MinimalLayout>\r\n                <Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>\r\n            </MinimalLayout>",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<MinimalLayout>",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 27
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "MinimalLayout",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 20,
+                                            "column": 26
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 27
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 28
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_element",
+                                      "text": "<Switch location={location} key={location.pathname}>\r\n                    <NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>\r\n                </Switch>",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "jsx_opening_element",
+                                          "text": "<Switch location={location} key={location.pathname}>",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 68
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Switch",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 17
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_attribute",
+                                              "text": "location={location}",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 43
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "location",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 32
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_expression",
+                                                  "text": "{location}",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 33
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 43
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "location",
+                                                      "startPosition": {
+                                                        "row": 21,
+                                                        "column": 34
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 21,
+                                                        "column": 42
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_attribute",
+                                              "text": "key={location.pathname}",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 44
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 67
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "key",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 44
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 47
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_expression",
+                                                  "text": "{location.pathname}",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 48
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 67
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "member_expression",
+                                                      "text": "location.pathname",
+                                                      "startPosition": {
+                                                        "row": 21,
+                                                        "column": 49
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 21,
+                                                        "column": 66
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "location",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 49
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 57
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "pathname",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 58
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 66
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 68
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 69
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_element",
+                                          "text": "<NavMotion>\r\n                        <GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>\r\n                    </NavMotion>",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 32
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "jsx_opening_element",
+                                              "text": "<NavMotion>",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 31
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "NavMotion",
+                                                  "startPosition": {
+                                                    "row": 22,
+                                                    "column": 21
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 22,
+                                                    "column": 30
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 22,
+                                                "column": 31
+                                              },
+                                              "endPosition": {
+                                                "row": 22,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_element",
+                                              "text": "<GuestGuard>\r\n                            <Route path=\"/login\" component={AuthLogin} />\r\n                            <Route path=\"/register\" component={AuthRegister} />\r\n                        </GuestGuard>",
+                                              "startPosition": {
+                                                "row": 23,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 37
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "jsx_opening_element",
+                                                  "text": "<GuestGuard>",
+                                                  "startPosition": {
+                                                    "row": 23,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 23,
+                                                    "column": 36
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "GuestGuard",
+                                                      "startPosition": {
+                                                        "row": 23,
+                                                        "column": 25
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 23,
+                                                        "column": 35
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_text",
+                                                  "text": "\r",
+                                                  "startPosition": {
+                                                    "row": 23,
+                                                    "column": 36
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 23,
+                                                    "column": 37
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_self_closing_element",
+                                                  "text": "<Route path=\"/login\" component={AuthLogin} />",
+                                                  "startPosition": {
+                                                    "row": 24,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 24,
+                                                    "column": 73
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "Route",
+                                                      "startPosition": {
+                                                        "row": 24,
+                                                        "column": 29
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 24,
+                                                        "column": 34
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_attribute",
+                                                      "text": "path=\"/login\"",
+                                                      "startPosition": {
+                                                        "row": 24,
+                                                        "column": 35
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 24,
+                                                        "column": 48
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "path",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 35
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 39
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "string",
+                                                          "text": "\"/login\"",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 40
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 48
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "string_fragment",
+                                                              "text": "/login",
+                                                              "startPosition": {
+                                                                "row": 24,
+                                                                "column": 41
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 24,
+                                                                "column": 47
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_attribute",
+                                                      "text": "component={AuthLogin}",
+                                                      "startPosition": {
+                                                        "row": 24,
+                                                        "column": 49
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 24,
+                                                        "column": 70
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "component",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 49
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 58
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "jsx_expression",
+                                                          "text": "{AuthLogin}",
+                                                          "startPosition": {
+                                                            "row": 24,
+                                                            "column": 59
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 24,
+                                                            "column": 70
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "AuthLogin",
+                                                              "startPosition": {
+                                                                "row": 24,
+                                                                "column": 60
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 24,
+                                                                "column": 69
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_text",
+                                                  "text": "\r",
+                                                  "startPosition": {
+                                                    "row": 24,
+                                                    "column": 73
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 24,
+                                                    "column": 74
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_self_closing_element",
+                                                  "text": "<Route path=\"/register\" component={AuthRegister} />",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 79
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "Route",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 29
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 34
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "jsx_attribute",
+                                                      "text": "path=\"/register\"",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 35
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 51
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "path",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 35
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 39
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "string",
+                                                          "text": "\"/register\"",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 40
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 51
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "string_fragment",
+                                                              "text": "/register",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 41
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 50
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "jsx_attribute",
+                                                      "text": "component={AuthRegister}",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 52
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 76
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "component",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 52
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 61
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "jsx_expression",
+                                                          "text": "{AuthRegister}",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 62
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 76
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "AuthRegister",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 63
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 75
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "jsx_text",
+                                                  "text": "\r",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 79
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 80
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_closing_element",
+                                                  "text": "</GuestGuard>",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 37
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "GuestGuard",
+                                                      "startPosition": {
+                                                        "row": 26,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 26,
+                                                        "column": 36
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "jsx_text",
+                                              "text": "\r",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 37
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 38
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_closing_element",
+                                              "text": "</NavMotion>",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 32
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "NavMotion",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 31
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_text",
+                                          "text": "\r",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 32
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 33
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_closing_element",
+                                          "text": "</Switch>",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 25
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "Switch",
+                                              "startPosition": {
+                                                "row": 28,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 28,
+                                                "column": 24
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 26
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</MinimalLayout>",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "MinimalLayout",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</Route>",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 16
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Route",
+                                      "startPosition": {
+                                        "row": 30,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default LoginRoutes;",
+      "startPosition": {
+        "row": 34,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 34,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "LoginRoutes",
+          "startPosition": {
+            "row": 34,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 34,
+            "column": 26
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

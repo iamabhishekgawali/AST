@@ -1,0 +1,1338 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport { Link, Typography, Stack } from '@material-ui/core';\r\n\r\n//-----------------------|| FOOTER - AUTHENTICATION 2 & 3 ||-----------------------//\r\n\r\nconst AuthFooter = () => {\r\n    return (\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    );\r\n};\r\n\r\nexport default AuthFooter;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 21,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Link, Typography, Stack } from '@material-ui/core';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 60
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Link, Typography, Stack }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Link, Typography, Stack }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 34
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Link",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 13
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Link",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 13
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "Typography",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 25
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Typography",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 25
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "Stack",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 32
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Stack",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 32
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 3,
+            "column": 40
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 59
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 3,
+                "column": 41
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 58
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| FOOTER - AUTHENTICATION 2 & 3 ||-----------------------//\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 86
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const AuthFooter = () => {\r\n    return (\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 18,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "AuthFooter = () => {\r\n    return (\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 18,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "AuthFooter",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 16
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    return (\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 7,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    return (\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    );",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>\r\n    )",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<Stack direction=\"row\" justifyContent=\"space-between\">\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>\r\n            <Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>\r\n        </Stack>",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 16
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<Stack direction=\"row\" justifyContent=\"space-between\">",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 62
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Stack",
+                                      "startPosition": {
+                                        "row": 9,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "direction=\"row\"",
+                                      "startPosition": {
+                                        "row": 9,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 30
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "direction",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"row\"",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 25
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 30
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "row",
+                                              "startPosition": {
+                                                "row": 9,
+                                                "column": 26
+                                              },
+                                              "endPosition": {
+                                                "row": 9,
+                                                "column": 29
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "justifyContent=\"space-between\"",
+                                      "startPosition": {
+                                        "row": 9,
+                                        "column": 31
+                                      },
+                                      "endPosition": {
+                                        "row": 9,
+                                        "column": 61
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "justifyContent",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 31
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 45
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"space-between\"",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 46
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 61
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "space-between",
+                                              "startPosition": {
+                                                "row": 9,
+                                                "column": 47
+                                              },
+                                              "endPosition": {
+                                                "row": 9,
+                                                "column": 60
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 9,
+                                    "column": 62
+                                  },
+                                  "endPosition": {
+                                    "row": 9,
+                                    "column": 63
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">\r\n                berrydashboard.io\r\n            </Typography>",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<Typography variant=\"subtitle2\" component={Link} href=\"https://berrydashboard.io\" target=\"_blank\" underline=\"hover\">",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 128
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "variant=\"subtitle2\"",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 43
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "variant",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 31
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"subtitle2\"",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 32
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 43
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "subtitle2",
+                                                  "startPosition": {
+                                                    "row": 10,
+                                                    "column": 33
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 10,
+                                                    "column": 42
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "component={Link}",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 44
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 60
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "component",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 44
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 53
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_expression",
+                                              "text": "{Link}",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 54
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 60
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Link",
+                                                  "startPosition": {
+                                                    "row": 10,
+                                                    "column": 55
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 10,
+                                                    "column": 59
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "href=\"https://berrydashboard.io\"",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 61
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 93
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "href",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 61
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 65
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"https://berrydashboard.io\"",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 66
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 93
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "https://berrydashboard.io",
+                                                  "startPosition": {
+                                                    "row": 10,
+                                                    "column": 67
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 10,
+                                                    "column": 92
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "target=\"_blank\"",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 94
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 109
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "target",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 94
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 100
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"_blank\"",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 101
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 109
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "_blank",
+                                                  "startPosition": {
+                                                    "row": 10,
+                                                    "column": 102
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 10,
+                                                    "column": 108
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "underline=\"hover\"",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 110
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 127
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "underline",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 110
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 119
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"hover\"",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 120
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 127
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "hover",
+                                                  "startPosition": {
+                                                    "row": 10,
+                                                    "column": 121
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 10,
+                                                    "column": 126
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 128
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 129
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "berrydashboard.io\r",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 34
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</Typography>",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 25
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">\r\n                &copy; codedthemes.com\r\n            </Typography>",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<Typography variant=\"subtitle2\" component={Link} href=\"https://codedthemes.com\" target=\"_blank\" underline=\"hover\">",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 126
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "variant=\"subtitle2\"",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 43
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "variant",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 31
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"subtitle2\"",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 32
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 43
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "subtitle2",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 33
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 42
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "component={Link}",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 44
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 60
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "component",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 44
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 53
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_expression",
+                                              "text": "{Link}",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 54
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 60
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "Link",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 55
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 59
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "href=\"https://codedthemes.com\"",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 61
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 91
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "href",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 61
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 65
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"https://codedthemes.com\"",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 66
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 91
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "https://codedthemes.com",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 67
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 90
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "target=\"_blank\"",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 92
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 107
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "target",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 92
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 98
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"_blank\"",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 99
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 107
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "_blank",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 100
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 106
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "underline=\"hover\"",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 108
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 125
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "underline",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 108
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 117
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"hover\"",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 118
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 125
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "hover",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 119
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 124
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 126
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 127
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "&copy; codedthemes.com\r",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 39
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</Typography>",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 25
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</Stack>",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 16
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Stack",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default AuthFooter;",
+      "startPosition": {
+        "row": 20,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 20,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "AuthFooter",
+          "startPosition": {
+            "row": 20,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 20,
+            "column": 25
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

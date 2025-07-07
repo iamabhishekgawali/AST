@@ -1,0 +1,1350 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\nimport { Redirect, Switch } from 'react-router-dom';\r\n\r\n// routes\r\nimport MainRoutes from './MainRoutes';\r\nimport LoginRoutes from './LoginRoutes';\r\nimport AuthenticationRoutes from './AuthenticationRoutes';\r\n\r\n// project imports\r\nimport config from './../config';\r\n\r\n//-----------------------|| ROUTING RENDER ||-----------------------//\r\n\r\nconst Routes = () => {\r\n    return (\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    );\r\n};\r\n\r\nexport default Routes;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 32,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Redirect, Switch } from 'react-router-dom';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 52
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Redirect, Switch }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Redirect, Switch }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Redirect",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 17
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Redirect",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 17
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "Switch",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 25
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Switch",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 25
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 1,
+            "column": 33
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 51
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 1,
+                "column": 34
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 50
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// routes\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 10
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import MainRoutes from './MainRoutes';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 38
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "MainRoutes",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 17
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "MainRoutes",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 17
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./MainRoutes'",
+          "startPosition": {
+            "row": 4,
+            "column": 23
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 37
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./MainRoutes",
+              "startPosition": {
+                "row": 4,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 36
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import LoginRoutes from './LoginRoutes';",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "LoginRoutes",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 18
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "LoginRoutes",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 18
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./LoginRoutes'",
+          "startPosition": {
+            "row": 5,
+            "column": 24
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./LoginRoutes",
+              "startPosition": {
+                "row": 5,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 38
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import AuthenticationRoutes from './AuthenticationRoutes';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 58
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "AuthenticationRoutes",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "AuthenticationRoutes",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./AuthenticationRoutes'",
+          "startPosition": {
+            "row": 6,
+            "column": 33
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 57
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./AuthenticationRoutes",
+              "startPosition": {
+                "row": 6,
+                "column": 34
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 56
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import config from './../config';",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 33
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "config",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "config",
+              "startPosition": {
+                "row": 9,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../config'",
+          "startPosition": {
+            "row": 9,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 32
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../config",
+              "startPosition": {
+                "row": 9,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 31
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| ROUTING RENDER ||-----------------------//\r",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 71
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const Routes = () => {\r\n    return (\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 29,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "Routes = () => {\r\n    return (\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 13,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 29,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Routes",
+              "startPosition": {
+                "row": 13,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 12
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    return (\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 13,
+                "column": 15
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    return (\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    );",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>\r\n    )",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<Switch>\r\n            <Redirect exact from=\"/\" to={config.defaultPath} />\r\n            <React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>\r\n        </Switch>",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 17
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<Switch>",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 16
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Switch",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 16
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 17
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_self_closing_element",
+                                  "text": "<Redirect exact from=\"/\" to={config.defaultPath} />",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 63
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Redirect",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 21
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "exact",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 22
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 27
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "exact",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 22
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "from=\"/\"",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 28
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 36
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "from",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 28
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 32
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"/\"",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 33
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 36
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "/",
+                                              "startPosition": {
+                                                "row": 16,
+                                                "column": 34
+                                              },
+                                              "endPosition": {
+                                                "row": 16,
+                                                "column": 35
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "to={config.defaultPath}",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 37
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 60
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "to",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 37
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 39
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{config.defaultPath}",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 40
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 60
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_expression",
+                                              "text": "config.defaultPath",
+                                              "startPosition": {
+                                                "row": 16,
+                                                "column": 41
+                                              },
+                                              "endPosition": {
+                                                "row": 16,
+                                                "column": 59
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "config",
+                                                  "startPosition": {
+                                                    "row": 16,
+                                                    "column": 41
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 16,
+                                                    "column": 47
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "defaultPath",
+                                                  "startPosition": {
+                                                    "row": 16,
+                                                    "column": 48
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 16,
+                                                    "column": 59
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 63
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 64
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<React.Fragment>\r\n                {/* Routes for authentication pages */}\r\n                <AuthenticationRoutes />\r\n\r\n                {/* Route for login */}\r\n                <LoginRoutes />\r\n\r\n                {/* Routes for main layouts */}\r\n                <MainRoutes />\r\n            </React.Fragment>",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<React.Fragment>",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 28
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "member_expression",
+                                          "text": "React.Fragment",
+                                          "startPosition": {
+                                            "row": 17,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 17,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "React",
+                                              "startPosition": {
+                                                "row": 17,
+                                                "column": 13
+                                              },
+                                              "endPosition": {
+                                                "row": 17,
+                                                "column": 18
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "Fragment",
+                                              "startPosition": {
+                                                "row": 17,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 17,
+                                                "column": 27
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 28
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 29
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_expression",
+                                      "text": "{/* Routes for authentication pages */}",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 55
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "comment",
+                                          "text": "/* Routes for authentication pages */",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 54
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 55
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 56
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_self_closing_element",
+                                      "text": "<AuthenticationRoutes />",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 40
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "AuthenticationRoutes",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 37
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 41
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 0
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 1
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_expression",
+                                      "text": "{/* Route for login */}",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 39
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "comment",
+                                          "text": "/* Route for login */",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 38
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 39
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 40
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_self_closing_element",
+                                      "text": "<LoginRoutes />",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "LoginRoutes",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 31
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 32
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 0
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 1
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_expression",
+                                      "text": "{/* Routes for main layouts */}",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 47
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "comment",
+                                          "text": "/* Routes for main layouts */",
+                                          "startPosition": {
+                                            "row": 24,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 24,
+                                            "column": 46
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 47
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 48
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_self_closing_element",
+                                      "text": "<MainRoutes />",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 30
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "MainRoutes",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 30
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 31
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</React.Fragment>",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 29
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "member_expression",
+                                          "text": "React.Fragment",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 28
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "React",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 14
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 19
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "Fragment",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 28
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 30
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</Switch>",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 17
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Switch",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default Routes;",
+      "startPosition": {
+        "row": 31,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 31,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "Routes",
+          "startPosition": {
+            "row": 31,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 31,
+            "column": 21
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

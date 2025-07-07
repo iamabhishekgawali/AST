@@ -1,0 +1,1844 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport { makeStyles } from '@material-ui/styles';\r\nimport { Card } from '@material-ui/core';\r\n\r\n// project imports\r\nimport MainCard from './../../ui-component/cards/MainCard';\r\nimport SecondaryAction from './../../ui-component/cards/CardSecondaryAction';\r\n\r\n// style constant\r\nconst useStyles = makeStyles((theme) => ({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n}));\r\n\r\n//=============================|| TABLER ICONS ||=============================//\r\n\r\nconst TablerIcons = () => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    );\r\n};\r\n\r\nexport default TablerIcons;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 34,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { makeStyles } from '@material-ui/styles';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ makeStyles }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ makeStyles }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "makeStyles",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "makeStyles",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/styles'",
+          "startPosition": {
+            "row": 3,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/styles",
+              "startPosition": {
+                "row": 3,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Card } from '@material-ui/core';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 41
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Card }",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Card }",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 15
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Card",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 13
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Card",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 13
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 4,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 40
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 4,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 39
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import MainCard from './../../ui-component/cards/MainCard';",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 59
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "MainCard",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "MainCard",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../../ui-component/cards/MainCard'",
+          "startPosition": {
+            "row": 7,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 58
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../../ui-component/cards/MainCard",
+              "startPosition": {
+                "row": 7,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 57
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import SecondaryAction from './../../ui-component/cards/CardSecondaryAction';",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 77
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "SecondaryAction",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "SecondaryAction",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 22
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./../../ui-component/cards/CardSecondaryAction'",
+          "startPosition": {
+            "row": 8,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 76
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./../../ui-component/cards/CardSecondaryAction",
+              "startPosition": {
+                "row": 8,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 75
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// style constant\r",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 18
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const useStyles = makeStyles((theme) => ({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n}));",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 17,
+        "column": 4
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "useStyles = makeStyles((theme) => ({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n}))",
+          "startPosition": {
+            "row": 11,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 17,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "useStyles",
+              "startPosition": {
+                "row": 11,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "makeStyles((theme) => ({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n}))",
+              "startPosition": {
+                "row": 11,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 3
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "makeStyles",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 28
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "((theme) => ({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n}))",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 3
+                  },
+                  "children": [
+                    {
+                      "type": "arrow_function",
+                      "text": "(theme) => ({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n})",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 29
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 2
+                      },
+                      "children": [
+                        {
+                          "type": "formal_parameters",
+                          "text": "(theme)",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 36
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "theme",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 35
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "({\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n})",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 40
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 2
+                          },
+                          "children": [
+                            {
+                              "type": "object",
+                              "text": "{\r\n    frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }\r\n}",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 41
+                              },
+                              "endPosition": {
+                                "row": 17,
+                                "column": 1
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "frame: {\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 4
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 5
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "frame",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 4
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 9
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n        height: 'calc(100vh - 210px)',\r\n        border: '1px solid',\r\n        borderColor: theme.palette.primary.light\r\n    }",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 11
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 5
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "height: 'calc(100vh - 210px)'",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "height",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 14
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "'calc(100vh - 210px)'",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 37
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "calc(100vh - 210px)",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 17
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "border: '1px solid'",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 27
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "border",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 14
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "'1px solid'",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 27
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "1px solid",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 17
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "borderColor: theme.palette.primary.light",
+                                          "startPosition": {
+                                            "row": 15,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 15,
+                                            "column": 48
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "borderColor",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 19
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "member_expression",
+                                              "text": "theme.palette.primary.light",
+                                              "startPosition": {
+                                                "row": 15,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 15,
+                                                "column": 48
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "member_expression",
+                                                  "text": "theme.palette.primary",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 21
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 42
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "member_expression",
+                                                      "text": "theme.palette",
+                                                      "startPosition": {
+                                                        "row": 15,
+                                                        "column": 21
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 15,
+                                                        "column": 34
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "theme",
+                                                          "startPosition": {
+                                                            "row": 15,
+                                                            "column": 21
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 15,
+                                                            "column": 26
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "palette",
+                                                          "startPosition": {
+                                                            "row": 15,
+                                                            "column": 27
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 15,
+                                                            "column": 34
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "primary",
+                                                      "startPosition": {
+                                                        "row": 15,
+                                                        "column": 35
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 15,
+                                                        "column": 42
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "light",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 43
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 48
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//=============================|| TABLER ICONS ||=============================//\r",
+      "startPosition": {
+        "row": 19,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 19,
+        "column": 81
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const TablerIcons = () => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 21,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 31,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "TablerIcons = () => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 21,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 31,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "TablerIcons",
+              "startPosition": {
+                "row": 21,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 17
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 21,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 31,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const classes = useStyles();",
+                      "startPosition": {
+                        "row": 22,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 22,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "classes = useStyles()",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 22,
+                            "column": 31
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "classes",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useStyles()",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 31
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useStyles",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    );",
+                      "startPosition": {
+                        "row": 24,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 30,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>\r\n    )",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>\r\n            <Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>\r\n        </MainCard>",
+                              "startPosition": {
+                                "row": 25,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 19
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<MainCard title=\"Tabler Icons\" secondary={<SecondaryAction link=\"https://tablericons.com/\" />}>",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 103
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "MainCard",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "title=\"Tabler Icons\"",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 38
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "title",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"Tabler Icons\"",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 38
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "Tabler Icons",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 37
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "secondary={<SecondaryAction link=\"https://tablericons.com/\" />}",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 39
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 102
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "secondary",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 39
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 48
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{<SecondaryAction link=\"https://tablericons.com/\" />}",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 49
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 102
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "jsx_self_closing_element",
+                                              "text": "<SecondaryAction link=\"https://tablericons.com/\" />",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 50
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 101
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "SecondaryAction",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 51
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 66
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "jsx_attribute",
+                                                  "text": "link=\"https://tablericons.com/\"",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 67
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 98
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "link",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 67
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 71
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string",
+                                                      "text": "\"https://tablericons.com/\"",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 72
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 98
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "string_fragment",
+                                                          "text": "https://tablericons.com/",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 73
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 97
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 103
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 104
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<Card sx={{ overflow: 'hidden' }}>\r\n                <iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />\r\n            </Card>",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 19
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<Card sx={{ overflow: 'hidden' }}>",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 46
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Card",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 17
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "sx={{ overflow: 'hidden' }}",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 45
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "sx",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_expression",
+                                              "text": "{{ overflow: 'hidden' }}",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 45
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "object",
+                                                  "text": "{ overflow: 'hidden' }",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 44
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "pair",
+                                                      "text": "overflow: 'hidden'",
+                                                      "startPosition": {
+                                                        "row": 26,
+                                                        "column": 24
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 26,
+                                                        "column": 42
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "property_identifier",
+                                                          "text": "overflow",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 24
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 32
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "string",
+                                                          "text": "'hidden'",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 34
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 42
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "string_fragment",
+                                                              "text": "hidden",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 35
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 41
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 46
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 47
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_self_closing_element",
+                                      "text": "<iframe title=\"Tabler Icons\" className={classes.frame} width=\"100%\" src=\"https://tablericons.com/\" />",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 117
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "iframe",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "title=\"Tabler Icons\"",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 44
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "title",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 29
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"Tabler Icons\"",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 30
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 44
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "Tabler Icons",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 31
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 43
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "className={classes.frame}",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 45
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 70
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "className",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 45
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 54
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "jsx_expression",
+                                              "text": "{classes.frame}",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 55
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 70
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "member_expression",
+                                                  "text": "classes.frame",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 56
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 69
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "classes",
+                                                      "startPosition": {
+                                                        "row": 27,
+                                                        "column": 56
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 27,
+                                                        "column": 63
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "frame",
+                                                      "startPosition": {
+                                                        "row": 27,
+                                                        "column": 64
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 27,
+                                                        "column": 69
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "width=\"100%\"",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 71
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 83
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "width",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 71
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 76
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"100%\"",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 77
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 83
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "100%",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 78
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 82
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "src=\"https://tablericons.com/\"",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 84
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 114
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "src",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 84
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 87
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"https://tablericons.com/\"",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 88
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 114
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "https://tablericons.com/",
+                                                  "startPosition": {
+                                                    "row": 27,
+                                                    "column": 89
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 27,
+                                                    "column": 113
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 117
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 118
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</Card>",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 19
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Card",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 18
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 19
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</MainCard>",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 19
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "MainCard",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 18
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default TablerIcons;",
+      "startPosition": {
+        "row": 33,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 33,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "TablerIcons",
+          "startPosition": {
+            "row": 33,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 33,
+            "column": 26
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

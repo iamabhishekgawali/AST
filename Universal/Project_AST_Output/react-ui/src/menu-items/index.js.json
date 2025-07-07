@@ -1,0 +1,477 @@
+{
+  "type": "program",
+  "text": "import { dashboard } from './dashboard';\r\nimport { utilities } from './utilities';\r\nimport { other } from './other';\r\n\r\n//-----------------------|| MENU ITEMS ||-----------------------//\r\n\r\nconst menuItems = {\r\n    items: [dashboard, utilities, other]\r\n};\r\n\r\nexport default menuItems;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 11,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import { dashboard } from './dashboard';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ dashboard }",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 20
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ dashboard }",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "dashboard",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "dashboard",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 18
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./dashboard'",
+          "startPosition": {
+            "row": 0,
+            "column": 26
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./dashboard",
+              "startPosition": {
+                "row": 0,
+                "column": 27
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 38
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { utilities } from './utilities';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ utilities }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 20
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ utilities }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "utilities",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "utilities",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 18
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./utilities'",
+          "startPosition": {
+            "row": 1,
+            "column": 26
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./utilities",
+              "startPosition": {
+                "row": 1,
+                "column": 27
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 38
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { other } from './other';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 32
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ other }",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ other }",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "other",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 14
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "other",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 14
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./other'",
+          "startPosition": {
+            "row": 2,
+            "column": 22
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./other",
+              "startPosition": {
+                "row": 2,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 30
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| MENU ITEMS ||-----------------------//\r",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 67
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const menuItems = {\r\n    items: [dashboard, utilities, other]\r\n};",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "menuItems = {\r\n    items: [dashboard, utilities, other]\r\n}",
+          "startPosition": {
+            "row": 6,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "menuItems",
+              "startPosition": {
+                "row": 6,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    items: [dashboard, utilities, other]\r\n}",
+              "startPosition": {
+                "row": 6,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "items: [dashboard, utilities, other]",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "items",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 9
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "array",
+                      "text": "[dashboard, utilities, other]",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 40
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "dashboard",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 21
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "utilities",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 23
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 32
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "other",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 39
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default menuItems;",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 25
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "menuItems",
+          "startPosition": {
+            "row": 10,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 24
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

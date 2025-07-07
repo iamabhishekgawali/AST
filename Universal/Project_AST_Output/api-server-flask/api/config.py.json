@@ -1,0 +1,4414 @@
+{
+  "type": "module",
+  "text": "# -*- encoding: utf-8 -*-\r\n\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"\r\n\r\nimport os, random, string\r\nfrom datetime import timedelta\r\n\r\nBASE_DIR = os.path.dirname(os.path.realpath(__file__))\r\n\r\nclass BaseConfig():\r\n    \r\n    SECRET_KEY = os.getenv('SECRET_KEY', None)\r\n    if not SECRET_KEY:\r\n        SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))\r\n\r\n    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', None)\r\n    if not JWT_SECRET_KEY:\r\n        JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))\r\n\r\n    GITHUB_CLIENT_ID     = os.getenv('GITHUB_CLIENT_ID' , None)\r\n    GITHUB_CLIENT_SECRET = os.getenv('GITHUB_SECRET_KEY', None)\r\n    \r\n    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)\r\n\r\n    SQLALCHEMY_TRACK_MODIFICATIONS = False\r\n\r\n    DB_ENGINE   = os.getenv('DB_ENGINE'   , None)\r\n    DB_USERNAME = os.getenv('DB_USERNAME' , None)\r\n    DB_PASS     = os.getenv('DB_PASS'     , None)\r\n    DB_HOST     = os.getenv('DB_HOST'     , None)\r\n    DB_PORT     = os.getenv('DB_PORT'     , None)\r\n    DB_NAME     = os.getenv('DB_NAME'     , None)\r\n\r\n    USE_SQLITE  = True \r\n\r\n    # try to set up a Relational DBMS\r\n    if DB_ENGINE and DB_NAME and DB_USERNAME:\r\n\r\n        try:\r\n            \r\n            # Relational DBMS: PSQL, MySql\r\n            SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False\r\n\r\n        except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')    \r\n\r\n    if USE_SQLITE:\r\n\r\n        # This will create a file in <app> FOLDER\r\n        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 61,
+    "column": 85
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "# -*- encoding: utf-8 -*-\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": []
+    },
+    {
+      "type": "expression_statement",
+      "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "string",
+          "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+          "startPosition": {
+            "row": 1,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "string_start",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 1,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "children": []
+            },
+            {
+              "type": "string_content",
+              "text": "\r\nCopyright (c) 2019 - present AppSeed.us\r\n",
+              "startPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "children": []
+            },
+            {
+              "type": "string_end",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 3
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import os, random, string",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 25
+      },
+      "children": [
+        {
+          "type": "dotted_name",
+          "text": "os",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 9
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "os",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 9
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "random",
+          "startPosition": {
+            "row": 5,
+            "column": 11
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 17
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "random",
+              "startPosition": {
+                "row": 5,
+                "column": 11
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 17
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "string",
+          "startPosition": {
+            "row": 5,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "string",
+              "startPosition": {
+                "row": 5,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 25
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "text": "from datetime import timedelta",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 30
+      },
+      "children": [
+        {
+          "type": "dotted_name",
+          "text": "datetime",
+          "startPosition": {
+            "row": 6,
+            "column": 5
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "datetime",
+              "startPosition": {
+                "row": 6,
+                "column": 5
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "timedelta",
+          "startPosition": {
+            "row": 6,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 30
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "timedelta",
+              "startPosition": {
+                "row": 6,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 30
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "BASE_DIR = os.path.dirname(os.path.realpath(__file__))",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 54
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "BASE_DIR = os.path.dirname(os.path.realpath(__file__))",
+          "startPosition": {
+            "row": 8,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "BASE_DIR",
+              "startPosition": {
+                "row": 8,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 8
+              },
+              "children": []
+            },
+            {
+              "type": "call",
+              "text": "os.path.dirname(os.path.realpath(__file__))",
+              "startPosition": {
+                "row": 8,
+                "column": 11
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 54
+              },
+              "children": [
+                {
+                  "type": "attribute",
+                  "text": "os.path.dirname",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "attribute",
+                      "text": "os.path",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "os",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 13
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "path",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "dirname",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "argument_list",
+                  "text": "(os.path.realpath(__file__))",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 54
+                  },
+                  "children": [
+                    {
+                      "type": "call",
+                      "text": "os.path.realpath(__file__)",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 53
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.path.realpath",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 43
+                          },
+                          "children": [
+                            {
+                              "type": "attribute",
+                              "text": "os.path",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 34
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "os",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "path",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 30
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 34
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "realpath",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 35
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 43
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "(__file__)",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 43
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 53
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "__file__",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 52
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_definition",
+      "text": "class BaseConfig():\r\n    \r\n    SECRET_KEY = os.getenv('SECRET_KEY', None)\r\n    if not SECRET_KEY:\r\n        SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))\r\n\r\n    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', None)\r\n    if not JWT_SECRET_KEY:\r\n        JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))\r\n\r\n    GITHUB_CLIENT_ID     = os.getenv('GITHUB_CLIENT_ID' , None)\r\n    GITHUB_CLIENT_SECRET = os.getenv('GITHUB_SECRET_KEY', None)\r\n    \r\n    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)\r\n\r\n    SQLALCHEMY_TRACK_MODIFICATIONS = False\r\n\r\n    DB_ENGINE   = os.getenv('DB_ENGINE'   , None)\r\n    DB_USERNAME = os.getenv('DB_USERNAME' , None)\r\n    DB_PASS     = os.getenv('DB_PASS'     , None)\r\n    DB_HOST     = os.getenv('DB_HOST'     , None)\r\n    DB_PORT     = os.getenv('DB_PORT'     , None)\r\n    DB_NAME     = os.getenv('DB_NAME'     , None)\r\n\r\n    USE_SQLITE  = True \r\n\r\n    # try to set up a Relational DBMS\r\n    if DB_ENGINE and DB_NAME and DB_USERNAME:\r\n\r\n        try:\r\n            \r\n            # Relational DBMS: PSQL, MySql\r\n            SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False\r\n\r\n        except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')    \r\n\r\n    if USE_SQLITE:\r\n\r\n        # This will create a file in <app> FOLDER\r\n        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 61,
+        "column": 85
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "BaseConfig",
+          "startPosition": {
+            "row": 10,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 16
+          },
+          "children": []
+        },
+        {
+          "type": "argument_list",
+          "text": "()",
+          "startPosition": {
+            "row": 10,
+            "column": 16
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 18
+          },
+          "children": []
+        },
+        {
+          "type": "block",
+          "text": "SECRET_KEY = os.getenv('SECRET_KEY', None)\r\n    if not SECRET_KEY:\r\n        SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))\r\n\r\n    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', None)\r\n    if not JWT_SECRET_KEY:\r\n        JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))\r\n\r\n    GITHUB_CLIENT_ID     = os.getenv('GITHUB_CLIENT_ID' , None)\r\n    GITHUB_CLIENT_SECRET = os.getenv('GITHUB_SECRET_KEY', None)\r\n    \r\n    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)\r\n\r\n    SQLALCHEMY_TRACK_MODIFICATIONS = False\r\n\r\n    DB_ENGINE   = os.getenv('DB_ENGINE'   , None)\r\n    DB_USERNAME = os.getenv('DB_USERNAME' , None)\r\n    DB_PASS     = os.getenv('DB_PASS'     , None)\r\n    DB_HOST     = os.getenv('DB_HOST'     , None)\r\n    DB_PORT     = os.getenv('DB_PORT'     , None)\r\n    DB_NAME     = os.getenv('DB_NAME'     , None)\r\n\r\n    USE_SQLITE  = True \r\n\r\n    # try to set up a Relational DBMS\r\n    if DB_ENGINE and DB_NAME and DB_USERNAME:\r\n\r\n        try:\r\n            \r\n            # Relational DBMS: PSQL, MySql\r\n            SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False\r\n\r\n        except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')    \r\n\r\n    if USE_SQLITE:\r\n\r\n        # This will create a file in <app> FOLDER\r\n        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+          "startPosition": {
+            "row": 12,
+            "column": 4
+          },
+          "endPosition": {
+            "row": 61,
+            "column": 85
+          },
+          "children": [
+            {
+              "type": "expression_statement",
+              "text": "SECRET_KEY = os.getenv('SECRET_KEY', None)",
+              "startPosition": {
+                "row": 12,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 46
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "SECRET_KEY = os.getenv('SECRET_KEY', None)",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 46
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "SECRET_KEY",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 14
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('SECRET_KEY', None)",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 46
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 17
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 17
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 19
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('SECRET_KEY', None)",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 26
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 46
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'SECRET_KEY'",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 39
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 28
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "SECRET_KEY",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 38
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 39
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 41
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 45
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "if_statement",
+              "text": "if not SECRET_KEY:\r\n        SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+              "startPosition": {
+                "row": 13,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 14,
+                "column": 91
+              },
+              "children": [
+                {
+                  "type": "not_operator",
+                  "text": "not SECRET_KEY",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "SECRET_KEY",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 21
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 91
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 91
+                      },
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "text": "SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 91
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "SECRET_KEY",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call",
+                              "text": "''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 91
+                              },
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "text": "''.join",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string",
+                                      "text": "''",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 23
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_start",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 21
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 22
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string_end",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 22
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "join",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 24
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 28
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "generator_expression",
+                                  "text": "(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                                  "startPosition": {
+                                    "row": 14,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 14,
+                                    "column": 91
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "text": "random.choice( string.ascii_lowercase  )",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 29
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 69
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "random.choice",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 42
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "random",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 35
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "choice",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 36
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 42
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "( string.ascii_lowercase  )",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 42
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 69
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "text": "string.ascii_lowercase",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 44
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 66
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "string",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 44
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 50
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "ascii_lowercase",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 51
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 66
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "for_in_clause",
+                                      "text": "for i in range( 32 )",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 70
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 90
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "i",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 74
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 75
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "call",
+                                          "text": "range( 32 )",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 79
+                                          },
+                                          "endPosition": {
+                                            "row": 14,
+                                            "column": 90
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "range",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 79
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 84
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "text": "( 32 )",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 84
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 90
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "integer",
+                                                  "text": "32",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 86
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 88
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', None)",
+              "startPosition": {
+                "row": 16,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 16,
+                "column": 54
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', None)",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 54
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "JWT_SECRET_KEY",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 18
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('JWT_SECRET_KEY', None)",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 21
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 54
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 21
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 30
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 23
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 24
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 30
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('JWT_SECRET_KEY', None)",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 30
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 54
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'JWT_SECRET_KEY'",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 31
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 32
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "JWT_SECRET_KEY",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 46
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 46
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 49
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 53
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "if_statement",
+              "text": "if not JWT_SECRET_KEY:\r\n        JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+              "startPosition": {
+                "row": 17,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 95
+              },
+              "children": [
+                {
+                  "type": "not_operator",
+                  "text": "not JWT_SECRET_KEY",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 25
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "JWT_SECRET_KEY",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 25
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 95
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 95
+                      },
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "text": "JWT_SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 95
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "JWT_SECRET_KEY",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 22
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call",
+                              "text": "''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 25
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 95
+                              },
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "text": "''.join",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 25
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 32
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string",
+                                      "text": "''",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 27
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_start",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 25
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 26
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string_end",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 26
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "join",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 28
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 32
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "generator_expression",
+                                  "text": "(random.choice( string.ascii_lowercase  ) for i in range( 32 ))",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 95
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "text": "random.choice( string.ascii_lowercase  )",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 33
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 73
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "random.choice",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 33
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 46
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "random",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 33
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 39
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "choice",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 40
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 46
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "( string.ascii_lowercase  )",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 46
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 73
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "text": "string.ascii_lowercase",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 48
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 70
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "string",
+                                                  "startPosition": {
+                                                    "row": 18,
+                                                    "column": 48
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 18,
+                                                    "column": 54
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "ascii_lowercase",
+                                                  "startPosition": {
+                                                    "row": 18,
+                                                    "column": 55
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 18,
+                                                    "column": 70
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "for_in_clause",
+                                      "text": "for i in range( 32 )",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 74
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 94
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "i",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 78
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 79
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "call",
+                                          "text": "range( 32 )",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 83
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 94
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "range",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 83
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 88
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "text": "( 32 )",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 88
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 94
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "integer",
+                                                  "text": "32",
+                                                  "startPosition": {
+                                                    "row": 18,
+                                                    "column": 90
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 18,
+                                                    "column": 92
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "GITHUB_CLIENT_ID     = os.getenv('GITHUB_CLIENT_ID' , None)",
+              "startPosition": {
+                "row": 20,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 20,
+                "column": 63
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "GITHUB_CLIENT_ID     = os.getenv('GITHUB_CLIENT_ID' , None)",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 63
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "GITHUB_CLIENT_ID",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 20
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('GITHUB_CLIENT_ID' , None)",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 63
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 36
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 29
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 36
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('GITHUB_CLIENT_ID' , None)",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 63
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'GITHUB_CLIENT_ID'",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 37
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 55
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 38
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "GITHUB_CLIENT_ID",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 54
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 54
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 55
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 58
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 62
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "GITHUB_CLIENT_SECRET = os.getenv('GITHUB_SECRET_KEY', None)",
+              "startPosition": {
+                "row": 21,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 63
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "GITHUB_CLIENT_SECRET = os.getenv('GITHUB_SECRET_KEY', None)",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 63
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "GITHUB_CLIENT_SECRET",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 24
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('GITHUB_SECRET_KEY', None)",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 63
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 36
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 29
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 36
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('GITHUB_SECRET_KEY', None)",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 63
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'GITHUB_SECRET_KEY'",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 37
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 56
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 38
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "GITHUB_SECRET_KEY",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 55
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 56
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 21,
+                                "column": 58
+                              },
+                              "endPosition": {
+                                "row": 21,
+                                "column": 62
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)",
+              "startPosition": {
+                "row": 23,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 23,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "JWT_ACCESS_TOKEN_EXPIRES",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 28
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "timedelta(hours=1)",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 31
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "timedelta",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 40
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "(hours=1)",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 40
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "keyword_argument",
+                              "text": "hours=1",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 41
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 48
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "hours",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 41
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 46
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "integer",
+                                  "text": "1",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 47
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 48
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "SQLALCHEMY_TRACK_MODIFICATIONS = False",
+              "startPosition": {
+                "row": 25,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 42
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "SQLALCHEMY_TRACK_MODIFICATIONS = False",
+                  "startPosition": {
+                    "row": 25,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "SQLALCHEMY_TRACK_MODIFICATIONS",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 34
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "false",
+                      "text": "False",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 37
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "DB_ENGINE   = os.getenv('DB_ENGINE'   , None)",
+              "startPosition": {
+                "row": 27,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 27,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "DB_ENGINE   = os.getenv('DB_ENGINE'   , None)",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DB_ENGINE",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 13
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('DB_ENGINE'   , None)",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('DB_ENGINE'   , None)",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'DB_ENGINE'",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 39
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "DB_ENGINE",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 38
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 39
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "DB_USERNAME = os.getenv('DB_USERNAME' , None)",
+              "startPosition": {
+                "row": 28,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 28,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "DB_USERNAME = os.getenv('DB_USERNAME' , None)",
+                  "startPosition": {
+                    "row": 28,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 28,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DB_USERNAME",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('DB_USERNAME' , None)",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('DB_USERNAME' , None)",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'DB_USERNAME'",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 41
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "DB_USERNAME",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 40
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 40
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 41
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "DB_PASS     = os.getenv('DB_PASS'     , None)",
+              "startPosition": {
+                "row": 29,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "DB_PASS     = os.getenv('DB_PASS'     , None)",
+                  "startPosition": {
+                    "row": 29,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DB_PASS",
+                      "startPosition": {
+                        "row": 29,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('DB_PASS'     , None)",
+                      "startPosition": {
+                        "row": 29,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 29,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('DB_PASS'     , None)",
+                          "startPosition": {
+                            "row": 29,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'DB_PASS'",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 37
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "DB_PASS",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 36
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 36
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "DB_HOST     = os.getenv('DB_HOST'     , None)",
+              "startPosition": {
+                "row": 30,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 30,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "DB_HOST     = os.getenv('DB_HOST'     , None)",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DB_HOST",
+                      "startPosition": {
+                        "row": 30,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 30,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('DB_HOST'     , None)",
+                      "startPosition": {
+                        "row": 30,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 30,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 30,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 30,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('DB_HOST'     , None)",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'DB_HOST'",
+                              "startPosition": {
+                                "row": 30,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 37
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "DB_HOST",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 36
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 36
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 30,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "DB_PORT     = os.getenv('DB_PORT'     , None)",
+              "startPosition": {
+                "row": 31,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 31,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "DB_PORT     = os.getenv('DB_PORT'     , None)",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DB_PORT",
+                      "startPosition": {
+                        "row": 31,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 31,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('DB_PORT'     , None)",
+                      "startPosition": {
+                        "row": 31,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 31,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 31,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 31,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('DB_PORT'     , None)",
+                          "startPosition": {
+                            "row": 31,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 31,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'DB_PORT'",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 37
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "DB_PORT",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 36
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 36
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "DB_NAME     = os.getenv('DB_NAME'     , None)",
+              "startPosition": {
+                "row": 32,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 32,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "DB_NAME     = os.getenv('DB_NAME'     , None)",
+                  "startPosition": {
+                    "row": 32,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 32,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DB_NAME",
+                      "startPosition": {
+                        "row": 32,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 32,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "call",
+                      "text": "os.getenv('DB_NAME'     , None)",
+                      "startPosition": {
+                        "row": 32,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 32,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute",
+                          "text": "os.getenv",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "os",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getenv",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 27
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "argument_list",
+                          "text": "('DB_NAME'     , None)",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "string",
+                              "text": "'DB_NAME'",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 37
+                              },
+                              "children": [
+                                {
+                                  "type": "string_start",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_content",
+                                  "text": "DB_NAME",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 36
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_end",
+                                  "text": "'",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 36
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "none",
+                              "text": "None",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "expression_statement",
+              "text": "USE_SQLITE  = True",
+              "startPosition": {
+                "row": 34,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 34,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "assignment",
+                  "text": "USE_SQLITE  = True",
+                  "startPosition": {
+                    "row": 34,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 34,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "USE_SQLITE",
+                      "startPosition": {
+                        "row": 34,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 34,
+                        "column": 14
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "true",
+                      "text": "True",
+                      "startPosition": {
+                        "row": 34,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 34,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comment",
+              "text": "# try to set up a Relational DBMS\r",
+              "startPosition": {
+                "row": 36,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 36,
+                "column": 38
+              },
+              "children": []
+            },
+            {
+              "type": "if_statement",
+              "text": "if DB_ENGINE and DB_NAME and DB_USERNAME:\r\n\r\n        try:\r\n            \r\n            # Relational DBMS: PSQL, MySql\r\n            SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False\r\n\r\n        except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')",
+              "startPosition": {
+                "row": 37,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 56,
+                "column": 42
+              },
+              "children": [
+                {
+                  "type": "boolean_operator",
+                  "text": "DB_ENGINE and DB_NAME and DB_USERNAME",
+                  "startPosition": {
+                    "row": 37,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 37,
+                    "column": 44
+                  },
+                  "children": [
+                    {
+                      "type": "boolean_operator",
+                      "text": "DB_ENGINE and DB_NAME",
+                      "startPosition": {
+                        "row": 37,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 37,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "DB_ENGINE",
+                          "startPosition": {
+                            "row": 37,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 37,
+                            "column": 16
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "DB_NAME",
+                          "startPosition": {
+                            "row": 37,
+                            "column": 21
+                          },
+                          "endPosition": {
+                            "row": 37,
+                            "column": 28
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "DB_USERNAME",
+                      "startPosition": {
+                        "row": 37,
+                        "column": 33
+                      },
+                      "endPosition": {
+                        "row": 37,
+                        "column": 44
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "try:\r\n            \r\n            # Relational DBMS: PSQL, MySql\r\n            SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False\r\n\r\n        except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 56,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "try_statement",
+                      "text": "try:\r\n            \r\n            # Relational DBMS: PSQL, MySql\r\n            SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False\r\n\r\n        except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')",
+                      "startPosition": {
+                        "row": 39,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 56,
+                        "column": 42
+                      },
+                      "children": [
+                        {
+                          "type": "comment",
+                          "text": "# Relational DBMS: PSQL, MySql\r",
+                          "startPosition": {
+                            "row": 41,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 41,
+                            "column": 43
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "block",
+                          "text": "SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            ) \r\n\r\n            USE_SQLITE  = False",
+                          "startPosition": {
+                            "row": 42,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 51,
+                            "column": 31
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            )",
+                              "startPosition": {
+                                "row": 42,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 49,
+                                "column": 13
+                              },
+                              "children": [
+                                {
+                                  "type": "assignment",
+                                  "text": "SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            )",
+                                  "startPosition": {
+                                    "row": 42,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 13
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "SQLALCHEMY_DATABASE_URI",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 35
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "call",
+                                      "text": "'{}://{}:{}@{}:{}/{}'.format(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            )",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 38
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "'{}://{}:{}@{}:{}/{}'.format",
+                                          "startPosition": {
+                                            "row": 42,
+                                            "column": 38
+                                          },
+                                          "endPosition": {
+                                            "row": 42,
+                                            "column": 66
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string",
+                                              "text": "'{}://{}:{}@{}:{}/{}'",
+                                              "startPosition": {
+                                                "row": 42,
+                                                "column": 38
+                                              },
+                                              "endPosition": {
+                                                "row": 42,
+                                                "column": 59
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_start",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 42,
+                                                    "column": 38
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 42,
+                                                    "column": 39
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_content",
+                                                  "text": "{}://{}:{}@{}:{}/{}",
+                                                  "startPosition": {
+                                                    "row": 42,
+                                                    "column": 39
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 42,
+                                                    "column": 58
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_end",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 42,
+                                                    "column": 58
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 42,
+                                                    "column": 59
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "format",
+                                              "startPosition": {
+                                                "row": 42,
+                                                "column": 60
+                                              },
+                                              "endPosition": {
+                                                "row": 42,
+                                                "column": 66
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "(\r\n                DB_ENGINE,\r\n                DB_USERNAME,\r\n                DB_PASS,\r\n                DB_HOST,\r\n                DB_PORT,\r\n                DB_NAME\r\n            )",
+                                          "startPosition": {
+                                            "row": 42,
+                                            "column": 66
+                                          },
+                                          "endPosition": {
+                                            "row": 49,
+                                            "column": 13
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "DB_ENGINE",
+                                              "startPosition": {
+                                                "row": 43,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 43,
+                                                "column": 25
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "DB_USERNAME",
+                                              "startPosition": {
+                                                "row": 44,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 44,
+                                                "column": 27
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "DB_PASS",
+                                              "startPosition": {
+                                                "row": 45,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 45,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "DB_HOST",
+                                              "startPosition": {
+                                                "row": 46,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 46,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "DB_PORT",
+                                              "startPosition": {
+                                                "row": 47,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 47,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "DB_NAME",
+                                              "startPosition": {
+                                                "row": 48,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 48,
+                                                "column": 23
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "USE_SQLITE  = False",
+                              "startPosition": {
+                                "row": 51,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 51,
+                                "column": 31
+                              },
+                              "children": [
+                                {
+                                  "type": "assignment",
+                                  "text": "USE_SQLITE  = False",
+                                  "startPosition": {
+                                    "row": 51,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 51,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "USE_SQLITE",
+                                      "startPosition": {
+                                        "row": 51,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 51,
+                                        "column": 22
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "False",
+                                      "startPosition": {
+                                        "row": 51,
+                                        "column": 26
+                                      },
+                                      "endPosition": {
+                                        "row": 51,
+                                        "column": 31
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "except_clause",
+                          "text": "except Exception as e:\r\n\r\n            print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')",
+                          "startPosition": {
+                            "row": 53,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 56,
+                            "column": 42
+                          },
+                          "children": [
+                            {
+                              "type": "as_pattern",
+                              "text": "Exception as e",
+                              "startPosition": {
+                                "row": 53,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 53,
+                                "column": 29
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "Exception",
+                                  "startPosition": {
+                                    "row": 53,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 53,
+                                    "column": 24
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "as_pattern_target",
+                                  "text": "e",
+                                  "startPosition": {
+                                    "row": 53,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 53,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "e",
+                                      "startPosition": {
+                                        "row": 53,
+                                        "column": 28
+                                      },
+                                      "endPosition": {
+                                        "row": 53,
+                                        "column": 29
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "block",
+                              "text": "print('> Error: DBMS Exception: ' + str(e) )\r\n            print('> Fallback to SQLite ')",
+                              "startPosition": {
+                                "row": 55,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 56,
+                                "column": 42
+                              },
+                              "children": [
+                                {
+                                  "type": "expression_statement",
+                                  "text": "print('> Error: DBMS Exception: ' + str(e) )",
+                                  "startPosition": {
+                                    "row": 55,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 55,
+                                    "column": 56
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "text": "print('> Error: DBMS Exception: ' + str(e) )",
+                                      "startPosition": {
+                                        "row": 55,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 55,
+                                        "column": 56
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "print",
+                                          "startPosition": {
+                                            "row": 55,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 55,
+                                            "column": 17
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "('> Error: DBMS Exception: ' + str(e) )",
+                                          "startPosition": {
+                                            "row": 55,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 55,
+                                            "column": 56
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "binary_operator",
+                                              "text": "'> Error: DBMS Exception: ' + str(e)",
+                                              "startPosition": {
+                                                "row": 55,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 55,
+                                                "column": 54
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string",
+                                                  "text": "'> Error: DBMS Exception: '",
+                                                  "startPosition": {
+                                                    "row": 55,
+                                                    "column": 18
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 55,
+                                                    "column": 45
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_start",
+                                                      "text": "'",
+                                                      "startPosition": {
+                                                        "row": 55,
+                                                        "column": 18
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 55,
+                                                        "column": 19
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string_content",
+                                                      "text": "> Error: DBMS Exception: ",
+                                                      "startPosition": {
+                                                        "row": 55,
+                                                        "column": 19
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 55,
+                                                        "column": 44
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string_end",
+                                                      "text": "'",
+                                                      "startPosition": {
+                                                        "row": 55,
+                                                        "column": 44
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 55,
+                                                        "column": 45
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "call",
+                                                  "text": "str(e)",
+                                                  "startPosition": {
+                                                    "row": 55,
+                                                    "column": 48
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 55,
+                                                    "column": 54
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "str",
+                                                      "startPosition": {
+                                                        "row": 55,
+                                                        "column": 48
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 55,
+                                                        "column": 51
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "argument_list",
+                                                      "text": "(e)",
+                                                      "startPosition": {
+                                                        "row": 55,
+                                                        "column": 51
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 55,
+                                                        "column": 54
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "e",
+                                                          "startPosition": {
+                                                            "row": 55,
+                                                            "column": 52
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 55,
+                                                            "column": 53
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "expression_statement",
+                                  "text": "print('> Fallback to SQLite ')",
+                                  "startPosition": {
+                                    "row": 56,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 56,
+                                    "column": 42
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "text": "print('> Fallback to SQLite ')",
+                                      "startPosition": {
+                                        "row": 56,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 56,
+                                        "column": 42
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "print",
+                                          "startPosition": {
+                                            "row": 56,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 56,
+                                            "column": 17
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "('> Fallback to SQLite ')",
+                                          "startPosition": {
+                                            "row": 56,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 56,
+                                            "column": 42
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string",
+                                              "text": "'> Fallback to SQLite '",
+                                              "startPosition": {
+                                                "row": 56,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 56,
+                                                "column": 41
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_start",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 56,
+                                                    "column": 18
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 56,
+                                                    "column": 19
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_content",
+                                                  "text": "> Fallback to SQLite ",
+                                                  "startPosition": {
+                                                    "row": 56,
+                                                    "column": 19
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 56,
+                                                    "column": 40
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_end",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 56,
+                                                    "column": 40
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 56,
+                                                    "column": 41
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "if_statement",
+              "text": "if USE_SQLITE:\r\n\r\n        # This will create a file in <app> FOLDER\r\n        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+              "startPosition": {
+                "row": 58,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 61,
+                "column": 85
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "USE_SQLITE",
+                  "startPosition": {
+                    "row": 58,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 58,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "comment",
+                  "text": "# This will create a file in <app> FOLDER\r",
+                  "startPosition": {
+                    "row": 60,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 60,
+                    "column": 50
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                  "startPosition": {
+                    "row": 61,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 61,
+                    "column": 85
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                      "startPosition": {
+                        "row": 61,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 61,
+                        "column": 85
+                      },
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "text": "SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                          "startPosition": {
+                            "row": 61,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 61,
+                            "column": 85
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "SQLALCHEMY_DATABASE_URI",
+                              "startPosition": {
+                                "row": 61,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 61,
+                                "column": 31
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "binary_operator",
+                              "text": "'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                              "startPosition": {
+                                "row": 61,
+                                "column": 34
+                              },
+                              "endPosition": {
+                                "row": 61,
+                                "column": 85
+                              },
+                              "children": [
+                                {
+                                  "type": "string",
+                                  "text": "'sqlite:///'",
+                                  "startPosition": {
+                                    "row": 61,
+                                    "column": 34
+                                  },
+                                  "endPosition": {
+                                    "row": 61,
+                                    "column": 46
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_start",
+                                      "text": "'",
+                                      "startPosition": {
+                                        "row": 61,
+                                        "column": 34
+                                      },
+                                      "endPosition": {
+                                        "row": 61,
+                                        "column": 35
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string_content",
+                                      "text": "sqlite:///",
+                                      "startPosition": {
+                                        "row": 61,
+                                        "column": 35
+                                      },
+                                      "endPosition": {
+                                        "row": 61,
+                                        "column": 45
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string_end",
+                                      "text": "'",
+                                      "startPosition": {
+                                        "row": 61,
+                                        "column": 45
+                                      },
+                                      "endPosition": {
+                                        "row": 61,
+                                        "column": 46
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "call",
+                                  "text": "os.path.join(BASE_DIR, 'db.sqlite3')",
+                                  "startPosition": {
+                                    "row": 61,
+                                    "column": 49
+                                  },
+                                  "endPosition": {
+                                    "row": 61,
+                                    "column": 85
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "text": "os.path.join",
+                                      "startPosition": {
+                                        "row": 61,
+                                        "column": 49
+                                      },
+                                      "endPosition": {
+                                        "row": 61,
+                                        "column": 61
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "os.path",
+                                          "startPosition": {
+                                            "row": 61,
+                                            "column": 49
+                                          },
+                                          "endPosition": {
+                                            "row": 61,
+                                            "column": 56
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "os",
+                                              "startPosition": {
+                                                "row": 61,
+                                                "column": 49
+                                              },
+                                              "endPosition": {
+                                                "row": 61,
+                                                "column": 51
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "path",
+                                              "startPosition": {
+                                                "row": 61,
+                                                "column": 52
+                                              },
+                                              "endPosition": {
+                                                "row": 61,
+                                                "column": 56
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "join",
+                                          "startPosition": {
+                                            "row": 61,
+                                            "column": 57
+                                          },
+                                          "endPosition": {
+                                            "row": 61,
+                                            "column": 61
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(BASE_DIR, 'db.sqlite3')",
+                                      "startPosition": {
+                                        "row": 61,
+                                        "column": 61
+                                      },
+                                      "endPosition": {
+                                        "row": 61,
+                                        "column": 85
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "BASE_DIR",
+                                          "startPosition": {
+                                            "row": 61,
+                                            "column": 62
+                                          },
+                                          "endPosition": {
+                                            "row": 61,
+                                            "column": 70
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'db.sqlite3'",
+                                          "startPosition": {
+                                            "row": 61,
+                                            "column": 72
+                                          },
+                                          "endPosition": {
+                                            "row": 61,
+                                            "column": 84
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_start",
+                                              "text": "'",
+                                              "startPosition": {
+                                                "row": 61,
+                                                "column": 72
+                                              },
+                                              "endPosition": {
+                                                "row": 61,
+                                                "column": 73
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string_content",
+                                              "text": "db.sqlite3",
+                                              "startPosition": {
+                                                "row": 61,
+                                                "column": 73
+                                              },
+                                              "endPosition": {
+                                                "row": 61,
+                                                "column": 83
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string_end",
+                                              "text": "'",
+                                              "startPosition": {
+                                                "row": 61,
+                                                "column": 83
+                                              },
+                                              "endPosition": {
+                                                "row": 61,
+                                                "column": 84
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1570 @@
+{
+  "type": "compilation_unit",
+  "text": "using Microsoft.EntityFrameworkCore;\r\nusing First_Backend.Models;\r\n\r\n\r\nnamespace First_Backend.Data\r\n{\r\n    public class MyDbContext : DbContext\r\n    {\r\n        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)\r\n        {\r\n        }\r\n\r\n        public DbSet<User> Users { get; set; }\r\n\r\n        // Utilizing Fluent API for unique constraints\r\n        protected override void OnModelCreating(ModelBuilder modelBuilder)\r\n        {\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }\r\n    }\r\n}",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 30,
+    "column": 1
+  },
+  "children": [
+    {
+      "type": "using_directive",
+      "text": "using Microsoft.EntityFrameworkCore;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "Microsoft.EntityFrameworkCore",
+          "startPosition": {
+            "row": 0,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 35
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Microsoft",
+              "startPosition": {
+                "row": 0,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "EntityFrameworkCore",
+              "startPosition": {
+                "row": 0,
+                "column": 16
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 35
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "using_directive",
+      "text": "using First_Backend.Models;",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "First_Backend.Models",
+          "startPosition": {
+            "row": 1,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 26
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "First_Backend",
+              "startPosition": {
+                "row": 1,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 19
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "Models",
+              "startPosition": {
+                "row": 1,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 26
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "namespace_declaration",
+      "text": "namespace First_Backend.Data\r\n{\r\n    public class MyDbContext : DbContext\r\n    {\r\n        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)\r\n        {\r\n        }\r\n\r\n        public DbSet<User> Users { get; set; }\r\n\r\n        // Utilizing Fluent API for unique constraints\r\n        protected override void OnModelCreating(ModelBuilder modelBuilder)\r\n        {\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }\r\n    }\r\n}",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 30,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "First_Backend.Data",
+          "startPosition": {
+            "row": 4,
+            "column": 10
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 28
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "First_Backend",
+              "startPosition": {
+                "row": 4,
+                "column": 10
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 23
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "Data",
+              "startPosition": {
+                "row": 4,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 28
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "declaration_list",
+          "text": "{\r\n    public class MyDbContext : DbContext\r\n    {\r\n        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)\r\n        {\r\n        }\r\n\r\n        public DbSet<User> Users { get; set; }\r\n\r\n        // Utilizing Fluent API for unique constraints\r\n        protected override void OnModelCreating(ModelBuilder modelBuilder)\r\n        {\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }\r\n    }\r\n}",
+          "startPosition": {
+            "row": 5,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 30,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "class_declaration",
+              "text": "public class MyDbContext : DbContext\r\n    {\r\n        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)\r\n        {\r\n        }\r\n\r\n        public DbSet<User> Users { get; set; }\r\n\r\n        // Utilizing Fluent API for unique constraints\r\n        protected override void OnModelCreating(ModelBuilder modelBuilder)\r\n        {\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }\r\n    }",
+              "startPosition": {
+                "row": 6,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifier",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "MyDbContext",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 28
+                  },
+                  "children": []
+                },
+                {
+                  "type": "base_list",
+                  "text": ": DbContext",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DbContext",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 31
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "declaration_list",
+                  "text": "{\r\n        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)\r\n        {\r\n        }\r\n\r\n        public DbSet<User> Users { get; set; }\r\n\r\n        // Utilizing Fluent API for unique constraints\r\n        protected override void OnModelCreating(ModelBuilder modelBuilder)\r\n        {\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }\r\n    }",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "constructor_declaration",
+                      "text": "public MyDbContext(DbContextOptions<MyDbContext> options): base(options)\r\n        {\r\n        }",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "public",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "MyDbContext",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "parameter_list",
+                          "text": "(DbContextOptions<MyDbContext> options)",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 26
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 65
+                          },
+                          "children": [
+                            {
+                              "type": "parameter",
+                              "text": "DbContextOptions<MyDbContext> options",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 64
+                              },
+                              "children": [
+                                {
+                                  "type": "generic_name",
+                                  "text": "DbContextOptions<MyDbContext>",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 56
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "DbContextOptions",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 27
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 43
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "type_argument_list",
+                                      "text": "<MyDbContext>",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 43
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 56
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "MyDbContext",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 44
+                                          },
+                                          "endPosition": {
+                                            "row": 8,
+                                            "column": 55
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "options",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 57
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 64
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "constructor_initializer",
+                          "text": ": base(options)",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 65
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 80
+                          },
+                          "children": [
+                            {
+                              "type": "argument_list",
+                              "text": "(options)",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 71
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 80
+                              },
+                              "children": [
+                                {
+                                  "type": "argument",
+                                  "text": "options",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 72
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 79
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "options",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 72
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 79
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "{\r\n        }",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 9
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "property_declaration",
+                      "text": "public DbSet<User> Users { get; set; }",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 46
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "public",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "generic_name",
+                          "text": "DbSet<User>",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "DbSet",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "type_argument_list",
+                              "text": "<User>",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 26
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "User",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 25
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Users",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 32
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "accessor_list",
+                          "text": "{ get; set; }",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 33
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 46
+                          },
+                          "children": [
+                            {
+                              "type": "accessor_declaration",
+                              "text": "get;",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 35
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 39
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "accessor_declaration",
+                              "text": "set;",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 40
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 44
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "text": "// Utilizing Fluent API for unique constraints",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 54
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "method_declaration",
+                      "text": "protected override void OnModelCreating(ModelBuilder modelBuilder)\r\n        {\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "protected",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 17
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "override",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "void",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "OnModelCreating",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 47
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "parameter_list",
+                          "text": "(ModelBuilder modelBuilder)",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 47
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 74
+                          },
+                          "children": [
+                            {
+                              "type": "parameter",
+                              "text": "ModelBuilder modelBuilder",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 73
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "ModelBuilder",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 48
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 60
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "modelBuilder",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 61
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 73
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "{\r\n            base.OnModelCreating(modelBuilder);\r\n\r\n            // Make username unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();\r\n            \r\n            // Make the email unique\r\n            modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();\r\n        }",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 9
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "base.OnModelCreating(modelBuilder);",
+                              "startPosition": {
+                                "row": 17,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 17,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "base.OnModelCreating(modelBuilder)",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 46
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "base.OnModelCreating",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 32
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "base_expression",
+                                          "text": "base",
+                                          "startPosition": {
+                                            "row": 17,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 17,
+                                            "column": 16
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "OnModelCreating",
+                                          "startPosition": {
+                                            "row": 17,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 17,
+                                            "column": 32
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(modelBuilder)",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 32
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 46
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "argument",
+                                          "text": "modelBuilder",
+                                          "startPosition": {
+                                            "row": 17,
+                                            "column": 33
+                                          },
+                                          "endPosition": {
+                                            "row": 17,
+                                            "column": 45
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "modelBuilder",
+                                              "startPosition": {
+                                                "row": 17,
+                                                "column": 33
+                                              },
+                                              "endPosition": {
+                                                "row": 17,
+                                                "column": 45
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "comment",
+                              "text": "// Make username unique",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 35
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique();",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 28
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique()",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)\r\n                .IsUnique",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "invocation_expression",
+                                          "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Name)",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 38
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_access_expression",
+                                              "text": "modelBuilder.Entity<User>()\r\n                .HasIndex",
+                                              "startPosition": {
+                                                "row": 20,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 25
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "invocation_expression",
+                                                  "text": "modelBuilder.Entity<User>()",
+                                                  "startPosition": {
+                                                    "row": 20,
+                                                    "column": 12
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 20,
+                                                    "column": 39
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "member_access_expression",
+                                                      "text": "modelBuilder.Entity<User>",
+                                                      "startPosition": {
+                                                        "row": 20,
+                                                        "column": 12
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 20,
+                                                        "column": 37
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "modelBuilder",
+                                                          "startPosition": {
+                                                            "row": 20,
+                                                            "column": 12
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 20,
+                                                            "column": 24
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "generic_name",
+                                                          "text": "Entity<User>",
+                                                          "startPosition": {
+                                                            "row": 20,
+                                                            "column": 25
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 20,
+                                                            "column": 37
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "Entity",
+                                                              "startPosition": {
+                                                                "row": 20,
+                                                                "column": 25
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 20,
+                                                                "column": 31
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "type_argument_list",
+                                                              "text": "<User>",
+                                                              "startPosition": {
+                                                                "row": 20,
+                                                                "column": 31
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 20,
+                                                                "column": 37
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "User",
+                                                                  "startPosition": {
+                                                                    "row": 20,
+                                                                    "column": 32
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 20,
+                                                                    "column": 36
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "argument_list",
+                                                      "text": "()",
+                                                      "startPosition": {
+                                                        "row": 20,
+                                                        "column": 37
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 20,
+                                                        "column": 39
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "HasIndex",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 17
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "text": "(u => u.Name)",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 38
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "argument",
+                                                  "text": "u => u.Name",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 37
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "lambda_expression",
+                                                      "text": "u => u.Name",
+                                                      "startPosition": {
+                                                        "row": 21,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 21,
+                                                        "column": 37
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "implicit_parameter_list",
+                                                          "text": "u",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 26
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 27
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "parameter",
+                                                              "text": "u",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 26
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 27
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "u",
+                                                                  "startPosition": {
+                                                                    "row": 21,
+                                                                    "column": 26
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 21,
+                                                                    "column": 27
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "member_access_expression",
+                                                          "text": "u.Name",
+                                                          "startPosition": {
+                                                            "row": 21,
+                                                            "column": 31
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 21,
+                                                            "column": 37
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "u",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 31
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 32
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "Name",
+                                                              "startPosition": {
+                                                                "row": 21,
+                                                                "column": 33
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 21,
+                                                                "column": 37
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "IsUnique",
+                                          "startPosition": {
+                                            "row": 22,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 22,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "comment",
+                              "text": "// Make the email unique",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 36
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique();",
+                              "startPosition": {
+                                "row": 25,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 28
+                              },
+                              "children": [
+                                {
+                                  "type": "invocation_expression",
+                                  "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique()",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "member_access_expression",
+                                      "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)\r\n                .IsUnique",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "invocation_expression",
+                                          "text": "modelBuilder.Entity<User>()\r\n                .HasIndex(u => u.Email)",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_access_expression",
+                                              "text": "modelBuilder.Entity<User>()\r\n                .HasIndex",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 25
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "invocation_expression",
+                                                  "text": "modelBuilder.Entity<User>()",
+                                                  "startPosition": {
+                                                    "row": 25,
+                                                    "column": 12
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 25,
+                                                    "column": 39
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "member_access_expression",
+                                                      "text": "modelBuilder.Entity<User>",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 12
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 37
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "modelBuilder",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 12
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 24
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "generic_name",
+                                                          "text": "Entity<User>",
+                                                          "startPosition": {
+                                                            "row": 25,
+                                                            "column": 25
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 25,
+                                                            "column": 37
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "Entity",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 25
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 31
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "type_argument_list",
+                                                              "text": "<User>",
+                                                              "startPosition": {
+                                                                "row": 25,
+                                                                "column": 31
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 25,
+                                                                "column": 37
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "User",
+                                                                  "startPosition": {
+                                                                    "row": 25,
+                                                                    "column": 32
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 25,
+                                                                    "column": 36
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "argument_list",
+                                                      "text": "()",
+                                                      "startPosition": {
+                                                        "row": 25,
+                                                        "column": 37
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 25,
+                                                        "column": 39
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "HasIndex",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 17
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 25
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "text": "(u => u.Email)",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 39
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "argument",
+                                                  "text": "u => u.Email",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 26
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 38
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "lambda_expression",
+                                                      "text": "u => u.Email",
+                                                      "startPosition": {
+                                                        "row": 26,
+                                                        "column": 26
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 26,
+                                                        "column": 38
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "implicit_parameter_list",
+                                                          "text": "u",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 26
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 27
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "parameter",
+                                                              "text": "u",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 26
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 27
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "identifier",
+                                                                  "text": "u",
+                                                                  "startPosition": {
+                                                                    "row": 26,
+                                                                    "column": 26
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 26,
+                                                                    "column": 27
+                                                                  },
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "member_access_expression",
+                                                          "text": "u.Email",
+                                                          "startPosition": {
+                                                            "row": 26,
+                                                            "column": 31
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 26,
+                                                            "column": 38
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "u",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 31
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 32
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "Email",
+                                                              "startPosition": {
+                                                                "row": 26,
+                                                                "column": 33
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 26,
+                                                                "column": 38
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "IsUnique",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

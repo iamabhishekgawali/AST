@@ -1,0 +1,1557 @@
+{
+  "type": "program",
+  "text": "// project imports\r\nimport config from '../config';\r\n\r\n// action - state management\r\nimport * as actionTypes from './actions';\r\n\r\nexport const initialState = {\r\n    isOpen: [], //for active default menu\r\n    fontFamily: config.fontFamily,\r\n    borderRadius: config.borderRadius,\r\n    opened: true\r\n};\r\n\r\n//-----------------------|| CUSTOMIZATION REDUCER ||-----------------------//\r\n\r\nconst customizationReducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }\r\n};\r\n\r\nexport default customizationReducer;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 44,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import config from '../config';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 31
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "config",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 13
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "config",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 13
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'../config'",
+          "startPosition": {
+            "row": 1,
+            "column": 19
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 30
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "../config",
+              "startPosition": {
+                "row": 1,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 29
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// action - state management\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 29
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import * as actionTypes from './actions';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 41
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "* as actionTypes",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "namespace_import",
+              "text": "* as actionTypes",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 23
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "actionTypes",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 23
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'./actions'",
+          "startPosition": {
+            "row": 4,
+            "column": 29
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 40
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "./actions",
+              "startPosition": {
+                "row": 4,
+                "column": 30
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 39
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export const initialState = {\r\n    isOpen: [], //for active default menu\r\n    fontFamily: config.fontFamily,\r\n    borderRadius: config.borderRadius,\r\n    opened: true\r\n};",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const initialState = {\r\n    isOpen: [], //for active default menu\r\n    fontFamily: config.fontFamily,\r\n    borderRadius: config.borderRadius,\r\n    opened: true\r\n};",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "initialState = {\r\n    isOpen: [], //for active default menu\r\n    fontFamily: config.fontFamily,\r\n    borderRadius: config.borderRadius,\r\n    opened: true\r\n}",
+              "startPosition": {
+                "row": 6,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "initialState",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 25
+                  },
+                  "children": []
+                },
+                {
+                  "type": "object",
+                  "text": "{\r\n    isOpen: [], //for active default menu\r\n    fontFamily: config.fontFamily,\r\n    borderRadius: config.borderRadius,\r\n    opened: true\r\n}",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "pair",
+                      "text": "isOpen: []",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "isOpen",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "array",
+                          "text": "[]",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "text": "//for active default menu\r",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 42
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "pair",
+                      "text": "fontFamily: config.fontFamily",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "fontFamily",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "member_expression",
+                          "text": "config.fontFamily",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 33
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "config",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 22
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "property_identifier",
+                              "text": "fontFamily",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 33
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "borderRadius: config.borderRadius",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 37
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "borderRadius",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 16
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "member_expression",
+                          "text": "config.borderRadius",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 37
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "config",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 24
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "property_identifier",
+                              "text": "borderRadius",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 25
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 37
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "opened: true",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 16
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "opened",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "true",
+                          "text": "true",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 16
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| CUSTOMIZATION REDUCER ||-----------------------//\r",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 78
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const customizationReducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }\r\n};",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 41,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "customizationReducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }\r\n}",
+          "startPosition": {
+            "row": 15,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 41,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "customizationReducer",
+              "startPosition": {
+                "row": 15,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 26
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "(state = initialState, action) => {\r\n    switch (action.type) {\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }\r\n}",
+              "startPosition": {
+                "row": 15,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 41,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "(state = initialState, action)",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 59
+                  },
+                  "children": [
+                    {
+                      "type": "assignment_pattern",
+                      "text": "state = initialState",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 30
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 50
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "state",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 30
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 35
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "initialState",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 38
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 50
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "action",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 52
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 58
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    switch (action.type) {\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }\r\n}",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 63
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "switch_statement",
+                      "text": "switch (action.type) {\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 40,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(action.type)",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 24
+                          },
+                          "children": [
+                            {
+                              "type": "member_expression",
+                              "text": "action.type",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "action",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "property_identifier",
+                                  "text": "type",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 19
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 23
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "switch_body",
+                          "text": "{\r\n        case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };\r\n        case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };\r\n        case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };\r\n        case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };\r\n        default:\r\n            return state;\r\n    }",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 25
+                          },
+                          "endPosition": {
+                            "row": 40,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "switch_case",
+                              "text": "case actionTypes.MENU_OPEN:\r\n            const id = action.id;\r\n            return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };",
+                              "startPosition": {
+                                "row": 17,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 14
+                              },
+                              "children": [
+                                {
+                                  "type": "member_expression",
+                                  "text": "actionTypes.MENU_OPEN",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 34
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "actionTypes",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "MENU_OPEN",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 34
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "lexical_declaration",
+                                  "text": "const id = action.id;",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 33
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "variable_declarator",
+                                      "text": "id = action.id",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 32
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "id",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 20
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "member_expression",
+                                          "text": "action.id",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 23
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 32
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "action",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 23
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 29
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "id",
+                                              "startPosition": {
+                                                "row": 18,
+                                                "column": 30
+                                              },
+                                              "endPosition": {
+                                                "row": 18,
+                                                "column": 32
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "return_statement",
+                                  "text": "return {\r\n                ...state,\r\n                isOpen: [id]\r\n            };",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 14
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                ...state,\r\n                isOpen: [id]\r\n            }",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "spread_element",
+                                          "text": "...state",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 20,
+                                            "column": 24
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 20,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 20,
+                                                "column": 24
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "isOpen: [id]",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 28
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "isOpen",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 22
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "array",
+                                              "text": "[id]",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 28
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "id",
+                                                  "startPosition": {
+                                                    "row": 21,
+                                                    "column": 25
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 21,
+                                                    "column": 27
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_case",
+                              "text": "case actionTypes.SET_MENU:\r\n            return {\r\n                ...state,\r\n                opened: action.opened\r\n            };",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 14
+                              },
+                              "children": [
+                                {
+                                  "type": "member_expression",
+                                  "text": "actionTypes.SET_MENU",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 33
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "actionTypes",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "SET_MENU",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 33
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "return_statement",
+                                  "text": "return {\r\n                ...state,\r\n                opened: action.opened\r\n            };",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 14
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                ...state,\r\n                opened: action.opened\r\n            }",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "spread_element",
+                                          "text": "...state",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 24
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 25,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 25,
+                                                "column": 24
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "opened: action.opened",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "opened",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 22
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "member_expression",
+                                              "text": "action.opened",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 37
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "action",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 30
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "opened",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 31
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 37
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_case",
+                              "text": "case actionTypes.SET_FONT_FAMILY:\r\n            return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 14
+                              },
+                              "children": [
+                                {
+                                  "type": "member_expression",
+                                  "text": "actionTypes.SET_FONT_FAMILY",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 40
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "actionTypes",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "SET_FONT_FAMILY",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 40
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "return_statement",
+                                  "text": "return {\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            };",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 14
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                ...state,\r\n                fontFamily: action.fontFamily\r\n            }",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "spread_element",
+                                          "text": "...state",
+                                          "startPosition": {
+                                            "row": 30,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 30,
+                                            "column": 24
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 30,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 30,
+                                                "column": 24
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "fontFamily: action.fontFamily",
+                                          "startPosition": {
+                                            "row": 31,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 31,
+                                            "column": 45
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "fontFamily",
+                                              "startPosition": {
+                                                "row": 31,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 26
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "member_expression",
+                                              "text": "action.fontFamily",
+                                              "startPosition": {
+                                                "row": 31,
+                                                "column": 28
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 45
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "action",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 28
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 34
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "fontFamily",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 35
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 45
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_case",
+                              "text": "case actionTypes.SET_BORDER_RADIUS:\r\n            return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };",
+                              "startPosition": {
+                                "row": 33,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 37,
+                                "column": 14
+                              },
+                              "children": [
+                                {
+                                  "type": "member_expression",
+                                  "text": "actionTypes.SET_BORDER_RADIUS",
+                                  "startPosition": {
+                                    "row": 33,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 33,
+                                    "column": 42
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "actionTypes",
+                                      "startPosition": {
+                                        "row": 33,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 33,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "SET_BORDER_RADIUS",
+                                      "startPosition": {
+                                        "row": 33,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 33,
+                                        "column": 42
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "return_statement",
+                                  "text": "return {\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            };",
+                                  "startPosition": {
+                                    "row": 34,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 37,
+                                    "column": 14
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n                ...state,\r\n                borderRadius: action.borderRadius\r\n            }",
+                                      "startPosition": {
+                                        "row": 34,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 37,
+                                        "column": 13
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "spread_element",
+                                          "text": "...state",
+                                          "startPosition": {
+                                            "row": 35,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 35,
+                                            "column": 24
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 35,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 35,
+                                                "column": 24
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "borderRadius: action.borderRadius",
+                                          "startPosition": {
+                                            "row": 36,
+                                            "column": 16
+                                          },
+                                          "endPosition": {
+                                            "row": 36,
+                                            "column": 49
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "borderRadius",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 28
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "member_expression",
+                                              "text": "action.borderRadius",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 30
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 49
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "action",
+                                                  "startPosition": {
+                                                    "row": 36,
+                                                    "column": 30
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 36,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "borderRadius",
+                                                  "startPosition": {
+                                                    "row": 36,
+                                                    "column": 37
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 36,
+                                                    "column": 49
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "switch_default",
+                              "text": "default:\r\n            return state;",
+                              "startPosition": {
+                                "row": 38,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 39,
+                                "column": 25
+                              },
+                              "children": [
+                                {
+                                  "type": "return_statement",
+                                  "text": "return state;",
+                                  "startPosition": {
+                                    "row": 39,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 39,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "state",
+                                      "startPosition": {
+                                        "row": 39,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 39,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default customizationReducer;",
+      "startPosition": {
+        "row": 43,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 43,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "customizationReducer",
+          "startPosition": {
+            "row": 43,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 43,
+            "column": 35
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

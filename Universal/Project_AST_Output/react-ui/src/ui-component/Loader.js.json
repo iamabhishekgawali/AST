@@ -1,0 +1,1342 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport { makeStyles } from '@material-ui/styles';\r\nimport LinearProgress from '@material-ui/core/LinearProgress';\r\n\r\n// style constant\r\nconst useStyles = makeStyles((theme) => ({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n}));\r\n\r\n//-----------------------|| Loader ||-----------------------//\r\n\r\nconst Loader = () => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Loader;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 33,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { makeStyles } from '@material-ui/styles';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ makeStyles }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ makeStyles }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "makeStyles",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "makeStyles",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/styles'",
+          "startPosition": {
+            "row": 3,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/styles",
+              "startPosition": {
+                "row": 3,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import LinearProgress from '@material-ui/core/LinearProgress';",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "LinearProgress",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "LinearProgress",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core/LinearProgress'",
+          "startPosition": {
+            "row": 4,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core/LinearProgress",
+              "startPosition": {
+                "row": 4,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 60
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// style constant\r",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 18
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const useStyles = makeStyles((theme) => ({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n}));",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 18,
+        "column": 4
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "useStyles = makeStyles((theme) => ({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n}))",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 18,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "useStyles",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "call_expression",
+              "text": "makeStyles((theme) => ({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n}))",
+              "startPosition": {
+                "row": 7,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 3
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "makeStyles",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "text": "((theme) => ({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n}))",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 3
+                  },
+                  "children": [
+                    {
+                      "type": "arrow_function",
+                      "text": "(theme) => ({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n})",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 29
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 2
+                      },
+                      "children": [
+                        {
+                          "type": "formal_parameters",
+                          "text": "(theme)",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 36
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "theme",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 35
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "({\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n})",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 40
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 2
+                          },
+                          "children": [
+                            {
+                              "type": "object",
+                              "text": "{\r\n    root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }\r\n}",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 41
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 1
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "root: {\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 4
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 5
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "root",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 4
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 8
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "object",
+                                      "text": "{\r\n        position: 'fixed',\r\n        top: 0,\r\n        left: 0,\r\n        zIndex: 1301,\r\n        width: '100%',\r\n        '& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }\r\n    }",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 5
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "pair",
+                                          "text": "position: 'fixed'",
+                                          "startPosition": {
+                                            "row": 9,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 9,
+                                            "column": 25
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "position",
+                                              "startPosition": {
+                                                "row": 9,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 9,
+                                                "column": 16
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "'fixed'",
+                                              "startPosition": {
+                                                "row": 9,
+                                                "column": 18
+                                              },
+                                              "endPosition": {
+                                                "row": 9,
+                                                "column": 25
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "fixed",
+                                                  "startPosition": {
+                                                    "row": 9,
+                                                    "column": 19
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 9,
+                                                    "column": 24
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "top: 0",
+                                          "startPosition": {
+                                            "row": 10,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 10,
+                                            "column": 14
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "top",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 11
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "number",
+                                              "text": "0",
+                                              "startPosition": {
+                                                "row": 10,
+                                                "column": 13
+                                              },
+                                              "endPosition": {
+                                                "row": 10,
+                                                "column": 14
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "left: 0",
+                                          "startPosition": {
+                                            "row": 11,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 11,
+                                            "column": 15
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "left",
+                                              "startPosition": {
+                                                "row": 11,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 11,
+                                                "column": 12
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "number",
+                                              "text": "0",
+                                              "startPosition": {
+                                                "row": 11,
+                                                "column": 14
+                                              },
+                                              "endPosition": {
+                                                "row": 11,
+                                                "column": 15
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "zIndex: 1301",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 20
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "zIndex",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 14
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "number",
+                                              "text": "1301",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 16
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "width: '100%'",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 21
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "width",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 13
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "'100%'",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 15
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 21
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "100%",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 16
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 20
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "pair",
+                                          "text": "'& > * + *': {\r\n            marginTop: theme.spacing(2)\r\n        }",
+                                          "startPosition": {
+                                            "row": 14,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 9
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string",
+                                              "text": "'& > * + *'",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 14,
+                                                "column": 19
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "& > * + *",
+                                                  "startPosition": {
+                                                    "row": 14,
+                                                    "column": 9
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 14,
+                                                    "column": 18
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "object",
+                                              "text": "{\r\n            marginTop: theme.spacing(2)\r\n        }",
+                                              "startPosition": {
+                                                "row": 14,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 16,
+                                                "column": 9
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "pair",
+                                                  "text": "marginTop: theme.spacing(2)",
+                                                  "startPosition": {
+                                                    "row": 15,
+                                                    "column": 12
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 15,
+                                                    "column": 39
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "property_identifier",
+                                                      "text": "marginTop",
+                                                      "startPosition": {
+                                                        "row": 15,
+                                                        "column": 12
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 15,
+                                                        "column": 21
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "call_expression",
+                                                      "text": "theme.spacing(2)",
+                                                      "startPosition": {
+                                                        "row": 15,
+                                                        "column": 23
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 15,
+                                                        "column": 39
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "member_expression",
+                                                          "text": "theme.spacing",
+                                                          "startPosition": {
+                                                            "row": 15,
+                                                            "column": 23
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 15,
+                                                            "column": 36
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "theme",
+                                                              "startPosition": {
+                                                                "row": 15,
+                                                                "column": 23
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 15,
+                                                                "column": 28
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "property_identifier",
+                                                              "text": "spacing",
+                                                              "startPosition": {
+                                                                "row": 15,
+                                                                "column": 29
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 15,
+                                                                "column": 36
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "arguments",
+                                                          "text": "(2)",
+                                                          "startPosition": {
+                                                            "row": 15,
+                                                            "column": 36
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 15,
+                                                            "column": 39
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "number",
+                                                              "text": "2",
+                                                              "startPosition": {
+                                                                "row": 15,
+                                                                "column": 37
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 15,
+                                                                "column": 38
+                                                              },
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| Loader ||-----------------------//\r",
+      "startPosition": {
+        "row": 20,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 20,
+        "column": 63
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const Loader = () => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 22,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 30,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "Loader = () => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 22,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 30,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Loader",
+              "startPosition": {
+                "row": 22,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 22,
+                "column": 12
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 22,
+                "column": 15
+              },
+              "endPosition": {
+                "row": 30,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const classes = useStyles();\r\n\r\n    return (\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const classes = useStyles();",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "classes = useStyles()",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 31
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "classes",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useStyles()",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 31
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useStyles",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    );",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>\r\n    )",
+                          "startPosition": {
+                            "row": 25,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<div className={classes.root}>\r\n            <LinearProgress color=\"primary\" />\r\n        </div>",
+                              "startPosition": {
+                                "row": 26,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 14
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<div className={classes.root}>",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 38
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "div",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "className={classes.root}",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 37
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "className",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 22
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_expression",
+                                          "text": "{classes.root}",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 23
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "member_expression",
+                                              "text": "classes.root",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 36
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "classes",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 24
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 31
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "property_identifier",
+                                                  "text": "root",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 32
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 36
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 39
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_self_closing_element",
+                                  "text": "<LinearProgress color=\"primary\" />",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 46
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "LinearProgress",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "color=\"primary\"",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 28
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 43
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "color",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 28
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 33
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"primary\"",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 34
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 43
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "primary",
+                                              "startPosition": {
+                                                "row": 27,
+                                                "column": 35
+                                              },
+                                              "endPosition": {
+                                                "row": 27,
+                                                "column": 42
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 46
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</div>",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 14
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "div",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default Loader;",
+      "startPosition": {
+        "row": 32,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 32,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "Loader",
+          "startPosition": {
+            "row": 32,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 32,
+            "column": 21
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

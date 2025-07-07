@@ -1,0 +1,703 @@
+{
+  "type": "program",
+  "text": "let BACKEND_SERVER = null;\r\nif (process.env.REACT_APP_BACKEND_SERVER) {\r\n  BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;\r\n} else {\r\n  BACKEND_SERVER = \"http://localhost:5000/api/\";\r\n}\r\n\r\nconst config = {\r\n    // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs, also don't put only '/' use blank('') instead,\r\n    // like '/berry-material-react/react/default'\r\n    basename: '',\r\n    defaultPath: '/dashboard/default',\r\n    fontFamily: `'Roboto', sans-serif`,\r\n    borderRadius: 12,\r\n    API_SERVER: BACKEND_SERVER\r\n};\r\n\r\nexport default config;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 18,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "lexical_declaration",
+      "text": "let BACKEND_SERVER = null;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "BACKEND_SERVER = null",
+          "startPosition": {
+            "row": 0,
+            "column": 4
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "BACKEND_SERVER",
+              "startPosition": {
+                "row": 0,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 18
+              },
+              "children": []
+            },
+            {
+              "type": "null",
+              "text": "null",
+              "startPosition": {
+                "row": 0,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 25
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "if_statement",
+      "text": "if (process.env.REACT_APP_BACKEND_SERVER) {\r\n  BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;\r\n} else {\r\n  BACKEND_SERVER = \"http://localhost:5000/api/\";\r\n}",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "parenthesized_expression",
+          "text": "(process.env.REACT_APP_BACKEND_SERVER)",
+          "startPosition": {
+            "row": 1,
+            "column": 3
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 41
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "process.env.REACT_APP_BACKEND_SERVER",
+              "startPosition": {
+                "row": 1,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 40
+              },
+              "children": [
+                {
+                  "type": "member_expression",
+                  "text": "process.env",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 15
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "process",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "property_identifier",
+                      "text": "env",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 15
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "REACT_APP_BACKEND_SERVER",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 40
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "statement_block",
+          "text": "{\r\n  BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;\r\n}",
+          "startPosition": {
+            "row": 1,
+            "column": 42
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "expression_statement",
+              "text": "BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;",
+              "startPosition": {
+                "row": 2,
+                "column": 2
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 56
+              },
+              "children": [
+                {
+                  "type": "assignment_expression",
+                  "text": "BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 2
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 55
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "BACKEND_SERVER",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 16
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "member_expression",
+                      "text": "process.env.REACT_APP_BACKEND_SERVER",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 55
+                      },
+                      "children": [
+                        {
+                          "type": "member_expression",
+                          "text": "process.env",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 30
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "process",
+                              "startPosition": {
+                                "row": 2,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 2,
+                                "column": 26
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "property_identifier",
+                              "text": "env",
+                              "startPosition": {
+                                "row": 2,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 2,
+                                "column": 30
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "REACT_APP_BACKEND_SERVER",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 55
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "else_clause",
+          "text": "else {\r\n  BACKEND_SERVER = \"http://localhost:5000/api/\";\r\n}",
+          "startPosition": {
+            "row": 3,
+            "column": 2
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "statement_block",
+              "text": "{\r\n  BACKEND_SERVER = \"http://localhost:5000/api/\";\r\n}",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "expression_statement",
+                  "text": "BACKEND_SERVER = \"http://localhost:5000/api/\";",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 2
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 48
+                  },
+                  "children": [
+                    {
+                      "type": "assignment_expression",
+                      "text": "BACKEND_SERVER = \"http://localhost:5000/api/\"",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 47
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "BACKEND_SERVER",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 16
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "\"http://localhost:5000/api/\"",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 47
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "http://localhost:5000/api/",
+                              "startPosition": {
+                                "row": 4,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 4,
+                                "column": 46
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const config = {\r\n    // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs, also don't put only '/' use blank('') instead,\r\n    // like '/berry-material-react/react/default'\r\n    basename: '',\r\n    defaultPath: '/dashboard/default',\r\n    fontFamily: `'Roboto', sans-serif`,\r\n    borderRadius: 12,\r\n    API_SERVER: BACKEND_SERVER\r\n};",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "config = {\r\n    // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs, also don't put only '/' use blank('') instead,\r\n    // like '/berry-material-react/react/default'\r\n    basename: '',\r\n    defaultPath: '/dashboard/default',\r\n    fontFamily: `'Roboto', sans-serif`,\r\n    borderRadius: 12,\r\n    API_SERVER: BACKEND_SERVER\r\n}",
+          "startPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 15,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "config",
+              "startPosition": {
+                "row": 7,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 12
+              },
+              "children": []
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs, also don't put only '/' use blank('') instead,\r\n    // like '/berry-material-react/react/default'\r\n    basename: '',\r\n    defaultPath: '/dashboard/default',\r\n    fontFamily: `'Roboto', sans-serif`,\r\n    borderRadius: 12,\r\n    API_SERVER: BACKEND_SERVER\r\n}",
+              "startPosition": {
+                "row": 7,
+                "column": 15
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "comment",
+                  "text": "// basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs, also don't put only '/' use blank('') instead,\r",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 146
+                  },
+                  "children": []
+                },
+                {
+                  "type": "comment",
+                  "text": "// like '/berry-material-react/react/default'\r",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 50
+                  },
+                  "children": []
+                },
+                {
+                  "type": "pair",
+                  "text": "basename: ''",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 16
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "basename",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "string",
+                      "text": "''",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 16
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "defaultPath: '/dashboard/default'",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 37
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "defaultPath",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "string",
+                      "text": "'/dashboard/default'",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 37
+                      },
+                      "children": [
+                        {
+                          "type": "string_fragment",
+                          "text": "/dashboard/default",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 18
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 36
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "fontFamily: `'Roboto', sans-serif`",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 38
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "fontFamily",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 14
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "template_string",
+                      "text": "`'Roboto', sans-serif`",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 38
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "borderRadius: 12",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "borderRadius",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 16
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "number",
+                      "text": "12",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "API_SERVER: BACKEND_SERVER",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 30
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "API_SERVER",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 14
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "BACKEND_SERVER",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 30
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default config;",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 17,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "config",
+          "startPosition": {
+            "row": 17,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 17,
+            "column": 21
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

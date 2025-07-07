@@ -1,0 +1,1076 @@
+{
+  "type": "program",
+  "text": "import PropTypes from 'prop-types';\r\nimport React from 'react';\r\nimport { useSelector } from 'react-redux';\r\nimport { Redirect } from 'react-router-dom';\r\n\r\n//-----------------------|| AUTH GUARD ||-----------------------//\r\n\r\n/**\r\n * Authentication guard for routes\r\n * @param {PropTypes.node} children children element/node\r\n */\r\nconst AuthGuard = ({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (!isLoggedIn) {\r\n        return <Redirect to=\"/login\" />;\r\n    }\r\n\r\n    return children;\r\n};\r\n\r\nAuthGuard.propTypes = {\r\n    children: PropTypes.node\r\n};\r\n\r\nexport default AuthGuard;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 27,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import PropTypes from 'prop-types';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 35
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "PropTypes",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "PropTypes",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 16
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'prop-types'",
+          "startPosition": {
+            "row": 0,
+            "column": 22
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "prop-types",
+              "startPosition": {
+                "row": 0,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 33
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 1,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 1,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { useSelector } from 'react-redux';",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 42
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ useSelector }",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ useSelector }",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "useSelector",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "useSelector",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-redux'",
+          "startPosition": {
+            "row": 2,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 41
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-redux",
+              "startPosition": {
+                "row": 2,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 40
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Redirect } from 'react-router-dom';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Redirect }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 19
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Redirect }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Redirect",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 17
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Redirect",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 17
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react-router-dom'",
+          "startPosition": {
+            "row": 3,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react-router-dom",
+              "startPosition": {
+                "row": 3,
+                "column": 26
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 42
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| AUTH GUARD ||-----------------------//\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 67
+      },
+      "children": []
+    },
+    {
+      "type": "comment",
+      "text": "/**\r\n * Authentication guard for routes\r\n * @param {PropTypes.node} children children element/node\r\n */",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 3
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const AuthGuard = ({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (!isLoggedIn) {\r\n        return <Redirect to=\"/login\" />;\r\n    }\r\n\r\n    return children;\r\n};",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 20,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "AuthGuard = ({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (!isLoggedIn) {\r\n        return <Redirect to=\"/login\" />;\r\n    }\r\n\r\n    return children;\r\n}",
+          "startPosition": {
+            "row": 11,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 20,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "AuthGuard",
+              "startPosition": {
+                "row": 11,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 15
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "({ children }) => {\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (!isLoggedIn) {\r\n        return <Redirect to=\"/login\" />;\r\n    }\r\n\r\n    return children;\r\n}",
+              "startPosition": {
+                "row": 11,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 20,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "({ children })",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 32
+                  },
+                  "children": [
+                    {
+                      "type": "object_pattern",
+                      "text": "{ children }",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "shorthand_property_identifier_pattern",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 21
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 29
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    const account = useSelector((state) => state.account);\r\n    const { isLoggedIn } = account;\r\n\r\n    if (!isLoggedIn) {\r\n        return <Redirect to=\"/login\" />;\r\n    }\r\n\r\n    return children;\r\n}",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 36
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const account = useSelector((state) => state.account);",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 58
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "account = useSelector((state) => state.account)",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 57
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "account",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 17
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "call_expression",
+                              "text": "useSelector((state) => state.account)",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 57
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "useSelector",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "arguments",
+                                  "text": "((state) => state.account)",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 57
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "arrow_function",
+                                      "text": "(state) => state.account",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 32
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 56
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "formal_parameters",
+                                          "text": "(state)",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 32
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 33
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 38
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "member_expression",
+                                          "text": "state.account",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 43
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 56
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "state",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 43
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 48
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "account",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 49
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 56
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "lexical_declaration",
+                      "text": "const { isLoggedIn } = account;",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "variable_declarator",
+                          "text": "{ isLoggedIn } = account",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 34
+                          },
+                          "children": [
+                            {
+                              "type": "object_pattern",
+                              "text": "{ isLoggedIn }",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 24
+                              },
+                              "children": [
+                                {
+                                  "type": "shorthand_property_identifier_pattern",
+                                  "text": "isLoggedIn",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 13,
+                                    "column": 22
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "account",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 34
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "if_statement",
+                      "text": "if (!isLoggedIn) {\r\n        return <Redirect to=\"/login\" />;\r\n    }",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(!isLoggedIn)",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 20
+                          },
+                          "children": [
+                            {
+                              "type": "unary_expression",
+                              "text": "!isLoggedIn",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 19
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "isLoggedIn",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 19
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "statement_block",
+                          "text": "{\r\n        return <Redirect to=\"/login\" />;\r\n    }",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 21
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "return_statement",
+                              "text": "return <Redirect to=\"/login\" />;",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 40
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_self_closing_element",
+                                  "text": "<Redirect to=\"/login\" />",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 39
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "Redirect",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "to=\"/login\"",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 36
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "to",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 25
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 27
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"/login\"",
+                                          "startPosition": {
+                                            "row": 16,
+                                            "column": 28
+                                          },
+                                          "endPosition": {
+                                            "row": 16,
+                                            "column": 36
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "/login",
+                                              "startPosition": {
+                                                "row": 16,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 16,
+                                                "column": 35
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return children;",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 19,
+                        "column": 20
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 19
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "AuthGuard.propTypes = {\r\n    children: PropTypes.node\r\n};",
+      "startPosition": {
+        "row": 22,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 24,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "assignment_expression",
+          "text": "AuthGuard.propTypes = {\r\n    children: PropTypes.node\r\n}",
+          "startPosition": {
+            "row": 22,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 24,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "member_expression",
+              "text": "AuthGuard.propTypes",
+              "startPosition": {
+                "row": 22,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 22,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "AuthGuard",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 9
+                  },
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "text": "propTypes",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 10
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 19
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    children: PropTypes.node\r\n}",
+              "startPosition": {
+                "row": 22,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 24,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "children: PropTypes.node",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "children",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "member_expression",
+                      "text": "PropTypes.node",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "PropTypes",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "property_identifier",
+                          "text": "node",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 28
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default AuthGuard;",
+      "startPosition": {
+        "row": 26,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 26,
+        "column": 25
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "AuthGuard",
+          "startPosition": {
+            "row": 26,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 26,
+            "column": 24
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

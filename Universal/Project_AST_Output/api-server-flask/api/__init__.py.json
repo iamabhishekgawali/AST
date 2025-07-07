@@ -1,0 +1,3867 @@
+{
+  "type": "module",
+  "text": "# -*- encoding: utf-8 -*-\r\n\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"\r\n\r\nimport os, json\r\n\r\nfrom flask import Flask\r\nfrom flask_cors import CORS\r\n\r\nfrom .routes import rest_api\r\nfrom .models import db\r\n\r\napp = Flask(__name__)\r\n\r\napp.config.from_object('api.config.BaseConfig')\r\n\r\ndb.init_app(app)\r\nrest_api.init_app(app)\r\nCORS(app)\r\n\r\n# Setup database\r\n@app.before_first_request\r\ndef initialize_database():\r\n    try:\r\n        db.create_all()\r\n    except Exception as e:\r\n\r\n        print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()\r\n\r\n\"\"\"\r\n   Custom responses\r\n\"\"\"\r\n\r\n@app.after_request\r\ndef after_request(response):\r\n    \"\"\"\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    \"\"\"\r\n\r\n    if int(response.status_code) >= 400:\r\n        response_data = json.loads(response.get_data())\r\n        if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))\r\n        response.headers.add('Content-Type', 'application/json')\r\n    return response\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 55,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "# -*- encoding: utf-8 -*-\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": []
+    },
+    {
+      "type": "expression_statement",
+      "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "string",
+          "text": "\"\"\"\r\nCopyright (c) 2019 - present AppSeed.us\r\n\"\"\"",
+          "startPosition": {
+            "row": 1,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "string_start",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 1,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "children": []
+            },
+            {
+              "type": "string_content",
+              "text": "\r\nCopyright (c) 2019 - present AppSeed.us\r\n",
+              "startPosition": {
+                "row": 1,
+                "column": 3
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "children": []
+            },
+            {
+              "type": "string_end",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 3,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 3
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "text": "import os, json",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 15
+      },
+      "children": [
+        {
+          "type": "dotted_name",
+          "text": "os",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 9
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "os",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 9
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "json",
+          "startPosition": {
+            "row": 5,
+            "column": 11
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "json",
+              "startPosition": {
+                "row": 5,
+                "column": 11
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "text": "from flask import Flask",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 23
+      },
+      "children": [
+        {
+          "type": "dotted_name",
+          "text": "flask",
+          "startPosition": {
+            "row": 7,
+            "column": 5
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 10
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "flask",
+              "startPosition": {
+                "row": 7,
+                "column": 5
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 10
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "Flask",
+          "startPosition": {
+            "row": 7,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "Flask",
+              "startPosition": {
+                "row": 7,
+                "column": 18
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 23
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "text": "from flask_cors import CORS",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "dotted_name",
+          "text": "flask_cors",
+          "startPosition": {
+            "row": 8,
+            "column": 5
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "flask_cors",
+              "startPosition": {
+                "row": 8,
+                "column": 5
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "CORS",
+          "startPosition": {
+            "row": 8,
+            "column": 23
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "CORS",
+              "startPosition": {
+                "row": 8,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "text": "from .routes import rest_api",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "relative_import",
+          "text": ".routes",
+          "startPosition": {
+            "row": 10,
+            "column": 5
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "import_prefix",
+              "text": ".",
+              "startPosition": {
+                "row": 10,
+                "column": 5
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 6
+              },
+              "children": []
+            },
+            {
+              "type": "dotted_name",
+              "text": "routes",
+              "startPosition": {
+                "row": 10,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 12
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "routes",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 12
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "rest_api",
+          "startPosition": {
+            "row": 10,
+            "column": 20
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 28
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "rest_api",
+              "startPosition": {
+                "row": 10,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 28
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "text": "from .models import db",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "relative_import",
+          "text": ".models",
+          "startPosition": {
+            "row": 11,
+            "column": 5
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "import_prefix",
+              "text": ".",
+              "startPosition": {
+                "row": 11,
+                "column": 5
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 6
+              },
+              "children": []
+            },
+            {
+              "type": "dotted_name",
+              "text": "models",
+              "startPosition": {
+                "row": 11,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 12
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 12
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dotted_name",
+          "text": "db",
+          "startPosition": {
+            "row": 11,
+            "column": 20
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "db",
+              "startPosition": {
+                "row": 11,
+                "column": 20
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 22
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "app = Flask(__name__)",
+      "startPosition": {
+        "row": 13,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 21
+      },
+      "children": [
+        {
+          "type": "assignment",
+          "text": "app = Flask(__name__)",
+          "startPosition": {
+            "row": 13,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "app",
+              "startPosition": {
+                "row": 13,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 3
+              },
+              "children": []
+            },
+            {
+              "type": "call",
+              "text": "Flask(__name__)",
+              "startPosition": {
+                "row": 13,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Flask",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "argument_list",
+                  "text": "(__name__)",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "__name__",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "app.config.from_object('api.config.BaseConfig')",
+      "startPosition": {
+        "row": 15,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 47
+      },
+      "children": [
+        {
+          "type": "call",
+          "text": "app.config.from_object('api.config.BaseConfig')",
+          "startPosition": {
+            "row": 15,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 15,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "attribute",
+              "text": "app.config.from_object",
+              "startPosition": {
+                "row": 15,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "attribute",
+                  "text": "app.config",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "app",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 0
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 3
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "config",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 10
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "from_object",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 22
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "argument_list",
+              "text": "('api.config.BaseConfig')",
+              "startPosition": {
+                "row": 15,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 47
+              },
+              "children": [
+                {
+                  "type": "string",
+                  "text": "'api.config.BaseConfig'",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 46
+                  },
+                  "children": [
+                    {
+                      "type": "string_start",
+                      "text": "'",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 24
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "string_content",
+                      "text": "api.config.BaseConfig",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 45
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "string_end",
+                      "text": "'",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 45
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 46
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "db.init_app(app)",
+      "startPosition": {
+        "row": 17,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 17,
+        "column": 16
+      },
+      "children": [
+        {
+          "type": "call",
+          "text": "db.init_app(app)",
+          "startPosition": {
+            "row": 17,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 17,
+            "column": 16
+          },
+          "children": [
+            {
+              "type": "attribute",
+              "text": "db.init_app",
+              "startPosition": {
+                "row": 17,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 11
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "db",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 2
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "init_app",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 3
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 11
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "argument_list",
+              "text": "(app)",
+              "startPosition": {
+                "row": 17,
+                "column": 11
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "app",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 15
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "rest_api.init_app(app)",
+      "startPosition": {
+        "row": 18,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 18,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "call",
+          "text": "rest_api.init_app(app)",
+          "startPosition": {
+            "row": 18,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 18,
+            "column": 22
+          },
+          "children": [
+            {
+              "type": "attribute",
+              "text": "rest_api.init_app",
+              "startPosition": {
+                "row": 18,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 17
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "rest_api",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 0
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "init_app",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 17
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "argument_list",
+              "text": "(app)",
+              "startPosition": {
+                "row": 18,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "app",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 21
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "CORS(app)",
+      "startPosition": {
+        "row": 19,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 19,
+        "column": 9
+      },
+      "children": [
+        {
+          "type": "call",
+          "text": "CORS(app)",
+          "startPosition": {
+            "row": 19,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 19,
+            "column": 9
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "CORS",
+              "startPosition": {
+                "row": 19,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 4
+              },
+              "children": []
+            },
+            {
+              "type": "argument_list",
+              "text": "(app)",
+              "startPosition": {
+                "row": 19,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 9
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "app",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 5
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 8
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "# Setup database\r",
+      "startPosition": {
+        "row": 21,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 21,
+        "column": 17
+      },
+      "children": []
+    },
+    {
+      "type": "decorated_definition",
+      "text": "@app.before_first_request\r\ndef initialize_database():\r\n    try:\r\n        db.create_all()\r\n    except Exception as e:\r\n\r\n        print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()",
+      "startPosition": {
+        "row": 22,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 35,
+        "column": 23
+      },
+      "children": [
+        {
+          "type": "decorator",
+          "text": "@app.before_first_request",
+          "startPosition": {
+            "row": 22,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 22,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "attribute",
+              "text": "app.before_first_request",
+              "startPosition": {
+                "row": 22,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 22,
+                "column": 25
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "app",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 4
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "before_first_request",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 5
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 25
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "function_definition",
+          "text": "def initialize_database():\r\n    try:\r\n        db.create_all()\r\n    except Exception as e:\r\n\r\n        print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()",
+          "startPosition": {
+            "row": 23,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 35,
+            "column": 23
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "initialize_database",
+              "startPosition": {
+                "row": 23,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 23,
+                "column": 23
+              },
+              "children": []
+            },
+            {
+              "type": "parameters",
+              "text": "()",
+              "startPosition": {
+                "row": 23,
+                "column": 23
+              },
+              "endPosition": {
+                "row": 23,
+                "column": 25
+              },
+              "children": []
+            },
+            {
+              "type": "block",
+              "text": "try:\r\n        db.create_all()\r\n    except Exception as e:\r\n\r\n        print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()",
+              "startPosition": {
+                "row": 24,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 35,
+                "column": 23
+              },
+              "children": [
+                {
+                  "type": "try_statement",
+                  "text": "try:\r\n        db.create_all()\r\n    except Exception as e:\r\n\r\n        print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()",
+                  "startPosition": {
+                    "row": 24,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 23
+                  },
+                  "children": [
+                    {
+                      "type": "block",
+                      "text": "db.create_all()",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "expression_statement",
+                          "text": "db.create_all()",
+                          "startPosition": {
+                            "row": 25,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 25,
+                            "column": 23
+                          },
+                          "children": [
+                            {
+                              "type": "call",
+                              "text": "db.create_all()",
+                              "startPosition": {
+                                "row": 25,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 25,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "text": "db.create_all",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 21
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "db",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 10
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "create_all",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 11
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 21
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 23
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "except_clause",
+                      "text": "except Exception as e:\r\n\r\n        print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 35,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "as_pattern",
+                          "text": "Exception as e",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 25
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "Exception",
+                              "startPosition": {
+                                "row": 26,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 26,
+                                "column": 20
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "as_pattern_target",
+                              "text": "e",
+                              "startPosition": {
+                                "row": 26,
+                                "column": 24
+                              },
+                              "endPosition": {
+                                "row": 26,
+                                "column": 25
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "e",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 24
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 25
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "block",
+                          "text": "print('> Error: DBMS Exception: ' + str(e) )\r\n\r\n        # fallback to SQLite\r\n        BASE_DIR = os.path.abspath(os.path.dirname(__file__))\r\n        app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')\r\n\r\n        print('> Fallback to SQLite ')\r\n        db.create_all()",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 23
+                          },
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "text": "print('> Error: DBMS Exception: ' + str(e) )",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 52
+                              },
+                              "children": [
+                                {
+                                  "type": "call",
+                                  "text": "print('> Error: DBMS Exception: ' + str(e) )",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 52
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "print",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "('> Error: DBMS Exception: ' + str(e) )",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 52
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "binary_operator",
+                                          "text": "'> Error: DBMS Exception: ' + str(e)",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 50
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string",
+                                              "text": "'> Error: DBMS Exception: '",
+                                              "startPosition": {
+                                                "row": 28,
+                                                "column": 14
+                                              },
+                                              "endPosition": {
+                                                "row": 28,
+                                                "column": 41
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_start",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 14
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 15
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_content",
+                                                  "text": "> Error: DBMS Exception: ",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 15
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 40
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_end",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 40
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 41
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "call",
+                                              "text": "str(e)",
+                                              "startPosition": {
+                                                "row": 28,
+                                                "column": 44
+                                              },
+                                              "endPosition": {
+                                                "row": 28,
+                                                "column": 50
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "str",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 44
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 47
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "argument_list",
+                                                  "text": "(e)",
+                                                  "startPosition": {
+                                                    "row": 28,
+                                                    "column": 47
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 28,
+                                                    "column": 50
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "e",
+                                                      "startPosition": {
+                                                        "row": 28,
+                                                        "column": 48
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 28,
+                                                        "column": 49
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "comment",
+                              "text": "# fallback to SQLite\r",
+                              "startPosition": {
+                                "row": 30,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 30,
+                                "column": 29
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "BASE_DIR = os.path.abspath(os.path.dirname(__file__))",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 61
+                              },
+                              "children": [
+                                {
+                                  "type": "assignment",
+                                  "text": "BASE_DIR = os.path.abspath(os.path.dirname(__file__))",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 61
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "BASE_DIR",
+                                      "startPosition": {
+                                        "row": 31,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "call",
+                                      "text": "os.path.abspath(os.path.dirname(__file__))",
+                                      "startPosition": {
+                                        "row": 31,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 61
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "os.path.abspath",
+                                          "startPosition": {
+                                            "row": 31,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 31,
+                                            "column": 34
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "text": "os.path",
+                                              "startPosition": {
+                                                "row": 31,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 26
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "os",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 19
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 21
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "path",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 22
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 26
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "abspath",
+                                              "startPosition": {
+                                                "row": 31,
+                                                "column": 27
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 34
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "(os.path.dirname(__file__))",
+                                          "startPosition": {
+                                            "row": 31,
+                                            "column": 34
+                                          },
+                                          "endPosition": {
+                                            "row": 31,
+                                            "column": 61
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "call",
+                                              "text": "os.path.dirname(__file__)",
+                                              "startPosition": {
+                                                "row": 31,
+                                                "column": 35
+                                              },
+                                              "endPosition": {
+                                                "row": 31,
+                                                "column": 60
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "attribute",
+                                                  "text": "os.path.dirname",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 35
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 50
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "attribute",
+                                                      "text": "os.path",
+                                                      "startPosition": {
+                                                        "row": 31,
+                                                        "column": 35
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 31,
+                                                        "column": 42
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "os",
+                                                          "startPosition": {
+                                                            "row": 31,
+                                                            "column": 35
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 31,
+                                                            "column": 37
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "path",
+                                                          "startPosition": {
+                                                            "row": 31,
+                                                            "column": 38
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 31,
+                                                            "column": 42
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "dirname",
+                                                      "startPosition": {
+                                                        "row": 31,
+                                                        "column": 43
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 31,
+                                                        "column": 50
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "argument_list",
+                                                  "text": "(__file__)",
+                                                  "startPosition": {
+                                                    "row": 31,
+                                                    "column": 50
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 31,
+                                                    "column": 60
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "__file__",
+                                                      "startPosition": {
+                                                        "row": 31,
+                                                        "column": 51
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 31,
+                                                        "column": 59
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 125
+                              },
+                              "children": [
+                                {
+                                  "type": "assignment",
+                                  "text": "app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 125
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "subscript",
+                                      "text": "app.config['SQLALCHEMY_DATABASE_URI']",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 45
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "app.config",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 18
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "app",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 8
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 11
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "config",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 18
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'SQLALCHEMY_DATABASE_URI'",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 44
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_start",
+                                              "text": "'",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 19
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string_content",
+                                              "text": "SQLALCHEMY_DATABASE_URI",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 43
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string_end",
+                                              "text": "'",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 43
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 44
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "assignment",
+                                      "text": "SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                                      "startPosition": {
+                                        "row": 32,
+                                        "column": 48
+                                      },
+                                      "endPosition": {
+                                        "row": 32,
+                                        "column": 125
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "SQLALCHEMY_DATABASE_URI",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 48
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 71
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "binary_operator",
+                                          "text": "'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')",
+                                          "startPosition": {
+                                            "row": 32,
+                                            "column": 74
+                                          },
+                                          "endPosition": {
+                                            "row": 32,
+                                            "column": 125
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string",
+                                              "text": "'sqlite:///'",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 74
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 86
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_start",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 32,
+                                                    "column": 74
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 32,
+                                                    "column": 75
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_content",
+                                                  "text": "sqlite:///",
+                                                  "startPosition": {
+                                                    "row": 32,
+                                                    "column": 75
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 32,
+                                                    "column": 85
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "string_end",
+                                                  "text": "'",
+                                                  "startPosition": {
+                                                    "row": 32,
+                                                    "column": 85
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 32,
+                                                    "column": 86
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "call",
+                                              "text": "os.path.join(BASE_DIR, 'db.sqlite3')",
+                                              "startPosition": {
+                                                "row": 32,
+                                                "column": 89
+                                              },
+                                              "endPosition": {
+                                                "row": 32,
+                                                "column": 125
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "attribute",
+                                                  "text": "os.path.join",
+                                                  "startPosition": {
+                                                    "row": 32,
+                                                    "column": 89
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 32,
+                                                    "column": 101
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "attribute",
+                                                      "text": "os.path",
+                                                      "startPosition": {
+                                                        "row": 32,
+                                                        "column": 89
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 32,
+                                                        "column": 96
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "os",
+                                                          "startPosition": {
+                                                            "row": 32,
+                                                            "column": 89
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 32,
+                                                            "column": 91
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "identifier",
+                                                          "text": "path",
+                                                          "startPosition": {
+                                                            "row": 32,
+                                                            "column": 92
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 32,
+                                                            "column": 96
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "join",
+                                                      "startPosition": {
+                                                        "row": 32,
+                                                        "column": 97
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 32,
+                                                        "column": 101
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "argument_list",
+                                                  "text": "(BASE_DIR, 'db.sqlite3')",
+                                                  "startPosition": {
+                                                    "row": 32,
+                                                    "column": 101
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 32,
+                                                    "column": 125
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "BASE_DIR",
+                                                      "startPosition": {
+                                                        "row": 32,
+                                                        "column": 102
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 32,
+                                                        "column": 110
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string",
+                                                      "text": "'db.sqlite3'",
+                                                      "startPosition": {
+                                                        "row": 32,
+                                                        "column": 112
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 32,
+                                                        "column": 124
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "string_start",
+                                                          "text": "'",
+                                                          "startPosition": {
+                                                            "row": 32,
+                                                            "column": 112
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 32,
+                                                            "column": 113
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "string_content",
+                                                          "text": "db.sqlite3",
+                                                          "startPosition": {
+                                                            "row": 32,
+                                                            "column": 113
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 32,
+                                                            "column": 123
+                                                          },
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "type": "string_end",
+                                                          "text": "'",
+                                                          "startPosition": {
+                                                            "row": 32,
+                                                            "column": 123
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 32,
+                                                            "column": 124
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "print('> Fallback to SQLite ')",
+                              "startPosition": {
+                                "row": 34,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 34,
+                                "column": 38
+                              },
+                              "children": [
+                                {
+                                  "type": "call",
+                                  "text": "print('> Fallback to SQLite ')",
+                                  "startPosition": {
+                                    "row": 34,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 34,
+                                    "column": 38
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "print",
+                                      "startPosition": {
+                                        "row": 34,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 34,
+                                        "column": 13
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "('> Fallback to SQLite ')",
+                                      "startPosition": {
+                                        "row": 34,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 34,
+                                        "column": 38
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string",
+                                          "text": "'> Fallback to SQLite '",
+                                          "startPosition": {
+                                            "row": 34,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 34,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_start",
+                                              "text": "'",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 14
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 15
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string_content",
+                                              "text": "> Fallback to SQLite ",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 15
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 36
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string_end",
+                                              "text": "'",
+                                              "startPosition": {
+                                                "row": 34,
+                                                "column": 36
+                                              },
+                                              "endPosition": {
+                                                "row": 34,
+                                                "column": 37
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "text": "db.create_all()",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "call",
+                                  "text": "db.create_all()",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 35,
+                                    "column": 23
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "text": "db.create_all",
+                                      "startPosition": {
+                                        "row": 35,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 35,
+                                        "column": 21
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "db",
+                                          "startPosition": {
+                                            "row": 35,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 35,
+                                            "column": 10
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "create_all",
+                                          "startPosition": {
+                                            "row": 35,
+                                            "column": 11
+                                          },
+                                          "endPosition": {
+                                            "row": 35,
+                                            "column": 21
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 35,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 35,
+                                        "column": 23
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "text": "\"\"\"\r\n   Custom responses\r\n\"\"\"",
+      "startPosition": {
+        "row": 37,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 39,
+        "column": 3
+      },
+      "children": [
+        {
+          "type": "string",
+          "text": "\"\"\"\r\n   Custom responses\r\n\"\"\"",
+          "startPosition": {
+            "row": 37,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 39,
+            "column": 3
+          },
+          "children": [
+            {
+              "type": "string_start",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 37,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 37,
+                "column": 3
+              },
+              "children": []
+            },
+            {
+              "type": "string_content",
+              "text": "\r\n   Custom responses\r\n",
+              "startPosition": {
+                "row": 37,
+                "column": 3
+              },
+              "endPosition": {
+                "row": 39,
+                "column": 0
+              },
+              "children": []
+            },
+            {
+              "type": "string_end",
+              "text": "\"\"\"",
+              "startPosition": {
+                "row": 39,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 39,
+                "column": 3
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "decorated_definition",
+      "text": "@app.after_request\r\ndef after_request(response):\r\n    \"\"\"\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    \"\"\"\r\n\r\n    if int(response.status_code) >= 400:\r\n        response_data = json.loads(response.get_data())\r\n        if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))\r\n        response.headers.add('Content-Type', 'application/json')\r\n    return response",
+      "startPosition": {
+        "row": 41,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 54,
+        "column": 19
+      },
+      "children": [
+        {
+          "type": "decorator",
+          "text": "@app.after_request",
+          "startPosition": {
+            "row": 41,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 41,
+            "column": 18
+          },
+          "children": [
+            {
+              "type": "attribute",
+              "text": "app.after_request",
+              "startPosition": {
+                "row": 41,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 41,
+                "column": 18
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "app",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 4
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "after_request",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 5
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 18
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "function_definition",
+          "text": "def after_request(response):\r\n    \"\"\"\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    \"\"\"\r\n\r\n    if int(response.status_code) >= 400:\r\n        response_data = json.loads(response.get_data())\r\n        if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))\r\n        response.headers.add('Content-Type', 'application/json')\r\n    return response",
+          "startPosition": {
+            "row": 42,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 54,
+            "column": 19
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "after_request",
+              "startPosition": {
+                "row": 42,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 42,
+                "column": 17
+              },
+              "children": []
+            },
+            {
+              "type": "parameters",
+              "text": "(response)",
+              "startPosition": {
+                "row": 42,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 42,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "response",
+                  "startPosition": {
+                    "row": 42,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 42,
+                    "column": 26
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "block",
+              "text": "\"\"\"\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    \"\"\"\r\n\r\n    if int(response.status_code) >= 400:\r\n        response_data = json.loads(response.get_data())\r\n        if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))\r\n        response.headers.add('Content-Type', 'application/json')\r\n    return response",
+              "startPosition": {
+                "row": 43,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 54,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "expression_statement",
+                  "text": "\"\"\"\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    \"\"\"",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 45,
+                    "column": 7
+                  },
+                  "children": [
+                    {
+                      "type": "string",
+                      "text": "\"\"\"\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    \"\"\"",
+                      "startPosition": {
+                        "row": 43,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 45,
+                        "column": 7
+                      },
+                      "children": [
+                        {
+                          "type": "string_start",
+                          "text": "\"\"\"",
+                          "startPosition": {
+                            "row": 43,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 7
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string_content",
+                          "text": "\r\n       Sends back a custom error with {\"success\", \"msg\"} format\r\n    ",
+                          "startPosition": {
+                            "row": 43,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 45,
+                            "column": 4
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string_end",
+                          "text": "\"\"\"",
+                          "startPosition": {
+                            "row": 45,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 45,
+                            "column": 7
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "if_statement",
+                  "text": "if int(response.status_code) >= 400:\r\n        response_data = json.loads(response.get_data())\r\n        if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))\r\n        response.headers.add('Content-Type', 'application/json')",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 53,
+                    "column": 64
+                  },
+                  "children": [
+                    {
+                      "type": "comparison_operator",
+                      "text": "int(response.status_code) >= 400",
+                      "startPosition": {
+                        "row": 47,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 47,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "call",
+                          "text": "int(response.status_code)",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 32
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "int",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(response.status_code)",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 10
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "text": "response.status_code",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 11
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "response",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 11
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "status_code",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 31
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "integer",
+                          "text": "400",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 39
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "block",
+                      "text": "response_data = json.loads(response.get_data())\r\n        if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))\r\n        response.headers.add('Content-Type', 'application/json')",
+                      "startPosition": {
+                        "row": 48,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 53,
+                        "column": 64
+                      },
+                      "children": [
+                        {
+                          "type": "expression_statement",
+                          "text": "response_data = json.loads(response.get_data())",
+                          "startPosition": {
+                            "row": 48,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 48,
+                            "column": 55
+                          },
+                          "children": [
+                            {
+                              "type": "assignment",
+                              "text": "response_data = json.loads(response.get_data())",
+                              "startPosition": {
+                                "row": 48,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 48,
+                                "column": 55
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "response_data",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "call",
+                                  "text": "json.loads(response.get_data())",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 24
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 55
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "text": "json.loads",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 24
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 34
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "json",
+                                          "startPosition": {
+                                            "row": 48,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 48,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "loads",
+                                          "startPosition": {
+                                            "row": 48,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 48,
+                                            "column": 34
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(response.get_data())",
+                                      "startPosition": {
+                                        "row": 48,
+                                        "column": 34
+                                      },
+                                      "endPosition": {
+                                        "row": 48,
+                                        "column": 55
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "call",
+                                          "text": "response.get_data()",
+                                          "startPosition": {
+                                            "row": 48,
+                                            "column": 35
+                                          },
+                                          "endPosition": {
+                                            "row": 48,
+                                            "column": 54
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "text": "response.get_data",
+                                              "startPosition": {
+                                                "row": 48,
+                                                "column": 35
+                                              },
+                                              "endPosition": {
+                                                "row": 48,
+                                                "column": 52
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "response",
+                                                  "startPosition": {
+                                                    "row": 48,
+                                                    "column": 35
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 48,
+                                                    "column": 43
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "get_data",
+                                                  "startPosition": {
+                                                    "row": 48,
+                                                    "column": 44
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 48,
+                                                    "column": 52
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "text": "()",
+                                              "startPosition": {
+                                                "row": 48,
+                                                "column": 52
+                                              },
+                                              "endPosition": {
+                                                "row": 48,
+                                                "column": 54
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "if_statement",
+                          "text": "if \"errors\" in response_data:\r\n            response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))",
+                          "startPosition": {
+                            "row": 49,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 52,
+                            "column": 56
+                          },
+                          "children": [
+                            {
+                              "type": "comparison_operator",
+                              "text": "\"errors\" in response_data",
+                              "startPosition": {
+                                "row": 49,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 49,
+                                "column": 36
+                              },
+                              "children": [
+                                {
+                                  "type": "string",
+                                  "text": "\"errors\"",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 11
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 19
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_start",
+                                      "text": "\"",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 11
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string_content",
+                                      "text": "errors",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 18
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string_end",
+                                      "text": "\"",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 19
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "response_data",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 23
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 36
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "block",
+                              "text": "response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}\r\n            response.set_data(json.dumps(response_data))",
+                              "startPosition": {
+                                "row": 50,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 52,
+                                "column": 56
+                              },
+                              "children": [
+                                {
+                                  "type": "expression_statement",
+                                  "text": "response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}",
+                                  "startPosition": {
+                                    "row": 50,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 51,
+                                    "column": 80
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "assignment",
+                                      "text": "response_data = {\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}",
+                                      "startPosition": {
+                                        "row": 50,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 51,
+                                        "column": 80
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "response_data",
+                                          "startPosition": {
+                                            "row": 50,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 50,
+                                            "column": 25
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "dictionary",
+                                          "text": "{\"success\": False,\r\n                             \"msg\": list(response_data[\"errors\"].items())[0][1]}",
+                                          "startPosition": {
+                                            "row": 50,
+                                            "column": 28
+                                          },
+                                          "endPosition": {
+                                            "row": 51,
+                                            "column": 80
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "pair",
+                                              "text": "\"success\": False",
+                                              "startPosition": {
+                                                "row": 50,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 50,
+                                                "column": 45
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string",
+                                                  "text": "\"success\"",
+                                                  "startPosition": {
+                                                    "row": 50,
+                                                    "column": 29
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 50,
+                                                    "column": 38
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_start",
+                                                      "text": "\"",
+                                                      "startPosition": {
+                                                        "row": 50,
+                                                        "column": 29
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 50,
+                                                        "column": 30
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string_content",
+                                                      "text": "success",
+                                                      "startPosition": {
+                                                        "row": 50,
+                                                        "column": 30
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 50,
+                                                        "column": 37
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string_end",
+                                                      "text": "\"",
+                                                      "startPosition": {
+                                                        "row": 50,
+                                                        "column": 37
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 50,
+                                                        "column": 38
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "false",
+                                                  "text": "False",
+                                                  "startPosition": {
+                                                    "row": 50,
+                                                    "column": 40
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 50,
+                                                    "column": 45
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "pair",
+                                              "text": "\"msg\": list(response_data[\"errors\"].items())[0][1]",
+                                              "startPosition": {
+                                                "row": 51,
+                                                "column": 29
+                                              },
+                                              "endPosition": {
+                                                "row": 51,
+                                                "column": 79
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string",
+                                                  "text": "\"msg\"",
+                                                  "startPosition": {
+                                                    "row": 51,
+                                                    "column": 29
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 51,
+                                                    "column": 34
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "string_start",
+                                                      "text": "\"",
+                                                      "startPosition": {
+                                                        "row": 51,
+                                                        "column": 29
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 51,
+                                                        "column": 30
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string_content",
+                                                      "text": "msg",
+                                                      "startPosition": {
+                                                        "row": 51,
+                                                        "column": 30
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 51,
+                                                        "column": 33
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "string_end",
+                                                      "text": "\"",
+                                                      "startPosition": {
+                                                        "row": 51,
+                                                        "column": 33
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 51,
+                                                        "column": 34
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "subscript",
+                                                  "text": "list(response_data[\"errors\"].items())[0][1]",
+                                                  "startPosition": {
+                                                    "row": 51,
+                                                    "column": 36
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 51,
+                                                    "column": 79
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "subscript",
+                                                      "text": "list(response_data[\"errors\"].items())[0]",
+                                                      "startPosition": {
+                                                        "row": 51,
+                                                        "column": 36
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 51,
+                                                        "column": 76
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "type": "call",
+                                                          "text": "list(response_data[\"errors\"].items())",
+                                                          "startPosition": {
+                                                            "row": 51,
+                                                            "column": 36
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 51,
+                                                            "column": 73
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "type": "identifier",
+                                                              "text": "list",
+                                                              "startPosition": {
+                                                                "row": 51,
+                                                                "column": 36
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 51,
+                                                                "column": 40
+                                                              },
+                                                              "children": []
+                                                            },
+                                                            {
+                                                              "type": "argument_list",
+                                                              "text": "(response_data[\"errors\"].items())",
+                                                              "startPosition": {
+                                                                "row": 51,
+                                                                "column": 40
+                                                              },
+                                                              "endPosition": {
+                                                                "row": 51,
+                                                                "column": 73
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "type": "call",
+                                                                  "text": "response_data[\"errors\"].items()",
+                                                                  "startPosition": {
+                                                                    "row": 51,
+                                                                    "column": 41
+                                                                  },
+                                                                  "endPosition": {
+                                                                    "row": 51,
+                                                                    "column": 72
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "type": "attribute",
+                                                                      "text": "response_data[\"errors\"].items",
+                                                                      "startPosition": {
+                                                                        "row": 51,
+                                                                        "column": 41
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 51,
+                                                                        "column": 70
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "type": "subscript",
+                                                                          "text": "response_data[\"errors\"]",
+                                                                          "startPosition": {
+                                                                            "row": 51,
+                                                                            "column": 41
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 51,
+                                                                            "column": 64
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "type": "identifier",
+                                                                              "text": "response_data",
+                                                                              "startPosition": {
+                                                                                "row": 51,
+                                                                                "column": 41
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 51,
+                                                                                "column": 54
+                                                                              },
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "type": "string",
+                                                                              "text": "\"errors\"",
+                                                                              "startPosition": {
+                                                                                "row": 51,
+                                                                                "column": 55
+                                                                              },
+                                                                              "endPosition": {
+                                                                                "row": 51,
+                                                                                "column": 63
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "type": "string_start",
+                                                                                  "text": "\"",
+                                                                                  "startPosition": {
+                                                                                    "row": 51,
+                                                                                    "column": 55
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 51,
+                                                                                    "column": 56
+                                                                                  },
+                                                                                  "children": []
+                                                                                },
+                                                                                {
+                                                                                  "type": "string_content",
+                                                                                  "text": "errors",
+                                                                                  "startPosition": {
+                                                                                    "row": 51,
+                                                                                    "column": 56
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 51,
+                                                                                    "column": 62
+                                                                                  },
+                                                                                  "children": []
+                                                                                },
+                                                                                {
+                                                                                  "type": "string_end",
+                                                                                  "text": "\"",
+                                                                                  "startPosition": {
+                                                                                    "row": 51,
+                                                                                    "column": 62
+                                                                                  },
+                                                                                  "endPosition": {
+                                                                                    "row": 51,
+                                                                                    "column": 63
+                                                                                  },
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "identifier",
+                                                                          "text": "items",
+                                                                          "startPosition": {
+                                                                            "row": 51,
+                                                                            "column": 65
+                                                                          },
+                                                                          "endPosition": {
+                                                                            "row": 51,
+                                                                            "column": 70
+                                                                          },
+                                                                          "children": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "type": "argument_list",
+                                                                      "text": "()",
+                                                                      "startPosition": {
+                                                                        "row": 51,
+                                                                        "column": 70
+                                                                      },
+                                                                      "endPosition": {
+                                                                        "row": 51,
+                                                                        "column": 72
+                                                                      },
+                                                                      "children": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "integer",
+                                                          "text": "0",
+                                                          "startPosition": {
+                                                            "row": 51,
+                                                            "column": 74
+                                                          },
+                                                          "endPosition": {
+                                                            "row": 51,
+                                                            "column": 75
+                                                          },
+                                                          "children": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "integer",
+                                                      "text": "1",
+                                                      "startPosition": {
+                                                        "row": 51,
+                                                        "column": 77
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 51,
+                                                        "column": 78
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "expression_statement",
+                                  "text": "response.set_data(json.dumps(response_data))",
+                                  "startPosition": {
+                                    "row": 52,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 52,
+                                    "column": 56
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "text": "response.set_data(json.dumps(response_data))",
+                                      "startPosition": {
+                                        "row": 52,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 52,
+                                        "column": 56
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "text": "response.set_data",
+                                          "startPosition": {
+                                            "row": 52,
+                                            "column": 12
+                                          },
+                                          "endPosition": {
+                                            "row": 52,
+                                            "column": 29
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "response",
+                                              "startPosition": {
+                                                "row": 52,
+                                                "column": 12
+                                              },
+                                              "endPosition": {
+                                                "row": 52,
+                                                "column": 20
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "set_data",
+                                              "startPosition": {
+                                                "row": 52,
+                                                "column": 21
+                                              },
+                                              "endPosition": {
+                                                "row": 52,
+                                                "column": 29
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "(json.dumps(response_data))",
+                                          "startPosition": {
+                                            "row": 52,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 52,
+                                            "column": 56
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "call",
+                                              "text": "json.dumps(response_data)",
+                                              "startPosition": {
+                                                "row": 52,
+                                                "column": 30
+                                              },
+                                              "endPosition": {
+                                                "row": 52,
+                                                "column": 55
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "attribute",
+                                                  "text": "json.dumps",
+                                                  "startPosition": {
+                                                    "row": 52,
+                                                    "column": 30
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 52,
+                                                    "column": 40
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "json",
+                                                      "startPosition": {
+                                                        "row": 52,
+                                                        "column": 30
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 52,
+                                                        "column": 34
+                                                      },
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "dumps",
+                                                      "startPosition": {
+                                                        "row": 52,
+                                                        "column": 35
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 52,
+                                                        "column": 40
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "argument_list",
+                                                  "text": "(response_data)",
+                                                  "startPosition": {
+                                                    "row": 52,
+                                                    "column": 40
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 52,
+                                                    "column": 55
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "type": "identifier",
+                                                      "text": "response_data",
+                                                      "startPosition": {
+                                                        "row": 52,
+                                                        "column": 41
+                                                      },
+                                                      "endPosition": {
+                                                        "row": 52,
+                                                        "column": 54
+                                                      },
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "expression_statement",
+                          "text": "response.headers.add('Content-Type', 'application/json')",
+                          "startPosition": {
+                            "row": 53,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 53,
+                            "column": 64
+                          },
+                          "children": [
+                            {
+                              "type": "call",
+                              "text": "response.headers.add('Content-Type', 'application/json')",
+                              "startPosition": {
+                                "row": 53,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 53,
+                                "column": 64
+                              },
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "text": "response.headers.add",
+                                  "startPosition": {
+                                    "row": 53,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 53,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "text": "response.headers",
+                                      "startPosition": {
+                                        "row": 53,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 53,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "response",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 8
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 16
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "headers",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "add",
+                                      "startPosition": {
+                                        "row": 53,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 53,
+                                        "column": 28
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "('Content-Type', 'application/json')",
+                                  "startPosition": {
+                                    "row": 53,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 53,
+                                    "column": 64
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string",
+                                      "text": "'Content-Type'",
+                                      "startPosition": {
+                                        "row": 53,
+                                        "column": 29
+                                      },
+                                      "endPosition": {
+                                        "row": 53,
+                                        "column": 43
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_start",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 30
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string_content",
+                                          "text": "Content-Type",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 30
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 42
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string_end",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 42
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 43
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'application/json'",
+                                      "startPosition": {
+                                        "row": 53,
+                                        "column": 45
+                                      },
+                                      "endPosition": {
+                                        "row": 53,
+                                        "column": 63
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_start",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 45
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 46
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string_content",
+                                          "text": "application/json",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 46
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 62
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string_end",
+                                          "text": "'",
+                                          "startPosition": {
+                                            "row": 53,
+                                            "column": 62
+                                          },
+                                          "endPosition": {
+                                            "row": 53,
+                                            "column": 63
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "return_statement",
+                  "text": "return response",
+                  "startPosition": {
+                    "row": 54,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 54,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "response",
+                      "startPosition": {
+                        "row": 54,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 54,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

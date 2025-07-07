@@ -1,0 +1,1338 @@
+{
+  "type": "program",
+  "text": "// assets\r\nimport { IconBrandChrome, IconHelp, IconSitemap } from '@tabler/icons';\r\n\r\n// constant\r\nconst icons = {\r\n    IconBrandChrome: IconBrandChrome,\r\n    IconHelp: IconHelp,\r\n    IconSitemap: IconSitemap\r\n};\r\n\r\n//-----------------------|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||-----------------------//\r\n\r\nexport const other = {\r\n    id: 'sample-docs-roadmap',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]\r\n};\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 35,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "comment",
+      "text": "// assets\r",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 10
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { IconBrandChrome, IconHelp, IconSitemap } from '@tabler/icons';",
+      "startPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 1,
+        "column": 71
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ IconBrandChrome, IconHelp, IconSitemap }",
+          "startPosition": {
+            "row": 1,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 49
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ IconBrandChrome, IconHelp, IconSitemap }",
+              "startPosition": {
+                "row": 1,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "IconBrandChrome",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconBrandChrome",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 24
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconHelp",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconHelp",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 26
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 34
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "import_specifier",
+                  "text": "IconSitemap",
+                  "startPosition": {
+                    "row": 1,
+                    "column": 36
+                  },
+                  "endPosition": {
+                    "row": 1,
+                    "column": 47
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "IconSitemap",
+                      "startPosition": {
+                        "row": 1,
+                        "column": 36
+                      },
+                      "endPosition": {
+                        "row": 1,
+                        "column": 47
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@tabler/icons'",
+          "startPosition": {
+            "row": 1,
+            "column": 55
+          },
+          "endPosition": {
+            "row": 1,
+            "column": 70
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@tabler/icons",
+              "startPosition": {
+                "row": 1,
+                "column": 56
+              },
+              "endPosition": {
+                "row": 1,
+                "column": 69
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// constant\r",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 12
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const icons = {\r\n    IconBrandChrome: IconBrandChrome,\r\n    IconHelp: IconHelp,\r\n    IconSitemap: IconSitemap\r\n};",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "icons = {\r\n    IconBrandChrome: IconBrandChrome,\r\n    IconHelp: IconHelp,\r\n    IconSitemap: IconSitemap\r\n}",
+          "startPosition": {
+            "row": 4,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "icons",
+              "startPosition": {
+                "row": 4,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 11
+              },
+              "children": []
+            },
+            {
+              "type": "object",
+              "text": "{\r\n    IconBrandChrome: IconBrandChrome,\r\n    IconHelp: IconHelp,\r\n    IconSitemap: IconSitemap\r\n}",
+              "startPosition": {
+                "row": 4,
+                "column": 14
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "pair",
+                  "text": "IconBrandChrome: IconBrandChrome",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 36
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconBrandChrome",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 19
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconBrandChrome",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 21
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 36
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconHelp: IconHelp",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconHelp",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconHelp",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 14
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "pair",
+                  "text": "IconSitemap: IconSitemap",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "property_identifier",
+                      "text": "IconSitemap",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "IconSitemap",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 28
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//-----------------------|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||-----------------------//\r",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 95
+      },
+      "children": []
+    },
+    {
+      "type": "export_statement",
+      "text": "export const other = {\r\n    id: 'sample-docs-roadmap',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]\r\n};",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 34,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "lexical_declaration",
+          "text": "const other = {\r\n    id: 'sample-docs-roadmap',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]\r\n};",
+          "startPosition": {
+            "row": 12,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 34,
+            "column": 2
+          },
+          "children": [
+            {
+              "type": "variable_declarator",
+              "text": "other = {\r\n    id: 'sample-docs-roadmap',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]\r\n}",
+              "startPosition": {
+                "row": 12,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 34,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "other",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "object",
+                  "text": "{\r\n    id: 'sample-docs-roadmap',\r\n    type: 'group',\r\n    children: [\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]\r\n}",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 34,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "pair",
+                      "text": "id: 'sample-docs-roadmap'",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 29
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 6
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'sample-docs-roadmap'",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 29
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "sample-docs-roadmap",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 28
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "type: 'group'",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 17
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "type",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 8
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string",
+                          "text": "'group'",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 17
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "group",
+                              "startPosition": {
+                                "row": 14,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 14,
+                                "column": 16
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "pair",
+                      "text": "children: [\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 33,
+                        "column": 5
+                      },
+                      "children": [
+                        {
+                          "type": "property_identifier",
+                          "text": "children",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "array",
+                          "text": "[\r\n        {\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        },\r\n        {\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }\r\n    ]",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 33,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'sample-page',\r\n            title: 'Sample Page',\r\n            type: 'item',\r\n            url: '/sample-page',\r\n            icon: icons['IconBrandChrome'],\r\n            breadcrumbs: false\r\n        }",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'sample-page'",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 29
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'sample-page'",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 29
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "sample-page",
+                                          "startPosition": {
+                                            "row": 17,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 17,
+                                            "column": 28
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Sample Page'",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 32
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Sample Page'",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 32
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Sample Page",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 31
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'item'",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'item'",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "item",
+                                          "startPosition": {
+                                            "row": 19,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 19,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "url: '/sample-page'",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "url",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'/sample-page'",
+                                      "startPosition": {
+                                        "row": 20,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 20,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "/sample-page",
+                                          "startPosition": {
+                                            "row": 20,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 20,
+                                            "column": 30
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconBrandChrome']",
+                                  "startPosition": {
+                                    "row": 21,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 21,
+                                    "column": 42
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconBrandChrome']",
+                                      "startPosition": {
+                                        "row": 21,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 21,
+                                        "column": 42
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconBrandChrome'",
+                                          "startPosition": {
+                                            "row": 21,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 21,
+                                            "column": 41
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconBrandChrome",
+                                              "startPosition": {
+                                                "row": 21,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 21,
+                                                "column": 40
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "breadcrumbs: false",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "breadcrumbs",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 23
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "false",
+                                      "text": "false",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 25
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 30
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "text": "{\r\n            id: 'documentation',\r\n            title: 'Documentation',\r\n            type: 'item',\r\n            url: 'https://docs.appseed.us/products/react/flask-berry-dashboard',\r\n            icon: icons['IconHelp'],\r\n            external: true,\r\n            target: true\r\n        }",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "pair",
+                                  "text": "id: 'documentation'",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 31
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "id",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 14
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'documentation'",
+                                      "startPosition": {
+                                        "row": 25,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 25,
+                                        "column": 31
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "documentation",
+                                          "startPosition": {
+                                            "row": 25,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 25,
+                                            "column": 30
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "title: 'Documentation'",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 34
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "title",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'Documentation'",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 34
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "Documentation",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 33
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "type: 'item'",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "type",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'item'",
+                                      "startPosition": {
+                                        "row": 27,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 27,
+                                        "column": 24
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "item",
+                                          "startPosition": {
+                                            "row": 27,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 27,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "url: 'https://docs.appseed.us/products/react/flask-berry-dashboard'",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 79
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "url",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 15
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "string",
+                                      "text": "'https://docs.appseed.us/products/react/flask-berry-dashboard'",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 79
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "https://docs.appseed.us/products/react/flask-berry-dashboard",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 78
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "icon: icons['IconHelp']",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 35
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "icon",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 16
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "subscript_expression",
+                                      "text": "icons['IconHelp']",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 35
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "icons",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "'IconHelp'",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 34
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "IconHelp",
+                                              "startPosition": {
+                                                "row": 29,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 29,
+                                                "column": 33
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "external: true",
+                                  "startPosition": {
+                                    "row": 30,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 30,
+                                    "column": 26
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "external",
+                                      "startPosition": {
+                                        "row": 30,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 20
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "true",
+                                      "text": "true",
+                                      "startPosition": {
+                                        "row": 30,
+                                        "column": 22
+                                      },
+                                      "endPosition": {
+                                        "row": 30,
+                                        "column": 26
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "pair",
+                                  "text": "target: true",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "property_identifier",
+                                      "text": "target",
+                                      "startPosition": {
+                                        "row": 31,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 18
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "true",
+                                      "text": "true",
+                                      "startPosition": {
+                                        "row": 31,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 31,
+                                        "column": 24
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

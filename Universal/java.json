@@ -1,0 +1,119 @@
+{
+    "language": "Java (Spring/JPA)",
+    "internalDependencyPatterns": [
+        "^com\\.mycompany",
+        "^org\\.myproject"
+    ],
+    "selectors": {
+        "function": [
+            "method_declaration"
+        ],
+        "class": [
+            "class_declaration",
+            "enum_declaration"
+        ],
+        "comment": [
+            "line_comment",
+            "block_comment"
+        ],
+        "import": [
+            {
+                "type": "import_declaration",
+                "source": {
+                    "path": [
+                        {
+                            "type": "scoped_identifier"
+                        }
+                    ]
+                }
+            }
+        ],
+        "patterns": {
+            "API Endpoints": {
+                "type": "annotation",
+                "textMatch": "Mapping",
+                "value": {
+                    "path": [
+                        {
+                            "type": "annotation_argument_list"
+                        },
+                        {
+                            "type": "element_value_pair"
+                        },
+                        {
+                            "type": "string_literal"
+                        }
+                    ]
+                }
+            },
+            "Database Queries": {
+                "type": "method_invocation",
+                "textMatch": "createQuery",
+                "value": {
+                    "path": [
+                        {
+                            "type": "argument_list"
+                        },
+                        {
+                            "type": "string_literal"
+                        }
+                    ]
+                }
+            },
+            "Autowired Injections": {
+                "type": "annotation",
+                "textMatch": "@Autowired",
+                "value": null
+            }
+        },
+        "quality": {
+            "exceptionHandling": [
+                "try_statement"
+            ]
+        },
+        "cyclomaticComplexity": {
+            "branchingNodes": [
+                "if_statement",
+                "for_statement",
+                "while_statement",
+                "switch_expression",
+                "catch_clause"
+            ],
+            "logicalOperators": [
+                "&&",
+                "||"
+            ]
+        }
+    },
+    "dependencyMaps": {
+        "Frameworks Detected": {
+            "org.springframework": "Spring",
+            "io.quarkus": "Quarkus",
+            "io.micronaut": "Micronaut",
+            "jakarta.ws.rs": "JAX-RS (Jakarta EE)"
+        },
+        "Database Technologies Detected": 
+            {
+                "org.postgresql": "PostgreSQL",
+                "com.mysql": "MySQL",
+                "com.microsoft.sqlserver": "Microsoft SQL Server",
+                "oracle.jdbc": "Oracle",
+                "org.h2": "H2",
+                "org.mariadb.jdbc": "MariaDB",
+                "org.hibernate": "Hibernate",
+                "com.ibm.db2": "IBM DB2",
+                "com.sybase": "Sybase",
+                "org.sqlite": "SQLite",
+                "org.hsqldb": "HSQLDB",
+                "cubrid.jdbc": "CUBRID",
+                "com.informix": "Informix",
+                "java.sql" : "JDBC"
+            },
+        "Cloud SDKs Detected": {
+            "software.amazon.awssdk": "AWS SDK v2",
+            "com.amazonaws": "AWS SDK v1",
+            "com.azure": "Azure",
+            "com.google.cloud": "Google Cloud"
+        }
+    }
+}

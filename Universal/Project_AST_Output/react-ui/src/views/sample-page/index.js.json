@@ -1,0 +1,757 @@
+{
+  "type": "program",
+  "text": "import React from 'react';\r\n\r\n// material-ui\r\nimport { Typography } from '@material-ui/core';\r\n\r\n// project imports\r\nimport MainCard from '../../ui-component/cards/MainCard';\r\n\r\n//==============================|| SAMPLE PAGE ||==============================//\r\n\r\nconst SamplePage = () => {\r\n    return (\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    );\r\n};\r\n\r\nexport default SamplePage;\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 24,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "import_statement",
+      "text": "import React from 'react';",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "React",
+          "startPosition": {
+            "row": 0,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 12
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "React",
+              "startPosition": {
+                "row": 0,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 12
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'react'",
+          "startPosition": {
+            "row": 0,
+            "column": 18
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 25
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "react",
+              "startPosition": {
+                "row": 0,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// material-ui\r",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 15
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import { Typography } from '@material-ui/core';",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 47
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "{ Typography }",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "named_imports",
+              "text": "{ Typography }",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "import_specifier",
+                  "text": "Typography",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "Typography",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'@material-ui/core'",
+          "startPosition": {
+            "row": 3,
+            "column": 27
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 46
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "@material-ui/core",
+              "startPosition": {
+                "row": 3,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "// project imports\r",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 19
+      },
+      "children": []
+    },
+    {
+      "type": "import_statement",
+      "text": "import MainCard from '../../ui-component/cards/MainCard';",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 57
+      },
+      "children": [
+        {
+          "type": "import_clause",
+          "text": "MainCard",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "MainCard",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 15
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "text": "'../../ui-component/cards/MainCard'",
+          "startPosition": {
+            "row": 6,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 56
+          },
+          "children": [
+            {
+              "type": "string_fragment",
+              "text": "../../ui-component/cards/MainCard",
+              "startPosition": {
+                "row": 6,
+                "column": 22
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 55
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comment",
+      "text": "//==============================|| SAMPLE PAGE ||==============================//\r",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 82
+      },
+      "children": []
+    },
+    {
+      "type": "lexical_declaration",
+      "text": "const SamplePage = () => {\r\n    return (\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    );\r\n};",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 21,
+        "column": 2
+      },
+      "children": [
+        {
+          "type": "variable_declarator",
+          "text": "SamplePage = () => {\r\n    return (\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    );\r\n}",
+          "startPosition": {
+            "row": 10,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 21,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "SamplePage",
+              "startPosition": {
+                "row": 10,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 16
+              },
+              "children": []
+            },
+            {
+              "type": "arrow_function",
+              "text": "() => {\r\n    return (\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    );\r\n}",
+              "startPosition": {
+                "row": 10,
+                "column": 19
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 1
+              },
+              "children": [
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "text": "{\r\n    return (\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    );\r\n}",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 1
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return (\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    );",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "parenthesized_expression",
+                          "text": "(\r\n        <MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>\r\n    )",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 5
+                          },
+                          "children": [
+                            {
+                              "type": "jsx_element",
+                              "text": "<MainCard title=\"Sample Card\">\r\n            <Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>\r\n        </MainCard>",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 19
+                              },
+                              "children": [
+                                {
+                                  "type": "jsx_opening_element",
+                                  "text": "<MainCard title=\"Sample Card\">",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 38
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "MainCard",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 17
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_attribute",
+                                      "text": "title=\"Sample Card\"",
+                                      "startPosition": {
+                                        "row": 12,
+                                        "column": 18
+                                      },
+                                      "endPosition": {
+                                        "row": 12,
+                                        "column": 37
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "property_identifier",
+                                          "text": "title",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 18
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "string",
+                                          "text": "\"Sample Card\"",
+                                          "startPosition": {
+                                            "row": 12,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 12,
+                                            "column": 37
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "Sample Card",
+                                              "startPosition": {
+                                                "row": 12,
+                                                "column": 25
+                                              },
+                                              "endPosition": {
+                                                "row": 12,
+                                                "column": 36
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 12,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 12,
+                                    "column": 39
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_element",
+                                  "text": "<Typography variant=\"body2\">\r\n                Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r\n                enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r\n                dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r\n                sunk in culpa qui officiate descent molls anim id est labours.\r\n            </Typography>",
+                                  "startPosition": {
+                                    "row": 13,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 25
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "jsx_opening_element",
+                                      "text": "<Typography variant=\"body2\">",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 40
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 23
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "jsx_attribute",
+                                          "text": "variant=\"body2\"",
+                                          "startPosition": {
+                                            "row": 13,
+                                            "column": 24
+                                          },
+                                          "endPosition": {
+                                            "row": 13,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "property_identifier",
+                                              "text": "variant",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 24
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 31
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "string",
+                                              "text": "\"body2\"",
+                                              "startPosition": {
+                                                "row": 13,
+                                                "column": 32
+                                              },
+                                              "endPosition": {
+                                                "row": 13,
+                                                "column": 39
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "body2",
+                                                  "startPosition": {
+                                                    "row": 13,
+                                                    "column": 33
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 13,
+                                                    "column": 38
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "\r",
+                                      "startPosition": {
+                                        "row": 13,
+                                        "column": 40
+                                      },
+                                      "endPosition": {
+                                        "row": 13,
+                                        "column": 41
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut\r",
+                                      "startPosition": {
+                                        "row": 14,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 14,
+                                        "column": 139
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "enif ad minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue\r",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 137
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "dolor in reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president,\r",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 140
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_text",
+                                      "text": "sunk in culpa qui officiate descent molls anim id est labours.\r",
+                                      "startPosition": {
+                                        "row": 17,
+                                        "column": 16
+                                      },
+                                      "endPosition": {
+                                        "row": 17,
+                                        "column": 79
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "jsx_closing_element",
+                                      "text": "</Typography>",
+                                      "startPosition": {
+                                        "row": 18,
+                                        "column": 12
+                                      },
+                                      "endPosition": {
+                                        "row": 18,
+                                        "column": 25
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "Typography",
+                                          "startPosition": {
+                                            "row": 18,
+                                            "column": 14
+                                          },
+                                          "endPosition": {
+                                            "row": 18,
+                                            "column": 24
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "jsx_text",
+                                  "text": "\r",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 25
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "jsx_closing_element",
+                                  "text": "</MainCard>",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 19
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "MainCard",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 18
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "export_statement",
+      "text": "export default SamplePage;",
+      "startPosition": {
+        "row": 23,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 23,
+        "column": 26
+      },
+      "children": [
+        {
+          "type": "identifier",
+          "text": "SamplePage",
+          "startPosition": {
+            "row": 23,
+            "column": 15
+          },
+          "endPosition": {
+            "row": 23,
+            "column": 25
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

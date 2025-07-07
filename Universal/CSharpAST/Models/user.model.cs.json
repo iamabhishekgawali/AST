@@ -1,0 +1,710 @@
+{
+  "type": "compilation_unit",
+  "text": "using System.ComponentModel.DataAnnotations;\r\n\r\nnamespace First_Backend.Models\r\n{\r\n    public class User\r\n    {\r\n        public int Id { get; set; }\r\n\r\n        [MaxLength(255)]\r\n        public required string Name { get; set; }\r\n\r\n        public required string Email { get; set; }\r\n        \r\n        public required string Password { get; set; }\r\n    }\r\n}",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 15,
+    "column": 1
+  },
+  "children": [
+    {
+      "type": "using_directive",
+      "text": "using System.ComponentModel.DataAnnotations;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "System.ComponentModel.DataAnnotations",
+          "startPosition": {
+            "row": 0,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "qualified_name",
+              "text": "System.ComponentModel",
+              "startPosition": {
+                "row": 0,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "System",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "ComponentModel",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "DataAnnotations",
+              "startPosition": {
+                "row": 0,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "namespace_declaration",
+      "text": "namespace First_Backend.Models\r\n{\r\n    public class User\r\n    {\r\n        public int Id { get; set; }\r\n\r\n        [MaxLength(255)]\r\n        public required string Name { get; set; }\r\n\r\n        public required string Email { get; set; }\r\n        \r\n        public required string Password { get; set; }\r\n    }\r\n}",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 15,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "qualified_name",
+          "text": "First_Backend.Models",
+          "startPosition": {
+            "row": 2,
+            "column": 10
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 30
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "First_Backend",
+              "startPosition": {
+                "row": 2,
+                "column": 10
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 23
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "Models",
+              "startPosition": {
+                "row": 2,
+                "column": 24
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 30
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "declaration_list",
+          "text": "{\r\n    public class User\r\n    {\r\n        public int Id { get; set; }\r\n\r\n        [MaxLength(255)]\r\n        public required string Name { get; set; }\r\n\r\n        public required string Email { get; set; }\r\n        \r\n        public required string Password { get; set; }\r\n    }\r\n}",
+          "startPosition": {
+            "row": 3,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 15,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "class_declaration",
+              "text": "public class User\r\n    {\r\n        public int Id { get; set; }\r\n\r\n        [MaxLength(255)]\r\n        public required string Name { get; set; }\r\n\r\n        public required string Email { get; set; }\r\n        \r\n        public required string Password { get; set; }\r\n    }",
+              "startPosition": {
+                "row": 4,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 14,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifier",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "User",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "declaration_list",
+                  "text": "{\r\n        public int Id { get; set; }\r\n\r\n        [MaxLength(255)]\r\n        public required string Name { get; set; }\r\n\r\n        public required string Email { get; set; }\r\n        \r\n        public required string Password { get; set; }\r\n    }",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "property_declaration",
+                      "text": "public int Id { get; set; }",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "public",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "int",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 18
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Id",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 21
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "accessor_list",
+                          "text": "{ get; set; }",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 22
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 35
+                          },
+                          "children": [
+                            {
+                              "type": "accessor_declaration",
+                              "text": "get;",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 24
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 28
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "accessor_declaration",
+                              "text": "set;",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 29
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 33
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "property_declaration",
+                      "text": "[MaxLength(255)]\r\n        public required string Name { get; set; }",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "attribute_list",
+                          "text": "[MaxLength(255)]",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 24
+                          },
+                          "children": [
+                            {
+                              "type": "attribute",
+                              "text": "MaxLength(255)",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "MaxLength",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "attribute_argument_list",
+                                  "text": "(255)",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 18
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 23
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "attribute_argument",
+                                      "text": "255",
+                                      "startPosition": {
+                                        "row": 8,
+                                        "column": 19
+                                      },
+                                      "endPosition": {
+                                        "row": 8,
+                                        "column": 22
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "integer_literal",
+                                          "text": "255",
+                                          "startPosition": {
+                                            "row": 8,
+                                            "column": 19
+                                          },
+                                          "endPosition": {
+                                            "row": 8,
+                                            "column": 22
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "public",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "required",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "string",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 30
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Name",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 35
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "accessor_list",
+                          "text": "{ get; set; }",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "accessor_declaration",
+                              "text": "get;",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 38
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 42
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "accessor_declaration",
+                              "text": "set;",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 43
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 47
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "property_declaration",
+                      "text": "public required string Email { get; set; }",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 50
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "public",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "required",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "string",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 30
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Email",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 36
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "accessor_list",
+                          "text": "{ get; set; }",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 37
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 50
+                          },
+                          "children": [
+                            {
+                              "type": "accessor_declaration",
+                              "text": "get;",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 39
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 43
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "accessor_declaration",
+                              "text": "set;",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 48
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "property_declaration",
+                      "text": "public required string Password { get; set; }",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 53
+                      },
+                      "children": [
+                        {
+                          "type": "modifier",
+                          "text": "public",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "modifier",
+                          "text": "required",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 23
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "predefined_type",
+                          "text": "string",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 30
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "Password",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 39
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "accessor_list",
+                          "text": "{ get; set; }",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 40
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 53
+                          },
+                          "children": [
+                            {
+                              "type": "accessor_declaration",
+                              "text": "get;",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 42
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 46
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "accessor_declaration",
+                              "text": "set;",
+                              "startPosition": {
+                                "row": 13,
+                                "column": 47
+                              },
+                              "endPosition": {
+                                "row": 13,
+                                "column": 51
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
