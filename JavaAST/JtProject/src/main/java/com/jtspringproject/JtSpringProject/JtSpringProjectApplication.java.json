@@ -1,0 +1,933 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;\r\n\r\n@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)\r\npublic class JtSpringProjectApplication {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(JtSpringProjectApplication.class, args);\r\n\t}\r\n\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 14,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "com",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.boot.SpringApplication;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 50
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.boot.SpringApplication",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 49
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.boot",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 31
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "boot",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 31
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "SpringApplication",
+              "startPosition": {
+                "row": 2,
+                "column": 32
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 49
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.boot.autoconfigure.SpringBootApplication;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 68
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.boot.autoconfigure.SpringBootApplication",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 67
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.boot.autoconfigure",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 45
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.boot",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 31
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "boot",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 31
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "autoconfigure",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 45
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "SpringBootApplication",
+              "startPosition": {
+                "row": 3,
+                "column": 46
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 67
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 84
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 83
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.boot.autoconfigure.orm.jpa",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 53
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.boot.autoconfigure.orm",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 49
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.boot.autoconfigure",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 45
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework.boot",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 31
+                          },
+                          "children": [
+                            {
+                              "type": "scoped_identifier",
+                              "text": "org.springframework",
+                              "startPosition": {
+                                "row": 4,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 4,
+                                "column": 26
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "org",
+                                  "startPosition": {
+                                    "row": 4,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 4,
+                                    "column": 10
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "springframework",
+                                  "startPosition": {
+                                    "row": 4,
+                                    "column": 11
+                                  },
+                                  "endPosition": {
+                                    "row": 4,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "boot",
+                              "startPosition": {
+                                "row": 4,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 4,
+                                "column": 31
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "autoconfigure",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 45
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "orm",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 46
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 49
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "jpa",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 50
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 53
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "HibernateJpaAutoConfiguration",
+              "startPosition": {
+                "row": 4,
+                "column": 54
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 83
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)\r\npublic class JtSpringProjectApplication {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(JtSpringProjectApplication.class, args);\r\n\t}\r\n\r\n}",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 13,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)\r\npublic",
+          "startPosition": {
+            "row": 6,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "annotation",
+              "text": "@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)",
+              "startPosition": {
+                "row": 6,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 69
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "SpringBootApplication",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "annotation_argument_list",
+                  "text": "(exclude = HibernateJpaAutoConfiguration.class)",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 69
+                  },
+                  "children": [
+                    {
+                      "type": "element_value_pair",
+                      "text": "exclude = HibernateJpaAutoConfiguration.class",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 68
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "exclude",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 23
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 30
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "class_literal",
+                          "text": "HibernateJpaAutoConfiguration.class",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 33
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 68
+                          },
+                          "children": [
+                            {
+                              "type": "type_identifier",
+                              "text": "HibernateJpaAutoConfiguration",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 33
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 62
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "JtSpringProjectApplication",
+          "startPosition": {
+            "row": 7,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 39
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(JtSpringProjectApplication.class, args);\r\n\t}\r\n\r\n}",
+          "startPosition": {
+            "row": 7,
+            "column": 40
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "method_declaration",
+              "text": "public static void main(String[] args) {\r\n\t\tSpringApplication.run(JtSpringProjectApplication.class, args);\r\n\t}",
+              "startPosition": {
+                "row": 9,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public static",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 19
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "main",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String[] args)",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 39
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String[] args",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 25
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 38
+                      },
+                      "children": [
+                        {
+                          "type": "array_type",
+                          "text": "String[]",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 25
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 33
+                          },
+                          "children": [
+                            {
+                              "type": "type_identifier",
+                              "text": "String",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 25
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 31
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "dimensions",
+                              "text": "[]",
+                              "startPosition": {
+                                "row": 9,
+                                "column": 31
+                              },
+                              "endPosition": {
+                                "row": 9,
+                                "column": 33
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "args",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 38
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tSpringApplication.run(JtSpringProjectApplication.class, args);\r\n\t}",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 40
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "SpringApplication.run(JtSpringProjectApplication.class, args);",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 64
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "SpringApplication.run(JtSpringProjectApplication.class, args)",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 63
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "SpringApplication",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 19
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "run",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 23
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(JtSpringProjectApplication.class, args)",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 63
+                              },
+                              "children": [
+                                {
+                                  "type": "class_literal",
+                                  "text": "JtSpringProjectApplication.class",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 24
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 56
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "type_identifier",
+                                      "text": "JtSpringProjectApplication",
+                                      "startPosition": {
+                                        "row": 10,
+                                        "column": 24
+                                      },
+                                      "endPosition": {
+                                        "row": 10,
+                                        "column": 50
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "args",
+                                  "startPosition": {
+                                    "row": 10,
+                                    "column": 58
+                                  },
+                                  "endPosition": {
+                                    "row": 10,
+                                    "column": 62
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

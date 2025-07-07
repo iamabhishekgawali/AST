@@ -1,0 +1,3727 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.dao;\r\n\r\nimport com.jtspringproject.JtSpringProject.models.Cart;\r\nimport com.jtspringproject.JtSpringProject.models.CartProduct;\r\nimport com.jtspringproject.JtSpringProject.models.Product;\r\nimport org.hibernate.SessionFactory;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Repository;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\nimport java.util.List;\r\n\r\n@Repository\r\npublic class cartProductDao {\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }\r\n\r\n    @Transactional\r\n    public CartProduct addCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().save(cartProduct);\r\n        return cartProduct;\r\n    }\r\n\r\n    @Transactional\r\n    public List<CartProduct> getCartProducts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list();\r\n    }\r\n\r\n    @Transactional\r\n    public List<Product> getProductByCartID(Integer cart_id) {\r\n        String sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\";\r\n        List<Integer> productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list();\r\n\r\n        sql = \"SELECT * FROM product WHERE id IN (:product_ids)\";\r\n        return this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list();\r\n    }\r\n\r\n    @Transactional\r\n    public void updateCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().update(cartProduct);\r\n    }\r\n\r\n    @Transactional\r\n    public void deleteCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().delete(cartProduct);\r\n    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 57,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.dao;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 48
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.dao",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "dao",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.Cart;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.Cart",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Cart",
+              "startPosition": {
+                "row": 2,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.CartProduct;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.CartProduct",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "CartProduct",
+              "startPosition": {
+                "row": 3,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 61
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.Product;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 58
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.Product",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 57
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Product",
+              "startPosition": {
+                "row": 4,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 57
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.hibernate.SessionFactory;",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.hibernate.SessionFactory",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 35
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.hibernate",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "org",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "hibernate",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 20
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "SessionFactory",
+              "startPosition": {
+                "row": 5,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 35
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.beans.factory.annotation.Autowired;",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.beans.factory.annotation.Autowired",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.beans.factory.annotation",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 51
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.beans.factory",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.beans",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "beans",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "factory",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 33
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 41
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 51
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Autowired",
+              "startPosition": {
+                "row": 6,
+                "column": 52
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 61
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.stereotype.Repository;",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.stereotype.Repository",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.stereotype",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "stereotype",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 37
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Repository",
+              "startPosition": {
+                "row": 7,
+                "column": 38
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 48
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.transaction.annotation.Transactional;",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 64
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.transaction.annotation.Transactional",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 63
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.transaction.annotation",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.transaction",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 38
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "transaction",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 38
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 39
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Transactional",
+              "startPosition": {
+                "row": 8,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 63
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.List;",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.List",
+          "startPosition": {
+            "row": 10,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 10,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "List",
+              "startPosition": {
+                "row": 10,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Repository\r\npublic class cartProductDao {\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }\r\n\r\n    @Transactional\r\n    public CartProduct addCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().save(cartProduct);\r\n        return cartProduct;\r\n    }\r\n\r\n    @Transactional\r\n    public List<CartProduct> getCartProducts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list();\r\n    }\r\n\r\n    @Transactional\r\n    public List<Product> getProductByCartID(Integer cart_id) {\r\n        String sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\";\r\n        List<Integer> productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list();\r\n\r\n        sql = \"SELECT * FROM product WHERE id IN (:product_ids)\";\r\n        return this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list();\r\n    }\r\n\r\n    @Transactional\r\n    public void updateCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().update(cartProduct);\r\n    }\r\n\r\n    @Transactional\r\n    public void deleteCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().delete(cartProduct);\r\n    }\r\n}",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 56,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Repository\r\npublic",
+          "startPosition": {
+            "row": 12,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@Repository",
+              "startPosition": {
+                "row": 12,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 11
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Repository",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 11
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "cartProductDao",
+          "startPosition": {
+            "row": 13,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 27
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }\r\n\r\n    @Transactional\r\n    public CartProduct addCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().save(cartProduct);\r\n        return cartProduct;\r\n    }\r\n\r\n    @Transactional\r\n    public List<CartProduct> getCartProducts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list();\r\n    }\r\n\r\n    @Transactional\r\n    public List<Product> getProductByCartID(Integer cart_id) {\r\n        String sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\";\r\n        List<Integer> productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list();\r\n\r\n        sql = \"SELECT * FROM product WHERE id IN (:product_ids)\";\r\n        return this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list();\r\n    }\r\n\r\n    @Transactional\r\n    public void updateCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().update(cartProduct);\r\n    }\r\n\r\n    @Transactional\r\n    public void deleteCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().delete(cartProduct);\r\n    }\r\n}",
+          "startPosition": {
+            "row": 13,
+            "column": 28
+          },
+          "endPosition": {
+            "row": 56,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Autowired\r\n    private SessionFactory sessionFactory;",
+              "startPosition": {
+                "row": 14,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 42
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Autowired\r\n    private",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Autowired",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Autowired",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "SessionFactory",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "sessionFactory",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 41
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "sessionFactory",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 41
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }",
+              "startPosition": {
+                "row": 17,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setSessionFactory",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 33
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(SessionFactory sf)",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 52
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "SessionFactory sf",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 51
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "SessionFactory",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 48
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "sf",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 49
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 51
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory = sf;\r\n    }",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 53
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory = sf;",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.sessionFactory = sf",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 32
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.sessionFactory",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "sessionFactory",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "sf",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 32
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public CartProduct addCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().save(cartProduct);\r\n        return cartProduct;\r\n    }",
+              "startPosition": {
+                "row": 21,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "CartProduct",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "addCartProduct",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 37
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(CartProduct cartProduct)",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 37
+                  },
+                  "endPosition": {
+                    "row": 22,
+                    "column": 62
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "CartProduct cartProduct",
+                      "startPosition": {
+                        "row": 22,
+                        "column": 38
+                      },
+                      "endPosition": {
+                        "row": 22,
+                        "column": 61
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "CartProduct",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 38
+                          },
+                          "endPosition": {
+                            "row": 22,
+                            "column": 49
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cartProduct",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 50
+                          },
+                          "endPosition": {
+                            "row": 22,
+                            "column": 61
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory.getCurrentSession().save(cartProduct);\r\n        return cartProduct;\r\n    }",
+                  "startPosition": {
+                    "row": 22,
+                    "column": 63
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory.getCurrentSession().save(cartProduct);",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 66
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().save(cartProduct)",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 65
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "field_access",
+                                  "text": "this.sessionFactory",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "this",
+                                      "text": "this",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "sessionFactory",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "getCurrentSession",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "save",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 52
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cartProduct)",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 52
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 65
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cartProduct",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 53
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 64
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return cartProduct;",
+                      "startPosition": {
+                        "row": 24,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 24,
+                        "column": 27
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "cartProduct",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public List<CartProduct> getCartProducts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list();\r\n    }",
+              "startPosition": {
+                "row": 27,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 30,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 28,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "generic_type",
+                  "text": "List<CartProduct>",
+                  "startPosition": {
+                    "row": 28,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 28,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "type_identifier",
+                      "text": "List",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "type_arguments",
+                      "text": "<CartProduct>",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "CartProduct",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 27
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "getCartProducts",
+                  "startPosition": {
+                    "row": 28,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 28,
+                    "column": 44
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 28,
+                    "column": 44
+                  },
+                  "endPosition": {
+                    "row": 28,
+                    "column": 46
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list();\r\n    }",
+                  "startPosition": {
+                    "row": 28,
+                    "column": 47
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list();",
+                      "startPosition": {
+                        "row": 29,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 96
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \").list()",
+                          "startPosition": {
+                            "row": 29,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 95
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession().createQuery(\"from CART_PRODUCT \")",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 88
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "this.sessionFactory.getCurrentSession()",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 54
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "field_access",
+                                      "text": "this.sessionFactory",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 34
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "this",
+                                          "text": "this",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 19
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "sessionFactory",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 34
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "getCurrentSession",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 35
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 52
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 52
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 54
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "createQuery",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 66
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "(\"from CART_PRODUCT \")",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 66
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 88
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_literal",
+                                      "text": "\"from CART_PRODUCT \"",
+                                      "startPosition": {
+                                        "row": 29,
+                                        "column": 67
+                                      },
+                                      "endPosition": {
+                                        "row": 29,
+                                        "column": 87
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "from CART_PRODUCT ",
+                                          "startPosition": {
+                                            "row": 29,
+                                            "column": 68
+                                          },
+                                          "endPosition": {
+                                            "row": 29,
+                                            "column": 86
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "list",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 89
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 93
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "()",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 93
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 95
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public List<Product> getProductByCartID(Integer cart_id) {\r\n        String sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\";\r\n        List<Integer> productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list();\r\n\r\n        sql = \"SELECT * FROM product WHERE id IN (:product_ids)\";\r\n        return this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list();\r\n    }",
+              "startPosition": {
+                "row": 32,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 45,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 32,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 32,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 32,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "generic_type",
+                  "text": "List<Product>",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "type_identifier",
+                      "text": "List",
+                      "startPosition": {
+                        "row": 33,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 33,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "type_arguments",
+                      "text": "<Product>",
+                      "startPosition": {
+                        "row": 33,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 33,
+                        "column": 24
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Product",
+                          "startPosition": {
+                            "row": 33,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 33,
+                            "column": 23
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "getProductByCartID",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 43
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Integer cart_id)",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 60
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Integer cart_id",
+                      "startPosition": {
+                        "row": 33,
+                        "column": 44
+                      },
+                      "endPosition": {
+                        "row": 33,
+                        "column": 59
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Integer",
+                          "startPosition": {
+                            "row": 33,
+                            "column": 44
+                          },
+                          "endPosition": {
+                            "row": 33,
+                            "column": 51
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart_id",
+                          "startPosition": {
+                            "row": 33,
+                            "column": 52
+                          },
+                          "endPosition": {
+                            "row": 33,
+                            "column": 59
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        String sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\";\r\n        List<Integer> productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list();\r\n\r\n        sql = \"SELECT * FROM product WHERE id IN (:product_ids)\";\r\n        return this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list();\r\n    }",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 61
+                  },
+                  "endPosition": {
+                    "row": 45,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "local_variable_declaration",
+                      "text": "String sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\";",
+                      "startPosition": {
+                        "row": 34,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 34,
+                        "column": 84
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 34,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 34,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "variable_declarator",
+                          "text": "sql = \"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\"",
+                          "startPosition": {
+                            "row": 34,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 34,
+                            "column": 83
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "sql",
+                              "startPosition": {
+                                "row": 34,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 34,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "string_literal",
+                              "text": "\"SELECT product_id FROM cart_product WHERE cart_id = :cart_id\"",
+                              "startPosition": {
+                                "row": 34,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 34,
+                                "column": 83
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "SELECT product_id FROM cart_product WHERE cart_id = :cart_id",
+                                  "startPosition": {
+                                    "row": 34,
+                                    "column": 22
+                                  },
+                                  "endPosition": {
+                                    "row": 34,
+                                    "column": 82
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "local_variable_declaration",
+                      "text": "List<Integer> productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list();",
+                      "startPosition": {
+                        "row": 35,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 38,
+                        "column": 24
+                      },
+                      "children": [
+                        {
+                          "type": "generic_type",
+                          "text": "List<Integer>",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 21
+                          },
+                          "children": [
+                            {
+                              "type": "type_identifier",
+                              "text": "List",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 12
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "type_arguments",
+                              "text": "<Integer>",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 21
+                              },
+                              "children": [
+                                {
+                                  "type": "type_identifier",
+                                  "text": "Integer",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 35,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "variable_declarator",
+                          "text": "productIds = this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list()",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 22
+                          },
+                          "endPosition": {
+                            "row": 38,
+                            "column": 23
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "productIds",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 22
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 32
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)\r\n                .list()",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 35
+                              },
+                              "endPosition": {
+                                "row": 38,
+                                "column": 23
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)\r\n                .setParameter(\"cart_id\", cart_id)",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 35
+                                  },
+                                  "endPosition": {
+                                    "row": 37,
+                                    "column": 49
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "method_invocation",
+                                      "text": "this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql)",
+                                      "startPosition": {
+                                        "row": 35,
+                                        "column": 35
+                                      },
+                                      "endPosition": {
+                                        "row": 36,
+                                        "column": 39
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "method_invocation",
+                                          "text": "this.sessionFactory.getCurrentSession()",
+                                          "startPosition": {
+                                            "row": 35,
+                                            "column": 35
+                                          },
+                                          "endPosition": {
+                                            "row": 35,
+                                            "column": 74
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "field_access",
+                                              "text": "this.sessionFactory",
+                                              "startPosition": {
+                                                "row": 35,
+                                                "column": 35
+                                              },
+                                              "endPosition": {
+                                                "row": 35,
+                                                "column": 54
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "this",
+                                                  "text": "this",
+                                                  "startPosition": {
+                                                    "row": 35,
+                                                    "column": 35
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 35,
+                                                    "column": 39
+                                                  },
+                                                  "children": []
+                                                },
+                                                {
+                                                  "type": "identifier",
+                                                  "text": "sessionFactory",
+                                                  "startPosition": {
+                                                    "row": 35,
+                                                    "column": 40
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 35,
+                                                    "column": 54
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "getCurrentSession",
+                                              "startPosition": {
+                                                "row": 35,
+                                                "column": 55
+                                              },
+                                              "endPosition": {
+                                                "row": 35,
+                                                "column": 72
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "text": "()",
+                                              "startPosition": {
+                                                "row": 35,
+                                                "column": 72
+                                              },
+                                              "endPosition": {
+                                                "row": 35,
+                                                "column": 74
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "createNativeQuery",
+                                          "startPosition": {
+                                            "row": 36,
+                                            "column": 17
+                                          },
+                                          "endPosition": {
+                                            "row": 36,
+                                            "column": 34
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "(sql)",
+                                          "startPosition": {
+                                            "row": 36,
+                                            "column": 34
+                                          },
+                                          "endPosition": {
+                                            "row": 36,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "identifier",
+                                              "text": "sql",
+                                              "startPosition": {
+                                                "row": 36,
+                                                "column": 35
+                                              },
+                                              "endPosition": {
+                                                "row": 36,
+                                                "column": 38
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "setParameter",
+                                      "startPosition": {
+                                        "row": 37,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 37,
+                                        "column": 29
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(\"cart_id\", cart_id)",
+                                      "startPosition": {
+                                        "row": 37,
+                                        "column": 29
+                                      },
+                                      "endPosition": {
+                                        "row": 37,
+                                        "column": 49
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_literal",
+                                          "text": "\"cart_id\"",
+                                          "startPosition": {
+                                            "row": 37,
+                                            "column": 30
+                                          },
+                                          "endPosition": {
+                                            "row": 37,
+                                            "column": 39
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_fragment",
+                                              "text": "cart_id",
+                                              "startPosition": {
+                                                "row": 37,
+                                                "column": 31
+                                              },
+                                              "endPosition": {
+                                                "row": 37,
+                                                "column": 38
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "cart_id",
+                                          "startPosition": {
+                                            "row": 37,
+                                            "column": 41
+                                          },
+                                          "endPosition": {
+                                            "row": 37,
+                                            "column": 48
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "list",
+                                  "startPosition": {
+                                    "row": 38,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 38,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 38,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 38,
+                                    "column": 23
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "sql = \"SELECT * FROM product WHERE id IN (:product_ids)\";",
+                      "startPosition": {
+                        "row": 40,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 40,
+                        "column": 65
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "sql = \"SELECT * FROM product WHERE id IN (:product_ids)\"",
+                          "startPosition": {
+                            "row": 40,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 40,
+                            "column": 64
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "sql",
+                              "startPosition": {
+                                "row": 40,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 40,
+                                "column": 11
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "string_literal",
+                              "text": "\"SELECT * FROM product WHERE id IN (:product_ids)\"",
+                              "startPosition": {
+                                "row": 40,
+                                "column": 14
+                              },
+                              "endPosition": {
+                                "row": 40,
+                                "column": 64
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "SELECT * FROM product WHERE id IN (:product_ids)",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 40,
+                                    "column": 63
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list();",
+                      "startPosition": {
+                        "row": 41,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 44,
+                        "column": 24
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)\r\n                .list()",
+                          "startPosition": {
+                            "row": 41,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 44,
+                            "column": 23
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)\r\n                .setParameterList(\"product_ids\", productIds)",
+                              "startPosition": {
+                                "row": 41,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 43,
+                                "column": 60
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "this.sessionFactory.getCurrentSession()\r\n                .createNativeQuery(sql, Product.class)",
+                                  "startPosition": {
+                                    "row": 41,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 54
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "method_invocation",
+                                      "text": "this.sessionFactory.getCurrentSession()",
+                                      "startPosition": {
+                                        "row": 41,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 41,
+                                        "column": 54
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "field_access",
+                                          "text": "this.sessionFactory",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 34
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "this",
+                                              "text": "this",
+                                              "startPosition": {
+                                                "row": 41,
+                                                "column": 15
+                                              },
+                                              "endPosition": {
+                                                "row": 41,
+                                                "column": 19
+                                              },
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "identifier",
+                                              "text": "sessionFactory",
+                                              "startPosition": {
+                                                "row": 41,
+                                                "column": 20
+                                              },
+                                              "endPosition": {
+                                                "row": 41,
+                                                "column": 34
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "getCurrentSession",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 35
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 52
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "()",
+                                          "startPosition": {
+                                            "row": 41,
+                                            "column": 52
+                                          },
+                                          "endPosition": {
+                                            "row": 41,
+                                            "column": 54
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "createNativeQuery",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 34
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(sql, Product.class)",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 34
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 54
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "sql",
+                                          "startPosition": {
+                                            "row": 42,
+                                            "column": 35
+                                          },
+                                          "endPosition": {
+                                            "row": 42,
+                                            "column": 38
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "class_literal",
+                                          "text": "Product.class",
+                                          "startPosition": {
+                                            "row": 42,
+                                            "column": 40
+                                          },
+                                          "endPosition": {
+                                            "row": 42,
+                                            "column": 53
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "type_identifier",
+                                              "text": "Product",
+                                              "startPosition": {
+                                                "row": 42,
+                                                "column": 40
+                                              },
+                                              "endPosition": {
+                                                "row": 42,
+                                                "column": 47
+                                              },
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "setParameterList",
+                                  "startPosition": {
+                                    "row": 43,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 43,
+                                    "column": 33
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "(\"product_ids\", productIds)",
+                                  "startPosition": {
+                                    "row": 43,
+                                    "column": 33
+                                  },
+                                  "endPosition": {
+                                    "row": 43,
+                                    "column": 60
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_literal",
+                                      "text": "\"product_ids\"",
+                                      "startPosition": {
+                                        "row": 43,
+                                        "column": 34
+                                      },
+                                      "endPosition": {
+                                        "row": 43,
+                                        "column": 47
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "product_ids",
+                                          "startPosition": {
+                                            "row": 43,
+                                            "column": 35
+                                          },
+                                          "endPosition": {
+                                            "row": 43,
+                                            "column": 46
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "productIds",
+                                      "startPosition": {
+                                        "row": 43,
+                                        "column": 49
+                                      },
+                                      "endPosition": {
+                                        "row": 43,
+                                        "column": 59
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "list",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 17
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 21
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "()",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 23
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public void updateCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().update(cartProduct);\r\n    }",
+              "startPosition": {
+                "row": 47,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 50,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 48,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 47,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 47,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 48,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 48,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "updateCartProduct",
+                  "startPosition": {
+                    "row": 48,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 48,
+                    "column": 33
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(CartProduct cartProduct)",
+                  "startPosition": {
+                    "row": 48,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 48,
+                    "column": 58
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "CartProduct cartProduct",
+                      "startPosition": {
+                        "row": 48,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 48,
+                        "column": 57
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "CartProduct",
+                          "startPosition": {
+                            "row": 48,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 48,
+                            "column": 45
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cartProduct",
+                          "startPosition": {
+                            "row": 48,
+                            "column": 46
+                          },
+                          "endPosition": {
+                            "row": 48,
+                            "column": 57
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory.getCurrentSession().update(cartProduct);\r\n    }",
+                  "startPosition": {
+                    "row": 48,
+                    "column": 59
+                  },
+                  "endPosition": {
+                    "row": 50,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory.getCurrentSession().update(cartProduct);",
+                      "startPosition": {
+                        "row": 49,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 49,
+                        "column": 68
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().update(cartProduct)",
+                          "startPosition": {
+                            "row": 49,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 49,
+                            "column": 67
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()",
+                              "startPosition": {
+                                "row": 49,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 49,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "field_access",
+                                  "text": "this.sessionFactory",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "this",
+                                      "text": "this",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "sessionFactory",
+                                      "startPosition": {
+                                        "row": 49,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 49,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "getCurrentSession",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "update",
+                              "startPosition": {
+                                "row": 49,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 49,
+                                "column": 54
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cartProduct)",
+                              "startPosition": {
+                                "row": 49,
+                                "column": 54
+                              },
+                              "endPosition": {
+                                "row": 49,
+                                "column": 67
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cartProduct",
+                                  "startPosition": {
+                                    "row": 49,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 49,
+                                    "column": 66
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public void deleteCartProduct(CartProduct cartProduct) {\r\n        this.sessionFactory.getCurrentSession().delete(cartProduct);\r\n    }",
+              "startPosition": {
+                "row": 52,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 55,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 52,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 53,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 52,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 52,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 52,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 52,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 53,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 53,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "deleteCartProduct",
+                  "startPosition": {
+                    "row": 53,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 53,
+                    "column": 33
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(CartProduct cartProduct)",
+                  "startPosition": {
+                    "row": 53,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 53,
+                    "column": 58
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "CartProduct cartProduct",
+                      "startPosition": {
+                        "row": 53,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 53,
+                        "column": 57
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "CartProduct",
+                          "startPosition": {
+                            "row": 53,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 53,
+                            "column": 45
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cartProduct",
+                          "startPosition": {
+                            "row": 53,
+                            "column": 46
+                          },
+                          "endPosition": {
+                            "row": 53,
+                            "column": 57
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory.getCurrentSession().delete(cartProduct);\r\n    }",
+                  "startPosition": {
+                    "row": 53,
+                    "column": 59
+                  },
+                  "endPosition": {
+                    "row": 55,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory.getCurrentSession().delete(cartProduct);",
+                      "startPosition": {
+                        "row": 54,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 54,
+                        "column": 68
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().delete(cartProduct)",
+                          "startPosition": {
+                            "row": 54,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 54,
+                            "column": 67
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()",
+                              "startPosition": {
+                                "row": 54,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 54,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "field_access",
+                                  "text": "this.sessionFactory",
+                                  "startPosition": {
+                                    "row": 54,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 54,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "this",
+                                      "text": "this",
+                                      "startPosition": {
+                                        "row": 54,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 54,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "sessionFactory",
+                                      "startPosition": {
+                                        "row": 54,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 54,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "getCurrentSession",
+                                  "startPosition": {
+                                    "row": 54,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 54,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 54,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 54,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "delete",
+                              "startPosition": {
+                                "row": 54,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 54,
+                                "column": 54
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cartProduct)",
+                              "startPosition": {
+                                "row": 54,
+                                "column": 54
+                              },
+                              "endPosition": {
+                                "row": 54,
+                                "column": 67
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cartProduct",
+                                  "startPosition": {
+                                    "row": 54,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 54,
+                                    "column": 66
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

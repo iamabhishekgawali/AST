@@ -1,0 +1,1967 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.services;\r\n\r\nimport com.jtspringproject.JtSpringProject.dao.cartDao;\r\nimport com.jtspringproject.JtSpringProject.models.Cart;\r\nimport com.jtspringproject.JtSpringProject.models.Category;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.util.List;\r\n\r\n@Service\r\npublic class cartService {\r\n    @Autowired\r\n    private cartDao cartDao;\r\n\r\n    public Cart addCart(Cart cart) {\r\n        return cartDao.addCart(cart);\r\n    }\r\n\r\n    //    public Cart getCart(int id)\r\n//    {\r\n//        return cartDao.getCart(id);\r\n//    }\r\n    public List<Cart> getCarts() {\r\n        return this.cartDao.getCarts();\r\n    }\r\n\r\n    public void updateCart(Cart cart) {\r\n        cartDao.updateCart(cart);\r\n    }\r\n\r\n    public void deleteCart(Cart cart) {\r\n        cartDao.deleteCart(cart);\r\n    }\r\n\r\n//    pubiic List<Cart> getCartByUserId(int customer_id){\r\n//        return cartDao.getCartsByCustomerID(customer_id);\r\n//    }\r\n\r\n\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 41,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.services;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 53
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.services",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 52
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "services",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 52
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.dao.cartDao;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.dao.cartDao",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.dao",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 46
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "dao",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 46
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "cartDao",
+              "startPosition": {
+                "row": 2,
+                "column": 47
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.Cart;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.Cart",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Cart",
+              "startPosition": {
+                "row": 3,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.Category;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 59
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.Category",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 58
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Category",
+              "startPosition": {
+                "row": 4,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 58
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.beans.factory.annotation.Autowired;",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.beans.factory.annotation.Autowired",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.beans.factory.annotation",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 51
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.beans.factory",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.beans",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "beans",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "factory",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 33
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 41
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 51
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Autowired",
+              "startPosition": {
+                "row": 5,
+                "column": 52
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 61
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.stereotype.Service;",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 46
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.stereotype.Service",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 45
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.stereotype",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "stereotype",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 37
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Service",
+              "startPosition": {
+                "row": 6,
+                "column": 38
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.List;",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.List",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "List",
+              "startPosition": {
+                "row": 8,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Service\r\npublic class cartService {\r\n    @Autowired\r\n    private cartDao cartDao;\r\n\r\n    public Cart addCart(Cart cart) {\r\n        return cartDao.addCart(cart);\r\n    }\r\n\r\n    //    public Cart getCart(int id)\r\n//    {\r\n//        return cartDao.getCart(id);\r\n//    }\r\n    public List<Cart> getCarts() {\r\n        return this.cartDao.getCarts();\r\n    }\r\n\r\n    public void updateCart(Cart cart) {\r\n        cartDao.updateCart(cart);\r\n    }\r\n\r\n    public void deleteCart(Cart cart) {\r\n        cartDao.deleteCart(cart);\r\n    }\r\n\r\n//    pubiic List<Cart> getCartByUserId(int customer_id){\r\n//        return cartDao.getCartsByCustomerID(customer_id);\r\n//    }\r\n\r\n\r\n}",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 40,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Service\r\npublic",
+          "startPosition": {
+            "row": 10,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@Service",
+              "startPosition": {
+                "row": 10,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 8
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Service",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 8
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "cartService",
+          "startPosition": {
+            "row": 11,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 24
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n    @Autowired\r\n    private cartDao cartDao;\r\n\r\n    public Cart addCart(Cart cart) {\r\n        return cartDao.addCart(cart);\r\n    }\r\n\r\n    //    public Cart getCart(int id)\r\n//    {\r\n//        return cartDao.getCart(id);\r\n//    }\r\n    public List<Cart> getCarts() {\r\n        return this.cartDao.getCarts();\r\n    }\r\n\r\n    public void updateCart(Cart cart) {\r\n        cartDao.updateCart(cart);\r\n    }\r\n\r\n    public void deleteCart(Cart cart) {\r\n        cartDao.deleteCart(cart);\r\n    }\r\n\r\n//    pubiic List<Cart> getCartByUserId(int customer_id){\r\n//        return cartDao.getCartsByCustomerID(customer_id);\r\n//    }\r\n\r\n\r\n}",
+          "startPosition": {
+            "row": 11,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 40,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Autowired\r\n    private cartDao cartDao;",
+              "startPosition": {
+                "row": 12,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 13,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Autowired\r\n    private",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Autowired",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Autowired",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "cartDao",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 19
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "cartDao",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 13,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "cartDao",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 20
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public Cart addCart(Cart cart) {\r\n        return cartDao.addCart(cart);\r\n    }",
+              "startPosition": {
+                "row": 15,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Cart",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "addCart",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 28
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 33
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return cartDao.addCart(cart);\r\n    }",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return cartDao.addCart(cart);",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 37
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "cartDao.addCart(cart)",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 36
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "cartDao",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 22
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "addCart",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 30
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cart)",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 36
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 35
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "line_comment",
+              "text": "//    public Cart getCart(int id)\r",
+              "startPosition": {
+                "row": 19,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 38
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//    {\r",
+              "startPosition": {
+                "row": 20,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 20,
+                "column": 8
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//        return cartDao.getCart(id);\r",
+              "startPosition": {
+                "row": 21,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 38
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//    }\r",
+              "startPosition": {
+                "row": 22,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 22,
+                "column": 8
+              },
+              "children": []
+            },
+            {
+              "type": "method_declaration",
+              "text": "public List<Cart> getCarts() {\r\n        return this.cartDao.getCarts();\r\n    }",
+              "startPosition": {
+                "row": 23,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "generic_type",
+                  "text": "List<Cart>",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "type_identifier",
+                      "text": "List",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "type_arguments",
+                      "text": "<Cart>",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 20
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "getCarts",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 32
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return this.cartDao.getCarts();\r\n    }",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return this.cartDao.getCarts();",
+                      "startPosition": {
+                        "row": 24,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 24,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.cartDao.getCarts()",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 38
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.cartDao",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 19
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "cartDao",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getCarts",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 36
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "()",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 38
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void updateCart(Cart cart) {\r\n        cartDao.updateCart(cart);\r\n    }",
+              "startPosition": {
+                "row": 27,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "updateCart",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 37
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 36
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 36
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        cartDao.updateCart(cart);\r\n    }",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 38
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "cartDao.updateCart(cart);",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "cartDao.updateCart(cart)",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 32
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "cartDao",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 15
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "updateCart",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 26
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cart)",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 26
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void deleteCart(Cart cart) {\r\n        cartDao.deleteCart(cart);\r\n    }",
+              "startPosition": {
+                "row": 31,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "deleteCart",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 37
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 31,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 31,
+                        "column": 36
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 31,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 31,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 31,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 31,
+                            "column": 36
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        cartDao.deleteCart(cart);\r\n    }",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 38
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "cartDao.deleteCart(cart);",
+                      "startPosition": {
+                        "row": 32,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 32,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "cartDao.deleteCart(cart)",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 32
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "cartDao",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 15
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "deleteCart",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 26
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cart)",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 26
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 27
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 31
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "line_comment",
+              "text": "//    pubiic List<Cart> getCartByUserId(int customer_id){\r",
+              "startPosition": {
+                "row": 35,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 35,
+                "column": 58
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//        return cartDao.getCartsByCustomerID(customer_id);\r",
+              "startPosition": {
+                "row": 36,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 36,
+                "column": 60
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//    }\r",
+              "startPosition": {
+                "row": 37,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 37,
+                "column": 8
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

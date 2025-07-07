@@ -1,0 +1,2442 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.models;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n\r\n@Entity(name=\"CART_PRODUCT\")\r\npublic class CartProduct {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private int id;\r\n\r\n    @ManyToOne\r\n    @JoinColumn(name=\"cart_id\")\r\n    private Cart cart;\r\n\r\n    @ManyToOne\r\n    @JoinTable(name=\"product_id\")\r\n    private Product product;\r\n\r\n\r\n    public CartProduct() {\r\n        product = null;\r\n    }\r\n    public CartProduct(Cart cart, Product product) {\r\n        this.cart=cart;\r\n        this.product = product;\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public Cart getCart() {\r\n        return cart;\r\n    }\r\n\r\n    public void setCart(Cart cart) {\r\n        this.cart = cart;\r\n    }\r\n    public Product getProduct() {\r\n        return product;\r\n    }\r\n\r\n    public void setProduct(Product product) {\r\n        this.product = product;\r\n    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 54,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.models;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 51
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 50
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "models",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 50
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.*;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 24
+          },
+          "children": [
+            {
+              "type": "identifier",
+              "text": "javax",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 12
+              },
+              "children": []
+            },
+            {
+              "type": "identifier",
+              "text": "persistence",
+              "startPosition": {
+                "row": 2,
+                "column": 13
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 24
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "asterisk",
+          "text": "*",
+          "startPosition": {
+            "row": 2,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 26
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.ArrayList;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 27
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.ArrayList",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 26
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "ArrayList",
+              "startPosition": {
+                "row": 3,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 26
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.List;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.List",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "List",
+              "startPosition": {
+                "row": 4,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Entity(name=\"CART_PRODUCT\")\r\npublic class CartProduct {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private int id;\r\n\r\n    @ManyToOne\r\n    @JoinColumn(name=\"cart_id\")\r\n    private Cart cart;\r\n\r\n    @ManyToOne\r\n    @JoinTable(name=\"product_id\")\r\n    private Product product;\r\n\r\n\r\n    public CartProduct() {\r\n        product = null;\r\n    }\r\n    public CartProduct(Cart cart, Product product) {\r\n        this.cart=cart;\r\n        this.product = product;\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public Cart getCart() {\r\n        return cart;\r\n    }\r\n\r\n    public void setCart(Cart cart) {\r\n        this.cart = cart;\r\n    }\r\n    public Product getProduct() {\r\n        return product;\r\n    }\r\n\r\n    public void setProduct(Product product) {\r\n        this.product = product;\r\n    }\r\n}",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 53,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Entity(name=\"CART_PRODUCT\")\r\npublic",
+          "startPosition": {
+            "row": 7,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "annotation",
+              "text": "@Entity(name=\"CART_PRODUCT\")",
+              "startPosition": {
+                "row": 7,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Entity",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "annotation_argument_list",
+                  "text": "(name=\"CART_PRODUCT\")",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 28
+                  },
+                  "children": [
+                    {
+                      "type": "element_value_pair",
+                      "text": "name=\"CART_PRODUCT\"",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 27
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "name",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string_literal",
+                          "text": "\"CART_PRODUCT\"",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 13
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 27
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "CART_PRODUCT",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 14
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "CartProduct",
+          "startPosition": {
+            "row": 8,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 24
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private int id;\r\n\r\n    @ManyToOne\r\n    @JoinColumn(name=\"cart_id\")\r\n    private Cart cart;\r\n\r\n    @ManyToOne\r\n    @JoinTable(name=\"product_id\")\r\n    private Product product;\r\n\r\n\r\n    public CartProduct() {\r\n        product = null;\r\n    }\r\n    public CartProduct(Cart cart, Product product) {\r\n        this.cart=cart;\r\n        this.product = product;\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public Cart getCart() {\r\n        return cart;\r\n    }\r\n\r\n    public void setCart(Cart cart) {\r\n        this.cart = cart;\r\n    }\r\n    public Product getProduct() {\r\n        return product;\r\n    }\r\n\r\n    public void setProduct(Product product) {\r\n        this.product = product;\r\n    }\r\n}",
+          "startPosition": {
+            "row": 8,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 53,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private int id;",
+              "startPosition": {
+                "row": 10,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Id",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 7
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Id",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 7
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@GeneratedValue(strategy = GenerationType.AUTO)",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 51
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "GeneratedValue",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 19
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(strategy = GenerationType.AUTO)",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 51
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "strategy = GenerationType.AUTO",
+                              "startPosition": {
+                                "row": 11,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 11,
+                                "column": 50
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "strategy",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 28
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "field_access",
+                                  "text": "GenerationType.AUTO",
+                                  "startPosition": {
+                                    "row": 11,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 11,
+                                    "column": 50
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "GenerationType",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 31
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 45
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "AUTO",
+                                      "startPosition": {
+                                        "row": 11,
+                                        "column": 46
+                                      },
+                                      "endPosition": {
+                                        "row": 11,
+                                        "column": 50
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "id",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "id",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 18
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@ManyToOne\r\n    @JoinColumn(name=\"cart_id\")\r\n    private Cart cart;",
+              "startPosition": {
+                "row": 14,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 16,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@ManyToOne\r\n    @JoinColumn(name=\"cart_id\")\r\n    private",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@ManyToOne",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "ManyToOne",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@JoinColumn(name=\"cart_id\")",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "JoinColumn",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 15
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(name=\"cart_id\")",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 31
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "name=\"cart_id\"",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 30
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 16
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"cart_id\"",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "cart_id",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 22
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 29
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Cart",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 16
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "cart",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "cart",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 21
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@ManyToOne\r\n    @JoinTable(name=\"product_id\")\r\n    private Product product;",
+              "startPosition": {
+                "row": 18,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 20,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@ManyToOne\r\n    @JoinTable(name=\"product_id\")\r\n    private",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@ManyToOne",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "ManyToOne",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@JoinTable(name=\"product_id\")",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 19,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "JoinTable",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 14
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(name=\"product_id\")",
+                          "startPosition": {
+                            "row": 19,
+                            "column": 14
+                          },
+                          "endPosition": {
+                            "row": 19,
+                            "column": 33
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "name=\"product_id\"",
+                              "startPosition": {
+                                "row": 19,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 19,
+                                "column": 32
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 19
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"product_id\"",
+                                  "startPosition": {
+                                    "row": 19,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 19,
+                                    "column": 32
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "product_id",
+                                      "startPosition": {
+                                        "row": 19,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 19,
+                                        "column": 31
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Product",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 19
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "product",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 20,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "product",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 20
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "constructor_declaration",
+              "text": "public CartProduct() {\r\n        product = null;\r\n    }",
+              "startPosition": {
+                "row": 23,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "CartProduct",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 23,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "constructor_body",
+                  "text": "{\r\n        product = null;\r\n    }",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "product = null;",
+                      "startPosition": {
+                        "row": 24,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 24,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "product = null",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "product",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 15
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "null_literal",
+                              "text": "null",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 22
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "constructor_declaration",
+              "text": "public CartProduct(Cart cart, Product product) {\r\n        this.cart=cart;\r\n        this.product = product;\r\n    }",
+              "startPosition": {
+                "row": 26,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 26,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "CartProduct",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 26,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart, Product product)",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 26,
+                    "column": 50
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 23
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 27
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "formal_parameter",
+                      "text": "Product product",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 49
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Product",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 41
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "product",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 42
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 49
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "constructor_body",
+                  "text": "{\r\n        this.cart=cart;\r\n        this.product = product;\r\n    }",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 51
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.cart=cart;",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.cart=cart",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.cart",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 17
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 27,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 27,
+                                    "column": 17
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "cart",
+                              "startPosition": {
+                                "row": 27,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 22
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "this.product = product;",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.product = product",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 30
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.product",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 20
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "product",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "product",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 30
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public int getId() {\r\n        return id;\r\n    }",
+              "startPosition": {
+                "row": 31,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getId",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 20
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return id;\r\n    }",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return id;",
+                      "startPosition": {
+                        "row": 32,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 32,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 17
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setId(int id) {\r\n        this.id = id;\r\n    }",
+              "startPosition": {
+                "row": 35,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 37,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setId",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(int id)",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 29
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "int id",
+                      "startPosition": {
+                        "row": 35,
+                        "column": 22
+                      },
+                      "endPosition": {
+                        "row": 35,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "text": "int",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 22
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 25
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 26
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 28
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.id = id;\r\n    }",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 37,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.id = id;",
+                      "startPosition": {
+                        "row": 36,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 36,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.id = id",
+                          "startPosition": {
+                            "row": 36,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 36,
+                            "column": 20
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.id",
+                              "startPosition": {
+                                "row": 36,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 36,
+                                "column": 15
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 36,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 36,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "id",
+                                  "startPosition": {
+                                    "row": 36,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 36,
+                                    "column": 15
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "id",
+                              "startPosition": {
+                                "row": 36,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 36,
+                                "column": 20
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public Cart getCart() {\r\n        return cart;\r\n    }",
+              "startPosition": {
+                "row": 39,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 41,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Cart",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getCart",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 25
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return cart;\r\n    }",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return cart;",
+                      "startPosition": {
+                        "row": 40,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 40,
+                        "column": 20
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 40,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 40,
+                            "column": 19
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setCart(Cart cart) {\r\n        this.cart = cart;\r\n    }",
+              "startPosition": {
+                "row": 43,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 45,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setCart",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 43,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 43,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 43,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 28
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 43,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 33
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.cart = cart;\r\n    }",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 45,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.cart = cart;",
+                      "startPosition": {
+                        "row": 44,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 44,
+                        "column": 25
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.cart = cart",
+                          "startPosition": {
+                            "row": 44,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 44,
+                            "column": 24
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.cart",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 17
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 44,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 44,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 44,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 44,
+                                    "column": 17
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "cart",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 24
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public Product getProduct() {\r\n        return product;\r\n    }",
+              "startPosition": {
+                "row": 46,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 48,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Product",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getProduct",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 29
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 31
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return product;\r\n    }",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 48,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return product;",
+                      "startPosition": {
+                        "row": 47,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 47,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "product",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 22
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setProduct(Product product) {\r\n        this.product = product;\r\n    }",
+              "startPosition": {
+                "row": 50,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 52,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 50,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 50,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 50,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 50,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setProduct",
+                  "startPosition": {
+                    "row": 50,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 50,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Product product)",
+                  "startPosition": {
+                    "row": 50,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 50,
+                    "column": 43
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Product product",
+                      "startPosition": {
+                        "row": 50,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 50,
+                        "column": 42
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Product",
+                          "startPosition": {
+                            "row": 50,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 50,
+                            "column": 34
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "product",
+                          "startPosition": {
+                            "row": 50,
+                            "column": 35
+                          },
+                          "endPosition": {
+                            "row": 50,
+                            "column": 42
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.product = product;\r\n    }",
+                  "startPosition": {
+                    "row": 50,
+                    "column": 44
+                  },
+                  "endPosition": {
+                    "row": 52,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.product = product;",
+                      "startPosition": {
+                        "row": 51,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 51,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.product = product",
+                          "startPosition": {
+                            "row": 51,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 51,
+                            "column": 30
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.product",
+                              "startPosition": {
+                                "row": 51,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 51,
+                                "column": 20
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 51,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 51,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "product",
+                                  "startPosition": {
+                                    "row": 51,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 51,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "product",
+                              "startPosition": {
+                                "row": 51,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 51,
+                                "column": 30
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

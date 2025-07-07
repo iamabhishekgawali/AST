@@ -1,0 +1,581 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject;\r\n\r\nimport org.junit.jupiter.api.Test;\r\nimport org.springframework.boot.test.context.SpringBootTest;\r\n\r\n@SpringBootTest\r\nclass JtSpringProjectApplicationTests {\r\n\r\n\t@Test\r\n\tvoid contextLoads() {\r\n\t}\r\n\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 13,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "com",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.junit.jupiter.api.Test;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.junit.jupiter.api.Test",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 33
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.junit.jupiter.api",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.junit.jupiter",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.junit",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 16
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "junit",
+                          "startPosition": {
+                            "row": 2,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 2,
+                            "column": 16
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jupiter",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 24
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "api",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 28
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Test",
+              "startPosition": {
+                "row": 2,
+                "column": 29
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 33
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.boot.test.context.SpringBootTest;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 60
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.boot.test.context.SpringBootTest",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 59
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.boot.test.context",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 44
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.boot.test",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 36
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.boot",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 3,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 3,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 3,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 3,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "boot",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 31
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "test",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 32
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 36
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "context",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 37
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 44
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "SpringBootTest",
+              "startPosition": {
+                "row": 3,
+                "column": 45
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 59
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@SpringBootTest\r\nclass JtSpringProjectApplicationTests {\r\n\r\n\t@Test\r\n\tvoid contextLoads() {\r\n\t}\r\n\r\n}",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 12,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@SpringBootTest",
+          "startPosition": {
+            "row": 5,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 15
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@SpringBootTest",
+              "startPosition": {
+                "row": 5,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 15
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "SpringBootTest",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 15
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "JtSpringProjectApplicationTests",
+          "startPosition": {
+            "row": 6,
+            "column": 6
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 37
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n\r\n\t@Test\r\n\tvoid contextLoads() {\r\n\t}\r\n\r\n}",
+          "startPosition": {
+            "row": 6,
+            "column": 38
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "method_declaration",
+              "text": "@Test\r\n\tvoid contextLoads() {\r\n\t}",
+              "startPosition": {
+                "row": 8,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Test",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 6
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Test",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 6
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Test",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 6
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 5
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "contextLoads",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 20
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t}",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 2
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

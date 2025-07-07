@@ -1,0 +1,2711 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.dao;\r\n\r\nimport java.util.List;\r\n\r\nimport com.jtspringproject.JtSpringProject.models.Cart;\r\nimport com.jtspringproject.JtSpringProject.models.Category;\r\nimport org.hibernate.SessionFactory;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Repository;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\n@Repository\r\npublic class cartDao {\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }\r\n\r\n    @Transactional\r\n    public Cart addCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().save(cart);\r\n        return cart;\r\n    }\r\n\r\n    @Transactional\r\n    public List<Cart> getCarts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list();\r\n    }\r\n\r\n//    @Transactional\r\n//    public List<Cart> getCartsByCustomerID(Integer customer_id) {\r\n//        String hql = \"from CART where CART.customer_id = :customer_id\";\r\n//        return this.sessionFactory.getCurrentSession()\r\n//                .createQuery(hql, Cart.class)\r\n//                .setParameter(\"customer_id\", customer_id)\r\n//                .list();\r\n//    }\r\n\r\n    @Transactional\r\n    public void updateCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().update(cart);\r\n    }\r\n\r\n    @Transactional\r\n    public void deleteCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().delete(cart);\r\n    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 50,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.dao;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 48
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.dao",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 47
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "dao",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 47
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.List;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.List",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "List",
+              "startPosition": {
+                "row": 2,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.Cart;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.Cart",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 4,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 4,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 4,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 4,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Cart",
+              "startPosition": {
+                "row": 4,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.Category;",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 59
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.Category",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 58
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Category",
+              "startPosition": {
+                "row": 5,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 58
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.hibernate.SessionFactory;",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.hibernate.SessionFactory",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 35
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.hibernate",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "org",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "hibernate",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 20
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "SessionFactory",
+              "startPosition": {
+                "row": 6,
+                "column": 21
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 35
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.beans.factory.annotation.Autowired;",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.beans.factory.annotation.Autowired",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.beans.factory.annotation",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 51
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.beans.factory",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.beans",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 7,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 7,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "beans",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "factory",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 33
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 41
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 51
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Autowired",
+              "startPosition": {
+                "row": 7,
+                "column": 52
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 61
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.stereotype.Repository;",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.stereotype.Repository",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.stereotype",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "stereotype",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 37
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Repository",
+              "startPosition": {
+                "row": 8,
+                "column": 38
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 48
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.transaction.annotation.Transactional;",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 64
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.transaction.annotation.Transactional",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 63
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.transaction.annotation",
+              "startPosition": {
+                "row": 9,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.transaction",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 38
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "transaction",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 38
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 39
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Transactional",
+              "startPosition": {
+                "row": 9,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 63
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Repository\r\npublic class cartDao {\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }\r\n\r\n    @Transactional\r\n    public Cart addCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().save(cart);\r\n        return cart;\r\n    }\r\n\r\n    @Transactional\r\n    public List<Cart> getCarts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list();\r\n    }\r\n\r\n//    @Transactional\r\n//    public List<Cart> getCartsByCustomerID(Integer customer_id) {\r\n//        String hql = \"from CART where CART.customer_id = :customer_id\";\r\n//        return this.sessionFactory.getCurrentSession()\r\n//                .createQuery(hql, Cart.class)\r\n//                .setParameter(\"customer_id\", customer_id)\r\n//                .list();\r\n//    }\r\n\r\n    @Transactional\r\n    public void updateCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().update(cart);\r\n    }\r\n\r\n    @Transactional\r\n    public void deleteCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().delete(cart);\r\n    }\r\n}",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 49,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Repository\r\npublic",
+          "startPosition": {
+            "row": 11,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@Repository",
+              "startPosition": {
+                "row": 11,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 11
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Repository",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 11
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "cartDao",
+          "startPosition": {
+            "row": 12,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 20
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }\r\n\r\n    @Transactional\r\n    public Cart addCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().save(cart);\r\n        return cart;\r\n    }\r\n\r\n    @Transactional\r\n    public List<Cart> getCarts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list();\r\n    }\r\n\r\n//    @Transactional\r\n//    public List<Cart> getCartsByCustomerID(Integer customer_id) {\r\n//        String hql = \"from CART where CART.customer_id = :customer_id\";\r\n//        return this.sessionFactory.getCurrentSession()\r\n//                .createQuery(hql, Cart.class)\r\n//                .setParameter(\"customer_id\", customer_id)\r\n//                .list();\r\n//    }\r\n\r\n    @Transactional\r\n    public void updateCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().update(cart);\r\n    }\r\n\r\n    @Transactional\r\n    public void deleteCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().delete(cart);\r\n    }\r\n}",
+          "startPosition": {
+            "row": 12,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 49,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Autowired\r\n    private SessionFactory sessionFactory;",
+              "startPosition": {
+                "row": 13,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 14,
+                "column": 42
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Autowired\r\n    private",
+                  "startPosition": {
+                    "row": 13,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Autowired",
+                      "startPosition": {
+                        "row": 13,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 13,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Autowired",
+                          "startPosition": {
+                            "row": 13,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 13,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "SessionFactory",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "sessionFactory",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 41
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "sessionFactory",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 41
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setSessionFactory(SessionFactory sf) {\r\n        this.sessionFactory = sf;\r\n    }",
+              "startPosition": {
+                "row": 16,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 10
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setSessionFactory",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 33
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(SessionFactory sf)",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 16,
+                    "column": 52
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "SessionFactory sf",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 34
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 51
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "SessionFactory",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 48
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "sf",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 49
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 51
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory = sf;\r\n    }",
+                  "startPosition": {
+                    "row": 16,
+                    "column": 53
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory = sf;",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.sessionFactory = sf",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 32
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.sessionFactory",
+                              "startPosition": {
+                                "row": 17,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 17,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "sessionFactory",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 27
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "sf",
+                              "startPosition": {
+                                "row": 17,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 17,
+                                "column": 32
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public Cart addCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().save(cart);\r\n        return cart;\r\n    }",
+              "startPosition": {
+                "row": 20,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 24,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Cart",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "addCart",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 28
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 33
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory.getCurrentSession().save(cart);\r\n        return cart;\r\n    }",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 24,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory.getCurrentSession().save(cart);",
+                      "startPosition": {
+                        "row": 22,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 22,
+                        "column": 59
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().save(cart)",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 22,
+                            "column": 58
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "field_access",
+                                  "text": "this.sessionFactory",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "this",
+                                      "text": "this",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "sessionFactory",
+                                      "startPosition": {
+                                        "row": 22,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 22,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "getCurrentSession",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "save",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 52
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cart)",
+                              "startPosition": {
+                                "row": 22,
+                                "column": 52
+                              },
+                              "endPosition": {
+                                "row": 22,
+                                "column": 58
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 22,
+                                    "column": 53
+                                  },
+                                  "endPosition": {
+                                    "row": 22,
+                                    "column": 57
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return cart;",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 20
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 19
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public List<Cart> getCarts() {\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list();\r\n    }",
+              "startPosition": {
+                "row": 26,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "generic_type",
+                  "text": "List<Cart>",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "type_identifier",
+                      "text": "List",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 15
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "type_arguments",
+                      "text": "<Cart>",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 27,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 20
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "getCarts",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 32
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list();\r\n    }",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list();",
+                      "startPosition": {
+                        "row": 28,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 28,
+                        "column": 87
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().createQuery(\"from CART\").list()",
+                          "startPosition": {
+                            "row": 28,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 28,
+                            "column": 86
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession().createQuery(\"from CART\")",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 79
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "this.sessionFactory.getCurrentSession()",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 54
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "field_access",
+                                      "text": "this.sessionFactory",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 34
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "this",
+                                          "text": "this",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 19
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "sessionFactory",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 20
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 34
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "getCurrentSession",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 35
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 52
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 52
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 54
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "createQuery",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 66
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "(\"from CART\")",
+                                  "startPosition": {
+                                    "row": 28,
+                                    "column": 66
+                                  },
+                                  "endPosition": {
+                                    "row": 28,
+                                    "column": 79
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_literal",
+                                      "text": "\"from CART\"",
+                                      "startPosition": {
+                                        "row": 28,
+                                        "column": 67
+                                      },
+                                      "endPosition": {
+                                        "row": 28,
+                                        "column": 78
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "string_fragment",
+                                          "text": "from CART",
+                                          "startPosition": {
+                                            "row": 28,
+                                            "column": 68
+                                          },
+                                          "endPosition": {
+                                            "row": 28,
+                                            "column": 77
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "list",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 80
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 84
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "()",
+                              "startPosition": {
+                                "row": 28,
+                                "column": 84
+                              },
+                              "endPosition": {
+                                "row": 28,
+                                "column": 86
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "line_comment",
+              "text": "//    @Transactional\r",
+              "startPosition": {
+                "row": 31,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 31,
+                "column": 21
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//    public List<Cart> getCartsByCustomerID(Integer customer_id) {\r",
+              "startPosition": {
+                "row": 32,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 32,
+                "column": 68
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//        String hql = \"from CART where CART.customer_id = :customer_id\";\r",
+              "startPosition": {
+                "row": 33,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 74
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//        return this.sessionFactory.getCurrentSession()\r",
+              "startPosition": {
+                "row": 34,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 34,
+                "column": 57
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//                .createQuery(hql, Cart.class)\r",
+              "startPosition": {
+                "row": 35,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 35,
+                "column": 48
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//                .setParameter(\"customer_id\", customer_id)\r",
+              "startPosition": {
+                "row": 36,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 36,
+                "column": 60
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//                .list();\r",
+              "startPosition": {
+                "row": 37,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 37,
+                "column": 27
+              },
+              "children": []
+            },
+            {
+              "type": "line_comment",
+              "text": "//    }\r",
+              "startPosition": {
+                "row": 38,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 38,
+                "column": 8
+              },
+              "children": []
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public void updateCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().update(cart);\r\n    }",
+              "startPosition": {
+                "row": 40,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 43,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 40,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 40,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 40,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 40,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 40,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "updateCart",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 37
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 41,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 41,
+                        "column": 36
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 41,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 41,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 41,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 41,
+                            "column": 36
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory.getCurrentSession().update(cart);\r\n    }",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 38
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory.getCurrentSession().update(cart);",
+                      "startPosition": {
+                        "row": 42,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 42,
+                        "column": 61
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().update(cart)",
+                          "startPosition": {
+                            "row": 42,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 42,
+                            "column": 60
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()",
+                              "startPosition": {
+                                "row": 42,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 42,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "field_access",
+                                  "text": "this.sessionFactory",
+                                  "startPosition": {
+                                    "row": 42,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "this",
+                                      "text": "this",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "sessionFactory",
+                                      "startPosition": {
+                                        "row": 42,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 42,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "getCurrentSession",
+                                  "startPosition": {
+                                    "row": 42,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 42,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "update",
+                              "startPosition": {
+                                "row": 42,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 42,
+                                "column": 54
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cart)",
+                              "startPosition": {
+                                "row": 42,
+                                "column": 54
+                              },
+                              "endPosition": {
+                                "row": 42,
+                                "column": 60
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 42,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 42,
+                                    "column": 59
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Transactional\r\n    public void deleteCart(Cart cart) {\r\n        this.sessionFactory.getCurrentSession().delete(cart);\r\n    }",
+              "startPosition": {
+                "row": 45,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 48,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Transactional\r\n    public",
+                  "startPosition": {
+                    "row": 45,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Transactional",
+                      "startPosition": {
+                        "row": 45,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 45,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Transactional",
+                          "startPosition": {
+                            "row": 45,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 45,
+                            "column": 18
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "deleteCart",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 26
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Cart cart)",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 46,
+                    "column": 37
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Cart cart",
+                      "startPosition": {
+                        "row": 46,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 46,
+                        "column": 36
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Cart",
+                          "startPosition": {
+                            "row": 46,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 46,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "cart",
+                          "startPosition": {
+                            "row": 46,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 46,
+                            "column": 36
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        this.sessionFactory.getCurrentSession().delete(cart);\r\n    }",
+                  "startPosition": {
+                    "row": 46,
+                    "column": 38
+                  },
+                  "endPosition": {
+                    "row": 48,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.sessionFactory.getCurrentSession().delete(cart);",
+                      "startPosition": {
+                        "row": 47,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 47,
+                        "column": 61
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.sessionFactory.getCurrentSession().delete(cart)",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 60
+                          },
+                          "children": [
+                            {
+                              "type": "method_invocation",
+                              "text": "this.sessionFactory.getCurrentSession()",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 47
+                              },
+                              "children": [
+                                {
+                                  "type": "field_access",
+                                  "text": "this.sessionFactory",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 8
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "this",
+                                      "text": "this",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 8
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 12
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "sessionFactory",
+                                      "startPosition": {
+                                        "row": 47,
+                                        "column": 13
+                                      },
+                                      "endPosition": {
+                                        "row": 47,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "getCurrentSession",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 28
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 45
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 47
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "delete",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 48
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 54
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(cart)",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 54
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 60
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cart",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 59
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

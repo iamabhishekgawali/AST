@@ -1,0 +1,60 @@
+{
+  "language": "Python",
+  "internalDependencyPatterns": [
+    "^\\."
+  ],
+  "selectors": {
+    "function": ["function_definition"],
+    "class": ["class_definition"],
+    "comment": ["comment"],
+    "import": [
+      { "type": "import_from_statement", "source": { "path": [{"type": "dotted_name"}] } },
+      { "type": "import_statement", "source": { "path": [{"type": "dotted_name"}] } }
+    ],
+    "patterns": {
+      "Endpoints Defined": {
+        "type": "decorator",
+        "textMatch": ".route",
+        "value": { "path": [{"type": "argument_list"}, {"type": "string"}] }
+      },
+      "Database Queries": {
+        "type": "call",
+        "textMatch": ".execute",
+        "value": { "path": [{"type": "argument_list"}, {"type": "string"}] }
+      },
+      "Environment Variables Accessed": {
+        "type": "call",
+        "textMatch": "os.environ.get",
+        "value": { "path": [{"type": "argument_list"}, {"type": "string"}] }
+      }
+    },
+    "quality": {
+      "exceptionHandling": ["try_statement"]
+    },
+    "cyclomaticComplexity": {
+      "branchingNodes": ["if_statement", "for_statement", "while_statement", "except_clause", "with_statement", "assert_statement"],
+      "logicalOperators": ["and", "or"]
+    }
+  },
+  "dependencyMaps": {
+    "Frameworks Detected": {
+      "flask": "Flask",
+      "django": "Django",
+      "fastapi": "FastAPI",
+      "celery": "Celery",
+      "alembic": "Alembic"
+    },
+    "Database Technologies Detected": {
+      "sqlalchemy": "SQLAlchemy",
+      "psycopg2": "PostgreSQL",
+      "pymysql": "MySQL",
+      "redis": "Redis",
+      "sqlite3": "SQLite"
+    },
+    "Cloud SDKs Detected": {
+      "boto3": "AWS",
+      "azure": "Azure",
+      "google.cloud": "Google Cloud"
+    }
+  }
+}

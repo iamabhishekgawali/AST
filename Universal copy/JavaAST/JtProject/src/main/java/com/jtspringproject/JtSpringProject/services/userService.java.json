@@ -1,0 +1,2511 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.services;\r\n\r\nimport com.jtspringproject.JtSpringProject.models.*;\r\nimport java.util.List;\r\n\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.dao.DataIntegrityViolationException;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport com.jtspringproject.JtSpringProject.dao.userDao;\r\nimport com.jtspringproject.JtSpringProject.models.User;\r\n\r\n@Service\r\npublic class userService {\r\n\t@Autowired\r\n\tprivate userDao userDao;\r\n\t\r\n\tpublic List<User> getUsers(){\r\n\t\treturn this.userDao.getAllUser();\r\n\t}\r\n\t\r\n\tpublic User addUser(User user) {\r\n\t\ttry {\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t} catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic User checkLogin(String username,String password) {\r\n\t\treturn this.userDao.getUser(username, password);\r\n\t}\r\n\r\n\tpublic boolean checkUserExists(String username) {\r\n\t\treturn this.userDao.userExists(username);\r\n\t}\r\n\r\n\tpublic User getUserByUsername(String username) {\r\n\t        return userDao.getUserByUsername(username);\r\n\t    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 42,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.services;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 53
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.services",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 52
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "services",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 52
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.*;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 52
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 49
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 42
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 42
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "models",
+              "startPosition": {
+                "row": 2,
+                "column": 43
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 49
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "asterisk",
+          "text": "*",
+          "startPosition": {
+            "row": 2,
+            "column": 50
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 51
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.List;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 22
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.List",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 21
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "List",
+              "startPosition": {
+                "row": 3,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 21
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.beans.factory.annotation.Autowired;",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 62
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.beans.factory.annotation.Autowired",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 61
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.beans.factory.annotation",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 51
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.beans.factory",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.beans",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 5,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 5,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "beans",
+                          "startPosition": {
+                            "row": 5,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 5,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "factory",
+                      "startPosition": {
+                        "row": 5,
+                        "column": 33
+                      },
+                      "endPosition": {
+                        "row": 5,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 41
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 51
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Autowired",
+              "startPosition": {
+                "row": 5,
+                "column": 52
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 61
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.dao.DataIntegrityViolationException;",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 63
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.dao.DataIntegrityViolationException",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 62
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.dao",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 30
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "dao",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 30
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "DataIntegrityViolationException",
+              "startPosition": {
+                "row": 6,
+                "column": 31
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 62
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.stereotype.Service;",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 46
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.stereotype.Service",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 45
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.stereotype",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "stereotype",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 37
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Service",
+              "startPosition": {
+                "row": 7,
+                "column": 38
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 45
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.dao.userDao;",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.dao.userDao",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.dao",
+              "startPosition": {
+                "row": 9,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 46
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "dao",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 46
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "userDao",
+              "startPosition": {
+                "row": 9,
+                "column": 47
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import com.jtspringproject.JtSpringProject.models.User;",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models.User",
+          "startPosition": {
+            "row": 10,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject.models",
+              "startPosition": {
+                "row": 10,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject.JtSpringProject",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 42
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "com.jtspringproject",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "jtspringproject",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "JtSpringProject",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 42
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "models",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 43
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "User",
+              "startPosition": {
+                "row": 10,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Service\r\npublic class userService {\r\n\t@Autowired\r\n\tprivate userDao userDao;\r\n\t\r\n\tpublic List<User> getUsers(){\r\n\t\treturn this.userDao.getAllUser();\r\n\t}\r\n\t\r\n\tpublic User addUser(User user) {\r\n\t\ttry {\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t} catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic User checkLogin(String username,String password) {\r\n\t\treturn this.userDao.getUser(username, password);\r\n\t}\r\n\r\n\tpublic boolean checkUserExists(String username) {\r\n\t\treturn this.userDao.userExists(username);\r\n\t}\r\n\r\n\tpublic User getUserByUsername(String username) {\r\n\t        return userDao.getUserByUsername(username);\r\n\t    }\r\n}",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 41,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Service\r\npublic",
+          "startPosition": {
+            "row": 12,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@Service",
+              "startPosition": {
+                "row": 12,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 8
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Service",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 8
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "userService",
+          "startPosition": {
+            "row": 13,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 24
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n\t@Autowired\r\n\tprivate userDao userDao;\r\n\t\r\n\tpublic List<User> getUsers(){\r\n\t\treturn this.userDao.getAllUser();\r\n\t}\r\n\t\r\n\tpublic User addUser(User user) {\r\n\t\ttry {\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t} catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic User checkLogin(String username,String password) {\r\n\t\treturn this.userDao.getUser(username, password);\r\n\t}\r\n\r\n\tpublic boolean checkUserExists(String username) {\r\n\t\treturn this.userDao.userExists(username);\r\n\t}\r\n\r\n\tpublic User getUserByUsername(String username) {\r\n\t        return userDao.getUserByUsername(username);\r\n\t    }\r\n}",
+          "startPosition": {
+            "row": 13,
+            "column": 25
+          },
+          "endPosition": {
+            "row": 41,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Autowired\r\n\tprivate userDao userDao;",
+              "startPosition": {
+                "row": 14,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 25
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Autowired\r\n\tprivate",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 8
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Autowired",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 11
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Autowired",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 11
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "userDao",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 16
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "userDao",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 24
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "userDao",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 24
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public List<User> getUsers(){\r\n\t\treturn this.userDao.getAllUser();\r\n\t}",
+              "startPosition": {
+                "row": 17,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "generic_type",
+                  "text": "List<User>",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "type_identifier",
+                      "text": "List",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 12
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "type_arguments",
+                      "text": "<User>",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "User",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 13
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 17
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "getUsers",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 27
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 29
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn this.userDao.getAllUser();\r\n\t}",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return this.userDao.getAllUser();",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.userDao.getAllUser()",
+                          "startPosition": {
+                            "row": 18,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 18,
+                            "column": 34
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.userDao",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 21
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "userDao",
+                                  "startPosition": {
+                                    "row": 18,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 18,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getAllUser",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 22
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 32
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "()",
+                              "startPosition": {
+                                "row": 18,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 18,
+                                "column": 34
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public User addUser(User user) {\r\n\t\ttry {\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t} catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}\r\n\t}",
+              "startPosition": {
+                "row": 21,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 28,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "User",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "addUser",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 20
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(User user)",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 31
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "User user",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 21
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 30
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "User",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 21
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 25
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "user",
+                          "startPosition": {
+                            "row": 21,
+                            "column": 26
+                          },
+                          "endPosition": {
+                            "row": 21,
+                            "column": 30
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\ttry {\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t} catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}\r\n\t}",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 28,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "try_statement",
+                      "text": "try {\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t} catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}",
+                      "startPosition": {
+                        "row": 22,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 3
+                      },
+                      "children": [
+                        {
+                          "type": "block",
+                          "text": "{\r\n\t\t\treturn this.userDao.saveUser(user);\r\n\t\t}",
+                          "startPosition": {
+                            "row": 22,
+                            "column": 6
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 3
+                          },
+                          "children": [
+                            {
+                              "type": "return_statement",
+                              "text": "return this.userDao.saveUser(user);",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 3
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 38
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "this.userDao.saveUser(user)",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 10
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 37
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "field_access",
+                                      "text": "this.userDao",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 10
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 22
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "this",
+                                          "text": "this",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 10
+                                          },
+                                          "endPosition": {
+                                            "row": 23,
+                                            "column": 14
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "identifier",
+                                          "text": "userDao",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 15
+                                          },
+                                          "endPosition": {
+                                            "row": 23,
+                                            "column": 22
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "saveUser",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 23
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 31
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "(user)",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 31
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 37
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "user",
+                                          "startPosition": {
+                                            "row": 23,
+                                            "column": 32
+                                          },
+                                          "endPosition": {
+                                            "row": 23,
+                                            "column": 36
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "catch_clause",
+                          "text": "catch (DataIntegrityViolationException e) {\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 4
+                          },
+                          "endPosition": {
+                            "row": 27,
+                            "column": 3
+                          },
+                          "children": [
+                            {
+                              "type": "catch_formal_parameter",
+                              "text": "DataIntegrityViolationException e",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 44
+                              },
+                              "children": [
+                                {
+                                  "type": "catch_type",
+                                  "text": "DataIntegrityViolationException",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 11
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 42
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "type_identifier",
+                                      "text": "DataIntegrityViolationException",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 11
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 42
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "e",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 43
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 44
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "block",
+                              "text": "{\r\n\t\t\t// handle unique constraint violation, e.g., by throwing a custom exception\r\n\t\t\tthrow new RuntimeException(\"Add user error\");\r\n\t\t}",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 46
+                              },
+                              "endPosition": {
+                                "row": 27,
+                                "column": 3
+                              },
+                              "children": [
+                                {
+                                  "type": "line_comment",
+                                  "text": "// handle unique constraint violation, e.g., by throwing a custom exception\r",
+                                  "startPosition": {
+                                    "row": 25,
+                                    "column": 3
+                                  },
+                                  "endPosition": {
+                                    "row": 25,
+                                    "column": 79
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "throw_statement",
+                                  "text": "throw new RuntimeException(\"Add user error\");",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 3
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 48
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "object_creation_expression",
+                                      "text": "new RuntimeException(\"Add user error\")",
+                                      "startPosition": {
+                                        "row": 26,
+                                        "column": 9
+                                      },
+                                      "endPosition": {
+                                        "row": 26,
+                                        "column": 47
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "type_identifier",
+                                          "text": "RuntimeException",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 13
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 29
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "(\"Add user error\")",
+                                          "startPosition": {
+                                            "row": 26,
+                                            "column": 29
+                                          },
+                                          "endPosition": {
+                                            "row": 26,
+                                            "column": 47
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "string_literal",
+                                              "text": "\"Add user error\"",
+                                              "startPosition": {
+                                                "row": 26,
+                                                "column": 30
+                                              },
+                                              "endPosition": {
+                                                "row": 26,
+                                                "column": 46
+                                              },
+                                              "children": [
+                                                {
+                                                  "type": "string_fragment",
+                                                  "text": "Add user error",
+                                                  "startPosition": {
+                                                    "row": 26,
+                                                    "column": 31
+                                                  },
+                                                  "endPosition": {
+                                                    "row": 26,
+                                                    "column": 45
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public User checkLogin(String username,String password) {\r\n\t\treturn this.userDao.getUser(username, password);\r\n\t}",
+              "startPosition": {
+                "row": 30,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 32,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "User",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "checkLogin",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String username,String password)",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 56
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String username",
+                      "startPosition": {
+                        "row": 30,
+                        "column": 24
+                      },
+                      "endPosition": {
+                        "row": 30,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 24
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 30
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "username",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 39
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "formal_parameter",
+                      "text": "String password",
+                      "startPosition": {
+                        "row": 30,
+                        "column": 40
+                      },
+                      "endPosition": {
+                        "row": 30,
+                        "column": 55
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 40
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 46
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "password",
+                          "startPosition": {
+                            "row": 30,
+                            "column": 47
+                          },
+                          "endPosition": {
+                            "row": 30,
+                            "column": 55
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn this.userDao.getUser(username, password);\r\n\t}",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 57
+                  },
+                  "endPosition": {
+                    "row": 32,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return this.userDao.getUser(username, password);",
+                      "startPosition": {
+                        "row": 31,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 31,
+                        "column": 50
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.userDao.getUser(username, password)",
+                          "startPosition": {
+                            "row": 31,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 31,
+                            "column": 49
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.userDao",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 21
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "userDao",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getUser",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 22
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 29
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(username, password)",
+                              "startPosition": {
+                                "row": 31,
+                                "column": 29
+                              },
+                              "endPosition": {
+                                "row": 31,
+                                "column": 49
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "username",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 30
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 38
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "password",
+                                  "startPosition": {
+                                    "row": 31,
+                                    "column": 40
+                                  },
+                                  "endPosition": {
+                                    "row": 31,
+                                    "column": 48
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public boolean checkUserExists(String username) {\r\n\t\treturn this.userDao.userExists(username);\r\n\t}",
+              "startPosition": {
+                "row": 34,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 36,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 34,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 34,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "boolean_type",
+                  "text": "boolean",
+                  "startPosition": {
+                    "row": 34,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 34,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "checkUserExists",
+                  "startPosition": {
+                    "row": 34,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 34,
+                    "column": 31
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String username)",
+                  "startPosition": {
+                    "row": 34,
+                    "column": 31
+                  },
+                  "endPosition": {
+                    "row": 34,
+                    "column": 48
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String username",
+                      "startPosition": {
+                        "row": 34,
+                        "column": 32
+                      },
+                      "endPosition": {
+                        "row": 34,
+                        "column": 47
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 34,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 34,
+                            "column": 38
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "username",
+                          "startPosition": {
+                            "row": 34,
+                            "column": 39
+                          },
+                          "endPosition": {
+                            "row": 34,
+                            "column": 47
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn this.userDao.userExists(username);\r\n\t}",
+                  "startPosition": {
+                    "row": 34,
+                    "column": 49
+                  },
+                  "endPosition": {
+                    "row": 36,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return this.userDao.userExists(username);",
+                      "startPosition": {
+                        "row": 35,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 35,
+                        "column": 43
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "this.userDao.userExists(username)",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 42
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.userDao",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 21
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 35,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "userDao",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 14
+                                  },
+                                  "endPosition": {
+                                    "row": 35,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "userExists",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 22
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 32
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(username)",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 42
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "username",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 33
+                                  },
+                                  "endPosition": {
+                                    "row": 35,
+                                    "column": 41
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public User getUserByUsername(String username) {\r\n\t        return userDao.getUserByUsername(username);\r\n\t    }",
+              "startPosition": {
+                "row": 38,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 40,
+                "column": 6
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 38,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 38,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "User",
+                  "startPosition": {
+                    "row": 38,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 38,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getUserByUsername",
+                  "startPosition": {
+                    "row": 38,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 38,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String username)",
+                  "startPosition": {
+                    "row": 38,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 38,
+                    "column": 47
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String username",
+                      "startPosition": {
+                        "row": 38,
+                        "column": 31
+                      },
+                      "endPosition": {
+                        "row": 38,
+                        "column": 46
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 38,
+                            "column": 31
+                          },
+                          "endPosition": {
+                            "row": 38,
+                            "column": 37
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "username",
+                          "startPosition": {
+                            "row": 38,
+                            "column": 38
+                          },
+                          "endPosition": {
+                            "row": 38,
+                            "column": 46
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t        return userDao.getUserByUsername(username);\r\n\t    }",
+                  "startPosition": {
+                    "row": 38,
+                    "column": 48
+                  },
+                  "endPosition": {
+                    "row": 40,
+                    "column": 6
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return userDao.getUserByUsername(username);",
+                      "startPosition": {
+                        "row": 39,
+                        "column": 9
+                      },
+                      "endPosition": {
+                        "row": 39,
+                        "column": 52
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "userDao.getUserByUsername(username)",
+                          "startPosition": {
+                            "row": 39,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 39,
+                            "column": 51
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "userDao",
+                              "startPosition": {
+                                "row": 39,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 39,
+                                "column": 23
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "getUserByUsername",
+                              "startPosition": {
+                                "row": 39,
+                                "column": 24
+                              },
+                              "endPosition": {
+                                "row": 39,
+                                "column": 41
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(username)",
+                              "startPosition": {
+                                "row": 39,
+                                "column": 41
+                              },
+                              "endPosition": {
+                                "row": 39,
+                                "column": 51
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "username",
+                                  "startPosition": {
+                                    "row": 39,
+                                    "column": 42
+                                  },
+                                  "endPosition": {
+                                    "row": 39,
+                                    "column": 50
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

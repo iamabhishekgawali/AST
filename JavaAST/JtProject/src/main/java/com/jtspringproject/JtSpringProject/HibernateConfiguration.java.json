@@ -1,0 +1,4273 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject;\r\n \r\nimport java.util.Properties;\r\n \r\nimport javax.sql.DataSource;\r\n \r\nimport org.springframework.beans.factory.annotation.Value;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.jdbc.datasource.DriverManagerDataSource;\r\nimport org.springframework.orm.hibernate5.HibernateTransactionManager;\r\nimport org.springframework.orm.hibernate5.LocalSessionFactoryBean;\r\nimport org.springframework.transaction.annotation.EnableTransactionManagement;\r\n \r\n@Configuration\r\n@EnableTransactionManagement\r\npublic class HibernateConfiguration {\r\n    @Value(\"${db.driver}\")\r\n    private String DRIVER;\r\n \r\n    @Value(\"${db.password}\")\r\n    private String PASSWORD;\r\n \r\n    @Value(\"${db.url}\")\r\n    private String URL;\r\n \r\n    @Value(\"${db.username}\")\r\n    private String USERNAME;\r\n \r\n    @Value(\"${hibernate.dialect}\")\r\n    private String DIALECT;\r\n \r\n    @Value(\"${hibernate.show_sql}\")\r\n    private String SHOW_SQL;\r\n \r\n    @Value(\"${hibernate.hbm2ddl.auto}\")\r\n    private String HBM2DDL_AUTO;\r\n \r\n    @Value(\"${entitymanager.packagesToScan}\")\r\n    private String PACKAGES_TO_SCAN;\r\n \r\n    @Bean\r\n    public DataSource dataSource() {\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(DRIVER);\r\n        dataSource.setUrl(URL);\r\n        dataSource.setUsername(USERNAME);\r\n        dataSource.setPassword(PASSWORD);\r\n        return dataSource;\r\n    }\r\n \r\n    @Bean\r\n    public LocalSessionFactoryBean sessionFactory() {\r\n        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();\r\n        sessionFactory.setDataSource(dataSource());\r\n        sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN);\r\n        Properties hibernateProperties = new Properties();\r\n        hibernateProperties.put(\"hibernate.dialect\", DIALECT);\r\n        hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL);\r\n        hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO);\r\n        sessionFactory.setHibernateProperties(hibernateProperties);\r\n \r\n        return sessionFactory;\r\n    }\r\n \r\n    @Bean\r\n    public HibernateTransactionManager transactionManager() {\r\n        HibernateTransactionManager transactionManager = new HibernateTransactionManager();\r\n        transactionManager.setSessionFactory(sessionFactory().getObject());\r\n        return transactionManager;\r\n    }   \r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 72,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 44
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 43
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "com",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 28
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import java.util.Properties;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "java.util.Properties",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "java.util",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "util",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Properties",
+              "startPosition": {
+                "row": 2,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.sql.DataSource;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.sql.DataSource",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.sql",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "sql",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 16
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "DataSource",
+              "startPosition": {
+                "row": 4,
+                "column": 17
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.beans.factory.annotation.Value;",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 58
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.beans.factory.annotation.Value",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 57
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.beans.factory.annotation",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 51
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.beans.factory",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 40
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.beans",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 6,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 6,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "beans",
+                          "startPosition": {
+                            "row": 6,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 6,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "factory",
+                      "startPosition": {
+                        "row": 6,
+                        "column": 33
+                      },
+                      "endPosition": {
+                        "row": 6,
+                        "column": 40
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 41
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 51
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Value",
+              "startPosition": {
+                "row": 6,
+                "column": 52
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 57
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.context.annotation.Bean;",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 51
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.context.annotation.Bean",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 50
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.context.annotation",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 45
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.context",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 7,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 7,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "context",
+                      "startPosition": {
+                        "row": 7,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 7,
+                        "column": 34
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 45
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Bean",
+              "startPosition": {
+                "row": 7,
+                "column": 46
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 50
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.context.annotation.Configuration;",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 60
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.context.annotation.Configuration",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 59
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.context.annotation",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 45
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.context",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "context",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 34
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 45
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Configuration",
+              "startPosition": {
+                "row": 8,
+                "column": 46
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 59
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.jdbc.datasource.DriverManagerDataSource;",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 67
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.jdbc.datasource.DriverManagerDataSource",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 66
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.jdbc.datasource",
+              "startPosition": {
+                "row": 9,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 42
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.jdbc",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 31
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 9,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 9,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jdbc",
+                      "startPosition": {
+                        "row": 9,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 9,
+                        "column": 31
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "datasource",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 42
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "DriverManagerDataSource",
+              "startPosition": {
+                "row": 9,
+                "column": 43
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 66
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.orm.hibernate5.HibernateTransactionManager;",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 70
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.orm.hibernate5.HibernateTransactionManager",
+          "startPosition": {
+            "row": 10,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 69
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.orm.hibernate5",
+              "startPosition": {
+                "row": 10,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 41
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.orm",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 30
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "orm",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 30
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "hibernate5",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 31
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 41
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "HibernateTransactionManager",
+              "startPosition": {
+                "row": 10,
+                "column": 42
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 69
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.orm.hibernate5.LocalSessionFactoryBean;",
+      "startPosition": {
+        "row": 11,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 11,
+        "column": 66
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.orm.hibernate5.LocalSessionFactoryBean",
+          "startPosition": {
+            "row": 11,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 11,
+            "column": 65
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.orm.hibernate5",
+              "startPosition": {
+                "row": 11,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 41
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.orm",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 30
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 11,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 11,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "orm",
+                      "startPosition": {
+                        "row": 11,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 11,
+                        "column": 30
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "hibernate5",
+                  "startPosition": {
+                    "row": 11,
+                    "column": 31
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 41
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "LocalSessionFactoryBean",
+              "startPosition": {
+                "row": 11,
+                "column": 42
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 65
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.transaction.annotation.EnableTransactionManagement;",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 12,
+        "column": 78
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.transaction.annotation.EnableTransactionManagement",
+          "startPosition": {
+            "row": 12,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 77
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.transaction.annotation",
+              "startPosition": {
+                "row": 12,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 49
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.transaction",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 38
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "org",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "springframework",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 11
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 26
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "transaction",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 27
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 38
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 39
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 49
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "EnableTransactionManagement",
+              "startPosition": {
+                "row": 12,
+                "column": 50
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 77
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Configuration\r\n@EnableTransactionManagement\r\npublic class HibernateConfiguration {\r\n    @Value(\"${db.driver}\")\r\n    private String DRIVER;\r\n \r\n    @Value(\"${db.password}\")\r\n    private String PASSWORD;\r\n \r\n    @Value(\"${db.url}\")\r\n    private String URL;\r\n \r\n    @Value(\"${db.username}\")\r\n    private String USERNAME;\r\n \r\n    @Value(\"${hibernate.dialect}\")\r\n    private String DIALECT;\r\n \r\n    @Value(\"${hibernate.show_sql}\")\r\n    private String SHOW_SQL;\r\n \r\n    @Value(\"${hibernate.hbm2ddl.auto}\")\r\n    private String HBM2DDL_AUTO;\r\n \r\n    @Value(\"${entitymanager.packagesToScan}\")\r\n    private String PACKAGES_TO_SCAN;\r\n \r\n    @Bean\r\n    public DataSource dataSource() {\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(DRIVER);\r\n        dataSource.setUrl(URL);\r\n        dataSource.setUsername(USERNAME);\r\n        dataSource.setPassword(PASSWORD);\r\n        return dataSource;\r\n    }\r\n \r\n    @Bean\r\n    public LocalSessionFactoryBean sessionFactory() {\r\n        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();\r\n        sessionFactory.setDataSource(dataSource());\r\n        sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN);\r\n        Properties hibernateProperties = new Properties();\r\n        hibernateProperties.put(\"hibernate.dialect\", DIALECT);\r\n        hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL);\r\n        hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO);\r\n        sessionFactory.setHibernateProperties(hibernateProperties);\r\n \r\n        return sessionFactory;\r\n    }\r\n \r\n    @Bean\r\n    public HibernateTransactionManager transactionManager() {\r\n        HibernateTransactionManager transactionManager = new HibernateTransactionManager();\r\n        transactionManager.setSessionFactory(sessionFactory().getObject());\r\n        return transactionManager;\r\n    }   \r\n}",
+      "startPosition": {
+        "row": 14,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 71,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Configuration\r\n@EnableTransactionManagement\r\npublic",
+          "startPosition": {
+            "row": 14,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 16,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@Configuration",
+              "startPosition": {
+                "row": 14,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 14,
+                "column": 14
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Configuration",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 14,
+                    "column": 14
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "marker_annotation",
+              "text": "@EnableTransactionManagement",
+              "startPosition": {
+                "row": 15,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 15,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "EnableTransactionManagement",
+                  "startPosition": {
+                    "row": 15,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 15,
+                    "column": 28
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "HibernateConfiguration",
+          "startPosition": {
+            "row": 16,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 16,
+            "column": 35
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n    @Value(\"${db.driver}\")\r\n    private String DRIVER;\r\n \r\n    @Value(\"${db.password}\")\r\n    private String PASSWORD;\r\n \r\n    @Value(\"${db.url}\")\r\n    private String URL;\r\n \r\n    @Value(\"${db.username}\")\r\n    private String USERNAME;\r\n \r\n    @Value(\"${hibernate.dialect}\")\r\n    private String DIALECT;\r\n \r\n    @Value(\"${hibernate.show_sql}\")\r\n    private String SHOW_SQL;\r\n \r\n    @Value(\"${hibernate.hbm2ddl.auto}\")\r\n    private String HBM2DDL_AUTO;\r\n \r\n    @Value(\"${entitymanager.packagesToScan}\")\r\n    private String PACKAGES_TO_SCAN;\r\n \r\n    @Bean\r\n    public DataSource dataSource() {\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(DRIVER);\r\n        dataSource.setUrl(URL);\r\n        dataSource.setUsername(USERNAME);\r\n        dataSource.setPassword(PASSWORD);\r\n        return dataSource;\r\n    }\r\n \r\n    @Bean\r\n    public LocalSessionFactoryBean sessionFactory() {\r\n        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();\r\n        sessionFactory.setDataSource(dataSource());\r\n        sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN);\r\n        Properties hibernateProperties = new Properties();\r\n        hibernateProperties.put(\"hibernate.dialect\", DIALECT);\r\n        hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL);\r\n        hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO);\r\n        sessionFactory.setHibernateProperties(hibernateProperties);\r\n \r\n        return sessionFactory;\r\n    }\r\n \r\n    @Bean\r\n    public HibernateTransactionManager transactionManager() {\r\n        HibernateTransactionManager transactionManager = new HibernateTransactionManager();\r\n        transactionManager.setSessionFactory(sessionFactory().getObject());\r\n        return transactionManager;\r\n    }   \r\n}",
+          "startPosition": {
+            "row": 16,
+            "column": 36
+          },
+          "endPosition": {
+            "row": 71,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${db.driver}\")\r\n    private String DRIVER;",
+              "startPosition": {
+                "row": 17,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 18,
+                "column": 26
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${db.driver}\")\r\n    private",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${db.driver}\")",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${db.driver}\")",
+                          "startPosition": {
+                            "row": 17,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 17,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${db.driver}\"",
+                              "startPosition": {
+                                "row": 17,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 17,
+                                "column": 25
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${db.driver}",
+                                  "startPosition": {
+                                    "row": 17,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 17,
+                                    "column": 24
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "DRIVER",
+                  "startPosition": {
+                    "row": 18,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 18,
+                    "column": 25
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DRIVER",
+                      "startPosition": {
+                        "row": 18,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 18,
+                        "column": 25
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${db.password}\")\r\n    private String PASSWORD;",
+              "startPosition": {
+                "row": 20,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${db.password}\")\r\n    private",
+                  "startPosition": {
+                    "row": 20,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${db.password}\")",
+                      "startPosition": {
+                        "row": 20,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 20,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${db.password}\")",
+                          "startPosition": {
+                            "row": 20,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 20,
+                            "column": 28
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${db.password}\"",
+                              "startPosition": {
+                                "row": 20,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 20,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${db.password}",
+                                  "startPosition": {
+                                    "row": 20,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 20,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "PASSWORD",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "PASSWORD",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${db.url}\")\r\n    private String URL;",
+              "startPosition": {
+                "row": 23,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 24,
+                "column": 23
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${db.url}\")\r\n    private",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 24,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${db.url}\")",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${db.url}\")",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 23
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${db.url}\"",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 22
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${db.url}",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 24,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 24,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "URL",
+                  "startPosition": {
+                    "row": 24,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 24,
+                    "column": 22
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "URL",
+                      "startPosition": {
+                        "row": 24,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 24,
+                        "column": 22
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${db.username}\")\r\n    private String USERNAME;",
+              "startPosition": {
+                "row": 26,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 27,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${db.username}\")\r\n    private",
+                  "startPosition": {
+                    "row": 26,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${db.username}\")",
+                      "startPosition": {
+                        "row": 26,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 26,
+                        "column": 28
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${db.username}\")",
+                          "startPosition": {
+                            "row": 26,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 26,
+                            "column": 28
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${db.username}\"",
+                              "startPosition": {
+                                "row": 26,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 26,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${db.username}",
+                                  "startPosition": {
+                                    "row": 26,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 26,
+                                    "column": 26
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "USERNAME",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "USERNAME",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${hibernate.dialect}\")\r\n    private String DIALECT;",
+              "startPosition": {
+                "row": 29,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 30,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${hibernate.dialect}\")\r\n    private",
+                  "startPosition": {
+                    "row": 29,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${hibernate.dialect}\")",
+                      "startPosition": {
+                        "row": 29,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 34
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 29,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${hibernate.dialect}\")",
+                          "startPosition": {
+                            "row": 29,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 29,
+                            "column": 34
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${hibernate.dialect}\"",
+                              "startPosition": {
+                                "row": 29,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 29,
+                                "column": 33
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${hibernate.dialect}",
+                                  "startPosition": {
+                                    "row": 29,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 29,
+                                    "column": 32
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "DIALECT",
+                  "startPosition": {
+                    "row": 30,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 30,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "DIALECT",
+                      "startPosition": {
+                        "row": 30,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 30,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${hibernate.show_sql}\")\r\n    private String SHOW_SQL;",
+              "startPosition": {
+                "row": 32,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${hibernate.show_sql}\")\r\n    private",
+                  "startPosition": {
+                    "row": 32,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${hibernate.show_sql}\")",
+                      "startPosition": {
+                        "row": 32,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 32,
+                        "column": 35
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${hibernate.show_sql}\")",
+                          "startPosition": {
+                            "row": 32,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 32,
+                            "column": 35
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${hibernate.show_sql}\"",
+                              "startPosition": {
+                                "row": 32,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 32,
+                                "column": 34
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${hibernate.show_sql}",
+                                  "startPosition": {
+                                    "row": 32,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 32,
+                                    "column": 33
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "SHOW_SQL",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "SHOW_SQL",
+                      "startPosition": {
+                        "row": 33,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 33,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${hibernate.hbm2ddl.auto}\")\r\n    private String HBM2DDL_AUTO;",
+              "startPosition": {
+                "row": 35,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 36,
+                "column": 32
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${hibernate.hbm2ddl.auto}\")\r\n    private",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 36,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${hibernate.hbm2ddl.auto}\")",
+                      "startPosition": {
+                        "row": 35,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 35,
+                        "column": 39
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${hibernate.hbm2ddl.auto}\")",
+                          "startPosition": {
+                            "row": 35,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 35,
+                            "column": 39
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${hibernate.hbm2ddl.auto}\"",
+                              "startPosition": {
+                                "row": 35,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 35,
+                                "column": 38
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${hibernate.hbm2ddl.auto}",
+                                  "startPosition": {
+                                    "row": 35,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 35,
+                                    "column": 37
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 36,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 36,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "HBM2DDL_AUTO",
+                  "startPosition": {
+                    "row": 36,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 36,
+                    "column": 31
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "HBM2DDL_AUTO",
+                      "startPosition": {
+                        "row": 36,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 36,
+                        "column": 31
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@Value(\"${entitymanager.packagesToScan}\")\r\n    private String PACKAGES_TO_SCAN;",
+              "startPosition": {
+                "row": 38,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 39,
+                "column": 36
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Value(\"${entitymanager.packagesToScan}\")\r\n    private",
+                  "startPosition": {
+                    "row": 38,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@Value(\"${entitymanager.packagesToScan}\")",
+                      "startPosition": {
+                        "row": 38,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 38,
+                        "column": 45
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Value",
+                          "startPosition": {
+                            "row": 38,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 38,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"${entitymanager.packagesToScan}\")",
+                          "startPosition": {
+                            "row": 38,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 38,
+                            "column": 45
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"${entitymanager.packagesToScan}\"",
+                              "startPosition": {
+                                "row": 38,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 38,
+                                "column": 44
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "${entitymanager.packagesToScan}",
+                                  "startPosition": {
+                                    "row": 38,
+                                    "column": 12
+                                  },
+                                  "endPosition": {
+                                    "row": 38,
+                                    "column": 43
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "PACKAGES_TO_SCAN",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 19
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 35
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "PACKAGES_TO_SCAN",
+                      "startPosition": {
+                        "row": 39,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 39,
+                        "column": 35
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Bean\r\n    public DataSource dataSource() {\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(DRIVER);\r\n        dataSource.setUrl(URL);\r\n        dataSource.setUsername(USERNAME);\r\n        dataSource.setPassword(PASSWORD);\r\n        return dataSource;\r\n    }",
+              "startPosition": {
+                "row": 41,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 49,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Bean\r\n    public",
+                  "startPosition": {
+                    "row": 41,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 42,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Bean",
+                      "startPosition": {
+                        "row": 41,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 41,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Bean",
+                          "startPosition": {
+                            "row": 41,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 41,
+                            "column": 9
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "DataSource",
+                  "startPosition": {
+                    "row": 42,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 42,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "dataSource",
+                  "startPosition": {
+                    "row": 42,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 42,
+                    "column": 32
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 42,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 42,
+                    "column": 34
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(DRIVER);\r\n        dataSource.setUrl(URL);\r\n        dataSource.setUsername(USERNAME);\r\n        dataSource.setPassword(PASSWORD);\r\n        return dataSource;\r\n    }",
+                  "startPosition": {
+                    "row": 42,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 49,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "local_variable_declaration",
+                      "text": "DriverManagerDataSource dataSource = new DriverManagerDataSource();",
+                      "startPosition": {
+                        "row": 43,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 43,
+                        "column": 75
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "DriverManagerDataSource",
+                          "startPosition": {
+                            "row": 43,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "variable_declarator",
+                          "text": "dataSource = new DriverManagerDataSource()",
+                          "startPosition": {
+                            "row": 43,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 43,
+                            "column": 74
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "dataSource",
+                              "startPosition": {
+                                "row": 43,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 43,
+                                "column": 42
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object_creation_expression",
+                              "text": "new DriverManagerDataSource()",
+                              "startPosition": {
+                                "row": 43,
+                                "column": 45
+                              },
+                              "endPosition": {
+                                "row": 43,
+                                "column": 74
+                              },
+                              "children": [
+                                {
+                                  "type": "type_identifier",
+                                  "text": "DriverManagerDataSource",
+                                  "startPosition": {
+                                    "row": 43,
+                                    "column": 49
+                                  },
+                                  "endPosition": {
+                                    "row": 43,
+                                    "column": 72
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 43,
+                                    "column": 72
+                                  },
+                                  "endPosition": {
+                                    "row": 43,
+                                    "column": 74
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "dataSource.setDriverClassName(DRIVER);",
+                      "startPosition": {
+                        "row": 44,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 44,
+                        "column": 46
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "dataSource.setDriverClassName(DRIVER)",
+                          "startPosition": {
+                            "row": 44,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 44,
+                            "column": 45
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "dataSource",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setDriverClassName",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 37
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(DRIVER)",
+                              "startPosition": {
+                                "row": 44,
+                                "column": 37
+                              },
+                              "endPosition": {
+                                "row": 44,
+                                "column": 45
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "DRIVER",
+                                  "startPosition": {
+                                    "row": 44,
+                                    "column": 38
+                                  },
+                                  "endPosition": {
+                                    "row": 44,
+                                    "column": 44
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "dataSource.setUrl(URL);",
+                      "startPosition": {
+                        "row": 45,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 45,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "dataSource.setUrl(URL)",
+                          "startPosition": {
+                            "row": 45,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 45,
+                            "column": 30
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "dataSource",
+                              "startPosition": {
+                                "row": 45,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 45,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setUrl",
+                              "startPosition": {
+                                "row": 45,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 45,
+                                "column": 25
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(URL)",
+                              "startPosition": {
+                                "row": 45,
+                                "column": 25
+                              },
+                              "endPosition": {
+                                "row": 45,
+                                "column": 30
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "URL",
+                                  "startPosition": {
+                                    "row": 45,
+                                    "column": 26
+                                  },
+                                  "endPosition": {
+                                    "row": 45,
+                                    "column": 29
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "dataSource.setUsername(USERNAME);",
+                      "startPosition": {
+                        "row": 46,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 46,
+                        "column": 41
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "dataSource.setUsername(USERNAME)",
+                          "startPosition": {
+                            "row": 46,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 46,
+                            "column": 40
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "dataSource",
+                              "startPosition": {
+                                "row": 46,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 46,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setUsername",
+                              "startPosition": {
+                                "row": 46,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 46,
+                                "column": 30
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(USERNAME)",
+                              "startPosition": {
+                                "row": 46,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 46,
+                                "column": 40
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "USERNAME",
+                                  "startPosition": {
+                                    "row": 46,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 46,
+                                    "column": 39
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "dataSource.setPassword(PASSWORD);",
+                      "startPosition": {
+                        "row": 47,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 47,
+                        "column": 41
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "dataSource.setPassword(PASSWORD)",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 40
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "dataSource",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 18
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setPassword",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 30
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(PASSWORD)",
+                              "startPosition": {
+                                "row": 47,
+                                "column": 30
+                              },
+                              "endPosition": {
+                                "row": 47,
+                                "column": 40
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "PASSWORD",
+                                  "startPosition": {
+                                    "row": 47,
+                                    "column": 31
+                                  },
+                                  "endPosition": {
+                                    "row": 47,
+                                    "column": 39
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return dataSource;",
+                      "startPosition": {
+                        "row": 48,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 48,
+                        "column": 26
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "dataSource",
+                          "startPosition": {
+                            "row": 48,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 48,
+                            "column": 25
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Bean\r\n    public LocalSessionFactoryBean sessionFactory() {\r\n        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();\r\n        sessionFactory.setDataSource(dataSource());\r\n        sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN);\r\n        Properties hibernateProperties = new Properties();\r\n        hibernateProperties.put(\"hibernate.dialect\", DIALECT);\r\n        hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL);\r\n        hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO);\r\n        sessionFactory.setHibernateProperties(hibernateProperties);\r\n \r\n        return sessionFactory;\r\n    }",
+              "startPosition": {
+                "row": 51,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 63,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Bean\r\n    public",
+                  "startPosition": {
+                    "row": 51,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 52,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Bean",
+                      "startPosition": {
+                        "row": 51,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 51,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Bean",
+                          "startPosition": {
+                            "row": 51,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 51,
+                            "column": 9
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "LocalSessionFactoryBean",
+                  "startPosition": {
+                    "row": 52,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 52,
+                    "column": 34
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "sessionFactory",
+                  "startPosition": {
+                    "row": 52,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 52,
+                    "column": 49
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 52,
+                    "column": 49
+                  },
+                  "endPosition": {
+                    "row": 52,
+                    "column": 51
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();\r\n        sessionFactory.setDataSource(dataSource());\r\n        sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN);\r\n        Properties hibernateProperties = new Properties();\r\n        hibernateProperties.put(\"hibernate.dialect\", DIALECT);\r\n        hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL);\r\n        hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO);\r\n        sessionFactory.setHibernateProperties(hibernateProperties);\r\n \r\n        return sessionFactory;\r\n    }",
+                  "startPosition": {
+                    "row": 52,
+                    "column": 52
+                  },
+                  "endPosition": {
+                    "row": 63,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "local_variable_declaration",
+                      "text": "LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();",
+                      "startPosition": {
+                        "row": 53,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 53,
+                        "column": 79
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "LocalSessionFactoryBean",
+                          "startPosition": {
+                            "row": 53,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 53,
+                            "column": 31
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "variable_declarator",
+                          "text": "sessionFactory = new LocalSessionFactoryBean()",
+                          "startPosition": {
+                            "row": 53,
+                            "column": 32
+                          },
+                          "endPosition": {
+                            "row": 53,
+                            "column": 78
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "sessionFactory",
+                              "startPosition": {
+                                "row": 53,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 53,
+                                "column": 46
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object_creation_expression",
+                              "text": "new LocalSessionFactoryBean()",
+                              "startPosition": {
+                                "row": 53,
+                                "column": 49
+                              },
+                              "endPosition": {
+                                "row": 53,
+                                "column": 78
+                              },
+                              "children": [
+                                {
+                                  "type": "type_identifier",
+                                  "text": "LocalSessionFactoryBean",
+                                  "startPosition": {
+                                    "row": 53,
+                                    "column": 53
+                                  },
+                                  "endPosition": {
+                                    "row": 53,
+                                    "column": 76
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 53,
+                                    "column": 76
+                                  },
+                                  "endPosition": {
+                                    "row": 53,
+                                    "column": 78
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "sessionFactory.setDataSource(dataSource());",
+                      "startPosition": {
+                        "row": 54,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 54,
+                        "column": 51
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "sessionFactory.setDataSource(dataSource())",
+                          "startPosition": {
+                            "row": 54,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 54,
+                            "column": 50
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "sessionFactory",
+                              "startPosition": {
+                                "row": 54,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 54,
+                                "column": 22
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setDataSource",
+                              "startPosition": {
+                                "row": 54,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 54,
+                                "column": 36
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(dataSource())",
+                              "startPosition": {
+                                "row": 54,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 54,
+                                "column": 50
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "dataSource()",
+                                  "startPosition": {
+                                    "row": 54,
+                                    "column": 37
+                                  },
+                                  "endPosition": {
+                                    "row": 54,
+                                    "column": 49
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "dataSource",
+                                      "startPosition": {
+                                        "row": 54,
+                                        "column": 37
+                                      },
+                                      "endPosition": {
+                                        "row": 54,
+                                        "column": 47
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 54,
+                                        "column": 47
+                                      },
+                                      "endPosition": {
+                                        "row": 54,
+                                        "column": 49
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN);",
+                      "startPosition": {
+                        "row": 55,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 55,
+                        "column": 59
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "sessionFactory.setPackagesToScan(PACKAGES_TO_SCAN)",
+                          "startPosition": {
+                            "row": 55,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 55,
+                            "column": 58
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "sessionFactory",
+                              "startPosition": {
+                                "row": 55,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 55,
+                                "column": 22
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setPackagesToScan",
+                              "startPosition": {
+                                "row": 55,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 55,
+                                "column": 40
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(PACKAGES_TO_SCAN)",
+                              "startPosition": {
+                                "row": 55,
+                                "column": 40
+                              },
+                              "endPosition": {
+                                "row": 55,
+                                "column": 58
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "PACKAGES_TO_SCAN",
+                                  "startPosition": {
+                                    "row": 55,
+                                    "column": 41
+                                  },
+                                  "endPosition": {
+                                    "row": 55,
+                                    "column": 57
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "local_variable_declaration",
+                      "text": "Properties hibernateProperties = new Properties();",
+                      "startPosition": {
+                        "row": 56,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 56,
+                        "column": 58
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Properties",
+                          "startPosition": {
+                            "row": 56,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 56,
+                            "column": 18
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "variable_declarator",
+                          "text": "hibernateProperties = new Properties()",
+                          "startPosition": {
+                            "row": 56,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 56,
+                            "column": 57
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "hibernateProperties",
+                              "startPosition": {
+                                "row": 56,
+                                "column": 19
+                              },
+                              "endPosition": {
+                                "row": 56,
+                                "column": 38
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object_creation_expression",
+                              "text": "new Properties()",
+                              "startPosition": {
+                                "row": 56,
+                                "column": 41
+                              },
+                              "endPosition": {
+                                "row": 56,
+                                "column": 57
+                              },
+                              "children": [
+                                {
+                                  "type": "type_identifier",
+                                  "text": "Properties",
+                                  "startPosition": {
+                                    "row": 56,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 56,
+                                    "column": 55
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 56,
+                                    "column": 55
+                                  },
+                                  "endPosition": {
+                                    "row": 56,
+                                    "column": 57
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "hibernateProperties.put(\"hibernate.dialect\", DIALECT);",
+                      "startPosition": {
+                        "row": 57,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 57,
+                        "column": 62
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "hibernateProperties.put(\"hibernate.dialect\", DIALECT)",
+                          "startPosition": {
+                            "row": 57,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 57,
+                            "column": 61
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "hibernateProperties",
+                              "startPosition": {
+                                "row": 57,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 57,
+                                "column": 27
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "put",
+                              "startPosition": {
+                                "row": 57,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 57,
+                                "column": 31
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(\"hibernate.dialect\", DIALECT)",
+                              "startPosition": {
+                                "row": 57,
+                                "column": 31
+                              },
+                              "endPosition": {
+                                "row": 57,
+                                "column": 61
+                              },
+                              "children": [
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"hibernate.dialect\"",
+                                  "startPosition": {
+                                    "row": 57,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 57,
+                                    "column": 51
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "hibernate.dialect",
+                                      "startPosition": {
+                                        "row": 57,
+                                        "column": 33
+                                      },
+                                      "endPosition": {
+                                        "row": 57,
+                                        "column": 50
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "DIALECT",
+                                  "startPosition": {
+                                    "row": 57,
+                                    "column": 53
+                                  },
+                                  "endPosition": {
+                                    "row": 57,
+                                    "column": 60
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL);",
+                      "startPosition": {
+                        "row": 58,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 58,
+                        "column": 64
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "hibernateProperties.put(\"hibernate.show_sql\", SHOW_SQL)",
+                          "startPosition": {
+                            "row": 58,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 58,
+                            "column": 63
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "hibernateProperties",
+                              "startPosition": {
+                                "row": 58,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 58,
+                                "column": 27
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "put",
+                              "startPosition": {
+                                "row": 58,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 58,
+                                "column": 31
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(\"hibernate.show_sql\", SHOW_SQL)",
+                              "startPosition": {
+                                "row": 58,
+                                "column": 31
+                              },
+                              "endPosition": {
+                                "row": 58,
+                                "column": 63
+                              },
+                              "children": [
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"hibernate.show_sql\"",
+                                  "startPosition": {
+                                    "row": 58,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 58,
+                                    "column": 52
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "hibernate.show_sql",
+                                      "startPosition": {
+                                        "row": 58,
+                                        "column": 33
+                                      },
+                                      "endPosition": {
+                                        "row": 58,
+                                        "column": 51
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "SHOW_SQL",
+                                  "startPosition": {
+                                    "row": 58,
+                                    "column": 54
+                                  },
+                                  "endPosition": {
+                                    "row": 58,
+                                    "column": 62
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO);",
+                      "startPosition": {
+                        "row": 59,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 59,
+                        "column": 72
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "hibernateProperties.put(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO)",
+                          "startPosition": {
+                            "row": 59,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 59,
+                            "column": 71
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "hibernateProperties",
+                              "startPosition": {
+                                "row": 59,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 59,
+                                "column": 27
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "put",
+                              "startPosition": {
+                                "row": 59,
+                                "column": 28
+                              },
+                              "endPosition": {
+                                "row": 59,
+                                "column": 31
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(\"hibernate.hbm2ddl.auto\", HBM2DDL_AUTO)",
+                              "startPosition": {
+                                "row": 59,
+                                "column": 31
+                              },
+                              "endPosition": {
+                                "row": 59,
+                                "column": 71
+                              },
+                              "children": [
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"hibernate.hbm2ddl.auto\"",
+                                  "startPosition": {
+                                    "row": 59,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 59,
+                                    "column": 56
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "hibernate.hbm2ddl.auto",
+                                      "startPosition": {
+                                        "row": 59,
+                                        "column": 33
+                                      },
+                                      "endPosition": {
+                                        "row": 59,
+                                        "column": 55
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "HBM2DDL_AUTO",
+                                  "startPosition": {
+                                    "row": 59,
+                                    "column": 58
+                                  },
+                                  "endPosition": {
+                                    "row": 59,
+                                    "column": 70
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "sessionFactory.setHibernateProperties(hibernateProperties);",
+                      "startPosition": {
+                        "row": 60,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 60,
+                        "column": 67
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "sessionFactory.setHibernateProperties(hibernateProperties)",
+                          "startPosition": {
+                            "row": 60,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 60,
+                            "column": 66
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "sessionFactory",
+                              "startPosition": {
+                                "row": 60,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 60,
+                                "column": 22
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setHibernateProperties",
+                              "startPosition": {
+                                "row": 60,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 60,
+                                "column": 45
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(hibernateProperties)",
+                              "startPosition": {
+                                "row": 60,
+                                "column": 45
+                              },
+                              "endPosition": {
+                                "row": 60,
+                                "column": 66
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "hibernateProperties",
+                                  "startPosition": {
+                                    "row": 60,
+                                    "column": 46
+                                  },
+                                  "endPosition": {
+                                    "row": 60,
+                                    "column": 65
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return sessionFactory;",
+                      "startPosition": {
+                        "row": 62,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 62,
+                        "column": 30
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "sessionFactory",
+                          "startPosition": {
+                            "row": 62,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 62,
+                            "column": 29
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "@Bean\r\n    public HibernateTransactionManager transactionManager() {\r\n        HibernateTransactionManager transactionManager = new HibernateTransactionManager();\r\n        transactionManager.setSessionFactory(sessionFactory().getObject());\r\n        return transactionManager;\r\n    }",
+              "startPosition": {
+                "row": 65,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 70,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Bean\r\n    public",
+                  "startPosition": {
+                    "row": 65,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 66,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Bean",
+                      "startPosition": {
+                        "row": 65,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 65,
+                        "column": 9
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Bean",
+                          "startPosition": {
+                            "row": 65,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 65,
+                            "column": 9
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "HibernateTransactionManager",
+                  "startPosition": {
+                    "row": 66,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 66,
+                    "column": 38
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "transactionManager",
+                  "startPosition": {
+                    "row": 66,
+                    "column": 39
+                  },
+                  "endPosition": {
+                    "row": 66,
+                    "column": 57
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 66,
+                    "column": 57
+                  },
+                  "endPosition": {
+                    "row": 66,
+                    "column": 59
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        HibernateTransactionManager transactionManager = new HibernateTransactionManager();\r\n        transactionManager.setSessionFactory(sessionFactory().getObject());\r\n        return transactionManager;\r\n    }",
+                  "startPosition": {
+                    "row": 66,
+                    "column": 60
+                  },
+                  "endPosition": {
+                    "row": 70,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "local_variable_declaration",
+                      "text": "HibernateTransactionManager transactionManager = new HibernateTransactionManager();",
+                      "startPosition": {
+                        "row": 67,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 67,
+                        "column": 91
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "HibernateTransactionManager",
+                          "startPosition": {
+                            "row": 67,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 67,
+                            "column": 35
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "variable_declarator",
+                          "text": "transactionManager = new HibernateTransactionManager()",
+                          "startPosition": {
+                            "row": 67,
+                            "column": 36
+                          },
+                          "endPosition": {
+                            "row": 67,
+                            "column": 90
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "transactionManager",
+                              "startPosition": {
+                                "row": 67,
+                                "column": 36
+                              },
+                              "endPosition": {
+                                "row": 67,
+                                "column": 54
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "object_creation_expression",
+                              "text": "new HibernateTransactionManager()",
+                              "startPosition": {
+                                "row": 67,
+                                "column": 57
+                              },
+                              "endPosition": {
+                                "row": 67,
+                                "column": 90
+                              },
+                              "children": [
+                                {
+                                  "type": "type_identifier",
+                                  "text": "HibernateTransactionManager",
+                                  "startPosition": {
+                                    "row": 67,
+                                    "column": 61
+                                  },
+                                  "endPosition": {
+                                    "row": 67,
+                                    "column": 88
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "text": "()",
+                                  "startPosition": {
+                                    "row": 67,
+                                    "column": 88
+                                  },
+                                  "endPosition": {
+                                    "row": 67,
+                                    "column": 90
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "text": "transactionManager.setSessionFactory(sessionFactory().getObject());",
+                      "startPosition": {
+                        "row": 68,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 68,
+                        "column": 75
+                      },
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "text": "transactionManager.setSessionFactory(sessionFactory().getObject())",
+                          "startPosition": {
+                            "row": 68,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 68,
+                            "column": 74
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "transactionManager",
+                              "startPosition": {
+                                "row": 68,
+                                "column": 8
+                              },
+                              "endPosition": {
+                                "row": 68,
+                                "column": 26
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "setSessionFactory",
+                              "startPosition": {
+                                "row": 68,
+                                "column": 27
+                              },
+                              "endPosition": {
+                                "row": 68,
+                                "column": 44
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "argument_list",
+                              "text": "(sessionFactory().getObject())",
+                              "startPosition": {
+                                "row": 68,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 68,
+                                "column": 74
+                              },
+                              "children": [
+                                {
+                                  "type": "method_invocation",
+                                  "text": "sessionFactory().getObject()",
+                                  "startPosition": {
+                                    "row": 68,
+                                    "column": 45
+                                  },
+                                  "endPosition": {
+                                    "row": 68,
+                                    "column": 73
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "method_invocation",
+                                      "text": "sessionFactory()",
+                                      "startPosition": {
+                                        "row": 68,
+                                        "column": 45
+                                      },
+                                      "endPosition": {
+                                        "row": 68,
+                                        "column": 61
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "identifier",
+                                          "text": "sessionFactory",
+                                          "startPosition": {
+                                            "row": 68,
+                                            "column": 45
+                                          },
+                                          "endPosition": {
+                                            "row": 68,
+                                            "column": 59
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "text": "()",
+                                          "startPosition": {
+                                            "row": 68,
+                                            "column": 59
+                                          },
+                                          "endPosition": {
+                                            "row": 68,
+                                            "column": 61
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "getObject",
+                                      "startPosition": {
+                                        "row": 68,
+                                        "column": 62
+                                      },
+                                      "endPosition": {
+                                        "row": 68,
+                                        "column": 71
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "text": "()",
+                                      "startPosition": {
+                                        "row": 68,
+                                        "column": 71
+                                      },
+                                      "endPosition": {
+                                        "row": 68,
+                                        "column": 73
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "text": "return transactionManager;",
+                      "startPosition": {
+                        "row": 69,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 69,
+                        "column": 34
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "transactionManager",
+                          "startPosition": {
+                            "row": 69,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 69,
+                            "column": 33
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

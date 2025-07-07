@@ -1,0 +1,4688 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.models;\r\n\r\nimport javax.persistence.CascadeType;\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport javax.persistence.GeneratedValue;\r\nimport javax.persistence.GenerationType;\r\nimport javax.persistence.Id;\r\nimport javax.persistence.JoinColumn;\r\nimport javax.persistence.ManyToOne;\r\nimport javax.persistence.OneToOne;\r\n\r\n@Entity(name=\"PRODUCT\")\r\npublic class Product {\r\n\t@Id\r\n\t@Column(name = \"product_id\")\r\n\t@GeneratedValue(strategy=GenerationType.AUTO)\r\n\tprivate int id;\r\n\t\r\n\tprivate String name;\r\n\t\r\n\tprivate String image;\r\n\t\r\n\t@OneToOne(cascade = CascadeType.ALL)\r\n\t@JoinColumn(name = \"category_id\",referencedColumnName = \"category_id\")\r\n\tprivate Category category;\r\n\t\r\n\tprivate int quantity;\r\n\t\r\n\tprivate int price;\r\n\t\r\n\tprivate int weight;\r\n\t\r\n\tprivate String description;\r\n\r\n\tpublic int getId() {\r\n\t\treturn id;\r\n\t}\r\n\r\n\tpublic void setId(int id) {\r\n\t\tthis.id = id;\r\n\t}\r\n\r\n\tpublic String getName() {\r\n\t\treturn name;\r\n\t}\r\n\r\n\tpublic void setName(String name) {\r\n\t\tthis.name = name;\r\n\t}\r\n\r\n\tpublic String getImage() {\r\n\t\treturn image;\r\n\t}\r\n\r\n\tpublic void setImage(String image) {\r\n\t\tthis.image = image;\r\n\t}\r\n\r\n\r\n\tpublic Category getCategory() {\r\n\t\treturn category;\r\n\t}\r\n\r\n\tpublic void setCategory(Category category) {\r\n\t\tthis.category = category;\r\n\t}\r\n\r\n\tpublic int getQuantity() {\r\n\t\treturn quantity;\r\n\t}\r\n\r\n\tpublic void setQuantity(int quantity) {\r\n\t\tthis.quantity = quantity;\r\n\t}\r\n\r\n\tpublic int getPrice() {\r\n\t\treturn price;\r\n\t}\r\n\r\n\tpublic void setPrice(int price) {\r\n\t\tthis.price = price;\r\n\t}\r\n\r\n\tpublic int getWeight() {\r\n\t\treturn weight;\r\n\t}\r\n\r\n\tpublic void setWeight(int weight) {\r\n\t\tthis.weight = weight;\r\n\t}\r\n\r\n\tpublic String getDescription() {\r\n\t\treturn description;\r\n\t}\r\n\r\n\tpublic void setDescription(String description) {\r\n\t\tthis.description = description;\r\n\t}\r\n\t\r\n\t@ManyToOne\r\n    @JoinColumn(name = \"customer_id\")\r\n    private User customer;\r\n\t\r\n\t\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 106,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.models;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 51
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.models",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 50
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "models",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 50
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.CascadeType;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 37
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.CascadeType",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 36
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "CascadeType",
+              "startPosition": {
+                "row": 2,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 36
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.Column;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 32
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.Column",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Column",
+              "startPosition": {
+                "row": 3,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 31
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.Entity;",
+      "startPosition": {
+        "row": 4,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 4,
+        "column": 32
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.Entity",
+          "startPosition": {
+            "row": 4,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 4,
+            "column": 31
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 4,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 4,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 4,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Entity",
+              "startPosition": {
+                "row": 4,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 4,
+                "column": 31
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.GeneratedValue;",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 5,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.GeneratedValue",
+          "startPosition": {
+            "row": 5,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 5,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 5,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "GeneratedValue",
+              "startPosition": {
+                "row": 5,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 39
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.GenerationType;",
+      "startPosition": {
+        "row": 6,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 6,
+        "column": 40
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.GenerationType",
+          "startPosition": {
+            "row": 6,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 39
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 6,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 6,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 6,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "GenerationType",
+              "startPosition": {
+                "row": 6,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 6,
+                "column": 39
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.Id;",
+      "startPosition": {
+        "row": 7,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 7,
+        "column": 28
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.Id",
+          "startPosition": {
+            "row": 7,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 7,
+            "column": 27
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 7,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 7,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 7,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Id",
+              "startPosition": {
+                "row": 7,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 7,
+                "column": 27
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.JoinColumn;",
+      "startPosition": {
+        "row": 8,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 8,
+        "column": 36
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.JoinColumn",
+          "startPosition": {
+            "row": 8,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 8,
+            "column": 35
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 8,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 8,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "JoinColumn",
+              "startPosition": {
+                "row": 8,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 8,
+                "column": 35
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.ManyToOne;",
+      "startPosition": {
+        "row": 9,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 9,
+        "column": 35
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.ManyToOne",
+          "startPosition": {
+            "row": 9,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 9,
+            "column": 34
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 9,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "ManyToOne",
+              "startPosition": {
+                "row": 9,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 9,
+                "column": 34
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import javax.persistence.OneToOne;",
+      "startPosition": {
+        "row": 10,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 10,
+        "column": 34
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "javax.persistence.OneToOne",
+          "startPosition": {
+            "row": 10,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 10,
+            "column": 33
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "javax.persistence",
+              "startPosition": {
+                "row": 10,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 24
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "javax",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "persistence",
+                  "startPosition": {
+                    "row": 10,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 10,
+                    "column": 24
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "OneToOne",
+              "startPosition": {
+                "row": 10,
+                "column": 25
+              },
+              "endPosition": {
+                "row": 10,
+                "column": 33
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Entity(name=\"PRODUCT\")\r\npublic class Product {\r\n\t@Id\r\n\t@Column(name = \"product_id\")\r\n\t@GeneratedValue(strategy=GenerationType.AUTO)\r\n\tprivate int id;\r\n\t\r\n\tprivate String name;\r\n\t\r\n\tprivate String image;\r\n\t\r\n\t@OneToOne(cascade = CascadeType.ALL)\r\n\t@JoinColumn(name = \"category_id\",referencedColumnName = \"category_id\")\r\n\tprivate Category category;\r\n\t\r\n\tprivate int quantity;\r\n\t\r\n\tprivate int price;\r\n\t\r\n\tprivate int weight;\r\n\t\r\n\tprivate String description;\r\n\r\n\tpublic int getId() {\r\n\t\treturn id;\r\n\t}\r\n\r\n\tpublic void setId(int id) {\r\n\t\tthis.id = id;\r\n\t}\r\n\r\n\tpublic String getName() {\r\n\t\treturn name;\r\n\t}\r\n\r\n\tpublic void setName(String name) {\r\n\t\tthis.name = name;\r\n\t}\r\n\r\n\tpublic String getImage() {\r\n\t\treturn image;\r\n\t}\r\n\r\n\tpublic void setImage(String image) {\r\n\t\tthis.image = image;\r\n\t}\r\n\r\n\r\n\tpublic Category getCategory() {\r\n\t\treturn category;\r\n\t}\r\n\r\n\tpublic void setCategory(Category category) {\r\n\t\tthis.category = category;\r\n\t}\r\n\r\n\tpublic int getQuantity() {\r\n\t\treturn quantity;\r\n\t}\r\n\r\n\tpublic void setQuantity(int quantity) {\r\n\t\tthis.quantity = quantity;\r\n\t}\r\n\r\n\tpublic int getPrice() {\r\n\t\treturn price;\r\n\t}\r\n\r\n\tpublic void setPrice(int price) {\r\n\t\tthis.price = price;\r\n\t}\r\n\r\n\tpublic int getWeight() {\r\n\t\treturn weight;\r\n\t}\r\n\r\n\tpublic void setWeight(int weight) {\r\n\t\tthis.weight = weight;\r\n\t}\r\n\r\n\tpublic String getDescription() {\r\n\t\treturn description;\r\n\t}\r\n\r\n\tpublic void setDescription(String description) {\r\n\t\tthis.description = description;\r\n\t}\r\n\t\r\n\t@ManyToOne\r\n    @JoinColumn(name = \"customer_id\")\r\n    private User customer;\r\n\t\r\n\t\r\n}",
+      "startPosition": {
+        "row": 12,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 105,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Entity(name=\"PRODUCT\")\r\npublic",
+          "startPosition": {
+            "row": 12,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "annotation",
+              "text": "@Entity(name=\"PRODUCT\")",
+              "startPosition": {
+                "row": 12,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 12,
+                "column": 23
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Entity",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "annotation_argument_list",
+                  "text": "(name=\"PRODUCT\")",
+                  "startPosition": {
+                    "row": 12,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 12,
+                    "column": 23
+                  },
+                  "children": [
+                    {
+                      "type": "element_value_pair",
+                      "text": "name=\"PRODUCT\"",
+                      "startPosition": {
+                        "row": 12,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 12,
+                        "column": 22
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "name",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "string_literal",
+                          "text": "\"PRODUCT\"",
+                          "startPosition": {
+                            "row": 12,
+                            "column": 13
+                          },
+                          "endPosition": {
+                            "row": 12,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "PRODUCT",
+                              "startPosition": {
+                                "row": 12,
+                                "column": 14
+                              },
+                              "endPosition": {
+                                "row": 12,
+                                "column": 21
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "Product",
+          "startPosition": {
+            "row": 13,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 13,
+            "column": 20
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n\t@Id\r\n\t@Column(name = \"product_id\")\r\n\t@GeneratedValue(strategy=GenerationType.AUTO)\r\n\tprivate int id;\r\n\t\r\n\tprivate String name;\r\n\t\r\n\tprivate String image;\r\n\t\r\n\t@OneToOne(cascade = CascadeType.ALL)\r\n\t@JoinColumn(name = \"category_id\",referencedColumnName = \"category_id\")\r\n\tprivate Category category;\r\n\t\r\n\tprivate int quantity;\r\n\t\r\n\tprivate int price;\r\n\t\r\n\tprivate int weight;\r\n\t\r\n\tprivate String description;\r\n\r\n\tpublic int getId() {\r\n\t\treturn id;\r\n\t}\r\n\r\n\tpublic void setId(int id) {\r\n\t\tthis.id = id;\r\n\t}\r\n\r\n\tpublic String getName() {\r\n\t\treturn name;\r\n\t}\r\n\r\n\tpublic void setName(String name) {\r\n\t\tthis.name = name;\r\n\t}\r\n\r\n\tpublic String getImage() {\r\n\t\treturn image;\r\n\t}\r\n\r\n\tpublic void setImage(String image) {\r\n\t\tthis.image = image;\r\n\t}\r\n\r\n\r\n\tpublic Category getCategory() {\r\n\t\treturn category;\r\n\t}\r\n\r\n\tpublic void setCategory(Category category) {\r\n\t\tthis.category = category;\r\n\t}\r\n\r\n\tpublic int getQuantity() {\r\n\t\treturn quantity;\r\n\t}\r\n\r\n\tpublic void setQuantity(int quantity) {\r\n\t\tthis.quantity = quantity;\r\n\t}\r\n\r\n\tpublic int getPrice() {\r\n\t\treturn price;\r\n\t}\r\n\r\n\tpublic void setPrice(int price) {\r\n\t\tthis.price = price;\r\n\t}\r\n\r\n\tpublic int getWeight() {\r\n\t\treturn weight;\r\n\t}\r\n\r\n\tpublic void setWeight(int weight) {\r\n\t\tthis.weight = weight;\r\n\t}\r\n\r\n\tpublic String getDescription() {\r\n\t\treturn description;\r\n\t}\r\n\r\n\tpublic void setDescription(String description) {\r\n\t\tthis.description = description;\r\n\t}\r\n\t\r\n\t@ManyToOne\r\n    @JoinColumn(name = \"customer_id\")\r\n    private User customer;\r\n\t\r\n\t\r\n}",
+          "startPosition": {
+            "row": 13,
+            "column": 21
+          },
+          "endPosition": {
+            "row": 105,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "field_declaration",
+              "text": "@Id\r\n\t@Column(name = \"product_id\")\r\n\t@GeneratedValue(strategy=GenerationType.AUTO)\r\n\tprivate int id;",
+              "startPosition": {
+                "row": 14,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 17,
+                "column": 16
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@Id\r\n\t@Column(name = \"product_id\")\r\n\t@GeneratedValue(strategy=GenerationType.AUTO)\r\n\tprivate",
+                  "startPosition": {
+                    "row": 14,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 8
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@Id",
+                      "startPosition": {
+                        "row": 14,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 14,
+                        "column": 4
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Id",
+                          "startPosition": {
+                            "row": 14,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 14,
+                            "column": 4
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@Column(name = \"product_id\")",
+                      "startPosition": {
+                        "row": 15,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 15,
+                        "column": 29
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "Column",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 8
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(name = \"product_id\")",
+                          "startPosition": {
+                            "row": 15,
+                            "column": 8
+                          },
+                          "endPosition": {
+                            "row": 15,
+                            "column": 29
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "name = \"product_id\"",
+                              "startPosition": {
+                                "row": 15,
+                                "column": 9
+                              },
+                              "endPosition": {
+                                "row": 15,
+                                "column": 28
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 9
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"product_id\"",
+                                  "startPosition": {
+                                    "row": 15,
+                                    "column": 16
+                                  },
+                                  "endPosition": {
+                                    "row": 15,
+                                    "column": 28
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "product_id",
+                                      "startPosition": {
+                                        "row": 15,
+                                        "column": 17
+                                      },
+                                      "endPosition": {
+                                        "row": 15,
+                                        "column": 27
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@GeneratedValue(strategy=GenerationType.AUTO)",
+                      "startPosition": {
+                        "row": 16,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 16,
+                        "column": 46
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "GeneratedValue",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 16
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(strategy=GenerationType.AUTO)",
+                          "startPosition": {
+                            "row": 16,
+                            "column": 16
+                          },
+                          "endPosition": {
+                            "row": 16,
+                            "column": 46
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "strategy=GenerationType.AUTO",
+                              "startPosition": {
+                                "row": 16,
+                                "column": 17
+                              },
+                              "endPosition": {
+                                "row": 16,
+                                "column": 45
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "strategy",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 25
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "field_access",
+                                  "text": "GenerationType.AUTO",
+                                  "startPosition": {
+                                    "row": 16,
+                                    "column": 26
+                                  },
+                                  "endPosition": {
+                                    "row": 16,
+                                    "column": 45
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "GenerationType",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 26
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 40
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "AUTO",
+                                      "startPosition": {
+                                        "row": 16,
+                                        "column": 41
+                                      },
+                                      "endPosition": {
+                                        "row": 16,
+                                        "column": 45
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "id",
+                  "startPosition": {
+                    "row": 17,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 17,
+                    "column": 15
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "id",
+                      "startPosition": {
+                        "row": 17,
+                        "column": 13
+                      },
+                      "endPosition": {
+                        "row": 17,
+                        "column": 15
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "private String name;",
+              "startPosition": {
+                "row": 19,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 19,
+                "column": 21
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "private",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "name",
+                  "startPosition": {
+                    "row": 19,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 19,
+                    "column": 20
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "name",
+                      "startPosition": {
+                        "row": 19,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 19,
+                        "column": 20
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "private String image;",
+              "startPosition": {
+                "row": 21,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 21,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "private",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "image",
+                  "startPosition": {
+                    "row": 21,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 21,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "image",
+                      "startPosition": {
+                        "row": 21,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 21,
+                        "column": 21
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@OneToOne(cascade = CascadeType.ALL)\r\n\t@JoinColumn(name = \"category_id\",referencedColumnName = \"category_id\")\r\n\tprivate Category category;",
+              "startPosition": {
+                "row": 23,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 25,
+                "column": 27
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@OneToOne(cascade = CascadeType.ALL)\r\n\t@JoinColumn(name = \"category_id\",referencedColumnName = \"category_id\")\r\n\tprivate",
+                  "startPosition": {
+                    "row": 23,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 8
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@OneToOne(cascade = CascadeType.ALL)",
+                      "startPosition": {
+                        "row": 23,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 23,
+                        "column": 37
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "OneToOne",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 10
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(cascade = CascadeType.ALL)",
+                          "startPosition": {
+                            "row": 23,
+                            "column": 10
+                          },
+                          "endPosition": {
+                            "row": 23,
+                            "column": 37
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "cascade = CascadeType.ALL",
+                              "startPosition": {
+                                "row": 23,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 23,
+                                "column": 36
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "cascade",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 11
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "field_access",
+                                  "text": "CascadeType.ALL",
+                                  "startPosition": {
+                                    "row": 23,
+                                    "column": 21
+                                  },
+                                  "endPosition": {
+                                    "row": 23,
+                                    "column": 36
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "identifier",
+                                      "text": "CascadeType",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 32
+                                      },
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "identifier",
+                                      "text": "ALL",
+                                      "startPosition": {
+                                        "row": 23,
+                                        "column": 33
+                                      },
+                                      "endPosition": {
+                                        "row": 23,
+                                        "column": 36
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@JoinColumn(name = \"category_id\",referencedColumnName = \"category_id\")",
+                      "startPosition": {
+                        "row": 24,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 24,
+                        "column": 71
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "JoinColumn",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 12
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(name = \"category_id\",referencedColumnName = \"category_id\")",
+                          "startPosition": {
+                            "row": 24,
+                            "column": 12
+                          },
+                          "endPosition": {
+                            "row": 24,
+                            "column": 71
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "name = \"category_id\"",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 13
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 33
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 13
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 17
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"category_id\"",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 33
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "category_id",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 21
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 32
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "element_value_pair",
+                              "text": "referencedColumnName = \"category_id\"",
+                              "startPosition": {
+                                "row": 24,
+                                "column": 34
+                              },
+                              "endPosition": {
+                                "row": 24,
+                                "column": 70
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "referencedColumnName",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 34
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 54
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"category_id\"",
+                                  "startPosition": {
+                                    "row": 24,
+                                    "column": 57
+                                  },
+                                  "endPosition": {
+                                    "row": 24,
+                                    "column": 70
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "category_id",
+                                      "startPosition": {
+                                        "row": 24,
+                                        "column": 58
+                                      },
+                                      "endPosition": {
+                                        "row": 24,
+                                        "column": 69
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Category",
+                  "startPosition": {
+                    "row": 25,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "category",
+                  "startPosition": {
+                    "row": 25,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 25,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "category",
+                      "startPosition": {
+                        "row": 25,
+                        "column": 18
+                      },
+                      "endPosition": {
+                        "row": 25,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "private int quantity;",
+              "startPosition": {
+                "row": 27,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 27,
+                "column": 22
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "private",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "quantity",
+                  "startPosition": {
+                    "row": 27,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 27,
+                    "column": 21
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "quantity",
+                      "startPosition": {
+                        "row": 27,
+                        "column": 13
+                      },
+                      "endPosition": {
+                        "row": 27,
+                        "column": 21
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "private int price;",
+              "startPosition": {
+                "row": 29,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 29,
+                "column": 19
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "private",
+                  "startPosition": {
+                    "row": 29,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 29,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "price",
+                  "startPosition": {
+                    "row": 29,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 29,
+                    "column": 18
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "price",
+                      "startPosition": {
+                        "row": 29,
+                        "column": 13
+                      },
+                      "endPosition": {
+                        "row": 29,
+                        "column": 18
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "private int weight;",
+              "startPosition": {
+                "row": 31,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 31,
+                "column": 20
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "private",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "weight",
+                  "startPosition": {
+                    "row": 31,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 31,
+                    "column": 19
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "weight",
+                      "startPosition": {
+                        "row": 31,
+                        "column": 13
+                      },
+                      "endPosition": {
+                        "row": 31,
+                        "column": 19
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "private String description;",
+              "startPosition": {
+                "row": 33,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 33,
+                "column": 28
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "private",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 8
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 9
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 15
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "description",
+                  "startPosition": {
+                    "row": 33,
+                    "column": 16
+                  },
+                  "endPosition": {
+                    "row": 33,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "description",
+                      "startPosition": {
+                        "row": 33,
+                        "column": 16
+                      },
+                      "endPosition": {
+                        "row": 33,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public int getId() {\r\n\t\treturn id;\r\n\t}",
+              "startPosition": {
+                "row": 35,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 37,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getId",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 35,
+                    "column": 19
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn id;\r\n\t}",
+                  "startPosition": {
+                    "row": 35,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 37,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return id;",
+                      "startPosition": {
+                        "row": 36,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 36,
+                        "column": 12
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 36,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 36,
+                            "column": 11
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setId(int id) {\r\n\t\tthis.id = id;\r\n\t}",
+              "startPosition": {
+                "row": 39,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 41,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setId",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 18
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(int id)",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 39,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "int id",
+                      "startPosition": {
+                        "row": 39,
+                        "column": 19
+                      },
+                      "endPosition": {
+                        "row": 39,
+                        "column": 25
+                      },
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "text": "int",
+                          "startPosition": {
+                            "row": 39,
+                            "column": 19
+                          },
+                          "endPosition": {
+                            "row": 39,
+                            "column": 22
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "id",
+                          "startPosition": {
+                            "row": 39,
+                            "column": 23
+                          },
+                          "endPosition": {
+                            "row": 39,
+                            "column": 25
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.id = id;\r\n\t}",
+                  "startPosition": {
+                    "row": 39,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 41,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.id = id;",
+                      "startPosition": {
+                        "row": 40,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 40,
+                        "column": 15
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.id = id",
+                          "startPosition": {
+                            "row": 40,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 40,
+                            "column": 14
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.id",
+                              "startPosition": {
+                                "row": 40,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 40,
+                                "column": 9
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 40,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "id",
+                                  "startPosition": {
+                                    "row": 40,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 40,
+                                    "column": 9
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "id",
+                              "startPosition": {
+                                "row": 40,
+                                "column": 12
+                              },
+                              "endPosition": {
+                                "row": 40,
+                                "column": 14
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public String getName() {\r\n\t\treturn name;\r\n\t}",
+              "startPosition": {
+                "row": 43,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 45,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getName",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 43,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn name;\r\n\t}",
+                  "startPosition": {
+                    "row": 43,
+                    "column": 25
+                  },
+                  "endPosition": {
+                    "row": 45,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return name;",
+                      "startPosition": {
+                        "row": 44,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 44,
+                        "column": 14
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "name",
+                          "startPosition": {
+                            "row": 44,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 44,
+                            "column": 13
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setName(String name) {\r\n\t\tthis.name = name;\r\n\t}",
+              "startPosition": {
+                "row": 47,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 49,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 47,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 47,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setName",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 47,
+                    "column": 20
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String name)",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 47,
+                    "column": 33
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String name",
+                      "startPosition": {
+                        "row": 47,
+                        "column": 21
+                      },
+                      "endPosition": {
+                        "row": 47,
+                        "column": 32
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 21
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 27
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "name",
+                          "startPosition": {
+                            "row": 47,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 47,
+                            "column": 32
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.name = name;\r\n\t}",
+                  "startPosition": {
+                    "row": 47,
+                    "column": 34
+                  },
+                  "endPosition": {
+                    "row": 49,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.name = name;",
+                      "startPosition": {
+                        "row": 48,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 48,
+                        "column": 19
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.name = name",
+                          "startPosition": {
+                            "row": 48,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 48,
+                            "column": 18
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.name",
+                              "startPosition": {
+                                "row": 48,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 48,
+                                "column": 11
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 48,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 48,
+                                    "column": 11
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "name",
+                              "startPosition": {
+                                "row": 48,
+                                "column": 14
+                              },
+                              "endPosition": {
+                                "row": 48,
+                                "column": 18
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public String getImage() {\r\n\t\treturn image;\r\n\t}",
+              "startPosition": {
+                "row": 51,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 53,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 51,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 51,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 51,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 51,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getImage",
+                  "startPosition": {
+                    "row": 51,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 51,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 51,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 51,
+                    "column": 25
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn image;\r\n\t}",
+                  "startPosition": {
+                    "row": 51,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 53,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return image;",
+                      "startPosition": {
+                        "row": 52,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 52,
+                        "column": 15
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "image",
+                          "startPosition": {
+                            "row": 52,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 52,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setImage(String image) {\r\n\t\tthis.image = image;\r\n\t}",
+              "startPosition": {
+                "row": 55,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 57,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 55,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 55,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 55,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 55,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setImage",
+                  "startPosition": {
+                    "row": 55,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 55,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String image)",
+                  "startPosition": {
+                    "row": 55,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 55,
+                    "column": 35
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String image",
+                      "startPosition": {
+                        "row": 55,
+                        "column": 22
+                      },
+                      "endPosition": {
+                        "row": 55,
+                        "column": 34
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 55,
+                            "column": 22
+                          },
+                          "endPosition": {
+                            "row": 55,
+                            "column": 28
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "image",
+                          "startPosition": {
+                            "row": 55,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 55,
+                            "column": 34
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.image = image;\r\n\t}",
+                  "startPosition": {
+                    "row": 55,
+                    "column": 36
+                  },
+                  "endPosition": {
+                    "row": 57,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.image = image;",
+                      "startPosition": {
+                        "row": 56,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 56,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.image = image",
+                          "startPosition": {
+                            "row": 56,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 56,
+                            "column": 20
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.image",
+                              "startPosition": {
+                                "row": 56,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 56,
+                                "column": 12
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 56,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 56,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "image",
+                                  "startPosition": {
+                                    "row": 56,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 56,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "image",
+                              "startPosition": {
+                                "row": 56,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 56,
+                                "column": 20
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public Category getCategory() {\r\n\t\treturn category;\r\n\t}",
+              "startPosition": {
+                "row": 60,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 62,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 60,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 60,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "Category",
+                  "startPosition": {
+                    "row": 60,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 60,
+                    "column": 16
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getCategory",
+                  "startPosition": {
+                    "row": 60,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 60,
+                    "column": 28
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 60,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 60,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn category;\r\n\t}",
+                  "startPosition": {
+                    "row": 60,
+                    "column": 31
+                  },
+                  "endPosition": {
+                    "row": 62,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return category;",
+                      "startPosition": {
+                        "row": 61,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 61,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "category",
+                          "startPosition": {
+                            "row": 61,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 61,
+                            "column": 17
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setCategory(Category category) {\r\n\t\tthis.category = category;\r\n\t}",
+              "startPosition": {
+                "row": 64,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 66,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 64,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 64,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 64,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 64,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setCategory",
+                  "startPosition": {
+                    "row": 64,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 64,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(Category category)",
+                  "startPosition": {
+                    "row": 64,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 64,
+                    "column": 43
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "Category category",
+                      "startPosition": {
+                        "row": 64,
+                        "column": 25
+                      },
+                      "endPosition": {
+                        "row": 64,
+                        "column": 42
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "Category",
+                          "startPosition": {
+                            "row": 64,
+                            "column": 25
+                          },
+                          "endPosition": {
+                            "row": 64,
+                            "column": 33
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "category",
+                          "startPosition": {
+                            "row": 64,
+                            "column": 34
+                          },
+                          "endPosition": {
+                            "row": 64,
+                            "column": 42
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.category = category;\r\n\t}",
+                  "startPosition": {
+                    "row": 64,
+                    "column": 44
+                  },
+                  "endPosition": {
+                    "row": 66,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.category = category;",
+                      "startPosition": {
+                        "row": 65,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 65,
+                        "column": 27
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.category = category",
+                          "startPosition": {
+                            "row": 65,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 65,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.category",
+                              "startPosition": {
+                                "row": 65,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 65,
+                                "column": 15
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 65,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 65,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "category",
+                                  "startPosition": {
+                                    "row": 65,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 65,
+                                    "column": 15
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "category",
+                              "startPosition": {
+                                "row": 65,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 65,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public int getQuantity() {\r\n\t\treturn quantity;\r\n\t}",
+              "startPosition": {
+                "row": 68,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 70,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 68,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 68,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 68,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 68,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getQuantity",
+                  "startPosition": {
+                    "row": 68,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 68,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 68,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 68,
+                    "column": 25
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn quantity;\r\n\t}",
+                  "startPosition": {
+                    "row": 68,
+                    "column": 26
+                  },
+                  "endPosition": {
+                    "row": 70,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return quantity;",
+                      "startPosition": {
+                        "row": 69,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 69,
+                        "column": 18
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "quantity",
+                          "startPosition": {
+                            "row": 69,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 69,
+                            "column": 17
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setQuantity(int quantity) {\r\n\t\tthis.quantity = quantity;\r\n\t}",
+              "startPosition": {
+                "row": 72,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 74,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 72,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 72,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 72,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 72,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setQuantity",
+                  "startPosition": {
+                    "row": 72,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 72,
+                    "column": 24
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(int quantity)",
+                  "startPosition": {
+                    "row": 72,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 72,
+                    "column": 38
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "int quantity",
+                      "startPosition": {
+                        "row": 72,
+                        "column": 25
+                      },
+                      "endPosition": {
+                        "row": 72,
+                        "column": 37
+                      },
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "text": "int",
+                          "startPosition": {
+                            "row": 72,
+                            "column": 25
+                          },
+                          "endPosition": {
+                            "row": 72,
+                            "column": 28
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "quantity",
+                          "startPosition": {
+                            "row": 72,
+                            "column": 29
+                          },
+                          "endPosition": {
+                            "row": 72,
+                            "column": 37
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.quantity = quantity;\r\n\t}",
+                  "startPosition": {
+                    "row": 72,
+                    "column": 39
+                  },
+                  "endPosition": {
+                    "row": 74,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.quantity = quantity;",
+                      "startPosition": {
+                        "row": 73,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 73,
+                        "column": 27
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.quantity = quantity",
+                          "startPosition": {
+                            "row": 73,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 73,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.quantity",
+                              "startPosition": {
+                                "row": 73,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 73,
+                                "column": 15
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 73,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 73,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "quantity",
+                                  "startPosition": {
+                                    "row": 73,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 73,
+                                    "column": 15
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "quantity",
+                              "startPosition": {
+                                "row": 73,
+                                "column": 18
+                              },
+                              "endPosition": {
+                                "row": 73,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public int getPrice() {\r\n\t\treturn price;\r\n\t}",
+              "startPosition": {
+                "row": 76,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 78,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 76,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 76,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 76,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 76,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getPrice",
+                  "startPosition": {
+                    "row": 76,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 76,
+                    "column": 20
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 76,
+                    "column": 20
+                  },
+                  "endPosition": {
+                    "row": 76,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn price;\r\n\t}",
+                  "startPosition": {
+                    "row": 76,
+                    "column": 23
+                  },
+                  "endPosition": {
+                    "row": 78,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return price;",
+                      "startPosition": {
+                        "row": 77,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 77,
+                        "column": 15
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "price",
+                          "startPosition": {
+                            "row": 77,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 77,
+                            "column": 14
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setPrice(int price) {\r\n\t\tthis.price = price;\r\n\t}",
+              "startPosition": {
+                "row": 80,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 82,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 80,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 80,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 80,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 80,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setPrice",
+                  "startPosition": {
+                    "row": 80,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 80,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(int price)",
+                  "startPosition": {
+                    "row": 80,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 80,
+                    "column": 32
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "int price",
+                      "startPosition": {
+                        "row": 80,
+                        "column": 22
+                      },
+                      "endPosition": {
+                        "row": 80,
+                        "column": 31
+                      },
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "text": "int",
+                          "startPosition": {
+                            "row": 80,
+                            "column": 22
+                          },
+                          "endPosition": {
+                            "row": 80,
+                            "column": 25
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "price",
+                          "startPosition": {
+                            "row": 80,
+                            "column": 26
+                          },
+                          "endPosition": {
+                            "row": 80,
+                            "column": 31
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.price = price;\r\n\t}",
+                  "startPosition": {
+                    "row": 80,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 82,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.price = price;",
+                      "startPosition": {
+                        "row": 81,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 81,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.price = price",
+                          "startPosition": {
+                            "row": 81,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 81,
+                            "column": 20
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.price",
+                              "startPosition": {
+                                "row": 81,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 81,
+                                "column": 12
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 81,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 81,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "price",
+                                  "startPosition": {
+                                    "row": 81,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 81,
+                                    "column": 12
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "price",
+                              "startPosition": {
+                                "row": 81,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 81,
+                                "column": 20
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public int getWeight() {\r\n\t\treturn weight;\r\n\t}",
+              "startPosition": {
+                "row": 84,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 86,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 84,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 84,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "integral_type",
+                  "text": "int",
+                  "startPosition": {
+                    "row": 84,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 84,
+                    "column": 11
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getWeight",
+                  "startPosition": {
+                    "row": 84,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 84,
+                    "column": 21
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 84,
+                    "column": 21
+                  },
+                  "endPosition": {
+                    "row": 84,
+                    "column": 23
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn weight;\r\n\t}",
+                  "startPosition": {
+                    "row": 84,
+                    "column": 24
+                  },
+                  "endPosition": {
+                    "row": 86,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return weight;",
+                      "startPosition": {
+                        "row": 85,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 85,
+                        "column": 16
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "weight",
+                          "startPosition": {
+                            "row": 85,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 85,
+                            "column": 15
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setWeight(int weight) {\r\n\t\tthis.weight = weight;\r\n\t}",
+              "startPosition": {
+                "row": 88,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 90,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 88,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 88,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 88,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 88,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setWeight",
+                  "startPosition": {
+                    "row": 88,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 88,
+                    "column": 22
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(int weight)",
+                  "startPosition": {
+                    "row": 88,
+                    "column": 22
+                  },
+                  "endPosition": {
+                    "row": 88,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "int weight",
+                      "startPosition": {
+                        "row": 88,
+                        "column": 23
+                      },
+                      "endPosition": {
+                        "row": 88,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "text": "int",
+                          "startPosition": {
+                            "row": 88,
+                            "column": 23
+                          },
+                          "endPosition": {
+                            "row": 88,
+                            "column": 26
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "weight",
+                          "startPosition": {
+                            "row": 88,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 88,
+                            "column": 33
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.weight = weight;\r\n\t}",
+                  "startPosition": {
+                    "row": 88,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 90,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.weight = weight;",
+                      "startPosition": {
+                        "row": 89,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 89,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.weight = weight",
+                          "startPosition": {
+                            "row": 89,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 89,
+                            "column": 22
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.weight",
+                              "startPosition": {
+                                "row": 89,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 89,
+                                "column": 13
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 89,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 89,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "weight",
+                                  "startPosition": {
+                                    "row": 89,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 89,
+                                    "column": 13
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "weight",
+                              "startPosition": {
+                                "row": 89,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 89,
+                                "column": 22
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public String getDescription() {\r\n\t\treturn description;\r\n\t}",
+              "startPosition": {
+                "row": 92,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 94,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 92,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 92,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 92,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 92,
+                    "column": 14
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "getDescription",
+                  "startPosition": {
+                    "row": 92,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 92,
+                    "column": 29
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 92,
+                    "column": 29
+                  },
+                  "endPosition": {
+                    "row": 92,
+                    "column": 31
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\treturn description;\r\n\t}",
+                  "startPosition": {
+                    "row": 92,
+                    "column": 32
+                  },
+                  "endPosition": {
+                    "row": 94,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return description;",
+                      "startPosition": {
+                        "row": 93,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 93,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "description",
+                          "startPosition": {
+                            "row": 93,
+                            "column": 9
+                          },
+                          "endPosition": {
+                            "row": 93,
+                            "column": 20
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_declaration",
+              "text": "public void setDescription(String description) {\r\n\t\tthis.description = description;\r\n\t}",
+              "startPosition": {
+                "row": 96,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 98,
+                "column": 2
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "public",
+                  "startPosition": {
+                    "row": 96,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 96,
+                    "column": 7
+                  },
+                  "children": []
+                },
+                {
+                  "type": "void_type",
+                  "text": "void",
+                  "startPosition": {
+                    "row": 96,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 96,
+                    "column": 12
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "setDescription",
+                  "startPosition": {
+                    "row": 96,
+                    "column": 13
+                  },
+                  "endPosition": {
+                    "row": 96,
+                    "column": 27
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "(String description)",
+                  "startPosition": {
+                    "row": 96,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 96,
+                    "column": 47
+                  },
+                  "children": [
+                    {
+                      "type": "formal_parameter",
+                      "text": "String description",
+                      "startPosition": {
+                        "row": 96,
+                        "column": 28
+                      },
+                      "endPosition": {
+                        "row": 96,
+                        "column": 46
+                      },
+                      "children": [
+                        {
+                          "type": "type_identifier",
+                          "text": "String",
+                          "startPosition": {
+                            "row": 96,
+                            "column": 28
+                          },
+                          "endPosition": {
+                            "row": 96,
+                            "column": 34
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "description",
+                          "startPosition": {
+                            "row": 96,
+                            "column": 35
+                          },
+                          "endPosition": {
+                            "row": 96,
+                            "column": 46
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n\t\tthis.description = description;\r\n\t}",
+                  "startPosition": {
+                    "row": 96,
+                    "column": 48
+                  },
+                  "endPosition": {
+                    "row": 98,
+                    "column": 2
+                  },
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "text": "this.description = description;",
+                      "startPosition": {
+                        "row": 97,
+                        "column": 2
+                      },
+                      "endPosition": {
+                        "row": 97,
+                        "column": 33
+                      },
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "text": "this.description = description",
+                          "startPosition": {
+                            "row": 97,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 97,
+                            "column": 32
+                          },
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "text": "this.description",
+                              "startPosition": {
+                                "row": 97,
+                                "column": 2
+                              },
+                              "endPosition": {
+                                "row": 97,
+                                "column": 18
+                              },
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "text": "this",
+                                  "startPosition": {
+                                    "row": 97,
+                                    "column": 2
+                                  },
+                                  "endPosition": {
+                                    "row": 97,
+                                    "column": 6
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "identifier",
+                                  "text": "description",
+                                  "startPosition": {
+                                    "row": 97,
+                                    "column": 7
+                                  },
+                                  "endPosition": {
+                                    "row": 97,
+                                    "column": 18
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "description",
+                              "startPosition": {
+                                "row": 97,
+                                "column": 21
+                              },
+                              "endPosition": {
+                                "row": 97,
+                                "column": 32
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "text": "@ManyToOne\r\n    @JoinColumn(name = \"customer_id\")\r\n    private User customer;",
+              "startPosition": {
+                "row": 100,
+                "column": 1
+              },
+              "endPosition": {
+                "row": 102,
+                "column": 26
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@ManyToOne\r\n    @JoinColumn(name = \"customer_id\")\r\n    private",
+                  "startPosition": {
+                    "row": 100,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 102,
+                    "column": 11
+                  },
+                  "children": [
+                    {
+                      "type": "marker_annotation",
+                      "text": "@ManyToOne",
+                      "startPosition": {
+                        "row": 100,
+                        "column": 1
+                      },
+                      "endPosition": {
+                        "row": 100,
+                        "column": 11
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "ManyToOne",
+                          "startPosition": {
+                            "row": 100,
+                            "column": 2
+                          },
+                          "endPosition": {
+                            "row": 100,
+                            "column": 11
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "annotation",
+                      "text": "@JoinColumn(name = \"customer_id\")",
+                      "startPosition": {
+                        "row": 101,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 101,
+                        "column": 37
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "JoinColumn",
+                          "startPosition": {
+                            "row": 101,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 101,
+                            "column": 15
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(name = \"customer_id\")",
+                          "startPosition": {
+                            "row": 101,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 101,
+                            "column": 37
+                          },
+                          "children": [
+                            {
+                              "type": "element_value_pair",
+                              "text": "name = \"customer_id\"",
+                              "startPosition": {
+                                "row": 101,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 101,
+                                "column": 36
+                              },
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "text": "name",
+                                  "startPosition": {
+                                    "row": 101,
+                                    "column": 16
+                                  },
+                                  "endPosition": {
+                                    "row": 101,
+                                    "column": 20
+                                  },
+                                  "children": []
+                                },
+                                {
+                                  "type": "string_literal",
+                                  "text": "\"customer_id\"",
+                                  "startPosition": {
+                                    "row": 101,
+                                    "column": 23
+                                  },
+                                  "endPosition": {
+                                    "row": 101,
+                                    "column": 36
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "text": "customer_id",
+                                      "startPosition": {
+                                        "row": 101,
+                                        "column": 24
+                                      },
+                                      "endPosition": {
+                                        "row": 101,
+                                        "column": 35
+                                      },
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "User",
+                  "startPosition": {
+                    "row": 102,
+                    "column": 12
+                  },
+                  "endPosition": {
+                    "row": 102,
+                    "column": 16
+                  },
+                  "children": []
+                },
+                {
+                  "type": "variable_declarator",
+                  "text": "customer",
+                  "startPosition": {
+                    "row": 102,
+                    "column": 17
+                  },
+                  "endPosition": {
+                    "row": 102,
+                    "column": 25
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "customer",
+                      "startPosition": {
+                        "row": 102,
+                        "column": 17
+                      },
+                      "endPosition": {
+                        "row": 102,
+                        "column": 25
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+No of Files
+Lines of Code
+Functions
+Classes
+Avg Complexity
+Comments
+No of Direct dependencies
+Direct dependencies All List
+Endpoints defined
+Try/Except Block
+FrameworksDetected
+DatabaseDetected
+CloudDetected
+EnviornmentvariablesDetected

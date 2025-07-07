@@ -1,0 +1,664 @@
+{
+  "type": "program",
+  "text": "package com.jtspringproject.JtSpringProject.controller;\r\n\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\n\r\n@Controller\r\npublic class ErrorController {\r\n\r\n    @GetMapping(\"/403\")\r\n    public String accessDenied() {\r\n        return \"403\"; \r\n    }\r\n}\r\n",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 13,
+    "column": 0
+  },
+  "children": [
+    {
+      "type": "package_declaration",
+      "text": "package com.jtspringproject.JtSpringProject.controller;",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 55
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "com.jtspringproject.JtSpringProject.controller",
+          "startPosition": {
+            "row": 0,
+            "column": 8
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 54
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "com.jtspringproject.JtSpringProject",
+              "startPosition": {
+                "row": 0,
+                "column": 8
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 43
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "com.jtspringproject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 8
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 27
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 11
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jtspringproject",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 12
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 27
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "JtSpringProject",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 28
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 43
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "controller",
+              "startPosition": {
+                "row": 0,
+                "column": 44
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 54
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.stereotype.Controller;",
+      "startPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 2,
+        "column": 49
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.stereotype.Controller",
+          "startPosition": {
+            "row": 2,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 2,
+            "column": 48
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.stereotype",
+              "startPosition": {
+                "row": 2,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 37
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 26
+                  },
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 10
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "springframework",
+                      "startPosition": {
+                        "row": 2,
+                        "column": 11
+                      },
+                      "endPosition": {
+                        "row": 2,
+                        "column": 26
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "stereotype",
+                  "startPosition": {
+                    "row": 2,
+                    "column": 27
+                  },
+                  "endPosition": {
+                    "row": 2,
+                    "column": 37
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "Controller",
+              "startPosition": {
+                "row": 2,
+                "column": 38
+              },
+              "endPosition": {
+                "row": 2,
+                "column": 48
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "text": "import org.springframework.web.bind.annotation.GetMapping;",
+      "startPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 3,
+        "column": 58
+      },
+      "children": [
+        {
+          "type": "scoped_identifier",
+          "text": "org.springframework.web.bind.annotation.GetMapping",
+          "startPosition": {
+            "row": 3,
+            "column": 7
+          },
+          "endPosition": {
+            "row": 3,
+            "column": 57
+          },
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "text": "org.springframework.web.bind.annotation",
+              "startPosition": {
+                "row": 3,
+                "column": 7
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 46
+              },
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "text": "org.springframework.web.bind",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 7
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 35
+                  },
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "text": "org.springframework.web",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 7
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 30
+                      },
+                      "children": [
+                        {
+                          "type": "scoped_identifier",
+                          "text": "org.springframework",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 7
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 26
+                          },
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "text": "org",
+                              "startPosition": {
+                                "row": 3,
+                                "column": 7
+                              },
+                              "endPosition": {
+                                "row": 3,
+                                "column": 10
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "identifier",
+                              "text": "springframework",
+                              "startPosition": {
+                                "row": 3,
+                                "column": 11
+                              },
+                              "endPosition": {
+                                "row": 3,
+                                "column": 26
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "web",
+                          "startPosition": {
+                            "row": 3,
+                            "column": 27
+                          },
+                          "endPosition": {
+                            "row": 3,
+                            "column": 30
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "bind",
+                      "startPosition": {
+                        "row": 3,
+                        "column": 31
+                      },
+                      "endPosition": {
+                        "row": 3,
+                        "column": 35
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "identifier",
+                  "text": "annotation",
+                  "startPosition": {
+                    "row": 3,
+                    "column": 36
+                  },
+                  "endPosition": {
+                    "row": 3,
+                    "column": 46
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "identifier",
+              "text": "GetMapping",
+              "startPosition": {
+                "row": 3,
+                "column": 47
+              },
+              "endPosition": {
+                "row": 3,
+                "column": 57
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "text": "@Controller\r\npublic class ErrorController {\r\n\r\n    @GetMapping(\"/403\")\r\n    public String accessDenied() {\r\n        return \"403\"; \r\n    }\r\n}",
+      "startPosition": {
+        "row": 5,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 12,
+        "column": 1
+      },
+      "children": [
+        {
+          "type": "modifiers",
+          "text": "@Controller\r\npublic",
+          "startPosition": {
+            "row": 5,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 6
+          },
+          "children": [
+            {
+              "type": "marker_annotation",
+              "text": "@Controller",
+              "startPosition": {
+                "row": 5,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 5,
+                "column": 11
+              },
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "Controller",
+                  "startPosition": {
+                    "row": 5,
+                    "column": 1
+                  },
+                  "endPosition": {
+                    "row": 5,
+                    "column": 11
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "identifier",
+          "text": "ErrorController",
+          "startPosition": {
+            "row": 6,
+            "column": 13
+          },
+          "endPosition": {
+            "row": 6,
+            "column": 28
+          },
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "text": "{\r\n\r\n    @GetMapping(\"/403\")\r\n    public String accessDenied() {\r\n        return \"403\"; \r\n    }\r\n}",
+          "startPosition": {
+            "row": 6,
+            "column": 29
+          },
+          "endPosition": {
+            "row": 12,
+            "column": 1
+          },
+          "children": [
+            {
+              "type": "method_declaration",
+              "text": "@GetMapping(\"/403\")\r\n    public String accessDenied() {\r\n        return \"403\"; \r\n    }",
+              "startPosition": {
+                "row": 8,
+                "column": 4
+              },
+              "endPosition": {
+                "row": 11,
+                "column": 5
+              },
+              "children": [
+                {
+                  "type": "modifiers",
+                  "text": "@GetMapping(\"/403\")\r\n    public",
+                  "startPosition": {
+                    "row": 8,
+                    "column": 4
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 10
+                  },
+                  "children": [
+                    {
+                      "type": "annotation",
+                      "text": "@GetMapping(\"/403\")",
+                      "startPosition": {
+                        "row": 8,
+                        "column": 4
+                      },
+                      "endPosition": {
+                        "row": 8,
+                        "column": 23
+                      },
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "GetMapping",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 5
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 15
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "annotation_argument_list",
+                          "text": "(\"/403\")",
+                          "startPosition": {
+                            "row": 8,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 8,
+                            "column": 23
+                          },
+                          "children": [
+                            {
+                              "type": "string_literal",
+                              "text": "\"/403\"",
+                              "startPosition": {
+                                "row": 8,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 8,
+                                "column": 22
+                              },
+                              "children": [
+                                {
+                                  "type": "string_fragment",
+                                  "text": "/403",
+                                  "startPosition": {
+                                    "row": 8,
+                                    "column": 17
+                                  },
+                                  "endPosition": {
+                                    "row": 8,
+                                    "column": 21
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "type_identifier",
+                  "text": "String",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 11
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 17
+                  },
+                  "children": []
+                },
+                {
+                  "type": "identifier",
+                  "text": "accessDenied",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 18
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 30
+                  },
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "text": "()",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 30
+                  },
+                  "endPosition": {
+                    "row": 9,
+                    "column": 32
+                  },
+                  "children": []
+                },
+                {
+                  "type": "block",
+                  "text": "{\r\n        return \"403\"; \r\n    }",
+                  "startPosition": {
+                    "row": 9,
+                    "column": 33
+                  },
+                  "endPosition": {
+                    "row": 11,
+                    "column": 5
+                  },
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "text": "return \"403\";",
+                      "startPosition": {
+                        "row": 10,
+                        "column": 8
+                      },
+                      "endPosition": {
+                        "row": 10,
+                        "column": 21
+                      },
+                      "children": [
+                        {
+                          "type": "string_literal",
+                          "text": "\"403\"",
+                          "startPosition": {
+                            "row": 10,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 10,
+                            "column": 20
+                          },
+                          "children": [
+                            {
+                              "type": "string_fragment",
+                              "text": "403",
+                              "startPosition": {
+                                "row": 10,
+                                "column": 16
+                              },
+                              "endPosition": {
+                                "row": 10,
+                                "column": 19
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
